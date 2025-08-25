@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { Button } from "@/components/ui/button"
 import Image from "next/image"
 
 export const metadata: Metadata = {
@@ -45,18 +46,22 @@ export default function ServicesPage() {
               Expert installation • Custom solutions • Lifetime warranty
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
+              <Button
+                variant="primary"
+                size="lg"
                 href="/contact"
-                className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-black bg-white hover:bg-gray-100 rounded-lg shadow-2xl transition-colors duration-200"
+                className="bg-white text-black hover:bg-gray-100 shadow-2xl"
               >
                 Get Free Consultation →
-              </a>
-              <a
+              </Button>
+              <Button
+                variant="secondary"
+                size="lg"
                 href="/products"
-                className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white border-2 border-white hover:bg-white hover:text-black rounded-lg transition-colors duration-200"
+                className="border-2 border-white text-white hover:bg-white hover:text-black"
               >
                 Browse Products
-              </a>
+              </Button>
             </div>
           </div>
         </div>
@@ -121,12 +126,9 @@ export default function ServicesPage() {
                     Clean-up included
                   </li>
                 </ul>
-                <a
-                  href="/contact"
-                  className="inline-flex items-center justify-center w-full px-4 py-2 text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors duration-200"
-                >
+                <Button variant="primary" size="sm" href="/contact" className="w-full">
                   Schedule Installation
-                </a>
+                </Button>
               </div>
             </div>
 
@@ -178,12 +180,9 @@ export default function ServicesPage() {
                     Design recommendations
                   </li>
                 </ul>
-                <a
-                  href="/contact"
-                  className="inline-flex items-center justify-center w-full px-4 py-2 text-sm font-semibold text-blue-600 bg-white border border-blue-600 hover:bg-blue-50 rounded-lg transition-colors duration-200"
-                >
+                <Button variant="secondary" size="sm" href="/contact" className="w-full">
                   Book Consultation
-                </a>
+                </Button>
               </div>
             </div>
 
@@ -235,12 +234,9 @@ export default function ServicesPage() {
                     Special hardware
                   </li>
                 </ul>
-                <a
-                  href="/contact"
-                  className="inline-flex items-center justify-center w-full px-4 py-2 text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors duration-200"
-                >
+                <Button variant="primary" size="sm" href="/contact" className="w-full">
                   Discuss Custom Project
-                </a>
+                </Button>
               </div>
             </div>
           </div>
@@ -317,18 +313,12 @@ export default function ServicesPage() {
               warranty.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="/contact"
-                className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-lg shadow-xl transition-colors duration-200"
-              >
+              <Button variant="primary" size="lg" href="/contact" className="shadow-xl">
                 Schedule Free Consultation →
-              </a>
-              <a
-                href="/products"
-                className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-blue-600 bg-white border border-blue-600 hover:bg-blue-50 rounded-lg transition-colors duration-200"
-              >
+              </Button>
+              <Button variant="secondary" size="lg" href="/products">
                 Browse Products
-              </a>
+              </Button>
             </div>
             <div className="mt-8 flex items-center justify-center gap-6 text-sm text-gray-600">
               <div className="flex items-center gap-1">

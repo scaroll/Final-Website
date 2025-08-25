@@ -3,24 +3,31 @@
 import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
-// import { Button } from "@/components/ui/button"
-// import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-// import { Badge } from "@/components/ui/badge"
-// import { Input } from "@/components/ui/input"
-// import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-// import { useCart } from "@/lib/useCart"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { Input } from "@/components/ui/input"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { useCart } from "@/lib/useCart"
 import products from "@/data/simple-products.json"
 
 export default function ProductsPage() {
   const [searchTerm, setSearchTerm] = useState("")
   const [categoryFilter, setCategoryFilter] = useState("all")
   const [sortBy, setSortBy] = useState("name")
+  const { addItem } = useCart()
 
   console.log("[v0] Products loaded:", products.length)
+  console.log("[v0] Search term:", searchTerm)
+  console.log("[v0] Category filter:", categoryFilter)
 
   const filteredProducts = products
     .filter((product) => {
-      const matchesSearch = product.title?.toLowerCase().includes(searchTerm.toLowerCase()) || false
+      const matchesSearch =
+        product.title?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        false ||
+        product.description?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        false
       const matchesCategory = categoryFilter === "all" || product.category === categoryFilter
       return matchesSearch && matchesCategory
     })
@@ -36,6 +43,8 @@ export default function ProductsPage() {
       }
     })
 
+  console.log("[v0] Filtered products:", filteredProducts.length)
+
   const categories = [...new Set(products.map((p) => p.category))]
 
   return (
@@ -45,80 +54,93 @@ export default function ProductsPage() {
         <p className="text-lg text-gray-600">Discover our premium closet door collection</p>
       </div>
 
+      {/* Filters */}
       <div className="mb-8 flex flex-col md:flex-row gap-4">
-        <input
-          type="text"
+        <Input
           placeholder="Search products..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          className="px-3 py-2 border border-gray-300 rounded-md md:w-1/3"
+          className="md:w-1/3"
         />
 
-        <select
-          value={categoryFilter}
-          onChange={(e) => setCategoryFilter(e.target.value)}
-          className="px-3 py-2 border border-gray-300 rounded-md md:w-48"
-        >
-          <option value="all">All Categories</option>
-          {categories.map((category) => (
-            <option key={category} value={category}>
-              {category}
-            </option>
-          ))}
-        </select>
+        <Select value={categoryFilter} onValueChange={setCategoryFilter}>
+          <SelectTrigger className="md:w-48">
+            <SelectValue placeholder="Category" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="all">All Categories</SelectItem>
+            {categories.map((category) => (
+              <SelectItem key={category} value={category}>
+                {category}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
 
-        <select
-          value={sortBy}
-          onChange={(e) => setSortBy(e.target.value)}
-          className="px-3 py-2 border border-gray-300 rounded-md md:w-48"
-        >
-          <option value="name">Name</option>
-          <option value="price-low">Price: Low to High</option>
-          <option value="price-high">Price: High to Low</option>
-        </select>
+        <Select value={sortBy} onValueChange={setSortBy}>
+          <SelectTrigger className="md:w-48">
+            <SelectValue placeholder="Sort by" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="name">Name</SelectItem>
+            <SelectItem value="price-low">Price: Low to High</SelectItem>
+            <SelectItem value="price-high">Price: High to Low</SelectItem>
+          </SelectContent>
+        </Select>
       </div>
 
+      {/* Products Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {filteredProducts.map((product, index) => (
-          <div
-            key={product.id}
-            className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
-          >
-            <div className="aspect-square relative bg-gray-100">
-              <Image
-                src={product.image || "/placeholder.svg?height=400&width=400&text=No+Image"}
-                alt={`${product.title} - PG Closets Ottawa`}
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                priority={index < 3}
-              />
-              <span className="absolute top-2 left-2 bg-blue-600 text-white px-2 py-1 rounded text-sm">New</span>
-            </div>
-            <div className="p-4">
-              <h3 className="text-lg font-semibold mb-2">{product.title}</h3>
-              <p className="text-gray-600 text-sm mb-3 line-clamp-2">{product.description}</p>
-              <div className="flex items-center justify-between mb-4">
-                <span className="text-2xl font-bold">${(product.price / 100).toFixed(2)}</span>
-                <span className="bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm">{product.category}</span>
-              </div>
-              <div className="flex gap-2">
-                <button
-                  onClick={() => console.log("[v0] Add to cart:", product.title)}
-                  className="flex-1 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors"
+        {filteredProducts.map((product, index) => {
+          console.log("[v0] Rendering product:", product.title, "Image:", product.image)
+
+          return (
+            <Card key={product.id} className="overflow-hidden hover:shadow-lg transition-shadow">
+              <CardHeader className="p-0">
+                <div className="aspect-square relative bg-gray-100">
+                  <Image
+                    src={product.image || "/placeholder.svg?height=400&width=400&text=No+Image"}
+                    alt={`${product.title} - PG Closets Ottawa`}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    priority={index < 3}
+                    onError={(e) => {
+                      console.log("[v0] Image load error for:", product.title, product.image)
+                      e.currentTarget.src = "/placeholder.svg?height=400&width=400&text=Image+Error"
+                    }}
+                    onLoad={() => {
+                      console.log("[v0] Image loaded successfully:", product.title)
+                    }}
+                  />
+                  <Badge className="absolute top-2 left-2 bg-blue-600">New</Badge>
+                </div>
+              </CardHeader>
+              <CardContent className="p-4">
+                <CardTitle className="text-lg mb-2">{product.title}</CardTitle>
+                <p className="text-gray-600 text-sm mb-3 line-clamp-2">{product.description}</p>
+                <div className="flex items-center justify-between">
+                  <span className="text-2xl font-bold">${(product.price / 100).toFixed(2)}</span>
+                  <Badge variant="outline">{product.category}</Badge>
+                </div>
+              </CardContent>
+              <CardFooter className="p-4 pt-0 flex gap-2">
+                <Button
+                  onClick={() => {
+                    console.log("[v0] Adding to cart:", product.title)
+                    addItem(product)
+                  }}
+                  className="flex-1"
                 >
                   Add to Cart
-                </button>
-                <Link
-                  href={`/products/${product.slug}`}
-                  className="bg-gray-100 text-gray-800 px-4 py-2 rounded hover:bg-gray-200 transition-colors"
-                >
-                  View Details
-                </Link>
-              </div>
-            </div>
-          </div>
-        ))}
+                </Button>
+                <Button variant="outline" asChild>
+                  <Link href={`/products/${product.slug}`}>View Details</Link>
+                </Button>
+              </CardFooter>
+            </Card>
+          )
+        })}
       </div>
 
       {filteredProducts.length === 0 && (
