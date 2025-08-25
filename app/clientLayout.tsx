@@ -1,42 +1,39 @@
 "use client"
 import type React from "react"
-// import PgHeader from "../components/PgHeader"
-// import PgFooter from "../components/PgFooter"
-// import { WebsiteJSONLD, OrganizationJSONLD } from "../lib/seo"
-// import { AuthProvider } from "../contexts/AuthContext"
-// import Script from "next/script"
-// import { PerformanceMonitor } from "../components/analytics/performance-monitor"
+import { AuthProvider } from "../contexts/AuthContext"
 
 export default function ClientLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="min-h-screen bg-white text-gray-900">
-      <header className="bg-blue-600 text-white p-4">
-        <div className="container mx-auto">
-          <h1 className="text-2xl font-bold">PG Closets</h1>
-          <nav className="mt-2">
-            <a href="/" className="mr-4 hover:underline">
-              Home
-            </a>
-            <a href="/products" className="mr-4 hover:underline">
-              Products
-            </a>
-            <a href="/about" className="mr-4 hover:underline">
-              About
-            </a>
-            <a href="/contact" className="hover:underline">
-              Contact
-            </a>
-          </nav>
-        </div>
-      </header>
+    <AuthProvider>
+      <div className="min-h-screen bg-white text-gray-900">
+        <header className="bg-blue-600 text-white p-4">
+          <div className="container mx-auto">
+            <h1 className="text-2xl font-bold">PG Closets</h1>
+            <nav className="mt-2">
+              <a href="/" className="mr-4 hover:underline">
+                Home
+              </a>
+              <a href="/products" className="mr-4 hover:underline">
+                Products
+              </a>
+              <a href="/about" className="mr-4 hover:underline">
+                About
+              </a>
+              <a href="/contact" className="hover:underline">
+                Contact
+              </a>
+            </nav>
+          </div>
+        </header>
 
-      <main className="min-h-screen">{children}</main>
+        <main className="min-h-screen">{children}</main>
 
-      <footer className="bg-gray-800 text-white p-4 mt-8">
-        <div className="container mx-auto text-center">
-          <p>&copy; 2024 PG Closets. All rights reserved.</p>
-        </div>
-      </footer>
-    </div>
+        <footer className="bg-gray-800 text-white p-4 mt-8">
+          <div className="container mx-auto text-center">
+            <p>&copy; 2024 PG Closets. All rights reserved.</p>
+          </div>
+        </footer>
+      </div>
+    </AuthProvider>
   )
 }

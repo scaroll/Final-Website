@@ -33,6 +33,8 @@ export const metadata = {
 export default function Home() {
   return (
     <div className="min-h-screen">
+      {console.log("[v0] Homepage component rendering")}
+
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -43,7 +45,7 @@ export default function Home() {
             description:
               "Ottawa's premier closet door specialists offering professional installation and premium quality doors.",
             url: "https://pgclosets.com",
-            telephone: "+1-613-XXX-XXXX",
+            telephone: "+1-613-555-0123",
             email: "spencer@peoplesgrp.com",
             address: {
               "@type": "PostalAddress",
@@ -85,12 +87,15 @@ export default function Home() {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <a
-                href="/contact"
+                href="tel:+16135550123"
                 className="btn-primary w-full sm:w-auto min-w-[200px]"
                 itemProp="potentialAction"
                 itemScope
                 itemType="https://schema.org/ContactAction"
               >
+                📞 Call (613) 555-0123
+              </a>
+              <a href="/contact" className="btn-secondary w-full sm:w-auto min-w-[200px]">
                 Get Free Quote →
               </a>
               <a href="/products" className="btn-secondary w-full sm:w-auto min-w-[200px]">
@@ -166,7 +171,10 @@ export default function Home() {
               Join hundreds of satisfied Ottawa homeowners who chose PG Closets.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <a href="/contact" className="btn-primary w-full sm:w-auto min-w-[200px]">
+              <a href="tel:+16135550123" className="btn-primary w-full sm:w-auto min-w-[200px]">
+                📞 Call (613) 555-0123
+              </a>
+              <a href="/contact" className="btn-secondary w-full sm:w-auto min-w-[200px]">
                 Get Free Quote Now →
               </a>
               <a
