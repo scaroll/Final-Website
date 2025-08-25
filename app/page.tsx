@@ -1,185 +1,185 @@
-import { LocalBusinessJSONLD } from "@/lib/seo"
-import { Button } from "@/components/ui/button"
-
 export const metadata = {
-  title: "Premium Closet Doors Ottawa | Official Renin Dealer | Custom Installation | PG Closets",
+  title: "PG Closets Ottawa | Premium Closet Doors & Installation",
   description:
-    "Transform your Ottawa home with premium Renin closet doors. Expert installation of barn doors, bypass doors, bifold doors & pivot doors. Free consultation, lifetime warranty, 2-week delivery. Serving Ottawa, Kanata, Nepean, Orleans, Barrhaven.",
+    "Ottawa's premier closet door specialists. Professional installation, premium quality, transparent pricing.",
   keywords:
-    "closet doors Ottawa, barn doors Ottawa, Renin dealer, bypass doors, bifold doors, pivot doors, custom closet installation, professional installation Ottawa, home renovation, interior design, space optimization, premium doors Canada, closet solutions Ottawa",
+    "closet doors Ottawa, barn doors Ottawa, bifold doors, sliding doors, professional installation, home renovation Ottawa, custom closets, interior doors, space solutions",
   openGraph: {
-    title: "Premium Closet Doors Ottawa | Official Renin Dealer | PG Closets",
+    title: "PG Closets Ottawa | Premium Closet Doors & Installation",
     description:
-      "Transform your Ottawa home with premium Renin closet doors. Expert installation, lifetime warranty, transparent Canadian pricing.",
-    images: ["/images/arcat/renin_176732_Continental_Hall_3_Lite.jpg"],
+      "Ottawa's premier closet door specialists. Professional installation, premium quality, transparent pricing.",
     type: "website",
     locale: "en_CA",
+    siteName: "PG Closets",
+    url: "https://pgclosets.com",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PG Closets Ottawa | Premium Closet Doors & Installation",
+    description:
+      "Ottawa's premier closet door specialists. Professional installation, premium quality, transparent pricing.",
   },
   alternates: {
     canonical: "https://pgclosets.com",
+  },
+  robots: "index, follow",
+  other: {
+    "geo.region": "CA-ON",
+    "geo.placename": "Ottawa",
+    "geo.position": "45.4215;-75.6972",
   },
 }
 
 export default function Home() {
   return (
-    <main>
-      <LocalBusinessJSONLD />
+    <div className="min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            name: "PG Closets",
+            description:
+              "Ottawa's premier closet door specialists offering professional installation and premium quality doors.",
+            url: "https://pgclosets.com",
+            telephone: "+1-613-XXX-XXXX",
+            email: "spencer@peoplesgrp.com",
+            address: {
+              "@type": "PostalAddress",
+              addressLocality: "Ottawa",
+              addressRegion: "ON",
+              addressCountry: "CA",
+            },
+            geo: {
+              "@type": "GeoCoordinates",
+              latitude: "45.4215",
+              longitude: "-75.6972",
+            },
+            areaServed: ["Ottawa", "Kanata", "Nepean", "Orleans", "Barrhaven", "Gatineau"],
+            serviceType: ["Closet Door Installation", "Custom Closets", "Home Renovation"],
+            priceRange: "$$",
+            openingHours: "Mo-Fr 09:00-17:00",
+          }),
+        }}
+      />
 
       <section
-        className="relative min-h-screen flex items-center justify-center overflow-hidden bg-cover bg-center"
+        className="relative min-h-screen flex items-center justify-center"
         style={{
-          backgroundImage: "url('/images/arcat/renin_176732_Continental_Hall_3_Lite.jpg')",
+          background: "linear-gradient(to bottom right, #243c74, #89bee6)",
         }}
         itemScope
         itemType="https://schema.org/WebPageElement"
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/70" />
-
-        <div className="relative z-10 container mx-auto px-4 text-center text-white">
+        <div className="container-apple text-center text-white">
           <div className="max-w-4xl mx-auto space-y-8">
-            <div className="space-y-6">
-              <h1 className="text-5xl lg:text-7xl font-bold leading-tight tracking-tight" itemProp="headline">
-                Ottawa's Renin Closet Door
-                <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-100 to-gray-300">
-                  Experts
-                </span>
-              </h1>
-              <p className="text-xl lg:text-2xl text-gray-100 max-w-2xl mx-auto leading-relaxed" itemProp="description">
-                Official Renin dealer • Professional installation • Transparent Canadian pricing
-              </p>
+            <h1 className="text-h1 text-white" itemProp="headline">
+              Ottawa's Premier
+              <br />
+              <span className="gradient-text">Closet Door Experts</span>
+            </h1>
+            <p className="text-body-l text-gray-100 max-w-2xl mx-auto" itemProp="description">
+              Professional installation • Premium quality • Transparent Canadian pricing
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <a
+                href="/contact"
+                className="btn-primary w-full sm:w-auto min-w-[200px]"
+                itemProp="potentialAction"
+                itemScope
+                itemType="https://schema.org/ContactAction"
+              >
+                Get Free Quote →
+              </a>
+              <a href="/products" className="btn-secondary w-full sm:w-auto min-w-[200px]">
+                Browse Products
+              </a>
             </div>
 
-            <div className="space-y-6">
-              <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                <Button
-                  variant="primary"
-                  size="lg"
-                  href="/contact"
-                  className="bg-white text-black hover:bg-gray-100 shadow-2xl"
-                  itemProp="potentialAction"
-                >
-                  Request Work →
-                </Button>
-                <Button
-                  variant="secondary"
-                  size="lg"
-                  href="/products"
-                  className="border-2 border-white text-white hover:bg-white hover:text-black shadow-lg hover:shadow-2xl backdrop-blur-sm bg-white/10 hover:bg-white active:bg-gray-100 transform hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 ease-out hover:scale-105 active:scale-95"
-                >
-                  Browse Products
-                </Button>
-              </div>
-
-              <div className="flex items-center justify-center gap-3 text-green-200 bg-green-900/20 backdrop-blur-sm rounded-full px-6 py-3 mx-auto w-fit">
-                <svg className="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                  <path
-                    fillRule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-                <span className="text-lg font-medium">
-                  Free Ottawa consultation • No obligation • Instant CAD pricing
-                </span>
-              </div>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 text-green-200 bg-green-900/20 backdrop-blur-sm rounded-full px-4 sm:px-6 py-3 mx-auto w-fit max-w-full">
+              <svg className="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                <path
+                  fillRule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clipRule="evenodd"
+                />
+              </svg>
+              <span className="text-sm sm:text-base font-medium text-center">
+                Free consultation • No obligation • Instant pricing
+              </span>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="py-16 bg-white" itemScope itemType="https://schema.org/ItemList">
-        <div className="container mx-auto px-4">
+      <section className="section-apple bg-white" itemScope itemType="https://schema.org/ItemList">
+        <div className="container-apple">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4" itemProp="headline">
-              Premium Renin Door Collections
+            <h2 className="text-h2 mb-4" itemProp="name">
+              Premium Door Collections
             </h2>
-            <p className="text-xl text-gray-600" itemProp="description">
-              Explore our complete range of closet door styles, each designed for Canadian homes
+            <p className="text-body-l text-pg-gray" itemProp="description">
+              Explore our complete range of closet door styles
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
             {[
-              {
-                name: "Sliding Doors",
-                type: "sliding",
-                description: "Space-saving bypass doors",
-                count: "25+ styles",
-                image: "/images/arcat/renin_205739_Bypass_Closet_Doors_Euro_3_Lite.jpg",
-              },
-              {
-                name: "Bifold Doors",
-                type: "bifold",
-                description: "Classic folding design",
-                count: "20+ styles",
-                image: "/images/arcat/renin_205746_Bifold_Closet_Door_Euro_1_Lite.jpg",
-              },
-              {
-                name: "Barn Doors",
-                type: "barn",
-                description: "Modern sliding barn style",
-                count: "30+ styles",
-                image: "/images/arcat/renin_205731_Mix_Match_Hardware_Driftwood_K_Design.jpg",
-              },
-              {
-                name: "Hardware",
-                type: "hardware",
-                description: "Premium hardware systems",
-                count: "15+ styles",
-                image: "/images/arcat/renin_205752_Barn_Door_Hardware_Kits_Cadium_Bent_Strap.jpg",
-              },
+              { name: "Sliding Doors", description: "Space-saving bypass doors", count: "25+ styles", type: "sliding" },
+              { name: "Bifold Doors", description: "Classic folding design", count: "20+ styles", type: "bifold" },
+              { name: "Barn Doors", description: "Modern sliding barn style", count: "30+ styles", type: "barn" },
+              { name: "Hardware", description: "Premium hardware systems", count: "15+ styles", type: "hardware" },
             ].map((category) => (
-              <div
-                key={category.type}
-                className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group"
-                itemScope
-                itemType="https://schema.org/ProductGroup"
-              >
-                <div className="aspect-square overflow-hidden">
-                  <img
-                    src={category.image || "/placeholder.svg"}
-                    alt={`${category.name} - ${category.description}`}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    loading="lazy"
-                  />
+              <div key={category.name} className="card-apple p-6" itemScope itemType="https://schema.org/ProductGroup">
+                <div className="aspect-square bg-gradient-to-br from-pg-sky/20 to-pg-navy/20 rounded-lg mb-4 flex items-center justify-center">
+                  <div className="w-16 h-16 bg-pg-navy/10 rounded-full flex items-center justify-center">
+                    <div className="w-8 h-8 bg-pg-navy rounded" aria-hidden="true"></div>
+                  </div>
                 </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2" itemProp="name">
-                    {category.name}
-                  </h3>
-                  <p className="text-gray-600 mb-2" itemProp="description">
-                    {category.description}
-                  </p>
-                  <p className="text-sm text-gray-500 mb-4">{category.count}</p>
-                  <Button variant="secondary" size="sm" href={`/products?category=${category.type}`} className="w-full">
-                    Browse {category.name}
-                  </Button>
-                </div>
+                <h3 className="text-h3 mb-2" itemProp="name">
+                  {category.name}
+                </h3>
+                <p className="text-body-m text-pg-gray mb-2" itemProp="description">
+                  {category.description}
+                </p>
+                <p className="text-body-s text-pg-gray mb-4">{category.count}</p>
+                <a
+                  href={`/products?category=${category.type}`}
+                  className="btn-secondary w-full text-center"
+                  aria-label={`Browse ${category.name} collection`}
+                >
+                  Browse {category.name}
+                </a>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4 text-center">
+      <section className="section-dense bg-pg-offwhite">
+        <div className="container-apple text-center">
           <div className="max-w-2xl mx-auto">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Ready to Transform Your Ottawa Home?</h2>
-            <p className="text-xl text-gray-600 mb-8">
-              Join hundreds of satisfied Ottawa homeowners who chose PG Closets for their premium closet door solutions.
+            <h2 className="text-h2 mb-4">Ready to Transform Your Ottawa Home?</h2>
+            <p className="text-body-l text-pg-gray mb-8">
+              Join hundreds of satisfied Ottawa homeowners who chose PG Closets.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="primary" size="lg" href="/contact">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <a href="/contact" className="btn-primary w-full sm:w-auto min-w-[200px]">
                 Get Free Quote Now →
-              </Button>
-              <Button variant="secondary" size="lg" href="mailto:spencer@peoplesgrp.com">
-                Email: spencer@peoplesgrp.com
-              </Button>
+              </a>
+              <a
+                href="mailto:spencer@peoplesgrp.com"
+                className="btn-secondary w-full sm:w-auto min-w-[200px] text-center"
+                aria-label="Send email to spencer@peoplesgrp.com"
+              >
+                <span className="hidden sm:inline">Email: </span>spencer@peoplesgrp.com
+              </a>
             </div>
           </div>
         </div>
       </section>
-    </main>
+    </div>
   )
 }

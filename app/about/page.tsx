@@ -1,8 +1,6 @@
 import type { Metadata } from "next"
 import PgHeader from "@/components/PgHeader"
 import PgFooter from "@/components/PgFooter"
-import { Button } from "@/components/ui/button"
-import Link from "next/link"
 
 export const metadata: Metadata = {
   title: "About PG Closets | Official Renin Dealer Ottawa",
@@ -35,12 +33,18 @@ export default function AboutPage() {
                 with premium Renin door systems and exceptional service.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button variant="primary" size="lg" href="/contact">
+                <a
+                  href="/contact"
+                  className="inline-flex items-center justify-center px-8 py-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors text-center"
+                >
                   Get Free Consultation
-                </Button>
-                <Button variant="secondary" size="lg" href="/products">
+                </a>
+                <a
+                  href="/products"
+                  className="inline-flex items-center justify-center px-8 py-4 bg-gray-100 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors text-center"
+                >
                   Browse Products
-                </Button>
+                </a>
               </div>
             </div>
             <div className="relative">
@@ -180,12 +184,18 @@ export default function AboutPage() {
             Experience the PG Closets difference for yourself. Let's create something beautiful for your home.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/configurator">
-              <Button className="btn-primary px-8 py-4 text-lg rounded-full">Start Your Project</Button>
-            </Link>
-            <Link href="/contact">
-              <Button className="btn-secondary px-8 py-4 text-lg rounded-full">Get in Touch</Button>
-            </Link>
+            <a
+              href="/configurator"
+              className="inline-flex items-center justify-center px-8 py-4 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700 transition-colors"
+            >
+              Start Your Project
+            </a>
+            <a
+              href="/contact"
+              className="inline-flex items-center justify-center px-8 py-4 bg-gray-100 text-gray-900 font-semibold rounded-full hover:bg-gray-200 transition-colors"
+            >
+              Get in Touch
+            </a>
           </div>
         </div>
       </section>

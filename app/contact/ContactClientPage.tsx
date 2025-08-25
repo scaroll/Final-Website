@@ -13,32 +13,43 @@ export default function ContactClientPage() {
   const [scriptLoaded, setScriptLoaded] = useState(false)
   const [scriptError, setScriptError] = useState(false)
 
-  // <CHANGE> Added CSS loading through useEffect for App Router compatibility
   useEffect(() => {
-    // Load Jobber CSS dynamically
-    const link = document.createElement("link")
-    link.rel = "stylesheet"
-    link.href = "https://d3ey4dbjkt2f6s.cloudfront.net/assets/external/work_request_embed.css"
-    link.media = "screen"
-    document.head.appendChild(link)
+    // Wrap in try-catch to handle any URL construction errors
+    try {
+      // Load Jobber CSS dynamically
+      const link = document.createElement("link")
+      link.rel = "stylesheet"
+      link.href = "https://d3ey4dbjkt2f6s.cloudfront.net/assets/external/work_request_embed.css"
+      link.media = "screen"
 
-    const checkJobberForm = setTimeout(() => {
-      const jobberContainer = document.getElementById("83a3d24e-c18d-441c-80d1-d85419ea28ae")
-      if (jobberContainer && jobberContainer.children.length === 0) {
-        console.log("[v0] Jobber form container is empty, script may have failed")
+      link.onerror = () => {
+        console.log("[v0] Failed to load Jobber CSS")
         setScriptError(true)
       }
-    }, 5000)
 
-    return () => {
-      clearTimeout(checkJobberForm)
-      // <CHANGE> Cleanup CSS link on unmount
-      const existingLink = document.querySelector(
-        'link[href="https://d3ey4dbjkt2f6s.cloudfront.net/assets/external/work_request_embed.css"]',
-      )
-      if (existingLink) {
-        document.head.removeChild(existingLink)
+      document.head.appendChild(link)
+
+      const checkJobberForm = setTimeout(() => {
+        const jobberContainer = document.getElementById("83a3d24e-c18d-441c-80d1-d85419ea28ae")
+        if (jobberContainer && jobberContainer.children.length === 0) {
+          console.log("[v0] Jobber form container is empty, script may have failed")
+          setScriptError(true)
+        }
+      }, 5000)
+
+      return () => {
+        clearTimeout(checkJobberForm)
+        // Cleanup CSS link on unmount
+        const existingLink = document.querySelector(
+          'link[href="https://d3ey4dbjkt2f6s.cloudfront.net/assets/external/work_request_embed.css"]',
+        )
+        if (existingLink) {
+          document.head.removeChild(existingLink)
+        }
       }
+    } catch (error) {
+      console.log("[v0] Error in contact page setup:", error)
+      setScriptError(true)
     }
   }, [])
 
@@ -86,10 +97,9 @@ export default function ContactClientPage() {
         </div>
       </div>
 
-      {/* <CHANGE> Added error boundary and better error handling for Script component */}
       <Script
         src="https://d3ey4dbjkt2f6s.cloudfront.net/assets/static_link/work_request_embed_snippet.js"
-        strategy="afterInteractive"
+        strategy="lazyOnload"
         onLoad={handleScriptLoad}
         onError={handleScriptError}
         data-clienthub-id="83a3d24e-c18d-441c-80d1-d85419ea28ae"

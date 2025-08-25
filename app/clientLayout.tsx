@@ -1,35 +1,42 @@
 "use client"
 import type React from "react"
-import PgHeader from "../components/PgHeader"
-import PgFooter from "../components/PgFooter"
-import { WebsiteJSONLD, OrganizationJSONLD } from "../lib/seo"
-import { AuthProvider } from "../contexts/AuthContext"
-import Script from "next/script"
-import { PerformanceMonitor } from "../components/analytics/performance-monitor"
+// import PgHeader from "../components/PgHeader"
+// import PgFooter from "../components/PgFooter"
+// import { WebsiteJSONLD, OrganizationJSONLD } from "../lib/seo"
+// import { AuthProvider } from "../contexts/AuthContext"
+// import Script from "next/script"
+// import { PerformanceMonitor } from "../components/analytics/performance-monitor"
 
 export default function ClientLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="bg-pg-offwhite text-pg-dark">
-      <Script src="https://www.googletagmanager.com/gtag/js?id=G-8THLNNP89K" strategy="afterInteractive" />
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-8THLNNP89K');
-        `}
-      </Script>
+    <div className="min-h-screen bg-white text-gray-900">
+      <header className="bg-blue-600 text-white p-4">
+        <div className="container mx-auto">
+          <h1 className="text-2xl font-bold">PG Closets</h1>
+          <nav className="mt-2">
+            <a href="/" className="mr-4 hover:underline">
+              Home
+            </a>
+            <a href="/products" className="mr-4 hover:underline">
+              Products
+            </a>
+            <a href="/about" className="mr-4 hover:underline">
+              About
+            </a>
+            <a href="/contact" className="hover:underline">
+              Contact
+            </a>
+          </nav>
+        </div>
+      </header>
 
-      <WebsiteJSONLD />
-      <OrganizationJSONLD />
+      <main className="min-h-screen">{children}</main>
 
-      <AuthProvider>
-        <PgHeader />
-        {children}
-        <PgFooter />
-      </AuthProvider>
-
-      <PerformanceMonitor />
+      <footer className="bg-gray-800 text-white p-4 mt-8">
+        <div className="container mx-auto text-center">
+          <p>&copy; 2024 PG Closets. All rights reserved.</p>
+        </div>
+      </footer>
     </div>
   )
 }
