@@ -26,36 +26,100 @@ export default function AboutPage() {
 
       {/* Hero Section */}
       <section className="section-padding-lg bg-gradient-to-br from-pg-offwhite to-white pt-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="headline-large text-4xl md:text-6xl text-pg-dark mb-6">Our Story</h1>
-          <p className="text-xl text-pg-gray mb-8 max-w-3xl mx-auto">
-            Family-owned and Ottawa-operated since 2010, PG Closets has been transforming homes across the region with
-            premium Renin door systems and exceptional service.
-          </p>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h1 className="headline-large text-4xl md:text-6xl text-pg-dark mb-6">Our Story</h1>
+              <p className="text-xl text-pg-gray mb-8">
+                Family-owned and Ottawa-operated since 2010, PG Closets has been transforming homes across the region
+                with premium Renin door systems and exceptional service.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button variant="primary" size="lg" href="/contact">
+                  Get Free Consultation
+                </Button>
+                <Button variant="secondary" size="lg" href="/products">
+                  Browse Products
+                </Button>
+              </div>
+            </div>
+            <div className="relative">
+              <div className="aspect-square rounded-2xl overflow-hidden shadow-2xl">
+                <img
+                  src="/images/arcat/renin_205745_Bypass_Closet_Doors_Savona_2_Panel_Arched_Design.jpg"
+                  alt="Premium Renin closet doors installed in Ottawa home"
+                  className="w-full h-full object-cover"
+                  loading="eager"
+                />
+              </div>
+              <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-xl shadow-lg">
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-pg-navy mb-1">500+</div>
+                  <div className="text-sm text-pg-gray">Happy Customers</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Story Section */}
       <section className="section-padding bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="prose prose-lg max-w-none">
-            <p className="text-lg text-pg-gray leading-relaxed mb-8">
-              What started as a small family business has grown into Ottawa's most trusted name in premium door systems.
-              As an official Renin dealer, we combine the quality and innovation of Canada's leading door manufacturer
-              with the personal touch and local expertise that only a family business can provide.
-            </p>
-            <p className="text-lg text-pg-gray leading-relaxed mb-8">
-              Our commitment to excellence has earned us the trust of over 500 Ottawa families, and we're proud to
-              maintain a 98% customer satisfaction rating. Every project, from a simple barn door to a complete closet
-              system, receives the same attention to detail and dedication to quality that has defined our business from
-              day one.
-            </p>
-            <p className="text-lg text-pg-gray leading-relaxed">
-              Today, we continue to grow while staying true to our founding principles: transparent pricing, quality
-              products, professional installation, and exceptional customer service. When you choose PG Closets, you're
-              not just getting a door system – you're joining a family of satisfied customers who trust us with their
-              homes.
-            </p>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="prose prose-lg max-w-none">
+              <p className="text-lg text-pg-gray leading-relaxed mb-8">
+                What started as a small family business has grown into Ottawa's most trusted name in premium door
+                systems. As an official Renin dealer, we combine the quality and innovation of Canada's leading door
+                manufacturer with the personal touch and local expertise that only a family business can provide.
+              </p>
+              <p className="text-lg text-pg-gray leading-relaxed mb-8">
+                Our commitment to excellence has earned us the trust of over 500 Ottawa families, and we're proud to
+                maintain a 98% customer satisfaction rating. Every project, from a simple barn door to a complete closet
+                system, receives the same attention to detail and dedication to quality that has defined our business
+                from day one.
+              </p>
+              <p className="text-lg text-pg-gray leading-relaxed">
+                Today, we continue to grow while staying true to our founding principles: transparent pricing, quality
+                products, professional installation, and exceptional customer service. When you choose PG Closets,
+                you're not just getting a door system – you're joining a family of satisfied customers who trust us with
+                their homes.
+              </p>
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="space-y-4">
+                <div className="aspect-square rounded-lg overflow-hidden shadow-lg">
+                  <img
+                    src="/images/arcat/renin_205744_Bypass_Closet_Doors_Galloway_4_Panel_Design.jpg"
+                    alt="Galloway 4-Panel Design closet doors"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="aspect-square rounded-lg overflow-hidden shadow-lg">
+                  <img
+                    src="/images/arcat/renin_205747_Bifold_Closet_Door_Euro_3_Lite.jpg"
+                    alt="Euro 3-Lite bifold closet doors"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+              <div className="space-y-4 pt-8">
+                <div className="aspect-square rounded-lg overflow-hidden shadow-lg">
+                  <img
+                    src="/images/arcat/renin_205733_Mix_Match_Hardware_Crochet_Multi_X_Design.jpg"
+                    alt="Crochet Multi-X Design barn door"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="aspect-square rounded-lg overflow-hidden shadow-lg">
+                  <img
+                    src="/images/arcat/renin_205740_Bypass_Closet_Doors_Euro_5_Lite.jpg"
+                    alt="Euro 5-Lite bypass closet doors"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
