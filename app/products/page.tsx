@@ -17,6 +17,10 @@ export default function ProductsPage() {
   const [sortBy, setSortBy] = useState("name")
   const { addItem } = useCart()
 
+  console.log("[v0] Products loaded:", products.length)
+  console.log("[v0] Search term:", searchTerm)
+  console.log("[v0] Category filter:", categoryFilter)
+
   const filteredProducts = products
     .filter((product) => {
       const matchesSearch =
@@ -38,6 +42,8 @@ export default function ProductsPage() {
           return (a.title || "").localeCompare(b.title || "")
       }
     })
+
+  console.log("[v0] Filtered products:", filteredProducts.length)
 
   const categories = [...new Set(products.map((p) => p.category))]
 
@@ -85,39 +91,56 @@ export default function ProductsPage() {
 
       {/* Products Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {filteredProducts.map((product) => (
-          <Card key={product.id} className="overflow-hidden hover:shadow-lg transition-shadow">
-            <CardHeader className="p-0">
-              <div className="aspect-square relative">
-                <Image
-                  src={product.image || "/placeholder.svg"}
-                  alt={product.title}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  priority={products.indexOf(product) < 3}
-                />
-                <Badge className="absolute top-2 left-2 bg-blue-600">New</Badge>
-              </div>
-            </CardHeader>
-            <CardContent className="p-4">
-              <CardTitle className="text-lg mb-2">{product.title}</CardTitle>
-              <p className="text-gray-600 text-sm mb-3 line-clamp-2">{product.description}</p>
-              <div className="flex items-center justify-between">
-                <span className="text-2xl font-bold">${(product.price / 100).toFixed(2)}</span>
-                <Badge variant="outline">{product.category}</Badge>
-              </div>
-            </CardContent>
-            <CardFooter className="p-4 pt-0 flex gap-2">
-              <Button onClick={() => addItem(product)} className="flex-1">
-                Add to Cart
-              </Button>
-              <Button variant="outline" asChild>
-                <Link href={`/products/${product.slug}`}>View Details</Link>
-              </Button>
-            </CardFooter>
-          </Card>
-        ))}
+        {filteredProducts.map((product, index) => {
+          console.log("[v0] Rendering product:", product.title, "Image:", product.image)
+
+          return (
+            <Card key={product.id} className="overflow-hidden hover:shadow-lg transition-shadow">
+              <CardHeader className="p-0">
+                <div className="aspect-square relative bg-gray-100">
+                  <Image
+                    src={product.image || "/placeholder.svg?height=400&width=400&text=No+Image"}
+                    alt={`${product.title} - PG Closets Ottawa`}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    priority={index < 3}
+                    onError={(e) => {
+                      console.log("[v0] Image load error for:", product.title, product.image)
+                      e.currentTarget.src = "/placeholder.svg?height=400&width=400&text=Image+Error"
+                    }}
+                    onLoad={() => {
+                      console.log("[v0] Image loaded successfully:", product.title)
+                    }}
+                  />
+                  <Badge className="absolute top-2 left-2 bg-blue-600">New</Badge>
+                </div>
+              </CardHeader>
+              <CardContent className="p-4">
+                <CardTitle className="text-lg mb-2">{product.title}</CardTitle>
+                <p className="text-gray-600 text-sm mb-3 line-clamp-2">{product.description}</p>
+                <div className="flex items-center justify-between">
+                  <span className="text-2xl font-bold">${(product.price / 100).toFixed(2)}</span>
+                  <Badge variant="outline">{product.category}</Badge>
+                </div>
+              </CardContent>
+              <CardFooter className="p-4 pt-0 flex gap-2">
+                <Button
+                  onClick={() => {
+                    console.log("[v0] Adding to cart:", product.title)
+                    addItem(product)
+                  }}
+                  className="flex-1"
+                >
+                  Add to Cart
+                </Button>
+                <Button variant="outline" asChild>
+                  <Link href={`/products/${product.slug}`}>View Details</Link>
+                </Button>
+              </CardFooter>
+            </Card>
+          )
+        })}
       </div>
 
       {filteredProducts.length === 0 && (
