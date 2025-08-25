@@ -1,5 +1,6 @@
 import type { CartItem } from "@/hooks/use-cart"
 import { formatPrice } from "@/lib/renin-products"
+import { OptimizedImage } from "@/components/ui/optimized-image"
 
 interface CartSummaryProps {
   items: CartItem[]
@@ -34,10 +35,14 @@ export function CartSummary({ items, subtotal, tax, installationFee, total, prov
       <div className="space-y-4 mb-6">
         {items.map((item) => (
           <div key={`${item.product.id}-${item.selectedSize}-${item.selectedFinish}`} className="flex gap-3">
-            <img
-              src={item.product.images[0] || "/placeholder.svg"}
-              alt={item.product.name}
+            <OptimizedImage
+              src={item.product.images[0]}
+              alt={`${item.product.name} - Cart item - PG Closets`}
+              width={48}
+              height={48}
               className="w-12 h-12 object-cover rounded"
+              sizes="48px"
+              quality={90}
             />
             <div className="flex-1">
               <h4 className="font-medium text-sm">{item.product.name}</h4>

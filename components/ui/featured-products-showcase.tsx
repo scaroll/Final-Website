@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
+import { OptimizedImage } from "@/components/ui/optimized-image"
 
 const featuredProducts = [
   {
@@ -65,10 +66,14 @@ export default function FeaturedProductsShowcase() {
               >
                 <div className="flex items-center gap-4">
                   <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
-                    <img
-                      src={product.image || "/placeholder.svg"}
-                      alt={product.name}
+                    <OptimizedImage
+                      src={product.image}
+                      alt={`${product.name} - ${product.category} - PG Closets`}
+                      width={64}
+                      height={64}
                       className="w-full h-full object-cover"
+                      sizes="64px"
+                      quality={90}
                     />
                   </div>
                   <div className="flex-1">
@@ -87,11 +92,16 @@ export default function FeaturedProductsShowcase() {
 
           <div className="relative">
             <div className="aspect-square rounded-2xl overflow-hidden shadow-2xl">
-              <img
-                src={featuredProducts[activeProduct].image || "/placeholder.svg"}
-                alt={featuredProducts[activeProduct].name}
+              <OptimizedImage
+                src={featuredProducts[activeProduct].image}
+                alt={`${featuredProducts[activeProduct].name} - Featured closet door installation - PG Closets`}
+                width={600}
+                height={600}
                 className="w-full h-full object-cover transition-all duration-500"
-                loading="eager"
+                priority={true}
+                sizes="(max-width: 768px) 100vw, 600px"
+                quality={90}
+                placeholder="blur"
               />
             </div>
             <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-xl shadow-lg">

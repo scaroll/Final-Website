@@ -4,7 +4,7 @@ import type { ArcatProduct } from "../../lib/enhanced-renin-products"
 import { formatPrice } from "../../lib/enhanced-renin-products"
 import { Button } from "../ui/button"
 import { RequestQuoteButton } from "../ui/request-quote-button"
-import Image from "next/image"
+import { OptimizedImage } from "../ui/optimized-image"
 import { useState } from "react"
 
 interface ProductCardProps {
@@ -36,20 +36,8 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
   }
 
   const imageSources = getImageSources()
-  const currentImage = imageSources[currentImageIndex] || imageSources[imageSources.length - 1]
-
-  const handleImageError = () => {
-    if (currentImageIndex < imageSources.length - 1) {
-      setCurrentImageIndex((prev) => prev + 1)
-      setIsLoading(true) // Reset loading state for next image
-    } else {
-      setIsLoading(false)
-    }
-  }
-
-  const handleImageLoad = () => {
-    setIsLoading(false)
-  }
+  const primaryImage = imageSources[0]
+  const fallbackImage = imageSources[1]
 
   return (
     <div className="bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden group border border-gray-100">
@@ -60,20 +48,17 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
           </div>
         )}
 
-        <Image
-          src={currentImage || "/placeholder.svg"}
-          alt={`${product.name} - Professional closet door by Renin`}
+        <OptimizedImage
+          src={primaryImage || "/placeholder.svg"}
+          alt={`${product.name} - Professional closet door by Renin - PG Closets`}
           width={400}
           height={300}
-          className={`w-full h-full object-cover group-hover:scale-105 transition-all duration-500 ${
-            isLoading ? "opacity-0" : "opacity-100"
-          }`}
-          loading={priority ? "eager" : "lazy"}
+          className="w-full h-full object-cover group-hover:scale-105 transition-all duration-500"
           priority={priority}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          onLoad={handleImageLoad}
-          onError={handleImageError}
           quality={85}
+          fallbackSrc={fallbackImage}
+          placeholder="blur"
         />
       </div>
 

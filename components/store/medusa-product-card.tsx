@@ -1,6 +1,7 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
+import { OptimizedImage } from "@/components/ui/optimized-image"
 import { useMedusaCart } from "@/hooks/use-medusa-cart"
 import type { Product } from "@medusajs/medusa"
 
@@ -29,10 +30,14 @@ export function MedusaProductCard({ product, className = "" }: MedusaProductCard
     <div className={`card-apple group hover:shadow-xl transition-all duration-300 ${className}`}>
       <div className="aspect-square bg-pg-offwhite rounded-lg mb-4 overflow-hidden">
         {product.thumbnail ? (
-          <img
-            src={product.thumbnail || "/placeholder.svg"}
-            alt={product.title}
+          <OptimizedImage
+            src={product.thumbnail}
+            alt={`${product.title} - Premium closet door - PG Closets`}
+            width={300}
+            height={300}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            quality={85}
           />
         ) : (
           <div className="w-full h-full flex items-center justify-center">

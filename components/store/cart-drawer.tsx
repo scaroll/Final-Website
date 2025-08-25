@@ -2,6 +2,7 @@
 
 import { useMedusaCart } from "@/hooks/use-medusa-cart"
 import { Button } from "@/components/ui/button"
+import { OptimizedImage } from "@/components/ui/optimized-image"
 import { X, Minus, Plus, ShoppingBag } from "@/components/ui/icons"
 import type { LineItem } from "@medusajs/medusa"
 
@@ -60,10 +61,14 @@ export function CartDrawer({ isOpen = false, onClose }: CartDrawerProps) {
               <div className="space-y-4">
                 {cart.items.map((item: LineItem) => (
                   <div key={item.id} className="flex gap-4 p-4 border rounded-lg">
-                    <img
+                    <OptimizedImage
                       src={item.thumbnail || "/placeholder.svg"}
-                      alt={item.title}
+                      alt={`${item.title} - Cart item - PG Closets`}
+                      width={64}
+                      height={64}
                       className="w-16 h-16 object-cover rounded"
+                      sizes="64px"
+                      quality={90}
                     />
                     <div className="flex-1">
                       <h3 className="font-semibold text-sm">{item.title}</h3>
