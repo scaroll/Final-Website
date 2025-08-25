@@ -25,7 +25,7 @@ const blogPosts = [
     date: "2024-01-15",
     readTime: "8 min read",
     category: "Home Design",
-    image: "/api/placeholder/600/400",
+    image: "/images/arcat/renin_205745_Bypass_Closet_Doors_Savona_2_Panel_Arched_Design.jpg",
     featured: true,
   },
   {
@@ -36,7 +36,7 @@ const blogPosts = [
     date: "2024-01-10",
     readTime: "6 min read",
     category: "Product Comparison",
-    image: "/api/placeholder/600/400",
+    image: "/images/arcat/renin_205731_Mix_Match_Hardware_Driftwood_K_Design.jpg",
     featured: true,
   },
   {
@@ -47,7 +47,7 @@ const blogPosts = [
     date: "2024-01-05",
     readTime: "5 min read",
     category: "Industry Insights",
-    image: "/api/placeholder/600/400",
+    image: "/images/arcat/renin_205739_Bypass_Closet_Doors_Euro_3_Lite.jpg",
     featured: false,
   },
   {
@@ -58,7 +58,7 @@ const blogPosts = [
     date: "2023-12-20",
     readTime: "7 min read",
     category: "Installation Tips",
-    image: "/api/placeholder/600/400",
+    image: "/images/arcat/renin_205746_Bifold_Closet_Door_Euro_1_Lite.jpg",
     featured: false,
   },
   {
@@ -69,7 +69,7 @@ const blogPosts = [
     date: "2023-12-15",
     readTime: "6 min read",
     category: "Small Spaces",
-    image: "/api/placeholder/600/400",
+    image: "/images/arcat/renin_205741_Bypass_Closet_Doors_Harmony_1_Lite.jpg",
     featured: false,
   },
   {
@@ -80,7 +80,7 @@ const blogPosts = [
     date: "2023-12-10",
     readTime: "9 min read",
     category: "Heritage Homes",
-    image: "/api/placeholder/600/400",
+    image: "/images/arcat/renin_205750_Bifold_Closet_Door_Georgian_6_Panel_Insert_Design.jpg",
     featured: false,
   },
 ]
