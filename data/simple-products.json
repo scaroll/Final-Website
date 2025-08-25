@@ -1,0 +1,56 @@
+[
+  {
+    "id": "p-hoodie",
+    "slug": "signature-hoodie",
+    "title": "Signature Hoodie",
+    "description": "Super-soft fleece hoodie with minimalist branding. Unisex fit.",
+    "price": 6900,
+    "image": "/images/arcat/renin_176733_Continental_Pavilion_5_Lite.jpg",
+    "category": "Apparel"
+  },
+  {
+    "id": "p-tee",
+    "slug": "classic-tee",
+    "title": "Classic Tee",
+    "description": "Premium cotton tee. Pre-shrunk, side-seamed, tailored cut.",
+    "price": 2900,
+    "image": "/images/arcat/renin_176732_Continental_Pavilion_3_Lite.jpg",
+    "category": "Apparel"
+  },
+  {
+    "id": "p-cap",
+    "slug": "logo-cap",
+    "title": "Logo Cap",
+    "description": "Low-profile dad hat with embroidered logo. Adjustable strap.",
+    "price": 2400,
+    "image": "/images/arcat/renin_192861_Heritage_Herringbone_Chevron_Design.jpg",
+    "category": "Accessories"
+  },
+  {
+    "id": "p-mug",
+    "slug": "ceramic-mug",
+    "title": "Ceramic Mug",
+    "description": "Matte ceramic mug—dishwasher and microwave safe.",
+    "price": 1900,
+    "image": "/images/arcat/renin_192853_Heritage_Rustic_Plank_Design.jpg",
+    "category": "Home"
+  },
+  {
+    "id": "p-sticker",
+    "slug": "die-cut-sticker-pack",
+    "title": "Die-Cut Sticker Pack",
+    "description": "A 10-pack of weatherproof die-cut stickers.",
+    "price": 900,
+    "image": "/images/arcat/renin_192856_Heritage_Shaker_Design.jpg",
+    "category": "Accessories"
+  },
+  {
+    "id": "p-bottle",
+    "slug": "insulated-bottle",
+    "title": "Insulated Bottle",
+    "description": "Double-wall vacuum insulated bottle (24oz).",
+    "price": 3900,
+    "image": "/images/arcat/renin_192857_Heritage_Glass_Panel_Design.jpg",
+    "category": "Home"
+  }
+]
