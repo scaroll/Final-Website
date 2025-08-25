@@ -67,14 +67,27 @@ export default function Home() {
       />
 
       <section
-        className="relative min-h-screen flex items-center justify-center"
-        style={{
-          background: "linear-gradient(to bottom right, #243c74, #89bee6)",
-        }}
+        className="relative min-h-screen flex items-center justify-center overflow-hidden"
         itemScope
         itemType="https://schema.org/WebPageElement"
       >
-        <div className="container-apple text-center text-white">
+        {/* Video Background */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover z-0"
+          poster="/images/arcat/renin_176733_hd.jpg"
+        >
+          <source src="/hero-video.mp4" type="video/mp4" />
+          <source src="/hero-video.webm" type="video/webm" />
+        </video>
+
+        {/* Overlay for better text readability */}
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/70 to-blue-600/50 z-10"></div>
+
+        <div className="container-apple text-center text-white relative z-20">
           <div className="max-w-4xl mx-auto space-y-8">
             <h1 className="text-h1 text-white" itemProp="headline">
               Ottawa's Premier
@@ -132,16 +145,43 @@ export default function Home() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
             {[
-              { name: "Sliding Doors", description: "Space-saving bypass doors", count: "25+ styles", type: "sliding" },
-              { name: "Bifold Doors", description: "Classic folding design", count: "20+ styles", type: "bifold" },
-              { name: "Barn Doors", description: "Modern sliding barn style", count: "30+ styles", type: "barn" },
-              { name: "Hardware", description: "Premium hardware systems", count: "15+ styles", type: "hardware" },
+              {
+                name: "Sliding Doors",
+                description: "Space-saving bypass doors",
+                count: "25+ styles",
+                type: "sliding",
+                image: "/images/arcat/renin_205739_Bypass_Closet_Doors_Euro_3_Lite.jpg",
+              },
+              {
+                name: "Bifold Doors",
+                description: "Classic folding design",
+                count: "20+ styles",
+                type: "bifold",
+                image: "/images/arcat/renin_205746_Bifold_Closet_Door_Euro_1_Lite.jpg",
+              },
+              {
+                name: "Barn Doors",
+                description: "Modern sliding barn style",
+                count: "30+ styles",
+                type: "barn",
+                image: "/images/arcat/renin_205743_Bypass_Closet_Doors_Trident_Double_K_Design.jpg",
+              },
+              {
+                name: "Hardware",
+                description: "Premium hardware systems",
+                count: "15+ styles",
+                type: "hardware",
+                image: "/images/arcat/renin_205752_Barn_Door_Hardware_Kits_Cadium_Bent_Strap.jpg",
+              },
             ].map((category) => (
               <div key={category.name} className="card-apple p-6" itemScope itemType="https://schema.org/ProductGroup">
-                <div className="aspect-square bg-gradient-to-br from-pg-sky/20 to-pg-navy/20 rounded-lg mb-4 flex items-center justify-center">
-                  <div className="w-16 h-16 bg-pg-navy/10 rounded-full flex items-center justify-center">
-                    <div className="w-8 h-8 bg-pg-navy rounded" aria-hidden="true"></div>
-                  </div>
+                <div className="aspect-square bg-gradient-to-br from-pg-sky/20 to-pg-navy/20 rounded-lg mb-4 overflow-hidden">
+                  <img
+                    src={category.image || "/placeholder.svg"}
+                    alt={`${category.name} - ${category.description}`}
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                  />
                 </div>
                 <h3 className="text-h3 mb-2" itemProp="name">
                   {category.name}

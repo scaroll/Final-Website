@@ -8,7 +8,21 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
       <div className="min-h-screen bg-white text-gray-900">
         <header className="bg-blue-600 text-white p-4">
           <div className="container mx-auto">
-            <h1 className="text-2xl font-bold">PG Closets</h1>
+            <div className="flex items-center">
+              <img
+                src="/logo.png"
+                alt="PG Closets Logo"
+                className="h-8 w-auto mr-3"
+                onError={(e) => {
+                  e.currentTarget.style.display = "none"
+                  e.currentTarget.nextElementSibling.style.display = "block"
+                }}
+              />
+              <h1 className="text-2xl font-bold" style={{ display: "none" }}>
+                PG Closets
+              </h1>
+              <h1 className="text-2xl font-bold">PG Closets</h1>
+            </div>
             <nav className="mt-2">
               <a href="/" className="mr-4 hover:underline">
                 Home
