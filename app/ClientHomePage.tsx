@@ -6,53 +6,41 @@ import Image from "next/image"
 export default function ClientHomePage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [currentSlide, setCurrentSlide] = useState(0)
-  const [configuratorStep, setConfiguratorStep] = useState(1)
-  const [selectedRoom, setSelectedRoom] = useState("")
-  const [selectedDoor, setSelectedDoor] = useState("")
-  const [selectedFinish, setSelectedFinish] = useState("")
+  const [quoteStep, setQuoteStep] = useState(1)
+  const [selectedDoorType, setSelectedDoorType] = useState("")
   const [dimensions, setDimensions] = useState({ width: 72, height: 80 })
+  const [quantity, setQuantity] = useState(1)
+  const [addOns, setAddOns] = useState<string[]>([])
   const [quotePrice, setQuotePrice] = useState(0)
+  const [showJobberForm, setShowJobberForm] = useState(false)
   const [projectCount, setProjectCount] = useState(0)
-  const [showBooking, setShowBooking] = useState(false)
-  const [showExitPopup, setShowExitPopup] = useState(false)
+
+  const doorTypes = [
+    { name: "Sliding", price: 459, image: "/images/arcat/renin_199065_hd.jpg" },
+    { name: "Bi-Fold", price: 549, image: "/images/arcat/renin_199063_hd.jpg" },
+    { name: "Pivot", price: 699, image: "/images/arcat/renin_199064_hd.jpg" },
+    { name: "Barn", price: 799, image: "/images/arcat/renin_155701_Bifold_Closet_Door_Euro_1_Lite_v2.jpg" },
+  ]
+
+  const premiumAddOns = [
+    { name: "Mirror Inserts", price: 150 },
+    { name: "Soft-close Mechanism", price: 75 },
+    { name: "Premium Handles", price: 50 },
+  ]
 
   const heroSlides = [
     {
-      title: "Ottawa's Premier Custom Closet Systems",
-      subtitle: "From Design to Install in 14 Days",
+      title: "Transform Your Ottawa Home with Premium Closet Doors",
+      subtitle: "Official Renin Dealer • Professional Installation • Lifetime Warranty",
       image: "/images/arcat/renin_199065_hd.jpg",
-      trustBadge: "500+ Homes Transformed",
+      trustBadge: "500+ Ottawa Homes Transformed",
     },
     {
-      title: "Award-Winning Design Excellence",
-      subtitle: "15+ Years of Premium Craftsmanship",
+      title: "Ottawa's Only Official Renin Dealer",
+      subtitle: "2-Week Delivery Guarantee • Licensed & Insured",
       image: "/images/arcat/renin_199063_hd.jpg",
-      trustBadge: "5-Star Google Rating",
+      trustBadge: "4.9★ Google Rating",
     },
-    {
-      title: "Custom Solutions for Every Space",
-      subtitle: "Professional Installation Guaranteed",
-      image: "/images/arcat/renin_199064_hd.jpg",
-      trustBadge: "A+ BBB Rating",
-    },
-  ]
-
-  const doorStyles = [
-    { name: "Ashbury 2 Panel Bifold", image: "/images/arcat/renin_199065_hd.jpg", basePrice: 419 },
-    { name: "Georgian 6 Panel Bifold", image: "/images/arcat/renin_199063_hd.jpg", basePrice: 485 },
-    { name: "Parsons Flush Panel", image: "/images/arcat/renin_199064_hd.jpg", basePrice: 365 },
-    {
-      name: "Euro 1-Lite Bifold",
-      image: "/images/arcat/renin_155701_Bifold_Closet_Door_Euro_1_Lite_v2.jpg",
-      basePrice: 445,
-    },
-  ]
-
-  const finishes = [
-    { name: "White", color: "#FFFFFF", price: 0 },
-    { name: "Driftwood", color: "#8B7355", price: 50 },
-    { name: "Espresso", color: "#3C2415", price: 75 },
-    { name: "Natural Oak", color: "#DEB887", price: 100 },
   ]
 
   useEffect(() => {
@@ -70,36 +58,53 @@ export default function ClientHomePage() {
   }, [])
 
   useEffect(() => {
-    if (selectedDoor && selectedFinish) {
-      const doorPrice = doorStyles.find((d) => d.name === selectedDoor)?.basePrice || 0
-      const finishPrice = finishes.find((f) => f.name === selectedFinish)?.price || 0
-      const sizeMultiplier = (dimensions.width * dimensions.height) / 5760 // Base size 72x80
-      setQuotePrice(Math.round((doorPrice + finishPrice) * sizeMultiplier))
-    }
-  }, [selectedDoor, selectedFinish, dimensions])
+    if (selectedDoorType) {
+      const doorPrice = doorTypes.find((d) => d.name === selectedDoorType)?.price || 0
+      const addOnPrice = addOns.reduce((total, addOn) => {
+        const addon = premiumAddOns.find((a) => a.name === addOn)
+        return total + (addon?.price || 0)
+      }, 0)
 
-  useEffect(() => {
-    const handleMouseLeave = (e: MouseEvent) => {
-      if (e.clientY <= 0) {
-        setShowExitPopup(true)
-      }
+      // Size multipliers from specification
+      const sqft = (dimensions.width * dimensions.height) / 144
+      let sizeMultiplier = 1
+      if (sqft > 40 && sqft <= 60)
+        sizeMultiplier = 1.2 // +20%
+      else if (sqft > 60) sizeMultiplier = 1.4 // +40%
+
+      // Bulk discount
+      const bulkDiscount = quantity >= 3 ? 0.9 : 1 // 10% off for 3+
+
+      const totalPrice = Math.round((doorPrice + addOnPrice) * sizeMultiplier * quantity * bulkDiscount)
+      setQuotePrice(totalPrice)
     }
-    document.addEventListener("mouseleave", handleMouseLeave)
-    return () => document.removeEventListener("mouseleave", handleMouseLeave)
-  }, [])
+  }, [selectedDoorType, dimensions, quantity, addOns])
+
+  const loadJobberForm = () => {
+    setShowJobberForm(true)
+    // Load Jobber script dynamically
+    const script = document.createElement("script")
+    script.src = "https://d3ey4dbjkt2f6s.cloudfront.net/assets/static_link/work_request_embed_snippet.js"
+    script.setAttribute("clienthub_id", "83a3d24e-c18d-441c-80d1-d85419ea28ae")
+    script.setAttribute(
+      "form_url",
+      "https://clienthub.getjobber.com/client_hubs/83a3d24e-c18d-441c-80d1-d85419ea28ae/public/work_request/embedded_work_request_form",
+    )
+    document.head.appendChild(script)
+  }
 
   return (
     <div className="min-h-screen bg-white font-sans overflow-x-hidden">
-      <header className="fixed top-0 w-full z-50 bg-white/98 backdrop-blur-md border-b-2 border-[#1e3a8a] shadow-xl">
+      <header className="fixed top-0 w-full z-50 bg-white/98 backdrop-blur-md shadow-lg">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="bg-gradient-to-r from-[#1e3a8a] to-[#87ceeb] text-white text-center py-3 text-sm font-bold tracking-wide">
-            🏆 AWARD WINNING: Ottawa's #1 Rated Closet Specialists - Book Free Consultation Today!
+          <div className="bg-gradient-to-r from-[#3B4A7C] to-[#4A5F8A] text-white text-center py-2 text-sm font-semibold">
+            500+ Ottawa Homes Transformed • 4.9★ Google Rating • Licensed & Insured
           </div>
 
           <div className="flex justify-between items-center h-20">
             <div className="flex-shrink-0">
-              <div className="flex items-center space-x-4">
-                <div className="relative w-16 h-16 overflow-hidden border-2 border-[#87ceeb] shadow-lg">
+              <div className="flex items-center space-x-3">
+                <div className="relative w-12 h-12 overflow-hidden">
                   <Image
                     src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/PG%20Logo.jpg-PA2Pv0eQKuJGkzYoQf9wsC86lYSKGa.jpeg"
                     alt="PG Closets Logo"
@@ -109,35 +114,38 @@ export default function ClientHomePage() {
                   />
                 </div>
                 <div>
-                  <h1 className="text-2xl font-black text-[#1e3a8a] tracking-tight">PG CLOSETS</h1>
-                  <p className="text-xs text-[#87ceeb] font-bold tracking-wider">PREMIUM SOLUTIONS</p>
+                  <h1 className="text-xl font-bold text-[#3B4A7C]">PG CLOSETS</h1>
+                  <p className="text-xs text-[#9BC4E2] font-medium">Premium Solutions</p>
                 </div>
               </div>
             </div>
 
-            <nav className="hidden lg:flex items-center space-x-8">
+            <nav className="hidden lg:flex items-center space-x-6">
               {[
                 { name: "Products", href: "/products" },
                 { name: "Gallery", href: "/gallery" },
-                { name: "Process", href: "/process" },
+                { name: "Pricing", href: "/pricing" },
+                { name: "Reviews", href: "/reviews" },
                 { name: "About", href: "/about" },
-                { name: "Contact", href: "/contact" },
+                { name: "Blog", href: "/blog" },
               ].map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className="relative text-gray-800 hover:text-[#1e3a8a] px-4 py-2 text-sm font-bold uppercase tracking-wide transition-all duration-300 group"
+                  className="text-[#3B4A7C] hover:text-[#9BC4E2] px-3 py-2 text-sm font-medium transition-colors"
                 >
                   {item.name}
-                  <span className="absolute bottom-0 left-0 w-0 h-1 bg-[#87ceeb] transition-all duration-300 group-hover:w-full"></span>
                 </a>
               ))}
-              <div className="flex items-center space-x-4">
-                <a href="tel:6135550123" className="text-[#1e3a8a] font-bold hover:text-[#87ceeb] transition-colors">
-                  📞 (613) 555-0123
+              <div className="flex items-center space-x-4 ml-6">
+                <a href="tel:6135550123" className="text-[#9BC4E2] font-semibold hover:text-[#3B4A7C]">
+                  (613) 555-0123
                 </a>
-                <button className="bg-[#87ceeb] text-white px-8 py-3 font-black uppercase tracking-wide hover:bg-[#1e3a8a] hover:shadow-2xl hover:scale-105 transition-all duration-300 border-2 border-[#87ceeb] hover:border-[#1e3a8a]">
-                  FREE QUOTE
+                <button
+                  onClick={loadJobberForm}
+                  className="bg-[#9BC4E2] text-[#3B4A7C] px-6 py-2 rounded-lg font-semibold hover:bg-[#3B4A7C] hover:text-white transition-all"
+                >
+                  Book Consultation
                 </button>
               </div>
             </nav>
@@ -145,13 +153,13 @@ export default function ClientHomePage() {
             <div className="lg:hidden">
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="text-[#1e3a8a] hover:text-[#87ceeb] p-3 hover:bg-blue-50 transition-all duration-300 border border-[#1e3a8a] hover:border-[#87ceeb]"
+                className="text-[#3B4A7C] hover:text-[#9BC4E2] p-2"
               >
-                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   {mobileMenuOpen ? (
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                   ) : (
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                   )}
                 </svg>
               </button>
@@ -159,32 +167,36 @@ export default function ClientHomePage() {
           </div>
 
           {mobileMenuOpen && (
-            <div className="lg:hidden border-t-2 border-[#87ceeb] py-6 space-y-4 bg-white/98 backdrop-blur-sm">
+            <div className="lg:hidden border-t py-4 space-y-2 bg-white">
               {[
                 { name: "Products", href: "/products" },
                 { name: "Gallery", href: "/gallery" },
-                { name: "Process", href: "/process" },
+                { name: "Pricing", href: "/pricing" },
+                { name: "Reviews", href: "/reviews" },
                 { name: "About", href: "/about" },
-                { name: "Contact", href: "/contact" },
+                { name: "Blog", href: "/blog" },
               ].map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className="block px-6 py-4 text-gray-800 hover:text-[#1e3a8a] hover:bg-[#87ceeb]/10 font-bold uppercase tracking-wide transition-all duration-300 border-l-4 border-transparent hover:border-[#87ceeb]"
+                  className="block px-4 py-2 text-[#3B4A7C] hover:text-[#9BC4E2] font-medium"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {item.name}
                 </a>
               ))}
-              <div className="px-6 space-y-3">
-                <a href="tel:6135550123" className="block text-[#1e3a8a] font-bold text-lg">
-                  📞 (613) 555-0123
+              <div className="px-4 pt-4 space-y-2">
+                <a href="tel:6135550123" className="block text-[#9BC4E2] font-semibold">
+                  (613) 555-0123
                 </a>
                 <button
-                  className="w-full bg-[#87ceeb] text-white py-4 font-black uppercase tracking-wide hover:bg-[#1e3a8a] transition-all duration-300"
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={() => {
+                    loadJobberForm()
+                    setMobileMenuOpen(false)
+                  }}
+                  className="w-full bg-[#9BC4E2] text-[#3B4A7C] py-3 rounded-lg font-semibold"
                 >
-                  GET FREE QUOTE
+                  Book Consultation
                 </button>
               </div>
             </div>
@@ -197,10 +209,10 @@ export default function ClientHomePage() {
           <div
             key={index}
             className={`absolute inset-0 transition-all duration-1000 ${
-              index === currentSlide ? "opacity-100 scale-100" : "opacity-0 scale-105"
+              index === currentSlide ? "opacity-100" : "opacity-0"
             }`}
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-[#1e3a8a]/95 via-[#1e3a8a]/85 to-[#87ceeb]/75 z-10"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-[#3B4A7C] to-[#4A5F8A] opacity-90 z-10"></div>
             <Image
               src={slide.image || "/placeholder.svg?height=1080&width=1920&query=premium closet doors"}
               alt={slide.title}
@@ -211,136 +223,82 @@ export default function ClientHomePage() {
           </div>
         ))}
 
-        <div className="relative z-20 text-center text-white px-4 max-w-7xl mx-auto">
-          <div className="mb-8">
-            <span className="inline-block bg-[#87ceeb] text-white px-6 py-2 text-sm font-black uppercase tracking-wider mb-6">
+        <div className="relative z-20 text-center text-white px-4 max-w-6xl mx-auto">
+          <div className="mb-6">
+            <span className="inline-block bg-[#9BC4E2] text-[#3B4A7C] px-4 py-2 text-sm font-semibold rounded-lg">
               {heroSlides[currentSlide].trustBadge}
             </span>
           </div>
 
-          <h1 className="text-5xl lg:text-7xl font-black mb-8 leading-tight tracking-tight">
-            {heroSlides[currentSlide].title}
-          </h1>
-          <p className="text-xl lg:text-2xl mb-12 font-medium max-w-4xl mx-auto leading-relaxed">
-            {heroSlides[currentSlide].subtitle}
-          </p>
+          <h1 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight">{heroSlides[currentSlide].title}</h1>
+          <p className="text-lg lg:text-xl mb-8 max-w-3xl mx-auto">{heroSlides[currentSlide].subtitle}</p>
 
-          <div className="flex justify-center space-x-12 mb-16 text-[#87ceeb]">
+          <div className="flex justify-center space-x-8 mb-8 text-[#9BC4E2]">
             <div className="text-center">
-              <div className="text-4xl font-black mb-2">{projectCount}+</div>
-              <div className="text-sm font-bold uppercase tracking-wide">HOMES</div>
+              <div className="text-2xl font-bold">Lifetime</div>
+              <div className="text-sm">Warranty</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-black mb-2">15+</div>
-              <div className="text-sm font-bold uppercase tracking-wide">YEARS</div>
+              <div className="text-2xl font-bold">2-Week</div>
+              <div className="text-sm">Delivery</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-black mb-2">5⭐</div>
-              <div className="text-sm font-bold uppercase tracking-wide">GOOGLE</div>
+              <div className="text-2xl font-bold">Ottawa's #1</div>
+              <div className="text-sm">Dealer</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-black mb-2">A+</div>
-              <div className="text-sm font-bold uppercase tracking-wide">BBB</div>
+              <div className="text-2xl font-bold">{projectCount}+</div>
+              <div className="text-sm">Installations</div>
             </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
-              onClick={() => setShowBooking(true)}
-              className="bg-[#87ceeb] text-white hover:bg-white hover:text-[#87ceeb] font-black px-16 py-5 text-xl uppercase tracking-wide shadow-2xl hover:shadow-3xl hover:scale-105 transition-all duration-300 border-4 border-[#87ceeb] hover:border-white"
+              onClick={() => setQuoteStep(1)}
+              className="bg-[#9BC4E2] text-[#3B4A7C] hover:bg-white font-semibold px-8 py-4 rounded-lg shadow-lg hover:shadow-xl transition-all"
+              style={{ height: "56px" }}
             >
-              GET INSTANT QUOTE
+              Get Free Consultation
             </button>
-            <button className="border-4 border-[#87ceeb] text-[#87ceeb] hover:bg-[#87ceeb] hover:text-white font-black px-16 py-5 text-xl uppercase tracking-wide backdrop-blur-sm hover:scale-105 transition-all duration-300">
-              BOOK CONSULTATION
+            <button className="border-2 border-[#9BC4E2] text-[#9BC4E2] hover:bg-[#9BC4E2] hover:text-[#3B4A7C] font-semibold px-8 py-4 rounded-lg transition-all">
+              View Our Work
             </button>
           </div>
-
-          <div className="mt-8 text-lg font-bold">💳 0% FINANCING AVAILABLE • 📞 CALL NOW: (613) 555-0123</div>
-        </div>
-
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex space-x-3">
-          {heroSlides.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentSlide(index)}
-              className={`w-4 h-4 transition-all duration-300 ${
-                index === currentSlide ? "bg-[#87ceeb] scale-125" : "bg-white/50 hover:bg-white/75"
-              }`}
-            />
-          ))}
         </div>
       </section>
 
-      <section className="py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold mb-6 text-[#1e3a8a] font-dm-sans">Design Your Perfect Closet</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Use our interactive configurator to visualize your custom closet and get instant pricing
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl lg:text-4xl font-bold mb-4 text-[#3B4A7C]">Interactive Quote Builder</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Get instant pricing for your custom closet doors with our advanced quote calculator
             </p>
           </div>
 
-          <div className="bg-white rounded-none shadow-2xl p-8">
-            <div className="flex justify-center mb-8">
-              <div className="flex space-x-4">
-                {[1, 2, 3, 4].map((step) => (
-                  <div
-                    key={step}
-                    className={`w-12 h-12 rounded-full flex items-center justify-center font-bold ${
-                      configuratorStep >= step ? "bg-[#87ceeb] text-white" : "bg-gray-200 text-gray-500"
-                    }`}
-                  >
-                    {step}
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {configuratorStep === 1 && (
-              <div className="text-center">
-                <h3 className="text-2xl font-bold mb-8 text-[#1e3a8a]">Choose Room Type</h3>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  {["Bedroom", "Hall", "Pantry"].map((room) => (
-                    <button
-                      key={room}
-                      onClick={() => {
-                        setSelectedRoom(room)
-                        setConfiguratorStep(2)
-                      }}
-                      className={`p-8 border-2 hover:border-[#87ceeb] transition-all duration-300 ${
-                        selectedRoom === room ? "border-[#87ceeb] bg-[#87ceeb]/10" : "border-gray-200"
-                      }`}
-                    >
-                      <div className="text-6xl mb-4">{room === "Bedroom" ? "🛏️" : room === "Hall" ? "🚪" : "🥫"}</div>
-                      <div className="text-xl font-semibold text-[#1e3a8a]">{room}</div>
-                    </button>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {configuratorStep === 2 && (
-              <div className="text-center">
-                <h3 className="text-2xl font-bold mb-8 text-[#1e3a8a]">Select Door Style</h3>
+          <div className="bg-white rounded-lg shadow-xl p-8">
+            {/* Quote Step 1: Door Style Selection */}
+            {quoteStep === 1 && (
+              <div>
+                <h3 className="text-2xl font-bold mb-6 text-[#3B4A7C] text-center">Step 1: Choose Door Style</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                  {doorStyles.map((door) => (
+                  {doorTypes.map((door) => (
                     <button
                       key={door.name}
                       onClick={() => {
-                        setSelectedDoor(door.name)
-                        setConfiguratorStep(3)
+                        setSelectedDoorType(door.name)
+                        setQuoteStep(2)
                       }}
-                      className={`border-2 hover:border-[#87ceeb] transition-all duration-300 ${
-                        selectedDoor === door.name ? "border-[#87ceeb]" : "border-gray-200"
+                      className={`border-2 rounded-lg overflow-hidden hover:border-[#9BC4E2] transition-all ${
+                        selectedDoorType === door.name ? "border-[#9BC4E2] bg-[#E8F4FD]" : "border-gray-200"
                       }`}
                     >
                       <div className="aspect-square relative">
                         <Image src={door.image || "/placeholder.svg"} alt={door.name} fill className="object-cover" />
                       </div>
                       <div className="p-4">
-                        <div className="font-semibold text-[#1e3a8a]">{door.name}</div>
-                        <div className="text-[#87ceeb]">From ${door.basePrice}</div>
+                        <div className="font-semibold text-[#3B4A7C]">{door.name}</div>
+                        <div className="text-[#9BC4E2] font-bold">${door.price}</div>
                       </div>
                     </button>
                   ))}
@@ -348,36 +306,13 @@ export default function ClientHomePage() {
               </div>
             )}
 
-            {configuratorStep === 3 && (
-              <div className="text-center">
-                <h3 className="text-2xl font-bold mb-8 text-[#1e3a8a]">Pick Finish</h3>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                  {finishes.map((finish) => (
-                    <button
-                      key={finish.name}
-                      onClick={() => {
-                        setSelectedFinish(finish.name)
-                        setConfiguratorStep(4)
-                      }}
-                      className={`p-6 border-2 hover:border-[#87ceeb] transition-all duration-300 ${
-                        selectedFinish === finish.name ? "border-[#87ceeb]" : "border-gray-200"
-                      }`}
-                    >
-                      <div className="w-16 h-16 mx-auto mb-4 border" style={{ backgroundColor: finish.color }}></div>
-                      <div className="font-semibold text-[#1e3a8a]">{finish.name}</div>
-                      <div className="text-[#87ceeb]">+${finish.price}</div>
-                    </button>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {configuratorStep === 4 && (
-              <div className="text-center">
-                <h3 className="text-2xl font-bold mb-8 text-[#1e3a8a]">Enter Dimensions</h3>
+            {/* Quote Step 2: Dimensions */}
+            {quoteStep === 2 && (
+              <div>
+                <h3 className="text-2xl font-bold mb-6 text-[#3B4A7C] text-center">Step 2: Enter Dimensions</h3>
                 <div className="max-w-md mx-auto space-y-6">
                   <div>
-                    <label className="block text-left font-semibold mb-2">Width (inches)</label>
+                    <label className="block text-sm font-medium mb-2">Width (inches)</label>
                     <input
                       type="range"
                       min="24"
@@ -386,10 +321,10 @@ export default function ClientHomePage() {
                       onChange={(e) => setDimensions({ ...dimensions, width: Number.parseInt(e.target.value) })}
                       className="w-full"
                     />
-                    <div className="text-[#87ceeb] font-bold">{dimensions.width}"</div>
+                    <div className="text-center text-[#9BC4E2] font-bold">{dimensions.width}"</div>
                   </div>
                   <div>
-                    <label className="block text-left font-semibold mb-2">Height (inches)</label>
+                    <label className="block text-sm font-medium mb-2">Height (inches)</label>
                     <input
                       type="range"
                       min="60"
@@ -398,17 +333,98 @@ export default function ClientHomePage() {
                       onChange={(e) => setDimensions({ ...dimensions, height: Number.parseInt(e.target.value) })}
                       className="w-full"
                     />
-                    <div className="text-[#87ceeb] font-bold">{dimensions.height}"</div>
+                    <div className="text-center text-[#9BC4E2] font-bold">{dimensions.height}"</div>
                   </div>
+                  <button
+                    onClick={() => setQuoteStep(3)}
+                    className="w-full bg-[#9BC4E2] text-[#3B4A7C] py-3 rounded-lg font-semibold hover:bg-[#3B4A7C] hover:text-white transition-all"
+                  >
+                    Continue
+                  </button>
+                </div>
+              </div>
+            )}
 
+            {/* Quote Step 3: Quantity */}
+            {quoteStep === 3 && (
+              <div>
+                <h3 className="text-2xl font-bold mb-6 text-[#3B4A7C] text-center">Step 3: Select Quantity</h3>
+                <div className="max-w-md mx-auto text-center">
+                  <div className="flex items-center justify-center space-x-4 mb-6">
+                    <button
+                      onClick={() => setQuantity(Math.max(1, quantity - 1))}
+                      className="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center font-bold text-xl hover:bg-[#9BC4E2] hover:text-white transition-all"
+                    >
+                      -
+                    </button>
+                    <div className="text-3xl font-bold text-[#3B4A7C] w-16">{quantity}</div>
+                    <button
+                      onClick={() => setQuantity(quantity + 1)}
+                      className="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center font-bold text-xl hover:bg-[#9BC4E2] hover:text-white transition-all"
+                    >
+                      +
+                    </button>
+                  </div>
+                  {quantity >= 3 && (
+                    <div className="bg-green-100 text-green-800 px-4 py-2 rounded-lg mb-6 font-semibold">
+                      Save 10% on 3+ doors!
+                    </div>
+                  )}
+                  <button
+                    onClick={() => setQuoteStep(4)}
+                    className="w-full bg-[#9BC4E2] text-[#3B4A7C] py-3 rounded-lg font-semibold hover:bg-[#3B4A7C] hover:text-white transition-all"
+                  >
+                    Continue
+                  </button>
+                </div>
+              </div>
+            )}
+
+            {/* Quote Step 4: Premium Add-ons */}
+            {quoteStep === 4 && (
+              <div>
+                <h3 className="text-2xl font-bold mb-6 text-[#3B4A7C] text-center">Step 4: Premium Add-ons</h3>
+                <div className="max-w-md mx-auto space-y-4">
+                  {premiumAddOns.map((addon) => (
+                    <label
+                      key={addon.name}
+                      className="flex items-center space-x-3 p-4 border rounded-lg hover:bg-gray-50 cursor-pointer"
+                    >
+                      <input
+                        type="checkbox"
+                        checked={addOns.includes(addon.name)}
+                        onChange={(e) => {
+                          if (e.target.checked) {
+                            setAddOns([...addOns, addon.name])
+                          } else {
+                            setAddOns(addOns.filter((a) => a !== addon.name))
+                          }
+                        }}
+                        className="w-5 h-5 text-[#9BC4E2]"
+                      />
+                      <div className="flex-1">
+                        <div className="font-semibold text-[#3B4A7C]">{addon.name}</div>
+                        <div className="text-[#9BC4E2] font-bold">+${addon.price}</div>
+                      </div>
+                    </label>
+                  ))}
+
+                  {/* Real-time Quote Summary */}
                   {quotePrice > 0 && (
-                    <div className="bg-[#87ceeb] text-white p-8 mt-8">
-                      <div className="text-3xl font-bold mb-2">${quotePrice}</div>
-                      <div className="text-lg">Estimated Price</div>
-                      <div className="text-sm mt-2">*Professional installation included</div>
-                      <button className="bg-white text-[#87ceeb] px-8 py-3 font-bold mt-4 hover:bg-gray-100 transition-all duration-300">
-                        Book Measurement
-                      </button>
+                    <div className="bg-[#3B4A7C] text-white p-6 rounded-lg mt-6">
+                      <div className="text-center">
+                        <div className="text-3xl font-bold mb-2">${quotePrice}</div>
+                        <div className="text-lg mb-2">Total Estimate</div>
+                        <div className="text-sm opacity-90 mb-4">
+                          ✓ Free consultation ✓ 2-week delivery ✓ Lifetime warranty
+                        </div>
+                        <button
+                          onClick={loadJobberForm}
+                          className="w-full bg-[#9BC4E2] text-[#3B4A7C] py-3 rounded-lg font-semibold hover:bg-white transition-all"
+                        >
+                          Book Free Consultation
+                        </button>
+                      </div>
                     </div>
                   )}
                 </div>
@@ -417,6 +433,20 @@ export default function ClientHomePage() {
           </div>
         </div>
       </section>
+
+      {showJobberForm && (
+        <section className="py-20 bg-white">
+          <div className="max-w-4xl mx-auto px-4">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl font-bold text-[#3B4A7C] mb-4">Book Your Free Consultation</h2>
+              <p className="text-lg text-gray-600">
+                Complete the form below and we'll contact you within 24 hours to schedule your consultation.
+              </p>
+            </div>
+            <div id="83a3d24e-c18d-441c-80d1-d85419ea28ae" className="bg-gray-50 p-8 rounded-lg"></div>
+          </div>
+        </section>
+      )}
 
       <section className="py-32 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4">
@@ -442,7 +472,7 @@ export default function ClientHomePage() {
                   <div key={step} className="text-center">
                     <div
                       className={`w-16 h-16 mx-auto flex items-center justify-center font-black text-lg border-4 transition-all duration-300 ${
-                        configuratorStep >= step
+                        quoteStep >= step
                           ? "bg-[#87ceeb] text-white border-[#87ceeb] scale-110"
                           : "bg-gray-100 text-gray-400 border-gray-300"
                       }`}
@@ -451,7 +481,7 @@ export default function ClientHomePage() {
                     </div>
                     <div
                       className={`mt-2 text-sm font-bold uppercase tracking-wide ${
-                        configuratorStep >= step ? "text-[#1e3a8a]" : "text-gray-400"
+                        quoteStep >= step ? "text-[#1e3a8a]" : "text-gray-400"
                       }`}
                     >
                       {label}
@@ -461,7 +491,7 @@ export default function ClientHomePage() {
               </div>
             </div>
 
-            {configuratorStep === 1 && (
+            {quoteStep === 1 && (
               <div className="text-center">
                 <h3 className="text-2xl font-bold mb-8 text-[#1e3a8a]">Choose Room Type</h3>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -469,11 +499,11 @@ export default function ClientHomePage() {
                     <button
                       key={room}
                       onClick={() => {
-                        setSelectedRoom(room)
-                        setConfiguratorStep(2)
+                        setSelectedDoorType(room)
+                        setQuoteStep(2)
                       }}
                       className={`p-8 border-2 hover:border-[#87ceeb] transition-all duration-300 ${
-                        selectedRoom === room ? "border-[#87ceeb] bg-[#87ceeb]/10" : "border-gray-200"
+                        selectedDoorType === room ? "border-[#87ceeb] bg-[#87ceeb]/10" : "border-gray-200"
                       }`}
                     >
                       <div className="text-6xl mb-4">{room === "Bedroom" ? "🛏️" : room === "Hall" ? "🚪" : "🥫"}</div>
@@ -484,19 +514,19 @@ export default function ClientHomePage() {
               </div>
             )}
 
-            {configuratorStep === 2 && (
+            {quoteStep === 2 && (
               <div className="text-center">
                 <h3 className="text-2xl font-bold mb-8 text-[#1e3a8a]">Select Door Style</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                  {doorStyles.map((door) => (
+                  {doorTypes.map((door) => (
                     <button
                       key={door.name}
                       onClick={() => {
-                        setSelectedDoor(door.name)
-                        setConfiguratorStep(3)
+                        setSelectedDoorType(door.name)
+                        setQuoteStep(3)
                       }}
                       className={`border-2 hover:border-[#87ceeb] transition-all duration-300 ${
-                        selectedDoor === door.name ? "border-[#87ceeb]" : "border-gray-200"
+                        selectedDoorType === door.name ? "border-[#87ceeb]" : "border-gray-200"
                       }`}
                     >
                       <div className="aspect-square relative">
@@ -504,7 +534,7 @@ export default function ClientHomePage() {
                       </div>
                       <div className="p-4">
                         <div className="font-semibold text-[#1e3a8a]">{door.name}</div>
-                        <div className="text-[#87ceeb]">From ${door.basePrice}</div>
+                        <div className="text-[#87ceeb]">From ${door.price}</div>
                       </div>
                     </button>
                   ))}
@@ -512,31 +542,14 @@ export default function ClientHomePage() {
               </div>
             )}
 
-            {configuratorStep === 3 && (
+            {quoteStep === 3 && (
               <div className="text-center">
                 <h3 className="text-2xl font-bold mb-8 text-[#1e3a8a]">Pick Finish</h3>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                  {finishes.map((finish) => (
-                    <button
-                      key={finish.name}
-                      onClick={() => {
-                        setSelectedFinish(finish.name)
-                        setConfiguratorStep(4)
-                      }}
-                      className={`p-6 border-2 hover:border-[#87ceeb] transition-all duration-300 ${
-                        selectedFinish === finish.name ? "border-[#87ceeb]" : "border-gray-200"
-                      }`}
-                    >
-                      <div className="w-16 h-16 mx-auto mb-4 border" style={{ backgroundColor: finish.color }}></div>
-                      <div className="font-semibold text-[#1e3a8a]">{finish.name}</div>
-                      <div className="text-[#87ceeb]">+${finish.price}</div>
-                    </button>
-                  ))}
-                </div>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-6">{[]}</div>
               </div>
             )}
 
-            {configuratorStep === 4 && (
+            {quoteStep === 4 && (
               <div className="text-center">
                 <h3 className="text-2xl font-bold mb-8 text-[#1e3a8a]">Enter Dimensions</h3>
                 <div className="max-w-md mx-auto space-y-6">
@@ -622,12 +635,12 @@ export default function ClientHomePage() {
         </div>
       </section>
 
-      <footer className="bg-[#1e3a8a] text-white py-20">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+      <footer className="bg-[#3B4A7C] text-white py-16">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="md:col-span-2">
-              <div className="flex items-center space-x-4 mb-8">
-                <div className="relative w-16 h-16 overflow-hidden border-2 border-[#87ceeb]">
+              <div className="flex items-center space-x-3 mb-6">
+                <div className="relative w-12 h-12">
                   <Image
                     src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/PG%20Logo.jpg-PA2Pv0eQKuJGkzYoQf9wsC86lYSKGa.jpeg"
                     alt="PG Closets Logo"
@@ -636,118 +649,46 @@ export default function ClientHomePage() {
                   />
                 </div>
                 <div>
-                  <h3 className="text-3xl font-black tracking-tight">PG CLOSETS</h3>
-                  <p className="text-[#87ceeb] font-bold">PREMIUM SOLUTIONS</p>
+                  <h3 className="text-2xl font-bold">PG CLOSETS</h3>
+                  <p className="text-[#9BC4E2]">Premium Solutions</p>
                 </div>
               </div>
-              <p className="text-gray-300 mb-8 leading-relaxed max-w-lg text-lg">
-                Ottawa's premier closet door specialists, transforming homes with premium Renin solutions and
-                award-winning professional installation services since 2009.
+              <p className="text-gray-300 mb-6 max-w-md">
+                Ottawa's premier closet door specialists, transforming homes with premium solutions and professional
+                installation services.
               </p>
-              <div className="flex space-x-4">
-                {["Facebook", "Instagram", "LinkedIn", "Google"].map((social) => (
+            </div>
+
+            <div>
+              <h4 className="text-lg font-semibold mb-4 text-[#9BC4E2]">Quick Links</h4>
+              <div className="space-y-2">
+                {["Products", "Gallery", "Pricing", "Reviews", "About", "Blog"].map((link) => (
                   <a
-                    key={social}
-                    href="#"
-                    className="w-14 h-14 bg-gray-800 flex items-center justify-center hover:bg-[#87ceeb] transition-all duration-300 border-2 border-[#87ceeb] hover:scale-110"
+                    key={link}
+                    href={`/${link.toLowerCase()}`}
+                    className="block text-gray-300 hover:text-white transition-colors"
                   >
-                    <span className="sr-only">{social}</span>
-                    <div className="w-6 h-6 bg-current"></div>
+                    {link}
                   </a>
                 ))}
               </div>
             </div>
 
             <div>
-              <h4 className="text-xl font-black mb-8 text-[#87ceeb] uppercase tracking-wide">Navigation</h4>
-              <div className="space-y-4">
-                {[
-                  { name: "Products", href: "/products" },
-                  { name: "Gallery", href: "/gallery" },
-                  { name: "Process", href: "/process" },
-                  { name: "About", href: "/about" },
-                  { name: "Contact", href: "/contact" },
-                ].map((link) => (
-                  <a
-                    key={link.name}
-                    href={link.href}
-                    className="block text-gray-300 hover:text-white hover:translate-x-2 transition-all duration-300 font-semibold"
-                  >
-                    → {link.name}
-                  </a>
-                ))}
-              </div>
-            </div>
-
-            <div>
-              <h4 className="text-xl font-black mb-8 text-[#87ceeb] uppercase tracking-wide">Contact</h4>
-              <div className="space-y-6 text-gray-300">
-                <div className="flex items-center space-x-4">
-                  <span className="text-[#87ceeb] text-xl">📧</span>
-                  <div>
-                    <div className="font-bold text-white">Email</div>
-                    <div>spencer@peoplesgrp.com</div>
-                  </div>
-                </div>
-                <div className="flex items-center space-x-4">
-                  <span className="text-[#87ceeb] text-xl">📱</span>
-                  <div>
-                    <div className="font-bold text-white">Phone</div>
-                    <div>(613) 555-0123</div>
-                  </div>
-                </div>
-                <div className="flex items-center space-x-4">
-                  <span className="text-[#87ceeb] text-xl">📍</span>
-                  <div>
-                    <div className="font-bold text-white">Service Area</div>
-                    <div>Ottawa & Surrounding Areas</div>
-                  </div>
-                </div>
+              <h4 className="text-lg font-semibold mb-4 text-[#9BC4E2]">Contact</h4>
+              <div className="space-y-2 text-gray-300">
+                <div>(613) 555-0123</div>
+                <div>spencer@peoplesgrp.com</div>
+                <div>Ottawa & Surrounding Areas</div>
               </div>
             </div>
           </div>
 
-          <div className="border-t-2 border-[#87ceeb]/30 mt-16 pt-8">
-            <div className="flex flex-col md:flex-row justify-between items-center">
-              <p className="text-gray-400 mb-4 md:mb-0">
-                &copy; 2024 PG Closets. All rights reserved. | Licensed & Insured | A+ BBB Rating
-              </p>
-              <div className="flex space-x-6 text-sm">
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                  Privacy Policy
-                </a>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                  Terms of Service
-                </a>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                  Warranty
-                </a>
-              </div>
-            </div>
+          <div className="border-t border-gray-600 mt-12 pt-8 text-center text-gray-400">
+            <p>&copy; 2024 PG Closets. All rights reserved. Licensed & Insured.</p>
           </div>
         </div>
       </footer>
-
-      {showExitPopup && (
-        <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
-          <div className="bg-white text-[#1e3a8a] p-8 max-w-md w-full">
-            <button onClick={() => setShowExitPopup(false)} className="float-right text-2xl">
-              ×
-            </button>
-            <h3 className="text-2xl font-bold mb-4 text-[#87ceeb]">Wait! Don't Leave Yet!</h3>
-            <p className="mb-6">Get 10% off your custom closet system when you book a free consultation today.</p>
-            <button className="w-full bg-[#87ceeb] text-white py-3 font-bold hover:bg-[#1e3a8a] transition-all duration-300">
-              Claim 10% Discount
-            </button>
-          </div>
-        </div>
-      )}
-
-      <div className="fixed bottom-6 right-6 z-40">
-        <button className="bg-[#87ceeb] text-white p-4 rounded-full shadow-lg hover:scale-110 transition-all duration-300">
-          💬 Design Help
-        </button>
-      </div>
     </div>
   )
 }

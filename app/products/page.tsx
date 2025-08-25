@@ -5,6 +5,7 @@ import Image from "next/image"
 import products from "@/data/simple-products.json"
 
 export default function ProductsPage() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [searchTerm, setSearchTerm] = useState("")
   const [categoryFilter, setCategoryFilter] = useState("all")
   const [sortBy, setSortBy] = useState("name")
@@ -131,163 +132,243 @@ export default function ProductsPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50 pt-24">
-      <div className="container mx-auto px-4 py-8">
-        <div className="text-center mb-12">
-          <h1 className="text-5xl font-bold mb-6 text-[#1e3a8a]">Premium Door Collection</h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Discover our complete range of premium closet doors, hardware, and accessories
-          </p>
-        </div>
-
-        <div className="mb-12 bg-white shadow-2xl p-8 border-l-4 border-[#87ceeb]">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div>
-              <label className="block text-sm font-bold text-[#1e3a8a] mb-3">Search Products</label>
-              <input
-                type="text"
-                placeholder="Search by name or description..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full px-4 py-4 border-2 border-gray-300 focus:ring-2 focus:ring-[#87ceeb] focus:border-[#1e3a8a] transition-all duration-300 font-medium"
+    <div className="min-h-screen bg-white">
+      <header className="fixed top-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-sm border-b border-gray-200">
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-between h-20">
+            <div className="flex items-center space-x-4">
+              <Image
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/PG%20Logo.jpg-PA2Pv0eQKuJGkzYoQf9wsC86lYSKGa.jpeg"
+                alt="PG Closets Logo"
+                width={60}
+                height={60}
+                className="object-contain"
               />
+              <div>
+                <h1 className="text-2xl font-bold text-[#1e3a8a]">PG Closets</h1>
+                <p className="text-sm text-[#9BC4E2]">Ottawa's Premier Door Experts</p>
+              </div>
             </div>
 
-            <div>
-              <label className="block text-sm font-bold text-[#1e3a8a] mb-3">Category</label>
-              <select
-                value={categoryFilter}
-                onChange={(e) => setCategoryFilter(e.target.value)}
-                className="w-full px-4 py-4 border-2 border-gray-300 focus:ring-2 focus:ring-[#87ceeb] focus:border-[#1e3a8a] transition-all duration-300 font-medium"
+            <nav className="hidden md:flex items-center space-x-8">
+              <a href="/" className="text-gray-700 hover:text-[#1e3a8a] font-medium transition-colors">
+                Home
+              </a>
+              <a href="/products" className="text-[#1e3a8a] font-bold border-b-2 border-[#9BC4E2]">
+                Products
+              </a>
+              <a href="/about" className="text-gray-700 hover:text-[#1e3a8a] font-medium transition-colors">
+                About
+              </a>
+              <a href="/contact" className="text-gray-700 hover:text-[#1e3a8a] font-medium transition-colors">
+                Contact
+              </a>
+              <a
+                href="tel:613-555-0123"
+                className="bg-[#1e3a8a] text-[#9BC4E2] px-6 py-3 font-bold hover:bg-[#9BC4E2] hover:text-[#1e3a8a] transition-all duration-300 border-2 border-[#1e3a8a]"
               >
-                <option value="all">All Categories</option>
-                {categories.map((category) => (
-                  <option key={category} value={category}>
-                    {category}
-                  </option>
-                ))}
-              </select>
-            </div>
+                (613) 555-0123
+              </a>
+            </nav>
 
-            <div>
-              <label className="block text-sm font-bold text-[#1e3a8a] mb-3">Sort By</label>
-              <select
-                value={sortBy}
-                onChange={(e) => setSortBy(e.target.value)}
-                className="w-full px-4 py-4 border-2 border-gray-300 focus:ring-2 focus:ring-[#87ceeb] focus:border-[#1e3a8a] transition-all duration-300 font-medium"
-              >
-                <option value="name">Name</option>
-                <option value="price-low">Price: Low to High</option>
-                <option value="price-high">Price: High to Low</option>
-              </select>
+            <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="md:hidden p-2 text-[#1e3a8a]">
+              <div className="w-6 h-6 flex flex-col justify-center space-y-1">
+                <div
+                  className={`h-0.5 bg-current transition-all ${isMobileMenuOpen ? "rotate-45 translate-y-1.5" : ""}`}
+                ></div>
+                <div className={`h-0.5 bg-current transition-all ${isMobileMenuOpen ? "opacity-0" : ""}`}></div>
+                <div
+                  className={`h-0.5 bg-current transition-all ${isMobileMenuOpen ? "-rotate-45 -translate-y-1.5" : ""}`}
+                ></div>
+              </div>
+            </button>
+          </div>
+
+          {isMobileMenuOpen && (
+            <div className="md:hidden py-4 border-t border-gray-200">
+              <div className="flex flex-col space-y-4">
+                <a href="/" className="text-gray-700 hover:text-[#1e3a8a] font-medium">
+                  Home
+                </a>
+                <a href="/products" className="text-[#1e3a8a] font-bold">
+                  Products
+                </a>
+                <a href="/about" className="text-gray-700 hover:text-[#1e3a8a] font-medium">
+                  About
+                </a>
+                <a href="/contact" className="text-gray-700 hover:text-[#1e3a8a] font-medium">
+                  Contact
+                </a>
+                <a
+                  href="tel:613-555-0123"
+                  className="bg-[#1e3a8a] text-[#9BC4E2] px-6 py-3 font-bold text-center border-2 border-[#1e3a8a]"
+                >
+                  (613) 555-0123
+                </a>
+              </div>
+            </div>
+          )}
+        </div>
+      </header>
+
+      <div className="pt-24 bg-gradient-to-b from-white to-gray-50">
+        <div className="container mx-auto px-4 py-8">
+          <div className="text-center mb-12">
+            <h1 className="text-5xl font-bold mb-6 text-[#1e3a8a]">Premium Door Collection</h1>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Discover our complete range of premium closet doors, hardware, and accessories
+            </p>
+          </div>
+
+          <div className="mb-12 bg-white shadow-2xl p-8 border-l-4 border-[#87ceeb]">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div>
+                <label className="block text-sm font-bold text-[#1e3a8a] mb-3">Search Products</label>
+                <input
+                  type="text"
+                  placeholder="Search by name or description..."
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  className="w-full px-4 py-4 border-2 border-gray-300 focus:ring-2 focus:ring-[#87ceeb] focus:border-[#1e3a8a] transition-all duration-300 font-medium"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-bold text-[#1e3a8a] mb-3">Category</label>
+                <select
+                  value={categoryFilter}
+                  onChange={(e) => setCategoryFilter(e.target.value)}
+                  className="w-full px-4 py-4 border-2 border-gray-300 focus:ring-2 focus:ring-[#87ceeb] focus:border-[#1e3a8a] transition-all duration-300 font-medium"
+                >
+                  <option value="all">All Categories</option>
+                  {categories.map((category) => (
+                    <option key={category} value={category}>
+                      {category}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              <div>
+                <label className="block text-sm font-bold text-[#1e3a8a] mb-3">Sort By</label>
+                <select
+                  value={sortBy}
+                  onChange={(e) => setSortBy(e.target.value)}
+                  className="w-full px-4 py-4 border-2 border-gray-300 focus:ring-2 focus:ring-[#87ceeb] focus:border-[#1e3a8a] transition-all duration-300 font-medium"
+                >
+                  <option value="name">Name</option>
+                  <option value="price-low">Price: Low to High</option>
+                  <option value="price-high">Price: High to Low</option>
+                </select>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProducts.map((product, index) => {
-            console.log("[v0] Rendering product:", product.title, "Image:", product.image)
-            const specs = getProductSpecs(product)
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {filteredProducts.map((product, index) => {
+              console.log("[v0] Rendering product:", product.title, "Image:", product.image)
+              const specs = getProductSpecs(product)
 
-            return (
-              <div
-                key={product.id}
-                className="group bg-white shadow-2xl overflow-hidden hover:shadow-3xl hover:-translate-y-3 transition-all duration-500 border-l-4 border-[#87ceeb]"
-              >
+              return (
                 <div
-                  className="aspect-square relative bg-gray-100 overflow-hidden cursor-pointer"
-                  onClick={() => setSelectedImage(product.image)}
+                  key={product.id}
+                  className="group bg-white shadow-2xl overflow-hidden hover:shadow-3xl hover:-translate-y-3 transition-all duration-500 border-l-4 border-[#87ceeb]"
                 >
-                  <Image
-                    src={product.image || "/placeholder.svg?height=400&width=400&text=No+Image"}
-                    alt={`${product.title} - PG Closets Ottawa`}
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-700"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    priority={index < 6}
-                    onError={(e) => {
-                      console.log("[v0] Image load error for:", product.title, product.image)
-                      e.currentTarget.src = "/placeholder.svg?height=400&width=400&text=Image+Error"
-                    }}
-                    onLoad={() => {
-                      console.log("[v0] Image loaded successfully:", product.title)
-                    }}
-                  />
-                  <div className="absolute top-4 left-4">
-                    <span className="bg-[#1e3a8a] text-[#87ceeb] px-4 py-2 text-sm font-bold border border-[#87ceeb]">
-                      NEW
-                    </span>
+                  <div
+                    className="aspect-square relative bg-gray-100 overflow-hidden cursor-pointer"
+                    onClick={() => setSelectedImage(product.image)}
+                  >
+                    <Image
+                      src={product.image || "/placeholder.svg?height=400&width=400&text=No+Image"}
+                      alt={`${product.title} - PG Closets Ottawa`}
+                      fill
+                      className="object-cover group-hover:scale-110 transition-transform duration-700"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      priority={index < 6}
+                      onError={(e) => {
+                        console.log("[v0] Image load error for:", product.title, product.image)
+                        e.currentTarget.src = "/placeholder.svg?height=400&width=400&text=Image+Error"
+                      }}
+                      onLoad={() => {
+                        console.log("[v0] Image loaded successfully:", product.title)
+                      }}
+                    />
+                    <div className="absolute top-4 left-4">
+                      <span className="bg-[#1e3a8a] text-[#87ceeb] px-4 py-2 text-sm font-bold border border-[#87ceeb]">
+                        NEW
+                      </span>
+                    </div>
+                    <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <div className="bg-black/70 text-white p-2 text-xs font-bold">🔍 Click to Expand</div>
+                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   </div>
-                  <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="bg-black/70 text-white p-2 text-xs font-bold">🔍 Click to Expand</div>
-                  </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                </div>
 
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-[#1e3a8a] transition-colors duration-300">
-                    {product.title}
-                  </h3>
-                  <p className="text-gray-600 text-sm mb-4 line-clamp-2 leading-relaxed">{product.description}</p>
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-[#1e3a8a] transition-colors duration-300">
+                      {product.title}
+                    </h3>
+                    <p className="text-gray-600 text-sm mb-4 line-clamp-2 leading-relaxed">{product.description}</p>
 
-                  <div className="mb-4 p-4 bg-gray-50 border-l-4 border-[#87ceeb]">
-                    <h4 className="font-bold text-[#1e3a8a] mb-3 text-sm">Key Specifications:</h4>
-                    <div className="space-y-2 text-xs text-gray-700">
-                      <div>
-                        <span className="font-semibold">Material:</span> {specs.material}
-                      </div>
-                      <div>
-                        <span className="font-semibold">Finish:</span> {specs.finish}
-                      </div>
-                      {specs.mechanism && (
+                    <div className="mb-4 p-4 bg-gray-50 border-l-4 border-[#87ceeb]">
+                      <h4 className="font-bold text-[#1e3a8a] mb-3 text-sm">Key Specifications:</h4>
+                      <div className="space-y-2 text-xs text-gray-700">
                         <div>
-                          <span className="font-semibold">Mechanism:</span> {specs.mechanism}
+                          <span className="font-semibold">Material:</span> {specs.material}
                         </div>
-                      )}
-                      {specs.sizes && (
                         <div>
-                          <span className="font-semibold">Sizes:</span> {specs.sizes}
+                          <span className="font-semibold">Finish:</span> {specs.finish}
                         </div>
-                      )}
-                      <div>
-                        <span className="font-semibold">Warranty:</span> {specs.warranty}
+                        {specs.mechanism && (
+                          <div>
+                            <span className="font-semibold">Mechanism:</span> {specs.mechanism}
+                          </div>
+                        )}
+                        {specs.sizes && (
+                          <div>
+                            <span className="font-semibold">Sizes:</span> {specs.sizes}
+                          </div>
+                        )}
+                        <div>
+                          <span className="font-semibold">Warranty:</span> {specs.warranty}
+                        </div>
                       </div>
                     </div>
-                  </div>
 
-                  <div className="flex items-center justify-between mb-6">
-                    <span className="text-3xl font-bold text-[#1e3a8a]">${(product.price / 100).toFixed(2)}</span>
-                    <span className="px-4 py-2 bg-[#87ceeb]/20 text-[#1e3a8a] text-sm font-bold border border-[#87ceeb]">
-                      {product.category}
-                    </span>
-                  </div>
+                    <div className="flex items-center justify-between mb-6">
+                      <span className="text-3xl font-bold text-[#1e3a8a]">${(product.price / 100).toFixed(2)}</span>
+                      <span className="px-4 py-2 bg-[#87ceeb]/20 text-[#1e3a8a] text-sm font-bold border border-[#87ceeb]">
+                        {product.category}
+                      </span>
+                    </div>
 
-                  <div className="flex gap-3">
-                    <button className="flex-1 bg-[#1e3a8a] text-[#87ceeb] py-4 font-bold hover:bg-[#87ceeb] hover:text-[#1e3a8a] hover:shadow-xl hover:scale-105 transition-all duration-300 border-2 border-[#1e3a8a]">
-                      Add to Cart
-                    </button>
-                    <button
-                      onClick={() => setSelectedProduct(product)}
-                      className="px-6 py-4 border-2 border-[#1e3a8a] text-[#1e3a8a] font-bold hover:bg-[#1e3a8a] hover:text-[#87ceeb] transition-all duration-300"
-                    >
-                      Full Details
-                    </button>
+                    <div className="flex gap-3">
+                      <button className="flex-1 bg-[#1e3a8a] text-[#87ceeb] py-4 font-bold hover:bg-[#87ceeb] hover:text-[#1e3a8a] hover:shadow-xl hover:scale-105 transition-all duration-300 border-2 border-[#1e3a8a]">
+                        Add to Cart
+                      </button>
+                      <button
+                        onClick={() => setSelectedProduct(product)}
+                        className="px-6 py-4 border-2 border-[#1e3a8a] text-[#1e3a8a] font-bold hover:bg-[#1e3a8a] hover:text-[#87ceeb] transition-all duration-300"
+                      >
+                        Full Details
+                      </button>
+                    </div>
                   </div>
                 </div>
-              </div>
-            )
-          })}
-        </div>
-
-        {filteredProducts.length === 0 && (
-          <div className="text-center py-16">
-            <div className="w-24 h-24 bg-gray-100 flex items-center justify-center mx-auto mb-6">
-              <span className="text-4xl">🔍</span>
-            </div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">No products found</h3>
-            <p className="text-gray-600 text-lg">Try adjusting your search criteria or browse all categories.</p>
+              )
+            })}
           </div>
-        )}
+
+          {filteredProducts.length === 0 && (
+            <div className="text-center py-16">
+              <div className="w-24 h-24 bg-gray-100 flex items-center justify-center mx-auto mb-6">
+                <span className="text-4xl">🔍</span>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">No products found</h3>
+              <p className="text-gray-600 text-lg">Try adjusting your search criteria or browse all categories.</p>
+            </div>
+          )}
+        </div>
       </div>
 
       {selectedImage && (
@@ -380,6 +461,109 @@ export default function ProductsPage() {
           </div>
         </div>
       )}
+
+      <footer className="bg-[#1e3a8a] text-white py-16">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+              <div className="flex items-center space-x-3 mb-6">
+                <Image
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/PG%20Logo.jpg-PA2Pv0eQKuJGkzYoQf9wsC86lYSKGa.jpeg"
+                  alt="PG Closets Logo"
+                  width={50}
+                  height={50}
+                  className="object-contain"
+                />
+                <div>
+                  <h3 className="text-xl font-bold text-[#9BC4E2]">PG Closets</h3>
+                  <p className="text-sm text-gray-300">Ottawa's Premier Door Experts</p>
+                </div>
+              </div>
+              <p className="text-gray-300 leading-relaxed">
+                Transforming Ottawa homes with premium closet doors and expert installation services since 2008.
+              </p>
+            </div>
+
+            <div>
+              <h4 className="text-lg font-bold text-[#9BC4E2] mb-4">Products</h4>
+              <ul className="space-y-2 text-gray-300">
+                <li>
+                  <a href="/products" className="hover:text-[#9BC4E2] transition-colors">
+                    Bifold Doors
+                  </a>
+                </li>
+                <li>
+                  <a href="/products" className="hover:text-[#9BC4E2] transition-colors">
+                    Bypass Doors
+                  </a>
+                </li>
+                <li>
+                  <a href="/products" className="hover:text-[#9BC4E2] transition-colors">
+                    Barn Doors
+                  </a>
+                </li>
+                <li>
+                  <a href="/products" className="hover:text-[#9BC4E2] transition-colors">
+                    Hardware
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="text-lg font-bold text-[#9BC4E2] mb-4">Services</h4>
+              <ul className="space-y-2 text-gray-300">
+                <li>
+                  <a href="/contact" className="hover:text-[#9BC4E2] transition-colors">
+                    Free Consultation
+                  </a>
+                </li>
+                <li>
+                  <a href="/contact" className="hover:text-[#9BC4E2] transition-colors">
+                    Professional Installation
+                  </a>
+                </li>
+                <li>
+                  <a href="/contact" className="hover:text-[#9BC4E2] transition-colors">
+                    Custom Solutions
+                  </a>
+                </li>
+                <li>
+                  <a href="/contact" className="hover:text-[#9BC4E2] transition-colors">
+                    Warranty Service
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="text-lg font-bold text-[#9BC4E2] mb-4">Contact</h4>
+              <div className="space-y-3 text-gray-300">
+                <p className="flex items-center space-x-2">
+                  <span>📞</span>
+                  <a href="tel:613-555-0123" className="hover:text-[#9BC4E2] transition-colors">
+                    (613) 555-0123
+                  </a>
+                </p>
+                <p className="flex items-center space-x-2">
+                  <span>✉️</span>
+                  <a href="mailto:info@pgclosets.ca" className="hover:text-[#9BC4E2] transition-colors">
+                    info@pgclosets.ca
+                  </a>
+                </p>
+                <p className="flex items-center space-x-2">
+                  <span>📍</span>
+                  <span>Ottawa, Ontario</span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="border-t border-[#9BC4E2]/20 mt-12 pt-8 text-center text-gray-300">
+            <p>&copy; 2024 PG Closets. All rights reserved. | Licensed & Insured</p>
+          </div>
+        </div>
+      </footer>
     </div>
   )
 }
