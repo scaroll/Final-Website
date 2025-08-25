@@ -5,51 +5,101 @@ import Image from "next/image"
 
 export default function ClientHomePage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [scrollY, setScrollY] = useState(0)
   const [currentSlide, setCurrentSlide] = useState(0)
-
-  useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY)
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % 3)
-    }, 5000)
-    return () => clearInterval(timer)
-  }, [])
+  const [configuratorStep, setConfiguratorStep] = useState(1)
+  const [selectedRoom, setSelectedRoom] = useState("")
+  const [selectedDoor, setSelectedDoor] = useState("")
+  const [selectedFinish, setSelectedFinish] = useState("")
+  const [dimensions, setDimensions] = useState({ width: 72, height: 80 })
+  const [quotePrice, setQuotePrice] = useState(0)
+  const [projectCount, setProjectCount] = useState(0)
+  const [showBooking, setShowBooking] = useState(false)
+  const [showExitPopup, setShowExitPopup] = useState(false)
 
   const heroSlides = [
     {
-      title: "Ottawa's Premier Closet Door Experts",
-      subtitle: "Official Renin Dealer • Professional Installation",
-      image: "/images/arcat/renin_205739_Bypass_Closet_Doors_Euro_3_Lite.jpg",
-      cta: "Transform Your Space",
+      title: "Ottawa's Premier Custom Closet Systems",
+      subtitle: "From Design to Install in 14 Days",
+      image: "/images/arcat/renin_199065_hd.jpg",
+      trustBadge: "500+ Homes Transformed",
     },
     {
-      title: "Premium Barn Door Collections",
-      subtitle: "25+ Styles • Custom Hardware • Expert Installation",
-      image: "/images/arcat/renin_205731_Mix_Match_Hardware_Driftwood_K_Design.jpg",
-      cta: "Explore Barn Doors",
+      title: "Award-Winning Design Excellence",
+      subtitle: "15+ Years of Premium Craftsmanship",
+      image: "/images/arcat/renin_199063_hd.jpg",
+      trustBadge: "5-Star Google Rating",
     },
     {
-      title: "Modern Bifold Solutions",
-      subtitle: "Space-Saving Design • Contemporary Styles",
-      image: "/images/arcat/renin_205746_Bifold_Closet_Door_Euro_1_Lite.jpg",
-      cta: "View Bifold Doors",
+      title: "Custom Solutions for Every Space",
+      subtitle: "Professional Installation Guaranteed",
+      image: "/images/arcat/renin_199064_hd.jpg",
+      trustBadge: "A+ BBB Rating",
     },
   ]
 
+  const doorStyles = [
+    { name: "Ashbury 2 Panel Bifold", image: "/images/arcat/renin_199065_hd.jpg", basePrice: 419 },
+    { name: "Georgian 6 Panel Bifold", image: "/images/arcat/renin_199063_hd.jpg", basePrice: 485 },
+    { name: "Parsons Flush Panel", image: "/images/arcat/renin_199064_hd.jpg", basePrice: 365 },
+    {
+      name: "Euro 1-Lite Bifold",
+      image: "/images/arcat/renin_155701_Bifold_Closet_Door_Euro_1_Lite_v2.jpg",
+      basePrice: 445,
+    },
+  ]
+
+  const finishes = [
+    { name: "White", color: "#FFFFFF", price: 0 },
+    { name: "Driftwood", color: "#8B7355", price: 50 },
+    { name: "Espresso", color: "#3C2415", price: 75 },
+    { name: "Natural Oak", color: "#DEB887", price: 100 },
+  ]
+
+  useEffect(() => {
+    const slideTimer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroSlides.length)
+    }, 5000)
+    return () => clearInterval(slideTimer)
+  }, [heroSlides.length])
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setProjectCount((prev) => (prev < 500 ? prev + 5 : 500))
+    }, 50)
+    return () => clearInterval(timer)
+  }, [])
+
+  useEffect(() => {
+    if (selectedDoor && selectedFinish) {
+      const doorPrice = doorStyles.find((d) => d.name === selectedDoor)?.basePrice || 0
+      const finishPrice = finishes.find((f) => f.name === selectedFinish)?.price || 0
+      const sizeMultiplier = (dimensions.width * dimensions.height) / 5760 // Base size 72x80
+      setQuotePrice(Math.round((doorPrice + finishPrice) * sizeMultiplier))
+    }
+  }, [selectedDoor, selectedFinish, dimensions])
+
+  useEffect(() => {
+    const handleMouseLeave = (e: MouseEvent) => {
+      if (e.clientY <= 0) {
+        setShowExitPopup(true)
+      }
+    }
+    document.addEventListener("mouseleave", handleMouseLeave)
+    return () => document.removeEventListener("mouseleave", handleMouseLeave)
+  }, [])
+
   return (
     <div className="min-h-screen bg-white font-sans overflow-x-hidden">
-      <header className="fixed top-0 w-full z-50 backdrop-blur-md bg-white/95 border-b-4 border-[#1e3a8a] shadow-lg">
+      <header className="fixed top-0 w-full z-50 bg-white/98 backdrop-blur-md border-b-2 border-[#1e3a8a] shadow-xl">
         <div className="max-w-7xl mx-auto px-4">
+          <div className="bg-gradient-to-r from-[#1e3a8a] to-[#87ceeb] text-white text-center py-3 text-sm font-bold tracking-wide">
+            🏆 AWARD WINNING: Ottawa's #1 Rated Closet Specialists - Book Free Consultation Today!
+          </div>
+
           <div className="flex justify-between items-center h-20">
             <div className="flex-shrink-0">
-              <div className="flex items-center space-x-3">
-                <div className="relative w-16 h-16 overflow-hidden shadow-lg">
+              <div className="flex items-center space-x-4">
+                <div className="relative w-16 h-16 overflow-hidden border-2 border-[#87ceeb] shadow-lg">
                   <Image
                     src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/PG%20Logo.jpg-PA2Pv0eQKuJGkzYoQf9wsC86lYSKGa.jpeg"
                     alt="PG Closets Logo"
@@ -59,38 +109,49 @@ export default function ClientHomePage() {
                   />
                 </div>
                 <div>
-                  <h1 className="text-2xl font-bold text-[#1e3a8a]">PG Closets</h1>
-                  <p className="text-xs text-[#87ceeb] font-medium">Official Renin Dealer</p>
+                  <h1 className="text-2xl font-black text-[#1e3a8a] tracking-tight">PG CLOSETS</h1>
+                  <p className="text-xs text-[#87ceeb] font-bold tracking-wider">PREMIUM SOLUTIONS</p>
                 </div>
               </div>
             </div>
 
-            <nav className="hidden md:flex space-x-8">
-              {["Home", "Products", "Gallery", "Contact"].map((item) => (
+            <nav className="hidden lg:flex items-center space-x-8">
+              {[
+                { name: "Products", href: "/products" },
+                { name: "Gallery", href: "/gallery" },
+                { name: "Process", href: "/process" },
+                { name: "About", href: "/about" },
+                { name: "Contact", href: "/contact" },
+              ].map((item) => (
                 <a
-                  key={item}
-                  href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
-                  className="relative text-gray-900 hover:text-[#1e3a8a] px-3 py-2 text-sm font-semibold transition-all duration-300 group"
+                  key={item.name}
+                  href={item.href}
+                  className="relative text-gray-800 hover:text-[#1e3a8a] px-4 py-2 text-sm font-bold uppercase tracking-wide transition-all duration-300 group"
                 >
-                  {item}
+                  {item.name}
                   <span className="absolute bottom-0 left-0 w-0 h-1 bg-[#87ceeb] transition-all duration-300 group-hover:w-full"></span>
                 </a>
               ))}
-              <button className="bg-[#1e3a8a] text-[#87ceeb] px-8 py-3 font-bold hover:bg-[#87ceeb] hover:text-[#1e3a8a] hover:shadow-xl hover:scale-105 transition-all duration-300 border-2 border-[#1e3a8a]">
-                Get Free Quote
-              </button>
+              <div className="flex items-center space-x-4">
+                <a href="tel:6135550123" className="text-[#1e3a8a] font-bold hover:text-[#87ceeb] transition-colors">
+                  📞 (613) 555-0123
+                </a>
+                <button className="bg-[#87ceeb] text-white px-8 py-3 font-black uppercase tracking-wide hover:bg-[#1e3a8a] hover:shadow-2xl hover:scale-105 transition-all duration-300 border-2 border-[#87ceeb] hover:border-[#1e3a8a]">
+                  FREE QUOTE
+                </button>
+              </div>
             </nav>
 
-            <div className="md:hidden">
+            <div className="lg:hidden">
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="text-gray-900 hover:text-[#1e3a8a] p-2 hover:bg-blue-50 transition-all duration-300"
+                className="text-[#1e3a8a] hover:text-[#87ceeb] p-3 hover:bg-blue-50 transition-all duration-300 border border-[#1e3a8a] hover:border-[#87ceeb]"
               >
-                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
                   {mobileMenuOpen ? (
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                   ) : (
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
                   )}
                 </svg>
               </button>
@@ -98,263 +159,475 @@ export default function ClientHomePage() {
           </div>
 
           {mobileMenuOpen && (
-            <div className="md:hidden border-t-4 border-[#87ceeb] py-4 space-y-2 bg-white/98 backdrop-blur-sm">
-              {["Home", "Products", "Gallery", "Contact"].map((item) => (
+            <div className="lg:hidden border-t-2 border-[#87ceeb] py-6 space-y-4 bg-white/98 backdrop-blur-sm">
+              {[
+                { name: "Products", href: "/products" },
+                { name: "Gallery", href: "/gallery" },
+                { name: "Process", href: "/process" },
+                { name: "About", href: "/about" },
+                { name: "Contact", href: "/contact" },
+              ].map((item) => (
                 <a
-                  key={item}
-                  href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
-                  className="block px-4 py-3 text-gray-900 hover:text-[#1e3a8a] hover:bg-[#87ceeb]/10 font-semibold transition-all duration-300"
+                  key={item.name}
+                  href={item.href}
+                  className="block px-6 py-4 text-gray-800 hover:text-[#1e3a8a] hover:bg-[#87ceeb]/10 font-bold uppercase tracking-wide transition-all duration-300 border-l-4 border-transparent hover:border-[#87ceeb]"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  {item}
+                  {item.name}
                 </a>
               ))}
-              <button
-                className="mx-4 w-full bg-[#1e3a8a] text-[#87ceeb] py-3 font-bold hover:bg-[#87ceeb] hover:text-[#1e3a8a] transition-all duration-300"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Get Free Quote
-              </button>
+              <div className="px-6 space-y-3">
+                <a href="tel:6135550123" className="block text-[#1e3a8a] font-bold text-lg">
+                  📞 (613) 555-0123
+                </a>
+                <button
+                  className="w-full bg-[#87ceeb] text-white py-4 font-black uppercase tracking-wide hover:bg-[#1e3a8a] transition-all duration-300"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  GET FREE QUOTE
+                </button>
+              </div>
             </div>
           )}
         </div>
       </header>
 
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        {/* Background slides */}
         {heroSlides.map((slide, index) => (
           <div
             key={index}
-            className={`absolute inset-0 transition-opacity duration-1000 ${
-              index === currentSlide ? "opacity-100" : "opacity-0"
+            className={`absolute inset-0 transition-all duration-1000 ${
+              index === currentSlide ? "opacity-100 scale-100" : "opacity-0 scale-105"
             }`}
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-[#1e3a8a]/90 to-[#1e3a8a]/80 z-10"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-[#1e3a8a]/95 via-[#1e3a8a]/85 to-[#87ceeb]/75 z-10"></div>
             <Image
-              src={slide.image || "/placeholder.svg"}
+              src={slide.image || "/placeholder.svg?height=1080&width=1920&query=premium closet doors"}
               alt={slide.title}
               fill
               className="object-cover"
-              style={{ transform: `translateY(${scrollY * 0.5}px)` }}
               priority={index === 0}
             />
           </div>
         ))}
 
-        {/* Hero content */}
-        <div className="relative z-20 text-center text-white px-4 max-w-5xl mx-auto">
-          <div
-            className="transform transition-all duration-1000"
-            style={{ transform: `translateY(${scrollY * 0.2}px)` }}
-          >
-            <h1 className="text-5xl lg:text-7xl font-bold mb-6 leading-tight animate-in fade-in slide-in-from-bottom duration-1000">
-              {heroSlides[currentSlide].title}
-            </h1>
-            <p className="text-xl lg:text-2xl mb-8 animate-in fade-in slide-in-from-bottom duration-1000 delay-300">
-              {heroSlides[currentSlide].subtitle}
-            </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center animate-in fade-in slide-in-from-bottom duration-1000 delay-500">
-              <button className="bg-[#87ceeb] text-[#1e3a8a] hover:bg-white font-bold px-10 py-4 text-lg shadow-2xl hover:shadow-3xl hover:scale-105 transition-all duration-300">
-                {heroSlides[currentSlide].cta}
-              </button>
-              <button className="border-2 border-[#87ceeb] text-[#87ceeb] hover:bg-[#87ceeb] hover:text-[#1e3a8a] font-bold px-10 py-4 text-lg backdrop-blur-sm hover:scale-105 transition-all duration-300">
-                View Gallery
-              </button>
+        <div className="relative z-20 text-center text-white px-4 max-w-7xl mx-auto">
+          <div className="mb-8">
+            <span className="inline-block bg-[#87ceeb] text-white px-6 py-2 text-sm font-black uppercase tracking-wider mb-6">
+              {heroSlides[currentSlide].trustBadge}
+            </span>
+          </div>
+
+          <h1 className="text-5xl lg:text-7xl font-black mb-8 leading-tight tracking-tight">
+            {heroSlides[currentSlide].title}
+          </h1>
+          <p className="text-xl lg:text-2xl mb-12 font-medium max-w-4xl mx-auto leading-relaxed">
+            {heroSlides[currentSlide].subtitle}
+          </p>
+
+          <div className="flex justify-center space-x-12 mb-16 text-[#87ceeb]">
+            <div className="text-center">
+              <div className="text-4xl font-black mb-2">{projectCount}+</div>
+              <div className="text-sm font-bold uppercase tracking-wide">HOMES</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-black mb-2">15+</div>
+              <div className="text-sm font-bold uppercase tracking-wide">YEARS</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-black mb-2">5⭐</div>
+              <div className="text-sm font-bold uppercase tracking-wide">GOOGLE</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-black mb-2">A+</div>
+              <div className="text-sm font-bold uppercase tracking-wide">BBB</div>
             </div>
           </div>
+
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <button
+              onClick={() => setShowBooking(true)}
+              className="bg-[#87ceeb] text-white hover:bg-white hover:text-[#87ceeb] font-black px-16 py-5 text-xl uppercase tracking-wide shadow-2xl hover:shadow-3xl hover:scale-105 transition-all duration-300 border-4 border-[#87ceeb] hover:border-white"
+            >
+              GET INSTANT QUOTE
+            </button>
+            <button className="border-4 border-[#87ceeb] text-[#87ceeb] hover:bg-[#87ceeb] hover:text-white font-black px-16 py-5 text-xl uppercase tracking-wide backdrop-blur-sm hover:scale-105 transition-all duration-300">
+              BOOK CONSULTATION
+            </button>
+          </div>
+
+          <div className="mt-8 text-lg font-bold">💳 0% FINANCING AVAILABLE • 📞 CALL NOW: (613) 555-0123</div>
         </div>
 
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3 z-20">
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex space-x-3">
           {heroSlides.map((_, index) => (
             <button
               key={index}
               onClick={() => setCurrentSlide(index)}
-              className={`w-3 h-3 transition-all duration-300 ${
-                index === currentSlide ? "bg-white scale-125" : "bg-white/50 hover:bg-white/75"
+              className={`w-4 h-4 transition-all duration-300 ${
+                index === currentSlide ? "bg-[#87ceeb] scale-125" : "bg-white/50 hover:bg-white/75"
               }`}
             />
           ))}
         </div>
-
-        <div className="absolute bottom-8 right-8 z-20 animate-bounce">
-          <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-white rounded-full mt-2 animate-pulse"></div>
-          </div>
-        </div>
       </section>
 
-      <section className="py-24 bg-gradient-to-b from-white to-gray-50">
+      <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-[#1e3a8a] to-[#87ceeb] bg-clip-text text-transparent">
-              Premium Door Collections
-            </h2>
+            <h2 className="text-5xl font-bold mb-6 text-[#1e3a8a] font-dm-sans">Design Your Perfect Closet</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Discover our curated selection of premium closet doors, each crafted with precision and designed to
-              transform your space
+              Use our interactive configurator to visualize your custom closet and get instant pricing
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {[
-              {
-                title: "Sliding Doors",
-                subtitle: "12+ Premium Styles",
-                description: "Space-saving bypass doors with contemporary elegance",
-                image: "/images/arcat/renin_205739_Bypass_Closet_Doors_Euro_3_Lite.jpg",
-                features: ["Space Efficient", "Modern Design", "Easy Installation"],
-                color: "from-[#1e3a8a] to-[#87ceeb]",
-                specs: {
-                  material: "Premium MDF with laminate finish",
-                  sizes: '24", 30", 36", 48", 60", 72", 80", 96" widths',
-                  hardware: "Soft-close bypass track system included",
-                  warranty: "5-year manufacturer warranty",
-                  installation: "Professional installation available",
-                },
-              },
-              {
-                title: "Bifold Doors",
-                subtitle: "8+ Classic Designs",
-                description: "Traditional folding design meets modern functionality",
-                image: "/images/arcat/renin_205746_Bifold_Closet_Door_Euro_1_Lite.jpg",
-                features: ["Classic Style", "Versatile", "Durable"],
-                color: "from-[#87ceeb] to-[#1e3a8a]",
-                specs: {
-                  material: "Solid wood core with veneer finish",
-                  sizes: '24", 30", 32", 36" widths (pairs available)',
-                  hardware: "Heavy-duty pivot hinges and track",
-                  warranty: "10-year structural warranty",
-                  installation: "DIY-friendly with pro installation option",
-                },
-              },
-              {
-                title: "Barn Doors",
-                subtitle: "25+ Trending Styles",
-                description: "Statement-making sliding barn door systems",
-                image: "/images/arcat/renin_205731_Mix_Match_Hardware_Driftwood_K_Design.jpg",
-                features: ["Trendy Design", "Custom Hardware", "Statement Piece"],
-                color: "from-[#1e3a8a] to-[#87ceeb]",
-                specs: {
-                  material: "Reclaimed wood look with engineered core",
-                  sizes: '30", 32", 36", 42" widths, custom heights',
-                  hardware: "Premium steel track with multiple finishes",
-                  warranty: "Lifetime hardware warranty",
-                  installation: "Professional installation recommended",
-                },
-              },
-              {
-                title: "Hardware & Accessories",
-                subtitle: "15+ Premium Options",
-                description: "Professional-grade hardware and finishing touches",
-                image: "/images/arcat/renin_205752_Barn_Door_Hardware_Kits_Cadium_Bent_Strap.jpg",
-                features: ["Premium Quality", "Multiple Finishes", "Professional Grade"],
-                color: "from-[#87ceeb] to-[#1e3a8a]",
-                specs: {
-                  material: "Stainless steel and powder-coated finishes",
-                  finishes: "Black, Bronze, Stainless, Brushed Nickel",
-                  capacity: "Supports doors up to 200 lbs",
-                  warranty: "Lifetime mechanical warranty",
-                  installation: "Complete installation kit included",
-                },
-              },
-            ].map((product, index) => (
-              <div
-                key={index}
-                className="group relative bg-white shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border-l-4 border-[#87ceeb]"
-              >
-                <div className="aspect-video overflow-hidden relative">
-                  <Image
-                    src={product.image || "/placeholder.svg"}
-                    alt={product.title}
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-700"
-                  />
+          <div className="bg-white rounded-none shadow-2xl p-8">
+            <div className="flex justify-center mb-8">
+              <div className="flex space-x-4">
+                {[1, 2, 3, 4].map((step) => (
                   <div
-                    className={`absolute inset-0 bg-gradient-to-t ${product.color} opacity-0 group-hover:opacity-20 transition-opacity duration-500`}
-                  ></div>
-                </div>
-                <div className="p-8">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-[#1e3a8a] transition-colors duration-300">
-                    {product.title}
-                  </h3>
-                  <p className="text-[#87ceeb] font-semibold mb-3">{product.subtitle}</p>
-                  <p className="text-gray-600 mb-6 leading-relaxed">{product.description}</p>
-
-                  <div className="mb-6 p-4 bg-gray-50 border-l-4 border-[#87ceeb]">
-                    <h4 className="font-semibold text-[#1e3a8a] mb-3">Specifications:</h4>
-                    <div className="space-y-2 text-sm">
-                      <div>
-                        <span className="font-medium">Material:</span> {product.specs.material}
-                      </div>
-                      <div>
-                        <span className="font-medium">Sizes:</span> {product.specs.sizes}
-                      </div>
-                      <div>
-                        <span className="font-medium">Hardware:</span> {product.specs.hardware}
-                      </div>
-                      <div>
-                        <span className="font-medium">Warranty:</span> {product.specs.warranty}
-                      </div>
-                      <div>
-                        <span className="font-medium">Installation:</span> {product.specs.installation}
-                      </div>
-                    </div>
+                    key={step}
+                    className={`w-12 h-12 rounded-full flex items-center justify-center font-bold ${
+                      configuratorStep >= step ? "bg-[#87ceeb] text-white" : "bg-gray-200 text-gray-500"
+                    }`}
+                  >
+                    {step}
                   </div>
+                ))}
+              </div>
+            </div>
 
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {product.features.map((feature, idx) => (
-                      <span
-                        key={idx}
-                        className="px-3 py-1 bg-[#87ceeb]/20 text-[#1e3a8a] text-sm font-medium border border-[#87ceeb]"
-                      >
-                        {feature}
-                      </span>
-                    ))}
-                  </div>
-
-                  <button className="w-full bg-gradient-to-r from-[#1e3a8a] to-[#87ceeb] text-white py-3 font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300">
-                    Explore Collection
-                  </button>
+            {configuratorStep === 1 && (
+              <div className="text-center">
+                <h3 className="text-2xl font-bold mb-8 text-[#1e3a8a]">Choose Room Type</h3>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  {["Bedroom", "Hall", "Pantry"].map((room) => (
+                    <button
+                      key={room}
+                      onClick={() => {
+                        setSelectedRoom(room)
+                        setConfiguratorStep(2)
+                      }}
+                      className={`p-8 border-2 hover:border-[#87ceeb] transition-all duration-300 ${
+                        selectedRoom === room ? "border-[#87ceeb] bg-[#87ceeb]/10" : "border-gray-200"
+                      }`}
+                    >
+                      <div className="text-6xl mb-4">{room === "Bedroom" ? "🛏️" : room === "Hall" ? "🚪" : "🥫"}</div>
+                      <div className="text-xl font-semibold text-[#1e3a8a]">{room}</div>
+                    </button>
+                  ))}
                 </div>
               </div>
-            ))}
+            )}
+
+            {configuratorStep === 2 && (
+              <div className="text-center">
+                <h3 className="text-2xl font-bold mb-8 text-[#1e3a8a]">Select Door Style</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                  {doorStyles.map((door) => (
+                    <button
+                      key={door.name}
+                      onClick={() => {
+                        setSelectedDoor(door.name)
+                        setConfiguratorStep(3)
+                      }}
+                      className={`border-2 hover:border-[#87ceeb] transition-all duration-300 ${
+                        selectedDoor === door.name ? "border-[#87ceeb]" : "border-gray-200"
+                      }`}
+                    >
+                      <div className="aspect-square relative">
+                        <Image src={door.image || "/placeholder.svg"} alt={door.name} fill className="object-cover" />
+                      </div>
+                      <div className="p-4">
+                        <div className="font-semibold text-[#1e3a8a]">{door.name}</div>
+                        <div className="text-[#87ceeb]">From ${door.basePrice}</div>
+                      </div>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {configuratorStep === 3 && (
+              <div className="text-center">
+                <h3 className="text-2xl font-bold mb-8 text-[#1e3a8a]">Pick Finish</h3>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                  {finishes.map((finish) => (
+                    <button
+                      key={finish.name}
+                      onClick={() => {
+                        setSelectedFinish(finish.name)
+                        setConfiguratorStep(4)
+                      }}
+                      className={`p-6 border-2 hover:border-[#87ceeb] transition-all duration-300 ${
+                        selectedFinish === finish.name ? "border-[#87ceeb]" : "border-gray-200"
+                      }`}
+                    >
+                      <div className="w-16 h-16 mx-auto mb-4 border" style={{ backgroundColor: finish.color }}></div>
+                      <div className="font-semibold text-[#1e3a8a]">{finish.name}</div>
+                      <div className="text-[#87ceeb]">+${finish.price}</div>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {configuratorStep === 4 && (
+              <div className="text-center">
+                <h3 className="text-2xl font-bold mb-8 text-[#1e3a8a]">Enter Dimensions</h3>
+                <div className="max-w-md mx-auto space-y-6">
+                  <div>
+                    <label className="block text-left font-semibold mb-2">Width (inches)</label>
+                    <input
+                      type="range"
+                      min="24"
+                      max="120"
+                      value={dimensions.width}
+                      onChange={(e) => setDimensions({ ...dimensions, width: Number.parseInt(e.target.value) })}
+                      className="w-full"
+                    />
+                    <div className="text-[#87ceeb] font-bold">{dimensions.width}"</div>
+                  </div>
+                  <div>
+                    <label className="block text-left font-semibold mb-2">Height (inches)</label>
+                    <input
+                      type="range"
+                      min="60"
+                      max="96"
+                      value={dimensions.height}
+                      onChange={(e) => setDimensions({ ...dimensions, height: Number.parseInt(e.target.value) })}
+                      className="w-full"
+                    />
+                    <div className="text-[#87ceeb] font-bold">{dimensions.height}"</div>
+                  </div>
+
+                  {quotePrice > 0 && (
+                    <div className="bg-[#87ceeb] text-white p-8 mt-8">
+                      <div className="text-3xl font-bold mb-2">${quotePrice}</div>
+                      <div className="text-lg">Estimated Price</div>
+                      <div className="text-sm mt-2">*Professional installation included</div>
+                      <button className="bg-white text-[#87ceeb] px-8 py-3 font-bold mt-4 hover:bg-gray-100 transition-all duration-300">
+                        Book Measurement
+                      </button>
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </section>
 
-      <section className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#1e3a8a] via-[#1e3a8a] to-[#87ceeb]"></div>
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 left-0 w-72 h-72 bg-[#87ceeb] mix-blend-multiply filter blur-xl animate-pulse"></div>
-          <div className="absolute top-0 right-0 w-72 h-72 bg-white mix-blend-multiply filter blur-xl animate-pulse delay-1000"></div>
-          <div className="absolute bottom-0 left-1/2 w-72 h-72 bg-[#87ceeb] mix-blend-multiply filter blur-xl animate-pulse delay-2000"></div>
-        </div>
-
-        <div className="relative z-10 max-w-7xl mx-auto px-4 text-center text-white">
-          <h2 className="text-4xl lg:text-6xl font-bold mb-8 animate-in fade-in slide-in-from-bottom duration-1000">
-            Ready to Transform Your Home?
-          </h2>
-          <p className="text-xl lg:text-2xl mb-12 max-w-3xl mx-auto leading-relaxed animate-in fade-in slide-in-from-bottom duration-1000 delay-300">
-            Join thousands of satisfied customers who have transformed their spaces with our premium closet door
-            solutions
-          </p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center animate-in fade-in slide-in-from-bottom duration-1000 delay-500">
-            <button className="bg-[#87ceeb] text-[#1e3a8a] hover:bg-white font-bold px-12 py-4 text-lg shadow-2xl hover:shadow-3xl hover:scale-105 transition-all duration-300">
-              Get Your Free Quote
-            </button>
-            <button className="border-2 border-[#87ceeb] text-[#87ceeb] hover:bg-[#87ceeb] hover:text-[#1e3a8a] font-bold px-12 py-4 text-lg backdrop-blur-sm hover:scale-105 transition-all duration-300">
-              📱 Call (613) 555-0123
-            </button>
-          </div>
-        </div>
-      </section>
-
-      <footer className="bg-gray-900 text-white py-16">
+      <section className="py-32 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="text-center mb-20">
+            <span className="inline-block bg-[#1e3a8a] text-white px-6 py-2 text-sm font-black uppercase tracking-wider mb-6">
+              INTERACTIVE DESIGN TOOL
+            </span>
+            <h2 className="text-6xl font-black mb-8 text-[#1e3a8a] tracking-tight">Design Your Perfect Closet</h2>
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              Use our advanced configurator to visualize your custom closet system and get instant professional pricing
+            </p>
+          </div>
+
+          <div className="bg-white shadow-2xl p-12 border-t-8 border-[#87ceeb]">
+            <div className="flex justify-center mb-12">
+              <div className="flex space-x-6">
+                {[
+                  { step: 1, label: "Room" },
+                  { step: 2, label: "Style" },
+                  { step: 3, label: "Finish" },
+                  { step: 4, label: "Size" },
+                ].map(({ step, label }) => (
+                  <div key={step} className="text-center">
+                    <div
+                      className={`w-16 h-16 mx-auto flex items-center justify-center font-black text-lg border-4 transition-all duration-300 ${
+                        configuratorStep >= step
+                          ? "bg-[#87ceeb] text-white border-[#87ceeb] scale-110"
+                          : "bg-gray-100 text-gray-400 border-gray-300"
+                      }`}
+                    >
+                      {step}
+                    </div>
+                    <div
+                      className={`mt-2 text-sm font-bold uppercase tracking-wide ${
+                        configuratorStep >= step ? "text-[#1e3a8a]" : "text-gray-400"
+                      }`}
+                    >
+                      {label}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {configuratorStep === 1 && (
+              <div className="text-center">
+                <h3 className="text-2xl font-bold mb-8 text-[#1e3a8a]">Choose Room Type</h3>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  {["Bedroom", "Hall", "Pantry"].map((room) => (
+                    <button
+                      key={room}
+                      onClick={() => {
+                        setSelectedRoom(room)
+                        setConfiguratorStep(2)
+                      }}
+                      className={`p-8 border-2 hover:border-[#87ceeb] transition-all duration-300 ${
+                        selectedRoom === room ? "border-[#87ceeb] bg-[#87ceeb]/10" : "border-gray-200"
+                      }`}
+                    >
+                      <div className="text-6xl mb-4">{room === "Bedroom" ? "🛏️" : room === "Hall" ? "🚪" : "🥫"}</div>
+                      <div className="text-xl font-semibold text-[#1e3a8a]">{room}</div>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {configuratorStep === 2 && (
+              <div className="text-center">
+                <h3 className="text-2xl font-bold mb-8 text-[#1e3a8a]">Select Door Style</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                  {doorStyles.map((door) => (
+                    <button
+                      key={door.name}
+                      onClick={() => {
+                        setSelectedDoor(door.name)
+                        setConfiguratorStep(3)
+                      }}
+                      className={`border-2 hover:border-[#87ceeb] transition-all duration-300 ${
+                        selectedDoor === door.name ? "border-[#87ceeb]" : "border-gray-200"
+                      }`}
+                    >
+                      <div className="aspect-square relative">
+                        <Image src={door.image || "/placeholder.svg"} alt={door.name} fill className="object-cover" />
+                      </div>
+                      <div className="p-4">
+                        <div className="font-semibold text-[#1e3a8a]">{door.name}</div>
+                        <div className="text-[#87ceeb]">From ${door.basePrice}</div>
+                      </div>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {configuratorStep === 3 && (
+              <div className="text-center">
+                <h3 className="text-2xl font-bold mb-8 text-[#1e3a8a]">Pick Finish</h3>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                  {finishes.map((finish) => (
+                    <button
+                      key={finish.name}
+                      onClick={() => {
+                        setSelectedFinish(finish.name)
+                        setConfiguratorStep(4)
+                      }}
+                      className={`p-6 border-2 hover:border-[#87ceeb] transition-all duration-300 ${
+                        selectedFinish === finish.name ? "border-[#87ceeb]" : "border-gray-200"
+                      }`}
+                    >
+                      <div className="w-16 h-16 mx-auto mb-4 border" style={{ backgroundColor: finish.color }}></div>
+                      <div className="font-semibold text-[#1e3a8a]">{finish.name}</div>
+                      <div className="text-[#87ceeb]">+${finish.price}</div>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {configuratorStep === 4 && (
+              <div className="text-center">
+                <h3 className="text-2xl font-bold mb-8 text-[#1e3a8a]">Enter Dimensions</h3>
+                <div className="max-w-md mx-auto space-y-6">
+                  <div>
+                    <label className="block text-left font-semibold mb-2">Width (inches)</label>
+                    <input
+                      type="range"
+                      min="24"
+                      max="120"
+                      value={dimensions.width}
+                      onChange={(e) => setDimensions({ ...dimensions, width: Number.parseInt(e.target.value) })}
+                      className="w-full"
+                    />
+                    <div className="text-[#87ceeb] font-bold">{dimensions.width}"</div>
+                  </div>
+                  <div>
+                    <label className="block text-left font-semibold mb-2">Height (inches)</label>
+                    <input
+                      type="range"
+                      min="60"
+                      max="96"
+                      value={dimensions.height}
+                      onChange={(e) => setDimensions({ ...dimensions, height: Number.parseInt(e.target.value) })}
+                      className="w-full"
+                    />
+                    <div className="text-[#87ceeb] font-bold">{dimensions.height}"</div>
+                  </div>
+
+                  {quotePrice > 0 && (
+                    <div className="bg-[#87ceeb] text-white p-8 mt-8">
+                      <div className="text-3xl font-bold mb-2">${quotePrice}</div>
+                      <div className="text-lg">Estimated Price</div>
+                      <div className="text-sm mt-2">*Professional installation included</div>
+                      <button className="bg-white text-[#87ceeb] px-8 py-3 font-bold mt-4 hover:bg-gray-100 transition-all duration-300">
+                        Book Measurement
+                      </button>
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 bg-[#1e3a8a] text-white">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div className="text-center">
+              <div className="text-6xl font-bold text-[#87ceeb] mb-4">{projectCount}+</div>
+              <div className="text-xl font-semibold mb-2">Homes Transformed</div>
+              <div className="text-gray-300">Across Ottawa & Surrounding Areas</div>
+            </div>
+            <div className="text-center">
+              <div className="text-6xl font-bold text-[#87ceeb] mb-4">15+</div>
+              <div className="text-xl font-semibold mb-2">Years Experience</div>
+              <div className="text-gray-300">Professional Installation Excellence</div>
+            </div>
+            <div className="text-center">
+              <div className="text-6xl font-bold text-[#87ceeb] mb-4">A+</div>
+              <div className="text-xl font-semibold mb-2">BBB Rating</div>
+              <div className="text-gray-300">Fully Licensed & Insured</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 bg-gradient-to-r from-[#87ceeb] to-[#1e3a8a] text-white">
+        <div className="max-w-4xl mx-auto px-4 text-center">
+          <h2 className="text-5xl font-bold mb-8 font-dm-sans">Ready to Transform Your Space?</h2>
+          <p className="text-xl mb-12 leading-relaxed">
+            Join 500+ satisfied Ottawa homeowners. Professional design, premium materials, expert installation.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <button className="bg-white text-[#87ceeb] hover:bg-gray-100 font-bold px-12 py-4 text-xl shadow-2xl hover:scale-105 transition-all duration-300 rounded-none">
+              Get Free Quote Today
+            </button>
+            <button className="border-2 border-white text-white hover:bg-white hover:text-[#87ceeb] font-bold px-12 py-4 text-xl hover:scale-105 transition-all duration-300 rounded-none">
+              📞 (613) 555-0123
+            </button>
+          </div>
+          <div className="mt-8 text-lg">💳 Financing Available • 0% Interest for 12 Months</div>
+        </div>
+      </section>
+
+      <footer className="bg-[#1e3a8a] text-white py-20">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
             <div className="md:col-span-2">
-              <div className="flex items-center space-x-3 mb-6">
-                <div className="relative w-14 h-14 overflow-hidden">
+              <div className="flex items-center space-x-4 mb-8">
+                <div className="relative w-16 h-16 overflow-hidden border-2 border-[#87ceeb]">
                   <Image
                     src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/PG%20Logo.jpg-PA2Pv0eQKuJGkzYoQf9wsC86lYSKGa.jpeg"
                     alt="PG Closets Logo"
@@ -363,67 +636,118 @@ export default function ClientHomePage() {
                   />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold">PG Closets</h3>
-                  <p className="text-[#87ceeb]">Official Renin Dealer</p>
+                  <h3 className="text-3xl font-black tracking-tight">PG CLOSETS</h3>
+                  <p className="text-[#87ceeb] font-bold">PREMIUM SOLUTIONS</p>
                 </div>
               </div>
-              <p className="text-gray-300 mb-6 leading-relaxed max-w-md">
+              <p className="text-gray-300 mb-8 leading-relaxed max-w-lg text-lg">
                 Ottawa's premier closet door specialists, transforming homes with premium Renin solutions and
-                professional installation services.
+                award-winning professional installation services since 2009.
               </p>
               <div className="flex space-x-4">
-                {["Facebook", "Instagram", "LinkedIn"].map((social) => (
+                {["Facebook", "Instagram", "LinkedIn", "Google"].map((social) => (
                   <a
                     key={social}
                     href="#"
-                    className="w-12 h-12 bg-gray-800 flex items-center justify-center hover:bg-[#1e3a8a] transition-colors duration-300 border border-[#87ceeb]"
+                    className="w-14 h-14 bg-gray-800 flex items-center justify-center hover:bg-[#87ceeb] transition-all duration-300 border-2 border-[#87ceeb] hover:scale-110"
                   >
                     <span className="sr-only">{social}</span>
-                    <div className="w-5 h-5 bg-current"></div>
+                    <div className="w-6 h-6 bg-current"></div>
                   </a>
                 ))}
               </div>
             </div>
 
             <div>
-              <h4 className="text-lg font-semibold mb-6 text-[#87ceeb]">Quick Links</h4>
-              <div className="space-y-3">
-                {["Products", "Gallery", "Installation", "Contact"].map((link) => (
+              <h4 className="text-xl font-black mb-8 text-[#87ceeb] uppercase tracking-wide">Navigation</h4>
+              <div className="space-y-4">
+                {[
+                  { name: "Products", href: "/products" },
+                  { name: "Gallery", href: "/gallery" },
+                  { name: "Process", href: "/process" },
+                  { name: "About", href: "/about" },
+                  { name: "Contact", href: "/contact" },
+                ].map((link) => (
                   <a
-                    key={link}
-                    href="#"
-                    className="block text-gray-300 hover:text-white transition-colors duration-300"
+                    key={link.name}
+                    href={link.href}
+                    className="block text-gray-300 hover:text-white hover:translate-x-2 transition-all duration-300 font-semibold"
                   >
-                    {link}
+                    → {link.name}
                   </a>
                 ))}
               </div>
             </div>
 
             <div>
-              <h4 className="text-lg font-semibold mb-6 text-[#87ceeb]">Contact Info</h4>
-              <div className="space-y-4 text-gray-300">
-                <div className="flex items-center space-x-3">
-                  <span className="text-[#87ceeb]">📧</span>
-                  <span>spencer@peoplesgrp.com</span>
+              <h4 className="text-xl font-black mb-8 text-[#87ceeb] uppercase tracking-wide">Contact</h4>
+              <div className="space-y-6 text-gray-300">
+                <div className="flex items-center space-x-4">
+                  <span className="text-[#87ceeb] text-xl">📧</span>
+                  <div>
+                    <div className="font-bold text-white">Email</div>
+                    <div>spencer@peoplesgrp.com</div>
+                  </div>
                 </div>
-                <div className="flex items-center space-x-3">
-                  <span className="text-[#87ceeb]">📱</span>
-                  <span>(613) 555-0123</span>
+                <div className="flex items-center space-x-4">
+                  <span className="text-[#87ceeb] text-xl">📱</span>
+                  <div>
+                    <div className="font-bold text-white">Phone</div>
+                    <div>(613) 555-0123</div>
+                  </div>
                 </div>
-                <div className="flex items-center space-x-3">
-                  <span className="text-[#87ceeb]">📍</span>
-                  <span>Ottawa, Ontario</span>
+                <div className="flex items-center space-x-4">
+                  <span className="text-[#87ceeb] text-xl">📍</span>
+                  <div>
+                    <div className="font-bold text-white">Service Area</div>
+                    <div>Ottawa & Surrounding Areas</div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="border-t border-[#87ceeb]/30 mt-12 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 PG Closets. All rights reserved. | Official Renin Dealer</p>
+          <div className="border-t-2 border-[#87ceeb]/30 mt-16 pt-8">
+            <div className="flex flex-col md:flex-row justify-between items-center">
+              <p className="text-gray-400 mb-4 md:mb-0">
+                &copy; 2024 PG Closets. All rights reserved. | Licensed & Insured | A+ BBB Rating
+              </p>
+              <div className="flex space-x-6 text-sm">
+                <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                  Privacy Policy
+                </a>
+                <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                  Terms of Service
+                </a>
+                <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                  Warranty
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </footer>
+
+      {showExitPopup && (
+        <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
+          <div className="bg-white text-[#1e3a8a] p-8 max-w-md w-full">
+            <button onClick={() => setShowExitPopup(false)} className="float-right text-2xl">
+              ×
+            </button>
+            <h3 className="text-2xl font-bold mb-4 text-[#87ceeb]">Wait! Don't Leave Yet!</h3>
+            <p className="mb-6">Get 10% off your custom closet system when you book a free consultation today.</p>
+            <button className="w-full bg-[#87ceeb] text-white py-3 font-bold hover:bg-[#1e3a8a] transition-all duration-300">
+              Claim 10% Discount
+            </button>
+          </div>
+        </div>
+      )}
+
+      <div className="fixed bottom-6 right-6 z-40">
+        <button className="bg-[#87ceeb] text-white p-4 rounded-full shadow-lg hover:scale-110 transition-all duration-300">
+          💬 Design Help
+        </button>
+      </div>
     </div>
   )
 }
