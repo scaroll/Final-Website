@@ -114,7 +114,7 @@ export default function ClientHomePage() {
     <div className="min-h-screen bg-white font-sans">
       <header className="fixed top-0 w-full z-50 bg-white shadow-lg">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="bg-gradient-to-r from-[#3B4A7C] to-[#4A5F8A] text-white text-center py-2 text-sm font-semibold">
+          <div className="bg-gradient-to-r from-[#1B4A9C] to-[#4A5F8A] text-white text-center py-2 text-sm font-semibold">
             ⭐ 5.0 • 🏠 500+ • ⏰ 15 Years • Official Renin Dealer
           </div>
 
@@ -130,38 +130,38 @@ export default function ClientHomePage() {
                 />
               </div>
               <div>
-                <h1 className="text-xl font-bold text-[#3B4A7C]">PG CLOSETS</h1>
+                <h1 className="text-xl font-bold text-[#1B4A9C]">PG CLOSETS</h1>
                 <p className="text-xs text-[#9BC4E2] font-medium">Premium Solutions</p>
               </div>
             </div>
 
             <nav className="hidden lg:flex items-center space-x-6">
-              <a href="/products" className="text-[#3B4A7C] hover:text-[#9BC4E2] px-3 py-2 text-sm font-medium">
+              <a href="/products" className="text-[#1B4A9C] hover:text-[#9BC4E2] px-3 py-2 text-sm font-medium">
                 Products
               </a>
               <button
                 onClick={() => setQuoteStep(1)}
-                className="bg-[#9BC4E2] text-[#3B4A7C] px-4 py-2 rounded text-sm font-medium hover:bg-[#3B4A7C] hover:text-white"
+                className="bg-[#9BC4E2] text-[#1B4A9C] px-4 py-2 text-sm font-medium hover:bg-[#1B4A9C] hover:text-white transition-all"
               >
                 Quote
               </button>
-              <a href="/gallery" className="text-[#3B4A7C] hover:text-[#9BC4E2] px-3 py-2 text-sm font-medium">
+              <a href="/gallery" className="text-[#1B4A9C] hover:text-[#9BC4E2] px-3 py-2 text-sm font-medium">
                 Gallery
               </a>
-              <a href="/pricing" className="text-[#3B4A7C] hover:text-[#9BC4E2] px-3 py-2 text-sm font-medium">
+              <a href="/pricing" className="text-[#1B4A9C] hover:text-[#9BC4E2] px-3 py-2 text-sm font-medium">
                 Pricing
               </a>
-              <a href="/reviews" className="text-[#3B4A7C] hover:text-[#9BC4E2] px-3 py-2 text-sm font-medium">
+              <a href="/reviews" className="text-[#1B4A9C] hover:text-[#9BC4E2] px-3 py-2 text-sm font-medium">
                 Reviews
               </a>
 
               <div className="flex items-center space-x-4 ml-6">
-                <a href="tel:6135550123" className="text-[#9BC4E2] font-semibold hover:text-[#3B4A7C]">
+                <a href="tel:6135550123" className="text-[#9BC4E2] font-semibold hover:text-[#1B4A9C]">
                   (613) 555-0123
                 </a>
                 <button
                   onClick={() => setQuoteStep(1)}
-                  className="bg-[#9BC4E2] text-[#3B4A7C] px-6 py-2 rounded font-semibold hover:bg-[#3B4A7C] hover:text-white transition-all"
+                  className="bg-[#9BC4E2] text-[#1B4A9C] px-6 py-2 font-semibold hover:bg-[#1B4A9C] hover:text-white transition-all"
                 >
                   Get Quote
                 </button>
@@ -171,7 +171,7 @@ export default function ClientHomePage() {
             <div className="lg:hidden">
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="text-[#3B4A7C] hover:text-[#9BC4E2] p-2"
+                className="text-[#1B4A9C] hover:text-[#9BC4E2] p-2"
               >
                 <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   {mobileMenuOpen ? (
@@ -186,24 +186,24 @@ export default function ClientHomePage() {
 
           {mobileMenuOpen && (
             <div className="lg:hidden border-t py-4 space-y-2 bg-white">
-              <a href="/products" className="block px-4 py-2 text-[#3B4A7C] hover:text-[#9BC4E2] font-medium">
+              <a href="/products" className="block px-4 py-2 text-[#1B4A9C] hover:text-[#9BC4E2] font-medium">
                 Products
               </a>
-              <a href="/gallery" className="block px-4 py-2 text-[#3B4A7C] hover:text-[#9BC4E2] font-medium">
+              <a href="/gallery" className="block px-4 py-2 text-[#1B4A9C] hover:text-[#9BC4E2] font-medium">
                 Gallery
               </a>
-              <a href="/pricing" className="block px-4 py-2 text-[#3B4A7C] hover:text-[#9BC4E2] font-medium">
+              <a href="/pricing" className="block px-4 py-2 text-[#1B4A9C] hover:text-[#9BC4E2] font-medium">
                 Pricing
               </a>
-              <a href="/reviews" className="block px-4 py-2 text-[#3B4A7C] hover:text-[#9BC4E2] font-medium">
+              <a href="/reviews" className="block px-4 py-2 text-[#1B4A9C] hover:text-[#9BC4E2] font-medium">
                 Reviews
               </a>
-              <a href="/contact" className="block px-4 py-2 text-[#3B4A7C] hover:text-[#9BC4E2] font-medium">
+              <a href="/contact" className="block px-4 py-2 text-[#1B4A9C] hover:text-[#9BC4E2] font-medium">
                 Contact
               </a>
 
               <div className="px-4 pt-4 grid grid-cols-2 gap-2">
-                <a href="tel:6135550123" className="bg-[#3B4A7C] text-white py-3 text-center rounded font-semibold">
+                <a href="tel:6135550123" className="bg-[#1B4A9C] text-white py-3 text-center font-semibold">
                   Call Now
                 </a>
                 <button
@@ -211,7 +211,7 @@ export default function ClientHomePage() {
                     loadJobberForm()
                     setMobileMenuOpen(false)
                   }}
-                  className="bg-[#9BC4E2] text-[#3B4A7C] py-3 rounded font-semibold"
+                  className="bg-[#9BC4E2] text-[#1B4A9C] py-3 font-semibold"
                 >
                   Get Quote
                 </button>
@@ -224,12 +224,12 @@ export default function ClientHomePage() {
       <section
         className="relative h-screen flex items-center justify-center"
         style={{
-          background: "linear-gradient(to bottom right, #3B4A7C, #4A5F8A)",
+          background: "linear-gradient(to bottom right, #1B4A9C, #4A5F8A)",
         }}
       >
         <div className="relative z-20 text-center text-white px-4 max-w-6xl mx-auto">
           <div className="mb-6">
-            <span className="inline-block bg-[#9BC4E2] text-[#3B4A7C] px-4 py-2 text-sm font-semibold rounded">
+            <span className="inline-block bg-[#9BC4E2] text-[#1B4A9C] px-4 py-2 text-sm font-semibold">
               ⚡ December: 3 Slots Left
             </span>
           </div>
@@ -257,13 +257,13 @@ export default function ClientHomePage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
               onClick={() => setQuoteStep(1)}
-              className="bg-[#9BC4E2] text-[#3B4A7C] hover:bg-white font-semibold px-8 py-4 rounded shadow-lg hover:shadow-xl transition-all"
+              className="bg-[#9BC4E2] text-[#1B4A9C] hover:bg-white font-semibold px-8 py-4 shadow-lg hover:shadow-xl transition-all"
             >
               Calculate Quote →
             </button>
             <button
               onClick={() => document.getElementById("products")?.scrollIntoView({ behavior: "smooth" })}
-              className="border-2 border-[#9BC4E2] text-[#9BC4E2] hover:bg-[#9BC4E2] hover:text-[#3B4A7C] font-semibold px-8 py-4 rounded transition-all"
+              className="border-2 border-[#9BC4E2] text-[#9BC4E2] hover:bg-[#9BC4E2] hover:text-[#1B4A9C] font-semibold px-8 py-4 transition-all"
             >
               View Gallery
             </button>
@@ -276,22 +276,22 @@ export default function ClientHomePage() {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
             <div>
               <div className="text-4xl mb-2">🛡️</div>
-              <div className="font-semibold text-[#3B4A7C]">Lifetime Warranty</div>
+              <div className="font-semibold text-[#1B4A9C]">Lifetime Warranty</div>
               <div className="text-sm text-gray-600">On all installations</div>
             </div>
             <div>
               <div className="text-4xl mb-2">🚚</div>
-              <div className="font-semibold text-[#3B4A7C]">2-Week Delivery</div>
+              <div className="font-semibold text-[#1B4A9C]">2-Week Delivery</div>
               <div className="text-sm text-gray-600">Guaranteed timeline</div>
             </div>
             <div>
               <div className="text-4xl mb-2">🏆</div>
-              <div className="font-semibold text-[#3B4A7C]">Ottawa's #1 Dealer</div>
+              <div className="font-semibold text-[#1B4A9C]">Ottawa's #1 Dealer</div>
               <div className="text-sm text-gray-600">Official Renin partner</div>
             </div>
             <div>
               <div className="text-4xl mb-2">✅</div>
-              <div className="font-semibold text-[#3B4A7C]">500+ Installations</div>
+              <div className="font-semibold text-[#1B4A9C]">500+ Installations</div>
               <div className="text-sm text-gray-600">Satisfied customers</div>
             </div>
           </div>
@@ -301,7 +301,7 @@ export default function ClientHomePage() {
       <section id="products" className="py-20 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-bold mb-4 text-[#3B4A7C]">Premium Door Collection</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold mb-4 text-[#1B4A9C]">Premium Door Collection</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Browse our complete selection of premium closet doors with instant pricing
             </p>
@@ -311,7 +311,7 @@ export default function ClientHomePage() {
             {products.map((product) => (
               <div
                 key={product.name}
-                className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all"
+                className="bg-white shadow-lg overflow-hidden hover:shadow-xl transition-all border border-[#E0E0E0]"
               >
                 <div className="aspect-square relative overflow-hidden">
                   <Image
@@ -320,13 +320,39 @@ export default function ClientHomePage() {
                     fill
                     className="object-cover hover:scale-105 transition-transform duration-300"
                   />
-                  <div className="absolute top-2 left-2 bg-[#9BC4E2] text-[#3B4A7C] px-2 py-1 text-xs font-semibold rounded">
+                  <div className="absolute top-2 left-2 bg-[#1B4A9C] text-white px-3 py-1 text-xs font-semibold">
+                    NEW
+                  </div>
+                  <div className="absolute top-2 right-2 bg-[#9BC4E2] text-[#1B4A9C] px-2 py-1 text-xs font-semibold">
                     {product.category}
                   </div>
                 </div>
-                <div className="p-4">
-                  <h3 className="font-semibold text-[#3B4A7C] mb-2">{product.name}</h3>
-                  <div className="text-2xl font-bold text-[#9BC4E2] mb-4">${product.price}</div>
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-[#2C3E50] mb-2">{product.name}</h3>
+                  <p className="text-[#6B7280] text-sm mb-4">
+                    Classic design with traditional styling for timeless closet solutions.
+                  </p>
+
+                  <div className="mb-4">
+                    <h4 className="font-semibold text-[#1B4A9C] mb-2">Key Specifications:</h4>
+                    <ul className="text-xs text-[#6B7280] space-y-1">
+                      <li>
+                        <strong>Material:</strong> Premium engineered wood core
+                      </li>
+                      <li>
+                        <strong>Finish:</strong> Durable laminate surface
+                      </li>
+                      <li>
+                        <strong>Sizes:</strong> 24", 30", 32", 36" widths
+                      </li>
+                      <li>
+                        <strong>Warranty:</strong> 5-year manufacturer warranty
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div className="text-3xl font-bold text-[#1B4A9C] mb-6">${product.price}.00</div>
+
                   <div className="flex gap-2">
                     <button
                       onClick={() => {
@@ -334,12 +360,12 @@ export default function ClientHomePage() {
                         setSelectedDoorType(product.type)
                         setQuoteStep(2)
                       }}
-                      className="flex-1 bg-[#9BC4E2] text-[#3B4A7C] py-2 rounded font-semibold hover:bg-[#3B4A7C] hover:text-white transition-all text-sm"
+                      className="flex-1 bg-[#1B4A9C] text-white py-3 font-semibold hover:bg-[#153A7E] transition-all text-sm uppercase tracking-wide"
                     >
-                      Quick Quote
+                      Add to Cart
                     </button>
-                    <button className="px-3 py-2 border border-[#9BC4E2] text-[#9BC4E2] rounded hover:bg-[#9BC4E2] hover:text-white transition-all text-sm">
-                      Details
+                    <button className="px-4 py-3 border-2 border-[#1B4A9C] text-[#1B4A9C] hover:bg-[#1B4A9C] hover:text-white transition-all text-sm uppercase tracking-wide">
+                      Full Details
                     </button>
                   </div>
                 </div>
@@ -353,14 +379,14 @@ export default function ClientHomePage() {
         <section className="py-20 bg-white">
           <div className="max-w-4xl mx-auto px-4">
             <div className="text-center mb-12">
-              <h2 className="text-3xl lg:text-4xl font-bold mb-4 text-[#3B4A7C]">Interactive Quote Calculator</h2>
+              <h2 className="text-3xl lg:text-4xl font-bold mb-4 text-[#1B4A9C]">Interactive Quote Calculator</h2>
               <p className="text-lg text-gray-600">Get instant pricing in 3 simple steps</p>
             </div>
 
-            <div className="bg-gray-50 rounded-lg p-8">
+            <div className="bg-[#F5F5F5] p-8 border-2 border-[#E0E0E0]">
               {quoteStep === 1 && (
                 <div className="text-center">
-                  <h3 className="text-2xl font-bold mb-8 text-[#3B4A7C]">Step 1: Choose Your Door</h3>
+                  <h3 className="text-2xl font-bold mb-8 text-[#1B4A9C]">Step 1: Choose Your Door</h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {products.slice(0, 8).map((product) => (
                       <button
@@ -370,9 +396,9 @@ export default function ClientHomePage() {
                           setSelectedDoorType(product.type)
                           setQuoteStep(2)
                         }}
-                        className="p-4 bg-white rounded-lg border-2 border-gray-200 hover:border-[#9BC4E2] transition-all"
+                        className="p-4 bg-white border-2 border-[#E0E0E0] hover:border-[#1B4A9C] transition-all"
                       >
-                        <div className="aspect-square relative mb-3 rounded overflow-hidden">
+                        <div className="aspect-square relative mb-3 overflow-hidden">
                           <Image
                             src={product.image || "/placeholder.svg"}
                             alt={product.name}
@@ -380,8 +406,8 @@ export default function ClientHomePage() {
                             className="object-cover"
                           />
                         </div>
-                        <div className="font-semibold text-[#3B4A7C] mb-1 text-sm">{product.name}</div>
-                        <div className="text-[#9BC4E2] font-bold">${product.price}</div>
+                        <div className="font-semibold text-[#1B4A9C] mb-1 text-sm">{product.name}</div>
+                        <div className="text-[#1B4A9C] font-bold text-lg">${product.price}</div>
                         <div className="text-xs text-gray-500 mt-1">{product.category}</div>
                       </button>
                     ))}
@@ -389,7 +415,7 @@ export default function ClientHomePage() {
                   <div className="mt-6">
                     <button
                       onClick={() => document.getElementById("products")?.scrollIntoView({ behavior: "smooth" })}
-                      className="text-[#9BC4E2] hover:text-[#3B4A7C] font-medium"
+                      className="text-[#9BC4E2] hover:text-[#1B4A9C] font-medium"
                     >
                       View All 12 Products →
                     </button>
@@ -399,14 +425,14 @@ export default function ClientHomePage() {
 
               {quoteStep === 2 && (
                 <div className="text-center">
-                  <h3 className="text-2xl font-bold mb-8 text-[#3B4A7C]">Step 2: Quantity & Size</h3>
+                  <h3 className="text-2xl font-bold mb-8 text-[#1B4A9C]">Step 2: Quantity & Size</h3>
                   <div className="space-y-6">
                     <div>
                       <label className="block text-lg font-medium mb-4">Number of Doors</label>
                       <select
                         value={quantity}
                         onChange={(e) => setQuantity(Number(e.target.value))}
-                        className="w-full max-w-xs mx-auto p-3 border rounded-lg"
+                        className="w-full max-w-xs mx-auto p-3 border-2 border-[#E0E0E0] focus:border-[#1B4A9C] outline-none"
                       >
                         {[1, 2, 3, 4, 5, 6].map((num) => (
                           <option key={num} value={num}>
@@ -422,10 +448,10 @@ export default function ClientHomePage() {
                           <button
                             key={sizeOption}
                             onClick={() => setSize(sizeOption)}
-                            className={`px-6 py-3 rounded-lg font-medium ${
+                            className={`px-6 py-3 font-medium transition-all ${
                               size === sizeOption
-                                ? "bg-[#9BC4E2] text-[#3B4A7C]"
-                                : "bg-white border border-gray-300 text-gray-700"
+                                ? "bg-[#1B4A9C] text-white"
+                                : "bg-white border-2 border-[#E0E0E0] text-gray-700 hover:border-[#1B4A9C]"
                             }`}
                           >
                             {sizeOption}
@@ -435,7 +461,7 @@ export default function ClientHomePage() {
                     </div>
                     <button
                       onClick={() => setQuoteStep(3)}
-                      className="bg-[#9BC4E2] text-[#3B4A7C] px-8 py-3 rounded-lg font-semibold hover:bg-[#3B4A7C] hover:text-white transition-all"
+                      className="bg-[#1B4A9C] text-white px-8 py-3 font-semibold hover:bg-[#153A7E] transition-all uppercase tracking-wide"
                     >
                       Continue
                     </button>
@@ -445,7 +471,7 @@ export default function ClientHomePage() {
 
               {quoteStep === 3 && (
                 <div className="text-center">
-                  <h3 className="text-2xl font-bold mb-8 text-[#3B4A7C]">Step 3: Add-ons</h3>
+                  <h3 className="text-2xl font-bold mb-8 text-[#1B4A9C]">Step 3: Add-ons</h3>
                   <div className="space-y-4">
                     {Object.entries(addOnPrices).map(([addOn, price]) => (
                       <label key={addOn} className="flex items-center justify-center space-x-3 cursor-pointer">
@@ -469,7 +495,7 @@ export default function ClientHomePage() {
                   </div>
                   <button
                     onClick={() => setQuoteStep(4)}
-                    className="mt-6 bg-[#9BC4E2] text-[#3B4A7C] px-8 py-3 rounded-lg font-semibold hover:bg-[#3B4A7C] hover:text-white transition-all"
+                    className="mt-6 bg-[#1B4A9C] text-white px-8 py-3 font-semibold hover:bg-[#153A7E] transition-all uppercase tracking-wide"
                   >
                     Get Final Quote
                   </button>
@@ -478,8 +504,8 @@ export default function ClientHomePage() {
 
               {quoteStep === 4 && (
                 <div className="text-center">
-                  <h3 className="text-2xl font-bold mb-8 text-[#3B4A7C]">Your Custom Quote</h3>
-                  <div className="bg-white p-8 rounded-lg mb-6">
+                  <h3 className="text-2xl font-bold mb-8 text-[#1B4A9C]">Your Custom Quote</h3>
+                  <div className="bg-white p-8 border-2 border-[#E0E0E0] mb-6">
                     {selectedProduct && (
                       <div className="flex justify-center mb-4">
                         <div className="w-24 h-24 relative rounded overflow-hidden">
@@ -498,7 +524,7 @@ export default function ClientHomePage() {
                     {addOns.length > 0 && (
                       <div className="text-sm text-gray-600 mb-4">Add-ons: {addOns.join(", ")}</div>
                     )}
-                    <div className="text-4xl font-bold text-[#9BC4E2] mb-6">${quotePrice}</div>
+                    <div className="text-4xl font-bold text-[#1B4A9C] mb-6">${quotePrice}</div>
                     <div className="text-sm text-gray-600 mb-6">
                       ✓ Professional installation included
                       <br />✓ Lifetime warranty
@@ -506,12 +532,12 @@ export default function ClientHomePage() {
                     </div>
                   </div>
 
-                  <div className="bg-white p-6 rounded-lg">
-                    <h4 className="text-xl font-bold mb-4 text-[#3B4A7C]">Book Your Free Consultation</h4>
+                  <div className="bg-white p-6 border-2 border-[#E0E0E0]">
+                    <h4 className="text-xl font-bold mb-4 text-[#1B4A9C]">Book Your Free Consultation</h4>
                     <div id="83a3d24e-c18d-441c-80d1-d85419ea28ae" className="min-h-[400px]"></div>
                     <button
                       onClick={loadJobberForm}
-                      className="mt-4 bg-[#9BC4E2] text-[#3B4A7C] px-8 py-3 rounded-lg font-semibold hover:bg-[#3B4A7C] hover:text-white transition-all"
+                      className="mt-4 bg-[#1B4A9C] text-white px-8 py-3 font-semibold hover:bg-[#153A7E] transition-all uppercase tracking-wide"
                     >
                       Load Consultation Form
                     </button>
@@ -526,7 +552,7 @@ export default function ClientHomePage() {
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-bold mb-4 text-[#3B4A7C]">Book Your Free Consultation</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold mb-4 text-[#1B4A9C]">Book Your Free Consultation</h2>
             <p className="text-lg text-gray-600">Complete the form below and we'll contact you within 24 hours</p>
           </div>
           <div
@@ -536,7 +562,7 @@ export default function ClientHomePage() {
         </div>
       </section>
 
-      <section className="py-24 bg-gradient-to-r from-[#9BC4E2] to-[#3B4A7C] text-white">
+      <section className="py-24 bg-gradient-to-r from-[#9BC4E2] to-[#1B4A9C] text-white">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold mb-8">Ready to Transform Your Space?</h2>
           <p className="text-xl mb-12">
@@ -545,13 +571,13 @@ export default function ClientHomePage() {
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <button
               onClick={loadJobberForm}
-              className="bg-white text-[#3B4A7C] hover:bg-gray-100 font-bold px-12 py-4 text-xl rounded transition-all"
+              className="bg-white text-[#1B4A9C] hover:bg-gray-100 font-bold px-12 py-4 text-xl transition-all uppercase tracking-wide"
             >
               Get Free Quote Today
             </button>
             <a
               href="tel:6135550123"
-              className="border-2 border-white text-white hover:bg-white hover:text-[#3B4A7C] font-bold px-12 py-4 text-xl rounded transition-all"
+              className="border-2 border-white text-white hover:bg-white hover:text-[#1B4A9C] font-bold px-12 py-4 text-xl transition-all uppercase tracking-wide"
             >
               📞 (613) 555-0123
             </a>
@@ -559,7 +585,7 @@ export default function ClientHomePage() {
         </div>
       </section>
 
-      <footer className="bg-[#3B4A7C] text-white py-16">
+      <footer className="bg-[#1B4A9C] text-white py-16">
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
