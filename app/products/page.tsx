@@ -20,7 +20,7 @@ export default function ProductsPage() {
   const filteredProducts = products
     .filter((product) => {
       const matchesSearch =
-        product.name?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        product.title?.toLowerCase().includes(searchTerm.toLowerCase()) ||
         false ||
         product.description?.toLowerCase().includes(searchTerm.toLowerCase()) ||
         false
@@ -35,7 +35,7 @@ export default function ProductsPage() {
           return b.price - a.price
         case "name":
         default:
-          return (a.name || "").localeCompare(b.name || "")
+          return (a.title || "").localeCompare(b.title || "")
       }
     })
 
@@ -91,19 +91,20 @@ export default function ProductsPage() {
               <div className="aspect-square relative">
                 <Image
                   src={product.image || "/placeholder.svg"}
-                  alt={product.name}
+                  alt={product.title}
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  priority={products.indexOf(product) < 3}
                 />
-                {product.featured && <Badge className="absolute top-2 left-2 bg-blue-600">Featured</Badge>}
+                <Badge className="absolute top-2 left-2 bg-blue-600">New</Badge>
               </div>
             </CardHeader>
             <CardContent className="p-4">
-              <CardTitle className="text-lg mb-2">{product.name}</CardTitle>
+              <CardTitle className="text-lg mb-2">{product.title}</CardTitle>
               <p className="text-gray-600 text-sm mb-3 line-clamp-2">{product.description}</p>
               <div className="flex items-center justify-between">
-                <span className="text-2xl font-bold">${product.price}</span>
+                <span className="text-2xl font-bold">${(product.price / 100).toFixed(2)}</span>
                 <Badge variant="outline">{product.category}</Badge>
               </div>
             </CardContent>

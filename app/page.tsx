@@ -1,6 +1,7 @@
 import { LocalBusinessJSONLD } from "@/lib/seo"
 import { Button } from "@/components/ui/button"
 import HeroVideo from "@/components/HeroVideo"
+import FeaturedProductsShowcase from "@/components/ui/featured-products-showcase"
 
 export const metadata = {
   title: "Premium Closet Doors Ottawa | Official Renin Dealer | Custom Installation | PG Closets",
@@ -241,6 +242,7 @@ export default function Home() {
                 type: "sliding",
                 description: "Space-saving bypass doors",
                 count: "25+ styles",
+                image: "/images/arcat/renin_176732_Continental_Hall_3_Lite.jpg",
                 gradient: "bg-gradient-to-br from-blue-900 via-blue-700 to-blue-300",
               },
               {
@@ -248,6 +250,7 @@ export default function Home() {
                 type: "bifold",
                 description: "Classic folding design",
                 count: "20+ styles",
+                image: "/images/arcat/renin_176733_Continental_Pavilion_5_Lite.jpg",
                 gradient: "bg-gradient-to-br from-gray-800 via-gray-600 to-gray-300",
               },
               {
@@ -255,6 +258,7 @@ export default function Home() {
                 type: "barn",
                 description: "Modern sliding barn style",
                 count: "30+ styles",
+                image: "/images/arcat/renin_192861_Heritage_Herringbone_Chevron_Design.jpg",
                 gradient: "bg-gradient-to-br from-blue-900 via-blue-600 to-white",
               },
               {
@@ -262,6 +266,7 @@ export default function Home() {
                 type: "pivot",
                 description: "Contemporary pivot design",
                 count: "15+ styles",
+                image: "/images/arcat/renin_176736_Continental_Dunmore_K_Lite.jpg",
                 gradient: "bg-gradient-to-br from-blue-600 via-blue-500 to-gray-400",
               },
             ].map((category) => (
@@ -271,9 +276,14 @@ export default function Home() {
                 itemScope
                 itemType="https://schema.org/ProductGroup"
               >
-                <div
-                  className={`w-full aspect-square ${category.gradient} rounded-lg mb-4 flex items-center justify-center group-hover:scale-105 transition-transform duration-300 relative overflow-hidden`}
-                >
+                <div className="w-full aspect-square rounded-lg mb-4 flex items-center justify-center group-hover:scale-105 transition-transform duration-300 relative overflow-hidden">
+                  <img
+                    src={category.image || "/placeholder.svg"}
+                    alt={`${category.name} - ${category.description}`}
+                    className="w-full h-full object-cover rounded-lg"
+                    loading={category.type === "sliding" || category.type === "bifold" ? "eager" : "lazy"}
+                  />
+                  <div className={`absolute inset-0 ${category.gradient} opacity-60 rounded-lg`} />
                   <div className="absolute inset-0 opacity-10">
                     <div
                       className="absolute inset-0"
@@ -313,6 +323,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <FeaturedProductsShowcase />
 
       <section className="section-apple" itemScope itemType="https://schema.org/PriceSpecification">
         <div className="container-apple">
