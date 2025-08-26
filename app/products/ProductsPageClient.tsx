@@ -4,8 +4,8 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import PgHeader from "@/components/PgHeader"
 import PgFooter from "@/components/PgFooter"
-import { ProductCard } from "@/components/ui/product-card"
-import { ProductFilters } from "@/components/ui/product-filters"
+import { ProductCard } from "@/components/store/product-card"
+import { ProductFilters } from "@/components/store/product-filters"
 import { Button } from "@/components/ui/button"
 
 const products = [

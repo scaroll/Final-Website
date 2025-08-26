@@ -65,6 +65,7 @@
     "tailwind-merge": "^2.5.5",
     "tailwindcss-animate": "^1.0.7",
     "use-sync-external-store": "latest",
+    "web-vitals": "^5.1.0",
     "yalc": "latest",
     "zod": "^3.23.8",
     "zustand": "^5.0.8"

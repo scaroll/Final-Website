@@ -12,6 +12,12 @@ const nextConfig = {
     optimizePackageImports: ['lucide-react', '@radix-ui/react-icons'],
   },
   
+  // External packages configuration
+  serverExternalPackages: [],
+  
+  // Core Web Vitals optimizations
+  poweredByHeader: false,
+  
   // Image optimization
   images: {
     unoptimized: false,

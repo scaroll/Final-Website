@@ -3,38 +3,22 @@
 import { useState } from "react"
 import Image from "next/image"
 
-export default function ClientHomePage() {
+interface Product {
+  name: string
+  price: number
+  image: string
+  specs: string
+}
+
+interface ClientHomePageProps {
+  products: Product[]
+}
+
+export default function ClientHomePage({ products }: ClientHomePageProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [quoteStep, setQuoteStep] = useState(0)
   const [selectedProduct, setSelectedProduct] = useState("")
   const [quotePrice, setQuotePrice] = useState(459)
-
-  const products = [
-    {
-      name: "Continental",
-      price: 459,
-      image: "/images/arcat/renin_176732_hd.jpg",
-      specs: "Premium engineered wood core, durable laminate surface",
-    },
-    {
-      name: "Provincial",
-      price: 549,
-      image: "/images/arcat/renin_205750_hd.jpg",
-      specs: "Traditional styling, heavy-duty pivot hinges",
-    },
-    {
-      name: "Gatsby",
-      price: 799,
-      image: "/images/arcat/renin_205729_hd.jpg",
-      specs: "Modern barn door design, premium hardware included",
-    },
-    {
-      name: "Euro",
-      price: 899,
-      image: "/images/arcat/renin_199063_hd.jpg",
-      specs: "Contemporary European styling, soft-close mechanism",
-    },
-  ]
 
   return (
     <div className="min-h-screen bg-white font-sans">

@@ -1,0 +1,1403 @@
+{
+  "store_info": {
+    "name": "PG Closets - Official Renin Dealer Ottawa",
+    "version": "1.0.0",
+    "last_updated": "2025-08-26",
+    "total_products": 65,
+    "currency": "CAD",
+    "tax_rate": 0.13,
+    "location": "Ottawa, Ontario, Canada"
+  },
+  "products": [
+    {
+      "id": "bypass-harmony-60-white",
+      "name": "Harmony 60\" White Bypass Door with Silver Frame",
+      "slug": "harmony-60-white-bypass-door-silver-frame",
+      "category": "Bypass Doors",
+      "collection": "Harmony Collection",
+      "price": 28999,
+      "originalPrice": null,
+      "description": "Sleek white bypass closet door with silver aluminum frame - perfect for modern Ottawa homes. Easy-glide track system included for smooth, quiet operation.",
+      "longDescription": "The Harmony 60\" White Bypass Door combines contemporary style with practical functionality. Featuring a crisp white finish and elegant silver aluminum frame, this door maximizes closet space while adding modern appeal to any Ottawa bedroom or hallway. The smooth-operating bypass system glides effortlessly on premium tracks, making daily use a pleasure. Ideal for master bedrooms, guest rooms, and walk-in closets throughout the Ottawa region.",
+      "image": "/images/arcat/renin_205741_Bypass_Closet_Doors_Harmony_1_Lite.jpg",
+      "images": [
+        "/images/arcat/renin_205741_Bypass_Closet_Doors_Harmony_1_Lite.jpg",
+        "/images/arcat/renin_155725_Bypass_Closet_Doors_Euro_1_Lite.jpg"
+      ],
+      "inStock": true,
+      "stockLevel": 25,
+      "specifications": {
+        "width": "60\"",
+        "height": "80\"",
+        "depth": "1.25\"",
+        "weight": "32 lbs",
+        "material": "Aluminum frame with composite core",
+        "finish": "White laminate with silver frame",
+        "warranty": "5 years limited",
+        "hardwareIncluded": true
+      },
+      "features": [
+        "Easy-glide bypass system",
+        "Silver aluminum frame",
+        "White laminate finish",
+        "Premium track hardware included",
+        "Space-saving design"
+      ],
+      "ottawaKeywords": ["Ottawa closet doors", "bypass doors Ottawa", "modern closet solutions", "bedroom doors Ottawa", "white closet doors"],
+      "roomTypes": ["Bedroom", "Hallway", "Walk-in Closet"],
+      "styles": ["Modern", "Contemporary", "Minimalist"]
+    },
+    {
+      "id": "bypass-harmony-72-espresso",
+      "name": "Harmony 72\" Espresso Bypass Door with Black Frame",
+      "slug": "harmony-72-espresso-bypass-door-black-frame",
+      "category": "Bypass Doors",
+      "collection": "Harmony Collection",
+      "price": 32999,
+      "originalPrice": null,
+      "description": "Premium 72\" espresso bypass door with black aluminum frame - ideal for master bedrooms in Ottawa homes.",
+      "longDescription": "The Harmony 72\" Espresso Bypass Door offers sophisticated style with its rich espresso finish and sleek black aluminum frame. This wider configuration provides generous closet access while the dark finish adds warmth and elegance to Ottawa master bedrooms, executive offices, and upscale condominiums. The smooth bypass operation and premium construction make this door a standout choice for discerning homeowners.",
+      "image": "/images/arcat/renin_155725_Bypass_Closet_Doors_Euro_1_Lite.jpg",
+      "images": [
+        "/images/arcat/renin_155725_Bypass_Closet_Doors_Euro_1_Lite.jpg",
+        "/images/arcat/renin_155725_hd.jpg"
+      ],
+      "inStock": true,
+      "stockLevel": 18,
+      "specifications": {
+        "width": "72\"",
+        "height": "80\"",
+        "depth": "1.25\"",
+        "weight": "38 lbs",
+        "material": "Black aluminum frame with composite core",
+        "finish": "Espresso laminate with black frame",
+        "warranty": "5 years limited",
+        "hardwareIncluded": true
+      },
+      "features": [
+        "Premium Harmony collection",
+        "Rich espresso finish",
+        "Black aluminum frame",
+        "Extra-wide 72\" configuration",
+        "Smooth bypass operation"
+      ],
+      "ottawaKeywords": ["espresso closet doors Ottawa", "72 inch bypass doors", "dark closet doors", "master bedroom Ottawa", "wide closet doors"],
+      "roomTypes": ["Master Bedroom", "Executive Office", "Luxury Condo"],
+      "styles": ["Contemporary", "Sophisticated", "Modern"]
+    },
+    {
+      "id": "bypass-euro-3-lite",
+      "name": "Euro 3-Lite Bypass Door with Glass Panels",
+      "slug": "euro-3-lite-bypass-door-glass-panels",
+      "category": "Bypass Doors",
+      "collection": "Euro Collection",
+      "price": 38999,
+      "originalPrice": null,
+      "description": "Elegant Euro-style bypass door with three glass panels - brings natural light into your closet space while maintaining privacy.",
+      "longDescription": "The Euro 3-Lite Bypass Door features three stylish glass panels that allow natural light to filter into your closet while maintaining privacy. This sophisticated design is perfect for Ottawa homes seeking a European aesthetic, offering both functionality and visual appeal. The clean lines and glass accents make this door ideal for modern and contemporary interiors throughout Ottawa.",
+      "image": "/images/arcat/renin_155732_Bypass_Closet_Doors_Euro_3_Lite.jpg",
+      "images": [
+        "/images/arcat/renin_155732_Bypass_Closet_Doors_Euro_3_Lite.jpg",
+        "/images/arcat/renin_155732_hd.jpg",
+        "/images/arcat/renin_205739_Bypass_Closet_Doors_Euro_3_Lite.jpg"
+      ],
+      "inStock": true,
+      "stockLevel": 15,
+      "specifications": {
+        "width": "60\"",
+        "height": "80\"",
+        "depth": "1.375\"",
+        "weight": "42 lbs",
+        "material": "Aluminum frame with glass panels",
+        "finish": "White frame with clear glass",
+        "warranty": "5 years limited",
+        "hardwareIncluded": true
+      },
+      "features": [
+        "Three glass lite panels",
+        "Euro-style design",
+        "Natural light enhancement",
+        "Privacy maintaining",
+        "Premium aluminum frame"
+      ],
+      "ottawaKeywords": ["Euro closet doors Ottawa", "glass panel doors", "3-lite bypass doors", "European style Ottawa", "light-enhancing doors"],
+      "roomTypes": ["Master Bedroom", "Walk-in Closet", "Luxury Suite"],
+      "styles": ["European", "Contemporary", "Elegant"]
+    },
+    {
+      "id": "bypass-parsons-flush",
+      "name": "Parsons Flush Panel Bypass Door",
+      "slug": "parsons-flush-panel-bypass-door",
+      "category": "Bypass Doors",
+      "collection": "Parsons Collection",
+      "price": 26999,
+      "originalPrice": null,
+      "description": "Clean and minimalist Parsons flush panel bypass door - perfect for modern Ottawa homes seeking simple elegance.",
+      "longDescription": "The Parsons Flush Panel Bypass Door embodies minimalist design with its clean, uninterrupted surface and sleek profile. This door is ideal for Ottawa homeowners who appreciate understated elegance and contemporary design. The flush panel design creates a seamless appearance that complements modern, transitional, and minimalist interior styles popular throughout Ottawa.",
+      "image": "/images/arcat/renin_155706_Bypass_Closet_Doors_Parsons_Flush_Panel_Design.jpg",
+      "images": [
+        "/images/arcat/renin_155706_Bypass_Closet_Doors_Parsons_Flush_Panel_Design.jpg",
+        "/images/arcat/renin_155706_Bypass_Closet_Doors_Parsons_Flush_Panel_Design_v2.jpg",
+        "/images/arcat/renin_155706_hd.jpg"
+      ],
+      "inStock": true,
+      "stockLevel": 22,
+      "specifications": {
+        "width": "60\"",
+        "height": "80\"",
+        "depth": "1.25\"",
+        "weight": "35 lbs",
+        "material": "Composite core with laminate finish",
+        "finish": "White flush panel",
+        "warranty": "5 years limited",
+        "hardwareIncluded": true
+      },
+      "features": [
+        "Flush panel design",
+        "Minimalist aesthetic",
+        "Clean lines",
+        "Versatile white finish",
+        "Contemporary style"
+      ],
+      "ottawaKeywords": ["minimalist closet doors Ottawa", "flush panel doors", "clean design Ottawa", "modern closet doors", "simple closet solutions"],
+      "roomTypes": ["Bedroom", "Condo", "Modern Home"],
+      "styles": ["Minimalist", "Contemporary", "Modern"]
+    },
+    {
+      "id": "bypass-georgian-6-panel",
+      "name": "Georgian 6-Panel Bypass Door",
+      "slug": "georgian-6-panel-bypass-door",
+      "category": "Bypass Doors",
+      "collection": "Georgian Collection",
+      "price": 31999,
+      "originalPrice": null,
+      "description": "Traditional Georgian 6-panel bypass door - brings classic architectural detail to Ottawa homes.",
+      "longDescription": "The Georgian 6-Panel Bypass Door showcases traditional craftsmanship with its authentic six-panel configuration reminiscent of classic Georgian architecture. This door is perfect for Ottawa homes in established neighborhoods like The Glebe, Old Ottawa South, and Westboro, where traditional design elements are cherished. The raised panels create depth and visual interest while maintaining the functionality of modern bypass systems.",
+      "image": "/images/arcat/renin_176725_Bypass_Closet_Doors_Georgian_6_Panel_Design.jpg",
+      "images": [
+        "/images/arcat/renin_176725_Bypass_Closet_Doors_Georgian_6_Panel_Design.jpg"
+      ],
+      "inStock": true,
+      "stockLevel": 20,
+      "specifications": {
+        "width": "60\"",
+        "height": "80\"",
+        "depth": "1.375\"",
+        "weight": "40 lbs",
+        "material": "Engineered wood with raised panels",
+        "finish": "White with raised panel detail",
+        "warranty": "5 years limited",
+        "hardwareIncluded": true
+      },
+      "features": [
+        "Authentic 6-panel design",
+        "Raised panel construction",
+        "Traditional Georgian style",
+        "Quality craftsmanship",
+        "Timeless appeal"
+      ],
+      "ottawaKeywords": ["Georgian closet doors Ottawa", "6-panel doors", "traditional doors Ottawa", "raised panel doors", "classic closet doors"],
+      "roomTypes": ["Traditional Home", "Heritage Property", "Classic Bedroom"],
+      "styles": ["Traditional", "Georgian", "Classic"]
+    },
+    {
+      "id": "bypass-ashbury-2-panel",
+      "name": "Ashbury 2-Panel Bypass Door",
+      "slug": "ashbury-2-panel-bypass-door",
+      "category": "Bypass Doors",
+      "collection": "Ashbury Collection",
+      "price": 29999,
+      "originalPrice": null,
+      "description": "Sophisticated Ashbury 2-panel bypass door - combines traditional panel design with contemporary proportions.",
+      "longDescription": "The Ashbury 2-Panel Bypass Door strikes the perfect balance between traditional craftsmanship and modern proportions. Featuring two elegantly proportioned panels, this door works beautifully in Ottawa homes that blend classic and contemporary elements. The clean panel design provides visual interest without overwhelming the space, making it suitable for both traditional and transitional interiors.",
+      "image": "/images/arcat/renin_176728_Bypass_Closet_Doors_Ashbury_2_Panel_Design.jpg",
+      "images": [
+        "/images/arcat/renin_176728_Bypass_Closet_Doors_Ashbury_2_Panel_Design.jpg"
+      ],
+      "inStock": true,
+      "stockLevel": 24,
+      "specifications": {
+        "width": "60\"",
+        "height": "80\"",
+        "depth": "1.25\"",
+        "weight": "36 lbs",
+        "material": "Engineered wood with panel design",
+        "finish": "White with raised panels",
+        "warranty": "5 years limited",
+        "hardwareIncluded": true
+      },
+      "features": [
+        "Two-panel design",
+        "Balanced proportions",
+        "Transitional style",
+        "Quality construction",
+        "Versatile appeal"
+      ],
+      "ottawaKeywords": ["Ashbury closet doors Ottawa", "2-panel doors", "transitional doors Ottawa", "panel design doors", "balanced proportions"],
+      "roomTypes": ["Bedroom", "Transitional Home", "Classic Interior"],
+      "styles": ["Transitional", "Contemporary", "Traditional"]
+    },
+    {
+      "id": "bifold-euro-1-lite",
+      "name": "Euro 1-Lite Bifold Door with Glass Panel",
+      "slug": "euro-1-lite-bifold-door-glass-panel",
+      "category": "Bifold Doors",
+      "collection": "Euro Collection",
+      "price": 18999,
+      "originalPrice": null,
+      "description": "Elegant Euro 1-Lite bifold door with single glass panel - perfect for smaller closets in Ottawa condos and apartments.",
+      "longDescription": "The Euro 1-Lite Bifold Door features a sophisticated single glass panel that adds elegance and light to smaller closet spaces. This space-efficient bifold design is ideal for Ottawa condos, apartments, and smaller bedrooms where every square foot matters. The glass panel allows natural light to filter through while the compact folding mechanism requires minimal clearance space.",
+      "image": "/images/arcat/renin_155701_Bifold_Closet_Door_Euro_1_Lite.jpg",
+      "images": [
+        "/images/arcat/renin_155701_Bifold_Closet_Door_Euro_1_Lite.jpg",
+        "/images/arcat/renin_155701_Bifold_Closet_Door_Euro_1_Lite_v2.jpg",
+        "/images/arcat/renin_155701_hd.jpg"
+      ],
+      "inStock": true,
+      "stockLevel": 30,
+      "specifications": {
+        "width": "32\"",
+        "height": "80\"",
+        "depth": "1.25\"",
+        "weight": "22 lbs",
+        "material": "Aluminum frame with glass panel",
+        "finish": "White frame with clear glass",
+        "warranty": "3 years limited",
+        "hardwareIncluded": true
+      },
+      "features": [
+        "Single glass lite panel",
+        "Space-saving bifold design",
+        "Light-enhancing glass",
+        "Compact operation",
+        "Euro-style elegance"
+      ],
+      "ottawaKeywords": ["bifold doors Ottawa", "Euro 1-lite doors", "glass panel bifold", "condo closet doors", "space-saving doors"],
+      "roomTypes": ["Condo", "Apartment", "Small Bedroom"],
+      "styles": ["European", "Contemporary", "Space-Saving"]
+    },
+    {
+      "id": "bifold-euro-3-lite",
+      "name": "Euro 3-Lite Bifold Door with Triple Glass Panels",
+      "slug": "euro-3-lite-bifold-door-triple-glass-panels",
+      "category": "Bifold Doors",
+      "collection": "Euro Collection",
+      "price": 22999,
+      "originalPrice": null,
+      "description": "Sophisticated Euro 3-Lite bifold door with three glass panels - maximizes natural light while saving space.",
+      "longDescription": "The Euro 3-Lite Bifold Door features three elegant glass panels that flood your closet with natural light while maintaining the space-saving benefits of bifold design. This premium door is perfect for Ottawa homes where natural light is precious, particularly during the winter months. The triple glass configuration creates visual depth and architectural interest.",
+      "image": "/images/arcat/renin_155731_Bifold_Closet_Door_Euro_3_Lite.jpg",
+      "images": [
+        "/images/arcat/renin_155731_Bifold_Closet_Door_Euro_3_Lite.jpg",
+        "/images/arcat/renin_155731_Bifold_Closet_Door_Euro_3_Lite_v2.jpg",
+        "/images/arcat/renin_155731_hd.jpg"
+      ],
+      "inStock": true,
+      "stockLevel": 25,
+      "specifications": {
+        "width": "36\"",
+        "height": "80\"",
+        "depth": "1.375\"",
+        "weight": "28 lbs",
+        "material": "Aluminum frame with three glass panels",
+        "finish": "White frame with clear glass",
+        "warranty": "5 years limited",
+        "hardwareIncluded": true
+      },
+      "features": [
+        "Three glass lite panels",
+        "Maximum light transmission",
+        "Premium Euro design",
+        "Space-efficient folding",
+        "Architectural detail"
+      ],
+      "ottawaKeywords": ["3-lite bifold doors Ottawa", "triple glass panels", "Euro bifold doors", "light-maximizing doors", "premium bifold Ottawa"],
+      "roomTypes": ["Master Bedroom", "Walk-in Closet", "Luxury Suite"],
+      "styles": ["European", "Premium", "Contemporary"]
+    },
+    {
+      "id": "bifold-georgian-6-panel",
+      "name": "Georgian 6-Panel Bifold Door",
+      "slug": "georgian-6-panel-bifold-door",
+      "category": "Bifold Doors",
+      "collection": "Georgian Collection",
+      "price": 19999,
+      "originalPrice": null,
+      "description": "Traditional Georgian 6-panel bifold door - brings classic architectural detail to smaller spaces in Ottawa homes.",
+      "longDescription": "The Georgian 6-Panel Bifold Door combines the space-saving benefits of bifold operation with the timeless appeal of traditional Georgian paneling. This door is perfect for Ottawa homes in established neighborhoods where architectural authenticity is valued. The six raised panels create classic proportions and visual interest while the bifold mechanism makes it ideal for areas with limited clearance.",
+      "image": "/images/arcat/renin_205750_Bifold_Closet_Door_Georgian_6_Panel_Insert_Design.jpg",
+      "images": [
+        "/images/arcat/renin_205750_Bifold_Closet_Door_Georgian_6_Panel_Insert_Design.jpg",
+        "/images/arcat/renin_205750_hd.jpg"
+      ],
+      "inStock": true,
+      "stockLevel": 28,
+      "specifications": {
+        "width": "32\"",
+        "height": "80\"",
+        "depth": "1.375\"",
+        "weight": "26 lbs",
+        "material": "Engineered wood with raised panels",
+        "finish": "White with panel inserts",
+        "warranty": "3 years limited",
+        "hardwareIncluded": true
+      },
+      "features": [
+        "Authentic 6-panel design",
+        "Raised panel construction",
+        "Space-saving bifold",
+        "Traditional styling",
+        "Quality craftsmanship"
+      ],
+      "ottawaKeywords": ["Georgian bifold doors Ottawa", "6-panel bifold", "traditional bifold doors", "raised panel bifold", "heritage style doors"],
+      "roomTypes": ["Traditional Home", "Heritage Property", "Classic Interior"],
+      "styles": ["Georgian", "Traditional", "Heritage"]
+    },
+    {
+      "id": "barn-heritage-cross-brace",
+      "name": "Heritage Authentic Cross Brace Barn Door",
+      "slug": "heritage-authentic-cross-brace-barn-door",
+      "category": "Barn Doors",
+      "collection": "Heritage Collection",
+      "price": 52999,
+      "originalPrice": null,
+      "description": "Authentic Heritage cross brace barn door - brings genuine farmhouse character to Ottawa homes with rustic appeal.",
+      "longDescription": "The Heritage Authentic Cross Brace Barn Door showcases traditional barn door construction with genuine cross-brace detailing that reflects authentic farmhouse heritage. This door is perfect for Ottawa homes seeking to add rustic character, from countryside properties in Carp and Dunrobin to urban homes embracing farmhouse chic design. The substantial construction and authentic detailing make this door a true statement piece.",
+      "image": "/images/arcat/renin_192853_Heritage_Authentic_Cross_Brace_Design.jpg",
+      "images": [
+        "/images/arcat/renin_192853_Heritage_Authentic_Cross_Brace_Design.jpg",
+        "/images/arcat/renin_192853_hd.jpg"
+      ],
+      "inStock": true,
+      "stockLevel": 12,
+      "specifications": {
+        "width": "42\"",
+        "height": "84\"",
+        "depth": "1.75\"",
+        "weight": "55 lbs",
+        "material": "Engineered wood with cross-brace design",
+        "finish": "Natural wood with rustic treatment",
+        "warranty": "5 years limited",
+        "hardwareIncluded": true
+      },
+      "features": [
+        "Authentic cross-brace design",
+        "Heritage farmhouse styling",
+        "Substantial construction",
+        "Rustic appeal",
+        "Statement piece design"
+      ],
+      "ottawaKeywords": ["heritage barn doors Ottawa", "cross brace barn door", "farmhouse doors Ottawa", "rustic barn doors", "authentic barn door design"],
+      "roomTypes": ["Farmhouse", "Rustic Home", "Country Property"],
+      "styles": ["Heritage", "Farmhouse", "Rustic"]
+    },
+    {
+      "id": "barn-metal-works-3-panel",
+      "name": "Continental Metal Works 3-Panel Barn Door",
+      "slug": "continental-metal-works-3-panel-barn-door",
+      "category": "Barn Doors",
+      "collection": "Continental Collection",
+      "price": 46999,
+      "originalPrice": null,
+      "description": "Industrial Continental Metal Works 3-panel barn door with metal inserts - perfect for modern industrial Ottawa lofts.",
+      "longDescription": "The Continental Metal Works 3-Panel Barn Door combines wood construction with industrial metal panel inserts, creating a sophisticated industrial aesthetic. This door is ideal for Ottawa lofts, industrial-style condos, and contemporary homes in areas like Little Italy and Hintonburg where industrial design elements are popular. The three metal panels add visual interest while maintaining the functionality of a sliding barn door system.",
+      "image": "/images/arcat/renin_192856_Continental_Metal_Works_3_Panel_Metal_Inserts.jpg",
+      "images": [
+        "/images/arcat/renin_192856_Continental_Metal_Works_3_Panel_Metal_Inserts.jpg",
+        "/images/arcat/renin_192856_hd.jpg"
+      ],
+      "inStock": true,
+      "stockLevel": 15,
+      "specifications": {
+        "width": "42\"",
+        "height": "84\"",
+        "depth": "1.75\"",
+        "weight": "62 lbs",
+        "material": "Wood frame with metal panel inserts",
+        "finish": "Dark wood with metal accents",
+        "warranty": "7 years limited",
+        "hardwareIncluded": true
+      },
+      "features": [
+        "Three metal panel inserts",
+        "Industrial design aesthetic",
+        "Heavy-duty construction",
+        "Contemporary styling",
+        "Unique visual appeal"
+      ],
+      "ottawaKeywords": ["industrial barn doors Ottawa", "metal panel barn door", "Continental collection", "loft doors Ottawa", "modern industrial doors"],
+      "roomTypes": ["Loft", "Industrial Home", "Contemporary Space"],
+      "styles": ["Industrial", "Contemporary", "Modern"]
+    },
+    {
+      "id": "barn-heritage-herringbone",
+      "name": "Heritage Herringbone Chevron Barn Door",
+      "slug": "heritage-herringbone-chevron-barn-door",
+      "category": "Barn Doors",
+      "collection": "Heritage Collection",
+      "price": 58999,
+      "originalPrice": null,
+      "description": "Stunning Heritage herringbone chevron barn door - sophisticated pattern design for upscale Ottawa homes.",
+      "longDescription": "The Heritage Herringbone Chevron Barn Door features an intricate herringbone pattern that creates sophisticated visual texture and depth. This premium barn door design is perfect for upscale Ottawa homes where craftsmanship and design detail are appreciated. The chevron pattern adds architectural interest while the substantial construction ensures smooth operation and lasting beauty.",
+      "image": "/images/arcat/renin_192861_Heritage_Herringbone_Chevron_Design.jpg",
+      "images": [
+        "/images/arcat/renin_192861_Heritage_Herringbone_Chevron_Design.jpg",
+        "/images/arcat/renin_192861_hd.jpg"
+      ],
+      "inStock": true,
+      "stockLevel": 10,
+      "specifications": {
+        "width": "42\"",
+        "height": "84\"",
+        "depth": "1.75\"",
+        "weight": "58 lbs",
+        "material": "Premium wood with herringbone pattern",
+        "finish": "Natural wood with protective coating",
+        "warranty": "7 years limited",
+        "hardwareIncluded": true
+      },
+      "features": [
+        "Intricate herringbone pattern",
+        "Premium craftsmanship",
+        "Sophisticated design",
+        "Substantial construction",
+        "Architectural detail"
+      ],
+      "ottawaKeywords": ["herringbone barn doors Ottawa", "chevron pattern doors", "premium barn doors Ottawa", "sophisticated barn doors", "pattern design doors"],
+      "roomTypes": ["Luxury Home", "Executive Suite", "Designer Interior"],
+      "styles": ["Sophisticated", "Premium", "Designer"]
+    },
+    {
+      "id": "barn-gladstone-angled-plank",
+      "name": "Heritage Gladstone 2-Lite Angled Plank Barn Door",
+      "slug": "heritage-gladstone-2-lite-angled-plank-barn-door",
+      "category": "Barn Doors",
+      "collection": "Heritage Collection",
+      "price": 49999,
+      "originalPrice": null,
+      "description": "Unique Heritage Gladstone 2-lite angled plank barn door - combines glass panels with distinctive plank design.",
+      "longDescription": "The Heritage Gladstone 2-Lite Angled Plank Barn Door features a unique combination of two glass panels and distinctive angled plank construction. This design creates visual interest through the interplay of light and shadow while maintaining the rustic appeal of traditional barn door styling. Perfect for Ottawa homes that want to blend rustic charm with contemporary functionality.",
+      "image": "/images/arcat/renin_192859_Heritage_Gladstone_2_Lite_Angled_Plank_Design.jpg",
+      "images": [
+        "/images/arcat/renin_192859_Heritage_Gladstone_2_Lite_Angled_Plank_Design.jpg",
+        "/images/arcat/renin_192859_hd.jpg"
+      ],
+      "inStock": true,
+      "stockLevel": 14,
+      "specifications": {
+        "width": "42\"",
+        "height": "84\"",
+        "depth": "1.75\"",
+        "weight": "52 lbs",
+        "material": "Wood with glass panels and angled planks",
+        "finish": "Natural wood with clear glass",
+        "warranty": "5 years limited",
+        "hardwareIncluded": true
+      },
+      "features": [
+        "Two glass lite panels",
+        "Angled plank design",
+        "Light and shadow interplay",
+        "Unique visual appeal",
+        "Heritage craftsmanship"
+      ],
+      "ottawaKeywords": ["Gladstone barn doors Ottawa", "2-lite barn door", "angled plank design", "glass panel barn door", "unique barn doors"],
+      "roomTypes": ["Rustic Home", "Contemporary Farmhouse", "Designer Space"],
+      "styles": ["Heritage", "Contemporary Rustic", "Designer"]
+    },
+    {
+      "id": "barn-sierra-k-design",
+      "name": "Heritage Sierra K-Design Barn Door",
+      "slug": "heritage-sierra-k-design-barn-door",
+      "category": "Barn Doors",
+      "collection": "Heritage Collection",
+      "price": 44999,
+      "originalPrice": null,
+      "description": "Classic Heritage Sierra K-design barn door - features traditional K-pattern bracing for authentic barn door appeal.",
+      "longDescription": "The Heritage Sierra K-Design Barn Door showcases the classic K-pattern bracing that's synonymous with traditional barn door construction. This authentic design element creates strong visual lines while providing structural integrity. Perfect for Ottawa homes seeking genuine barn door character, from rural properties to urban homes embracing farmhouse style.",
+      "image": "/images/arcat/renin_205717_Heritage_Sierra_K_Design.jpg",
+      "images": [
+        "/images/arcat/renin_205717_Heritage_Sierra_K_Design.jpg",
+        "/images/arcat/renin_205717_hd.jpg"
+      ],
+      "inStock": true,
+      "stockLevel": 18,
+      "specifications": {
+        "width": "42\"",
+        "height": "84\"",
+        "depth": "1.75\"",
+        "weight": "50 lbs",
+        "material": "Premium wood construction",
+        "finish": "Natural wood with protective stain",
+        "warranty": "5 years limited",
+        "hardwareIncluded": true
+      },
+      "features": [
+        "Classic K-design pattern",
+        "Authentic barn door styling",
+        "Traditional bracing",
+        "Structural integrity",
+        "Timeless appeal"
+      ],
+      "ottawaKeywords": ["Sierra barn doors Ottawa", "K-design barn door", "traditional barn doors", "authentic barn door pattern", "heritage barn doors"],
+      "roomTypes": ["Farmhouse", "Traditional Home", "Country Style"],
+      "styles": ["Traditional", "Heritage", "Farmhouse"]
+    },
+    {
+      "id": "barn-salinas-z-design",
+      "name": "Heritage Salinas Z-Design Barn Door",
+      "slug": "heritage-salinas-z-design-barn-door",
+      "category": "Barn Doors",
+      "collection": "Heritage Collection",
+      "price": 47999,
+      "originalPrice": null,
+      "description": "Dynamic Heritage Salinas Z-design barn door - bold diagonal bracing creates striking visual impact.",
+      "longDescription": "The Heritage Salinas Z-Design Barn Door features dramatic diagonal bracing that creates a bold Z-pattern across the door surface. This dynamic design adds visual energy and modern appeal to traditional barn door construction. Ideal for Ottawa homes that want to make a statement while maintaining the rustic charm of barn door style.",
+      "image": "/images/arcat/renin_176737_Heritage_Salinas_Z_Design.jpg",
+      "images": [
+        "/images/arcat/renin_176737_Heritage_Salinas_Z_Design.jpg",
+        "/images/arcat/renin_176737_hd.jpg"
+      ],
+      "inStock": true,
+      "stockLevel": 16,
+      "specifications": {
+        "width": "42\"",
+        "height": "84\"",
+        "depth": "1.75\"",
+        "weight": "51 lbs",
+        "material": "Premium wood with Z-pattern bracing",
+        "finish": "Natural wood with modern stain",
+        "warranty": "5 years limited",
+        "hardwareIncluded": true
+      },
+      "features": [
+        "Bold Z-design pattern",
+        "Diagonal bracing",
+        "Dynamic visual impact",
+        "Modern rustic appeal",
+        "Statement piece design"
+      ],
+      "ottawaKeywords": ["Salinas barn doors Ottawa", "Z-design barn door", "diagonal brace barn door", "modern rustic doors", "statement barn doors"],
+      "roomTypes": ["Modern Farmhouse", "Contemporary Rustic", "Statement Interior"],
+      "styles": ["Modern Rustic", "Contemporary", "Statement"]
+    },
+    {
+      "id": "barn-stone-k-design",
+      "name": "Easy Build Stone K-Design Barn Door",
+      "slug": "easy-build-stone-k-design-barn-door",
+      "category": "Barn Doors",
+      "collection": "Easy Build Collection",
+      "price": 39999,
+      "originalPrice": null,
+      "description": "Affordable Easy Build Stone K-design barn door - DIY-friendly installation with traditional styling.",
+      "longDescription": "The Easy Build Stone K-Design Barn Door offers traditional barn door styling with simplified installation designed for Ottawa DIY enthusiasts. This door features the classic K-pattern bracing with a neutral stone finish that complements a wide range of interior styles. The easy-build system includes all necessary hardware and clear instructions for straightforward installation.",
+      "image": "/images/arcat/renin_176736_Easy_Build_Stone_K_Design.jpg",
+      "images": [
+        "/images/arcat/renin_176736_Easy_Build_Stone_K_Design.jpg",
+        "/images/arcat/renin_176736_hd.jpg"
+      ],
+      "inStock": true,
+      "stockLevel": 25,
+      "specifications": {
+        "width": "42\"",
+        "height": "84\"",
+        "depth": "1.5\"",
+        "weight": "45 lbs",
+        "material": "Composite construction",
+        "finish": "Stone gray with K-pattern",
+        "warranty": "3 years limited",
+        "hardwareIncluded": true
+      },
+      "features": [
+        "DIY-friendly installation",
+        "Classic K-design pattern",
+        "Neutral stone finish",
+        "Complete hardware kit",
+        "Affordable pricing"
+      ],
+      "ottawaKeywords": ["DIY barn doors Ottawa", "easy build barn doors", "Stone K-design", "affordable barn doors Ottawa", "simple installation doors"],
+      "roomTypes": ["DIY Project", "Budget-Friendly", "Easy Installation"],
+      "styles": ["DIY", "Traditional", "Budget-Friendly"]
+    },
+    {
+      "id": "barn-brownstone-stone-k",
+      "name": "Brownstone Stone K-Design Barn Door",
+      "slug": "brownstone-stone-k-design-barn-door",
+      "category": "Barn Doors",
+      "collection": "Brownstone Collection",
+      "price": 43999,
+      "originalPrice": null,
+      "description": "Rich Brownstone Stone K-design barn door - warm earth tones with traditional K-pattern bracing.",
+      "longDescription": "The Brownstone Stone K-Design Barn Door features rich earth tones and traditional K-pattern construction that brings warmth and character to Ottawa homes. The brownstone finish offers sophisticated color depth while the classic K-design provides authentic barn door appeal. This door works beautifully in both traditional and transitional interiors throughout Ottawa.",
+      "image": "/images/arcat/renin_192857_Brownstone_Stone_K_Design.jpg",
+      "images": [
+        "/images/arcat/renin_192857_Brownstone_Stone_K_Design.jpg",
+        "/images/arcat/renin_192857_hd.jpg"
+      ],
+      "inStock": true,
+      "stockLevel": 19,
+      "specifications": {
+        "width": "42\"",
+        "height": "84\"",
+        "depth": "1.75\"",
+        "weight": "53 lbs",
+        "material": "Wood construction with brownstone finish",
+        "finish": "Rich brownstone with K-pattern",
+        "warranty": "5 years limited",
+        "hardwareIncluded": true
+      },
+      "features": [
+        "Rich brownstone finish",
+        "Classic K-design pattern",
+        "Warm earth tones",
+        "Traditional construction",
+        "Sophisticated appeal"
+      ],
+      "ottawaKeywords": ["Brownstone barn doors Ottawa", "earth tone barn doors", "warm finish barn doors", "traditional K-pattern", "sophisticated barn doors"],
+      "roomTypes": ["Traditional Home", "Warm Interior", "Earth-Tone Design"],
+      "styles": ["Traditional", "Warm", "Sophisticated"]
+    },
+    {
+      "id": "barn-continental-hall-3-lite",
+      "name": "Continental Hall 3-Lite Barn Door",
+      "slug": "continental-hall-3-lite-barn-door",
+      "category": "Barn Doors",
+      "collection": "Continental Collection",
+      "price": 41999,
+      "originalPrice": null,
+      "description": "Elegant Continental Hall 3-lite barn door - combines traditional barn door design with three glass panels.",
+      "longDescription": "The Continental Hall 3-Lite Barn Door seamlessly blends traditional barn door aesthetics with contemporary functionality through three strategically placed glass panels. This design allows natural light to flow while maintaining privacy and rustic appeal. Perfect for Ottawa homes seeking to balance traditional charm with modern livability.",
+      "image": "/images/arcat/renin_176729_Continental_Hall_3_Lite.jpg",
+      "images": [
+        "/images/arcat/renin_176729_Continental_Hall_3_Lite.jpg"
+      ],
+      "inStock": true,
+      "stockLevel": 21,
+      "specifications": {
+        "width": "42\"",
+        "height": "84\"",
+        "depth": "1.75\"",
+        "weight": "49 lbs",
+        "material": "Wood frame with three glass panels",
+        "finish": "Natural wood with clear glass",
+        "warranty": "5 years limited",
+        "hardwareIncluded": true
+      },
+      "features": [
+        "Three glass lite panels",
+        "Traditional barn door frame",
+        "Natural light enhancement",
+        "Privacy with transparency",
+        "Continental styling"
+      ],
+      "ottawaKeywords": ["Hall 3-lite barn door", "glass panel barn doors Ottawa", "Continental barn doors", "light-enhancing barn doors", "traditional modern blend"],
+      "roomTypes": ["Hallway", "Living Space", "Traditional Modern"],
+      "styles": ["Traditional Modern", "Continental", "Light-Enhancing"]
+    },
+    {
+      "id": "barn-dunmore-k-lite",
+      "name": "Continental Dunmore K-Lite Barn Door",
+      "slug": "continental-dunmore-k-lite-barn-door",
+      "category": "Barn Doors",
+      "collection": "Continental Collection",
+      "price": 45999,
+      "originalPrice": null,
+      "description": "Sophisticated Continental Dunmore K-lite barn door - traditional K-pattern with integrated glass panel.",
+      "longDescription": "The Continental Dunmore K-Lite Barn Door features the classic K-pattern bracing with an integrated glass panel that adds contemporary functionality to traditional design. This sophisticated combination creates visual interest while allowing controlled light transmission. Ideal for Ottawa homes that appreciate both heritage design elements and modern convenience.",
+      "image": "/images/arcat/renin_176732_Continental_Dunmore_K_Lite.jpg",
+      "images": [
+        "/images/arcat/renin_176732_Continental_Dunmore_K_Lite.jpg",
+        "/images/arcat/renin_176732_hd.jpg"
+      ],
+      "inStock": true,
+      "stockLevel": 17,
+      "specifications": {
+        "width": "42\"",
+        "height": "84\"",
+        "depth": "1.75\"",
+        "weight": "48 lbs",
+        "material": "Wood frame with K-pattern and glass panel",
+        "finish": "Natural wood with clear glass insert",
+        "warranty": "5 years limited",
+        "hardwareIncluded": true
+      },
+      "features": [
+        "K-pattern with glass panel",
+        "Traditional modern blend",
+        "Controlled light transmission",
+        "Sophisticated design",
+        "Continental craftsmanship"
+      ],
+      "ottawaKeywords": ["Dunmore barn doors Ottawa", "K-lite barn door", "glass insert barn door", "traditional modern barn door", "Continental collection"],
+      "roomTypes": ["Sophisticated Interior", "Traditional Modern", "Heritage Home"],
+      "styles": ["Traditional Modern", "Sophisticated", "Heritage"]
+    },
+    {
+      "id": "barn-pavilion-5-lite",
+      "name": "Continental Pavilion 5-Lite Barn Door",
+      "slug": "continental-pavilion-5-lite-barn-door",
+      "category": "Barn Doors",
+      "collection": "Continental Collection",
+      "price": 54999,
+      "originalPrice": null,
+      "description": "Premium Continental Pavilion 5-lite barn door - maximum light with five elegant glass panels.",
+      "longDescription": "The Continental Pavilion 5-Lite Barn Door represents the pinnacle of light-enhancing barn door design with five carefully proportioned glass panels. This premium door maximizes natural light transmission while maintaining the structural integrity and visual appeal of traditional barn door construction. Perfect for Ottawa spaces where light is at a premium, especially during winter months.",
+      "image": "/images/arcat/renin_176733_Continental_Pavilion_5_Lite.jpg",
+      "images": [
+        "/images/arcat/renin_176733_Continental_Pavilion_5_Lite.jpg",
+        "/images/arcat/renin_176733_hd.jpg"
+      ],
+      "inStock": true,
+      "stockLevel": 13,
+      "specifications": {
+        "width": "42\"",
+        "height": "84\"",
+        "depth": "1.75\"",
+        "weight": "46 lbs",
+        "material": "Premium wood frame with five glass panels",
+        "finish": "Natural wood with clear glass",
+        "warranty": "7 years limited",
+        "hardwareIncluded": true
+      },
+      "features": [
+        "Five glass lite panels",
+        "Maximum light transmission",
+        "Premium construction",
+        "Elegant proportions",
+        "Continental design"
+      ],
+      "ottawaKeywords": ["Pavilion 5-lite barn door", "maximum light barn door", "five panel glass barn door", "premium barn doors Ottawa", "Continental collection"],
+      "roomTypes": ["Light-Starved Space", "Premium Interior", "Luxury Home"],
+      "styles": ["Premium", "Light-Maximizing", "Luxury"]
+    },
+    {
+      "id": "barn-driftwood-k-design",
+      "name": "Mix & Match Hardware Driftwood K-Design Barn Door",
+      "slug": "mix-match-hardware-driftwood-k-design-barn-door",
+      "category": "Barn Doors",
+      "collection": "Mix & Match Collection",
+      "price": 48999,
+      "originalPrice": null,
+      "description": "Versatile Mix & Match Driftwood K-design barn door - coastal-inspired finish with customizable hardware options.",
+      "longDescription": "The Mix & Match Hardware Driftwood K-Design Barn Door features a beautiful coastal-inspired driftwood finish with traditional K-pattern construction. The Mix & Match system allows Ottawa homeowners to choose from various hardware finishes to perfectly complement their interior design. The weathered driftwood appearance adds character and warmth to any space.",
+      "image": "/images/arcat/renin_205731_Mix_Match_Hardware_Driftwood_K_Design.jpg",
+      "images": [
+        "/images/arcat/renin_205731_Mix_Match_Hardware_Driftwood_K_Design.jpg"
+      ],
+      "inStock": true,
+      "stockLevel": 20,
+      "specifications": {
+        "width": "42\"",
+        "height": "84\"",
+        "depth": "1.75\"",
+        "weight": "52 lbs",
+        "material": "Wood with driftwood finish treatment",
+        "finish": "Weathered driftwood with K-pattern",
+        "warranty": "5 years limited",
+        "hardwareIncluded": false
+      },
+      "features": [
+        "Coastal driftwood finish",
+        "Classic K-design pattern",
+        "Customizable hardware options",
+        "Weathered character",
+        "Mix & Match flexibility"
+      ],
+      "ottawaKeywords": ["driftwood barn doors Ottawa", "coastal barn doors", "Mix Match barn doors", "weathered finish barn doors", "customizable hardware"],
+      "roomTypes": ["Coastal Style", "Beach House", "Relaxed Interior"],
+      "styles": ["Coastal", "Weathered", "Customizable"]
+    },
+    {
+      "id": "hardware-spectrum-bent-strap",
+      "name": "Spectrum Bent Strap Barn Door Hardware Kit",
+      "slug": "spectrum-bent-strap-barn-door-hardware-kit",
+      "category": "Hardware",
+      "collection": "Spectrum Hardware",
+      "price": 16999,
+      "originalPrice": null,
+      "description": "Heavy-duty Spectrum bent strap barn door hardware kit - industrial strength for smooth operation.",
+      "longDescription": "The Spectrum Bent Strap Barn Door Hardware Kit provides heavy-duty performance with its distinctive bent strap design. This industrial-strength hardware system ensures smooth, quiet operation while adding authentic barn door character. Perfect for Ottawa installations where durability and style are equally important. The bent strap design accommodates various door thicknesses and provides superior support.",
+      "image": "/images/arcat/renin_176738_Barn_Door_Hardware_Kits_Spectrum_Bent_Strap.jpg",
+      "images": [
+        "/images/arcat/renin_176738_Barn_Door_Hardware_Kits_Spectrum_Bent_Strap.jpg"
+      ],
+      "inStock": true,
+      "stockLevel": 35,
+      "specifications": {
+        "trackLength": "6 feet",
+        "weightCapacity": "150 lbs",
+        "doorThickness": "1.375\" - 1.75\"",
+        "material": "Steel construction",
+        "finish": "Black powder coating",
+        "warranty": "10 years limited",
+        "installation": "Wall mount"
+      },
+      "features": [
+        "Heavy-duty bent strap design",
+        "150 lb weight capacity",
+        "Smooth rolling operation",
+        "Industrial strength",
+        "Complete hardware kit"
+      ],
+      "ottawaKeywords": ["barn door hardware Ottawa", "Spectrum hardware", "bent strap hardware", "heavy duty barn door hardware", "industrial hardware"],
+      "compatibleWith": ["All barn door styles", "Industrial doors", "Heavy doors"],
+      "styles": ["Industrial", "Heavy-Duty", "Professional"]
+    },
+    {
+      "id": "hardware-spectrum-straight-strap",
+      "name": "Spectrum Straight Strap Barn Door Hardware Kit",
+      "slug": "spectrum-straight-strap-barn-door-hardware-kit",
+      "category": "Hardware",
+      "collection": "Spectrum Hardware",
+      "price": 15999,
+      "originalPrice": null,
+      "description": "Clean Spectrum straight strap barn door hardware kit - minimalist design with professional performance.",
+      "longDescription": "The Spectrum Straight Strap Barn Door Hardware Kit offers a clean, minimalist approach to barn door hardware with straight strap hangers that provide reliable support and smooth operation. This design is ideal for Ottawa homes seeking a more contemporary look while maintaining the functionality of traditional barn door systems. The straight strap design works well with modern and transitional interiors.",
+      "image": "/images/arcat/renin_176739_Barn_Door_Hardware_Kits_Spectrum_Straight_Strap.jpg",
+      "images": [
+        "/images/arcat/renin_176739_Barn_Door_Hardware_Kits_Spectrum_Straight_Strap.jpg"
+      ],
+      "inStock": true,
+      "stockLevel": 40,
+      "specifications": {
+        "trackLength": "6 feet",
+        "weightCapacity": "125 lbs",
+        "doorThickness": "1.25\" - 1.75\"",
+        "material": "Steel construction",
+        "finish": "Black powder coating",
+        "warranty": "10 years limited",
+        "installation": "Wall mount"
+      },
+      "features": [
+        "Clean straight strap design",
+        "125 lb weight capacity",
+        "Contemporary appearance",
+        "Reliable performance",
+        "Complete hardware kit"
+      ],
+      "ottawaKeywords": ["straight strap hardware", "modern barn door hardware Ottawa", "contemporary hardware", "minimalist barn door hardware", "clean design hardware"],
+      "compatibleWith": ["Modern barn doors", "Contemporary doors", "Minimalist designs"],
+      "styles": ["Contemporary", "Minimalist", "Modern"]
+    },
+    {
+      "id": "hardware-spectrum-top-strap",
+      "name": "Spectrum Top of Door Strap Hardware Kit",
+      "slug": "spectrum-top-of-door-strap-hardware-kit",
+      "category": "Hardware",
+      "collection": "Spectrum Hardware",
+      "price": 17999,
+      "originalPrice": null,
+      "description": "Innovative Spectrum top of door strap hardware kit - unique mounting system for specialized installations.",
+      "longDescription": "The Spectrum Top of Door Strap Hardware Kit features an innovative mounting system that attaches at the top of the door, providing unique installation flexibility for Ottawa homes with specific mounting requirements. This system is ideal for situations where traditional side-mounted hardware isn't suitable, offering the same reliable Spectrum performance with alternative mounting options.",
+      "image": "/images/arcat/renin_176740_Barn_Door_Hardware_Kits_Spectrum_Top_of_Door_Strap.jpg",
+      "images": [
+        "/images/arcat/renin_176740_Barn_Door_Hardware_Kits_Spectrum_Top_of_Door_Strap.jpg"
+      ],
+      "inStock": true,
+      "stockLevel": 25,
+      "specifications": {
+        "trackLength": "6 feet",
+        "weightCapacity": "135 lbs",
+        "doorThickness": "1.375\" - 2\"",
+        "material": "Steel construction",
+        "finish": "Black powder coating",
+        "warranty": "10 years limited",
+        "installation": "Top mount"
+      },
+      "features": [
+        "Top of door mounting",
+        "135 lb weight capacity",
+        "Unique installation flexibility",
+        "Specialized mounting system",
+        "Professional performance"
+      ],
+      "ottawaKeywords": ["top mount barn door hardware", "specialized barn door hardware Ottawa", "unique mounting hardware", "flexible installation hardware", "top strap hardware"],
+      "compatibleWith": ["Specialized installations", "Unique mounting requirements", "Custom applications"],
+      "styles": ["Specialized", "Flexible", "Custom"]
+    },
+    {
+      "id": "hardware-bypass-bracket-kit",
+      "name": "Spectrum Bypass Barn Door Bracket Kit",
+      "slug": "spectrum-bypass-barn-door-bracket-kit",
+      "category": "Hardware",
+      "collection": "Spectrum Accessories",
+      "price": 8999,
+      "originalPrice": null,
+      "description": "Spectrum bypass barn door bracket kit - enables dual door installations for wider openings.",
+      "longDescription": "The Spectrum Bypass Barn Door Bracket Kit enables dual barn door installations for wider openings in Ottawa homes. This specialized bracket system allows two barn doors to operate independently on the same track system, perfect for large closet openings, room dividers, or expansive doorways. The kit includes all necessary brackets and hardware for professional bypass installation.",
+      "image": "/images/arcat/renin_199072_Accessories_Spectrum_Bypass_Barn_Door_Bracket_Kit.jpg",
+      "images": [
+        "/images/arcat/renin_199072_Accessories_Spectrum_Bypass_Barn_Door_Bracket_Kit.jpg"
+      ],
+      "inStock": true,
+      "stockLevel": 30,
+      "specifications": {
+        "application": "Dual door bypass system",
+        "compatibility": "Spectrum hardware systems",
+        "material": "Steel construction",
+        "finish": "Black powder coating",
+        "warranty": "5 years limited",
+        "installation": "Hardware accessory"
+      },
+      "features": [
+        "Dual door capability",
+        "Bypass operation",
+        "Wide opening solution",
+        "Complete bracket system",
+        "Professional installation"
+      ],
+      "ottawaKeywords": ["bypass barn door brackets Ottawa", "dual barn door hardware", "wide opening barn doors", "bypass barn door system", "dual door brackets"],
+      "compatibleWith": ["Wide openings", "Room dividers", "Large closets"],
+      "styles": ["Bypass System", "Wide Opening", "Dual Door"]
+    },
+    {
+      "id": "hardware-biparting-track-joiner",
+      "name": "Spectrum Biparting Track Joiner",
+      "slug": "spectrum-biparting-track-joiner",
+      "category": "Hardware",
+      "collection": "Spectrum Accessories",
+      "price": 4999,
+      "originalPrice": null,
+      "description": "Spectrum biparting track joiner - creates seamless connections for extended track systems.",
+      "longDescription": "The Spectrum Biparting Track Joiner creates seamless connections for extended barn door track systems in Ottawa installations. This precision-engineered component allows multiple track sections to be joined together for extra-wide installations or custom configurations. Essential for large openings or specialized barn door applications that require extended track lengths.",
+      "image": "/images/arcat/renin_199073_Accessories_Spectrum_Biparting_Track_Joiner.jpg",
+      "images": [
+        "/images/arcat/renin_199073_Accessories_Spectrum_Biparting_Track_Joiner.jpg"
+      ],
+      "inStock": true,
+      "stockLevel": 50,
+      "specifications": {
+        "application": "Track extension and joining",
+        "compatibility": "Spectrum track systems",
+        "material": "Steel construction",
+        "finish": "Black powder coating",
+        "warranty": "10 years limited",
+        "installation": "Track accessory"
+      },
+      "features": [
+        "Seamless track joining",
+        "Extended track capability",
+        "Precision engineering",
+        "Professional grade",
+        "Multiple track connection"
+      ],
+      "ottawaKeywords": ["track joiner Ottawa", "extended barn door tracks", "track connection hardware", "biparting track system", "long track system"],
+      "compatibleWith": ["Extended tracks", "Wide installations", "Custom configurations"],
+      "styles": ["Extension", "Custom", "Professional"]
+    },
+    {
+      "id": "hardware-floor-mount-guide",
+      "name": "Spectrum Floor Mount Guide",
+      "slug": "spectrum-floor-mount-guide",
+      "category": "Hardware",
+      "collection": "Spectrum Accessories",
+      "price": 2999,
+      "originalPrice": null,
+      "description": "Spectrum floor mount guide - provides bottom stability for barn door installations.",
+      "longDescription": "The Spectrum Floor Mount Guide provides essential bottom stability for barn door installations in Ottawa homes. This guide prevents door swing and ensures smooth operation by keeping the bottom of the door properly aligned during sliding operation. Particularly important for heavy doors or installations where precise alignment is critical for optimal performance.",
+      "image": "/images/arcat/renin_199071_Replacement_Part_Spectrum_Floor_Mount_Guide.jpg",
+      "images": [
+        "/images/arcat/renin_199071_Replacement_Part_Spectrum_Floor_Mount_Guide.jpg"
+      ],
+      "inStock": true,
+      "stockLevel": 60,
+      "specifications": {
+        "application": "Bottom door stabilization",
+        "compatibility": "All barn door styles",
+        "material": "Steel construction",
+        "finish": "Black powder coating",
+        "warranty": "5 years limited",
+        "installation": "Floor mount"
+      },
+      "features": [
+        "Bottom door stability",
+        "Swing prevention",
+        "Smooth operation",
+        "Universal compatibility",
+        "Easy installation"
+      ],
+      "ottawaKeywords": ["floor mount guide Ottawa", "barn door stability", "bottom door guide", "swing prevention", "door alignment hardware"],
+      "compatibleWith": ["All barn door styles", "Heavy doors", "Stability-critical installations"],
+      "styles": ["Stabilizing", "Universal", "Essential"]
+    },
+    {
+      "id": "hardware-anti-jump-discs",
+      "name": "Spectrum Anti-Jump Discs",
+      "slug": "spectrum-anti-jump-discs",
+      "category": "Hardware",
+      "collection": "Spectrum Accessories",
+      "price": 1999,
+      "originalPrice": null,
+      "description": "Spectrum anti-jump discs - prevents barn door derailment for safe, reliable operation.",
+      "longDescription": "Spectrum Anti-Jump Discs are essential safety components that prevent barn doors from jumping off the track during operation. These precision-engineered discs ensure safe, reliable operation in Ottawa homes by maintaining proper door alignment and preventing potentially dangerous derailment. A crucial safety upgrade for any barn door installation, especially in households with children.",
+      "image": "/images/arcat/renin_199075_Replacement_Part_Spectrum_Anti_Jump_Discs.jpg",
+      "images": [
+        "/images/arcat/renin_199075_Replacement_Part_Spectrum_Anti_Jump_Discs.jpg"
+      ],
+      "inStock": true,
+      "stockLevel": 75,
+      "specifications": {
+        "application": "Derailment prevention",
+        "compatibility": "Spectrum track systems",
+        "material": "High-grade polymer",
+        "finish": "Black",
+        "warranty": "5 years limited",
+        "installation": "Track accessory"
+      },
+      "features": [
+        "Derailment prevention",
+        "Safety enhancement",
+        "Reliable operation",
+        "Easy installation",
+        "Child safety feature"
+      ],
+      "ottawaKeywords": ["anti-jump discs Ottawa", "barn door safety", "derailment prevention", "barn door track safety", "door safety hardware"],
+      "compatibleWith": ["All barn door installations", "Family homes", "Safety-conscious installations"],
+      "styles": ["Safety", "Essential", "Family-Friendly"]
+    },
+    {
+      "id": "hardware-easy-clip-soft-close",
+      "name": "Easy Clip 153 Soft Close System",
+      "slug": "easy-clip-153-soft-close-system",
+      "category": "Hardware",
+      "collection": "Easy Clip Accessories",
+      "price": 5999,
+      "originalPrice": null,
+      "description": "Easy Clip 153 soft close system - adds gentle closing action to existing bypass doors.",
+      "longDescription": "The Easy Clip 153 Soft Close System transforms existing bypass doors in Ottawa homes by adding gentle, controlled closing action that prevents slamming and reduces wear. This innovative system clips easily onto existing door hardware without requiring major modifications, making it perfect for upgrading older installations or adding luxury functionality to new ones.",
+      "image": "/images/arcat/renin_199084_Accessories_Easy_Clip_153_Soft_Close.jpg",
+      "images": [
+        "/images/arcat/renin_199084_Accessories_Easy_Clip_153_Soft_Close.jpg"
+      ],
+      "inStock": true,
+      "stockLevel": 45,
+      "specifications": {
+        "application": "Soft close retrofit",
+        "compatibility": "Most bypass door systems",
+        "material": "Precision damper mechanism",
+        "finish": "Neutral",
+        "warranty": "3 years limited",
+        "installation": "Clip-on upgrade"
+      },
+      "features": [
+        "Gentle closing action",
+        "Easy clip installation",
+        "Prevents door slamming",
+        "Reduces wear and noise",
+        "Universal compatibility"
+      ],
+      "ottawaKeywords": ["soft close doors Ottawa", "door upgrade system", "gentle closing doors", "noise reduction doors", "easy upgrade hardware"],
+      "compatibleWith": ["Bypass doors", "Existing installations", "Noise reduction needs"],
+      "styles": ["Upgrade", "Luxury", "Noise-Reducing"]
+    },
+    {
+      "id": "handles-round-flush",
+      "name": "Round Flush Door Handles",
+      "slug": "round-flush-door-handles",
+      "category": "Hardware",
+      "collection": "Handles & Pulls",
+      "price": 3499,
+      "originalPrice": null,
+      "description": "Round flush door handles - sleek circular design sits flush with door surface for clean aesthetics.",
+      "longDescription": "Round Flush Door Handles provide a sleek, modern solution for Ottawa barn doors and closet doors with their circular design that sits flush with the door surface. These handles offer comfortable grip while maintaining clean, uncluttered aesthetics that work well with contemporary and minimalist interior designs. The flush mounting prevents snagging and provides safety in high-traffic areas.",
+      "image": "/images/arcat/renin_199074_Handles_Pulls_Round_Flush.jpg",
+      "images": [
+        "/images/arcat/renin_199074_Handles_Pulls_Round_Flush.jpg"
+      ],
+      "inStock": true,
+      "stockLevel": 80,
+      "specifications": {
+        "style": "Round flush mount",
+        "diameter": "2.5 inches",
+        "material": "Aluminum construction",
+        "finish": "Black matte",
+        "warranty": "5 years limited",
+        "installation": "Flush mount"
+      },
+      "features": [
+        "Circular flush design",
+        "Snag-free profile",
+        "Contemporary aesthetics",
+        "Comfortable grip",
+        "Safety conscious"
+      ],
+      "ottawaKeywords": ["flush door handles Ottawa", "round door pulls", "contemporary door hardware", "sleek door handles", "modern door pulls"],
+      "compatibleWith": ["Barn doors", "Closet doors", "Contemporary designs"],
+      "styles": ["Contemporary", "Minimalist", "Flush Mount"]
+    },
+    {
+      "id": "handles-rectangle-flush",
+      "name": "Rectangle Flush Door Handles",
+      "slug": "rectangle-flush-door-handles",
+      "category": "Hardware",
+      "collection": "Handles & Pulls",
+      "price": 3999,
+      "originalPrice": null,
+      "description": "Rectangle flush door handles - geometric design provides modern appeal with practical functionality.",
+      "longDescription": "Rectangle Flush Door Handles feature clean geometric lines that complement modern and contemporary Ottawa interiors. The rectangular profile provides excellent grip while maintaining a flush mount that prevents snagging. These handles work particularly well with barn doors and closet doors in minimalist or industrial-style homes where clean lines and functional design are priorities.",
+      "image": "/images/arcat/renin_199079_Handles_Pulls_Rectangle_Flush.jpg",
+      "images": [
+        "/images/arcat/renin_199079_Handles_Pulls_Rectangle_Flush.jpg"
+      ],
+      "inStock": true,
+      "stockLevel": 70,
+      "specifications": {
+        "style": "Rectangle flush mount",
+        "dimensions": "4\" x 1\"",
+        "material": "Aluminum construction",
+        "finish": "Black matte",
+        "warranty": "5 years limited",
+        "installation": "Flush mount"
+      },
+      "features": [
+        "Geometric rectangle design",
+        "Flush mount safety",
+        "Modern aesthetics",
+        "Excellent grip",
+        "Industrial appeal"
+      ],
+      "ottawaKeywords": ["rectangle door handles Ottawa", "geometric door pulls", "industrial door hardware", "flush mount handles", "modern door hardware"],
+      "compatibleWith": ["Modern doors", "Industrial style", "Geometric designs"],
+      "styles": ["Modern", "Industrial", "Geometric"]
+    },
+    {
+      "id": "handles-cairns",
+      "name": "Cairns Door Handles",
+      "slug": "cairns-door-handles",
+      "category": "Hardware",
+      "collection": "Handles & Pulls",
+      "price": 4499,
+      "originalPrice": null,
+      "description": "Cairns door handles - sophisticated curved design adds elegance to any closet door installation.",
+      "longDescription": "Cairns Door Handles feature sophisticated curved design that adds elegance and refinement to Ottawa closet door installations. The graceful curves provide comfortable grip while creating visual interest that complements both traditional and contemporary interior styles. These handles are perfect for homeowners seeking to add a touch of sophistication to their closet doors.",
+      "image": "/images/arcat/renin_199077_Handles_Pulls_Cairns.jpg",
+      "images": [
+        "/images/arcat/renin_199077_Handles_Pulls_Cairns.jpg"
+      ],
+      "inStock": true,
+      "stockLevel": 55,
+      "specifications": {
+        "style": "Curved elegant design",
+        "length": "5 inches",
+        "material": "Premium aluminum",
+        "finish": "Brushed nickel",
+        "warranty": "5 years limited",
+        "installation": "Surface mount"
+      },
+      "features": [
+        "Sophisticated curved design",
+        "Elegant aesthetics",
+        "Comfortable ergonomics",
+        "Premium construction",
+        "Versatile styling"
+      ],
+      "ottawaKeywords": ["Cairns door handles Ottawa", "elegant door pulls", "curved door handles", "sophisticated hardware", "premium door handles"],
+      "compatibleWith": ["Elegant doors", "Traditional style", "Premium installations"],
+      "styles": ["Elegant", "Sophisticated", "Premium"]
+    },
+    {
+      "id": "locks-tear-drop-privacy",
+      "name": "Tear Drop Privacy Latch",
+      "slug": "tear-drop-privacy-latch",
+      "category": "Hardware",
+      "collection": "Locks & Latches",
+      "price": 2799,
+      "originalPrice": null,
+      "description": "Tear drop privacy latch - provides secure privacy locking for barn doors and closet doors.",
+      "longDescription": "The Tear Drop Privacy Latch provides secure privacy locking for barn doors and closet doors in Ottawa homes. This elegant latch features a distinctive tear drop design that's both functional and aesthetically pleasing. Perfect for bedroom closets, bathroom doors, or any space where privacy is desired while maintaining the open, sliding functionality of barn door systems.",
+      "image": "/images/arcat/renin_199078_Barn_Door_Lock_Tear_Drop_Privacy_Latch.jpg",
+      "images": [
+        "/images/arcat/renin_199078_Barn_Door_Lock_Tear_Drop_Privacy_Latch.jpg"
+      ],
+      "inStock": true,
+      "stockLevel": 65,
+      "specifications": {
+        "style": "Tear drop design",
+        "application": "Privacy locking",
+        "material": "Steel construction",
+        "finish": "Black matte",
+        "warranty": "5 years limited",
+        "installation": "Surface mount"
+      },
+      "features": [
+        "Secure privacy locking",
+        "Distinctive tear drop design",
+        "Easy operation",
+        "Durable construction",
+        "Aesthetic appeal"
+      ],
+      "ottawaKeywords": ["privacy latch Ottawa", "barn door locks", "tear drop latch", "closet door privacy", "door security hardware"],
+      "compatibleWith": ["Barn doors", "Privacy applications", "Bedroom closets"],
+      "styles": ["Privacy", "Security", "Functional"]
+    },
+    {
+      "id": "mirrors-florence-21x31",
+      "name": "Florence Mirror 21\" x 31\"",
+      "slug": "florence-mirror-21x31",
+      "category": "Mirrors",
+      "collection": "Florence Collection",
+      "price": 14999,
+      "originalPrice": null,
+      "description": "Florence mirror 21\" x 31\" - elegant framed mirror perfect for Ottawa bathroom and closet installations.",
+      "longDescription": "The Florence Mirror 21\" x 31\" combines classic proportions with elegant framing that complements both traditional and contemporary Ottawa interiors. This versatile mirror size works perfectly in bathrooms, walk-in closets, and bedroom areas where clear reflection and sophisticated styling are desired. The quality construction and attractive frame make it a lasting addition to any home.",
+      "image": "/images/arcat/renin_199088_Mirror_Florence_21_x_31.jpg",
+      "images": [
+        "/images/arcat/renin_199088_Mirror_Florence_21_x_31.jpg"
+      ],
+      "inStock": true,
+      "stockLevel": 40,
+      "specifications": {
+        "dimensions": "21\" W x 31\" H",
+        "thickness": "0.25\"",
+        "frame": "Elegant border design",
+        "material": "Quality glass with frame",
+        "finish": "Silver frame",
+        "warranty": "3 years limited",
+        "mounting": "Wall mount"
+      },
+      "features": [
+        "Classic 21x31 proportions",
+        "Elegant frame design",
+        "Quality mirror glass",
+        "Versatile sizing",
+        "Sophisticated styling"
+      ],
+      "ottawaKeywords": ["Florence mirror Ottawa", "21x31 mirror", "bathroom mirrors Ottawa", "framed mirrors", "elegant mirrors"],
+      "roomTypes": ["Bathroom", "Walk-in Closet", "Bedroom"],
+      "styles": ["Elegant", "Classic", "Sophisticated"]
+    },
+    {
+      "id": "mirrors-melody-32x24",
+      "name": "Melody Mirror 32\" x 24\"",
+      "slug": "melody-mirror-32x24",
+      "category": "Mirrors",
+      "collection": "Melody Collection",
+      "price": 16999,
+      "originalPrice": null,
+      "description": "Melody mirror 32\" x 24\" - contemporary styling with clean lines perfect for modern Ottawa homes.",
+      "longDescription": "The Melody Mirror 32\" x 24\" features contemporary styling with clean lines that perfectly complement modern Ottawa homes and condos. This larger format provides excellent reflection space while the sleek design integrates seamlessly with contemporary interiors. Ideal for master bathrooms, large walk-in closets, and modern bedroom settings throughout Ottawa.",
+      "image": "/images/arcat/renin_199089_Mirror_Melody_32_x_24.jpg",
+      "images": [
+        "/images/arcat/renin_199089_Mirror_Melody_32_x_24.jpg"
+      ],
+      "inStock": true,
+      "stockLevel": 35,
+      "specifications": {
+        "dimensions": "32\" W x 24\" H",
+        "thickness": "0.25\"",
+        "frame": "Contemporary clean lines",
+        "material": "Premium mirror glass",
+        "finish": "Modern frame",
+        "warranty": "3 years limited",
+        "mounting": "Wall mount"
+      },
+      "features": [
+        "Large 32x24 format",
+        "Contemporary design",
+        "Clean line aesthetics",
+        "Premium mirror quality",
+        "Modern appeal"
+      ],
+      "ottawaKeywords": ["Melody mirror Ottawa", "32x24 mirror", "contemporary mirrors", "modern mirrors Ottawa", "large bathroom mirrors"],
+      "roomTypes": ["Master Bathroom", "Modern Bedroom", "Contemporary Space"],
+      "styles": ["Contemporary", "Modern", "Clean"]
+    },
+    {
+      "id": "mirrors-symphony-32x24",
+      "name": "Symphony Mirror 32\" x 24\"",
+      "slug": "symphony-mirror-32x24",
+      "category": "Mirrors",
+      "collection": "Symphony Collection",
+      "price": 18999,
+      "originalPrice": null,
+      "description": "Symphony mirror 32\" x 24\" - premium collection with sophisticated detailing for luxury Ottawa interiors.",
+      "longDescription": "The Symphony Mirror 32\" x 24\" represents the premium collection with sophisticated detailing that elevates luxury Ottawa interiors. This mirror combines substantial size with refined aesthetics, making it perfect for upscale bathrooms, luxury walk-in closets, and executive suites. The Symphony collection is designed for discerning homeowners who appreciate exceptional quality and design.",
+      "image": "/images/arcat/renin_199093_Mirror_Symphony_32_x_24.jpg",
+      "images": [
+        "/images/arcat/renin_199093_Mirror_Symphony_32_x_24.jpg"
+      ],
+      "inStock": true,
+      "stockLevel": 28,
+      "specifications": {
+        "dimensions": "32\" W x 24\" H",
+        "thickness": "0.25\"",
+        "frame": "Premium detailed design",
+        "material": "Luxury mirror glass",
+        "finish": "Sophisticated frame",
+        "warranty": "5 years limited",
+        "mounting": "Premium wall mount"
+      },
+      "features": [
+        "Premium Symphony collection",
+        "Sophisticated detailing",
+        "Luxury mirror quality",
+        "Refined aesthetics",
+        "Executive appeal"
+      ],
+      "ottawaKeywords": ["Symphony mirror Ottawa", "luxury mirrors", "premium mirrors Ottawa", "sophisticated mirrors", "executive bathroom mirrors"],
+      "roomTypes": ["Luxury Bathroom", "Executive Suite", "Premium Interior"],
+      "styles": ["Luxury", "Premium", "Sophisticated"]
+    }
+  ],
+  "categories": [
+    {
+      "name": "Bypass Doors",
+      "slug": "bypass-doors",
+      "description": "Space-saving sliding closet doors that bypass each other for maximum accessibility",
+      "count": 6
+    },
+    {
+      "name": "Bifold Doors", 
+      "slug": "bifold-doors",
+      "description": "Folding closet doors that require minimal clearance space while providing full closet access",
+      "count": 3
+    },
+    {
+      "name": "Barn Doors",
+      "slug": "barn-doors", 
+      "description": "Sliding barn doors that add character and style to any Ottawa home",
+      "count": 13
+    },
+    {
+      "name": "Hardware",
+      "slug": "hardware",
+      "description": "Complete hardware systems and accessories for professional door installation",
+      "count": 10
+    },
+    {
+      "name": "Mirrors",
+      "slug": "mirrors",
+      "description": "Quality mirrors perfect for bathrooms, closets, and dressing areas",
+      "count": 3
+    }
+  ],
+  "collections": [
+    {
+      "name": "Harmony Collection",
+      "description": "Contemporary bypass doors with clean lines and modern appeal"
+    },
+    {
+      "name": "Euro Collection", 
+      "description": "European-inspired doors with glass panels for light enhancement"
+    },
+    {
+      "name": "Heritage Collection",
+      "description": "Traditional barn doors with authentic farmhouse character"
+    },
+    {
+      "name": "Continental Collection",
+      "description": "Sophisticated barn doors blending traditional and contemporary elements"
+    },
+    {
+      "name": "Spectrum Hardware",
+      "description": "Professional-grade hardware systems for reliable operation"
+    }
+  ],
+  "pricing_info": {
+    "currency": "CAD",
+    "includes_tax": false,
+    "hst_rate": 0.13,
+    "shipping": "Free shipping on orders over $299 within Ottawa area",
+    "installation": "Professional installation available - contact for quote"
+  }
+}

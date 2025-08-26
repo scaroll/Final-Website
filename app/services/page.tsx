@@ -3,124 +3,122 @@ import Image from "next/image"
 import Link from "next/link"
 
 export const metadata: Metadata = {
-  title: "Professional Closet Door Services Ottawa | Installation & Consultation | PG Closets",
+  title: "Quality Closet Door Services Ottawa | Free Quotes & Professional Installation | PG Closets",
   description:
-    "Expert closet door installation, consultation, and custom solutions in Ottawa. Free in-home consultation, professional installation, lifetime warranty. Serving Ottawa, Kanata, Nepean, Orleans, Barrhaven.",
+    "Ottawa's local closet door specialists offering quality door solutions. Free quotes, professional installation, lifetime warranty. Serving Ottawa homeowners since 2010.",
   keywords:
-    "closet door installation Ottawa, professional door installation, custom closet solutions, home consultation Ottawa, door repair services, closet renovation Ottawa",
+    "quality closet doors Ottawa, professional door installation, closet specialists Ottawa, free quotes, custom closet solutions, expert installation",
   openGraph: {
-    title: "Professional Closet Door Services Ottawa | PG Closets",
+    title: "Quality Closet Door Services Ottawa | PG Closets",
     description:
-      "Expert closet door installation and consultation services in Ottawa. Free consultation, professional installation, lifetime warranty.",
+      "Ottawa's local closet specialists providing quality door solutions. Free quotes, professional installation, excellent service.",
     images: [{ url: "/images/arcat/renin_205738_Bypass_Closet_Doors_Euro_1_Lite.jpg", width: 1200, height: 630 }],
   },
   alternates: { canonical: "/services" },
 }
 
+// ISR: Revalidate daily for services page
+export const revalidate = 86400
+
 export default function ServicesPage() {
   return (
-    <main className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
+    <main className="min-h-screen bg-gradient-to-br from-slate-50 to-white">
       {/* Header */}
-      <header className="bg-[#1B4A9C] text-white sticky top-0 z-50 shadow-lg">
-        <div className="bg-[#1B4A9C] py-2 text-center text-sm">
-          <div className="flex items-center justify-center gap-4">
-            <span>⭐ 5.0</span>
-            <span>• 500+ Installations</span>
-            <span>• 15+ Years</span>
-            <span>• 98% Satisfaction</span>
+      <header className="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-sm border-b border-slate-200">
+        <div className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white text-center py-3 text-sm tracking-wide">
+          <div className="flex items-center justify-center space-x-8 text-xs uppercase font-light">
+            <span className="flex items-center space-x-1"><span className="w-1 h-1 bg-amber-400 rounded-full"></span><span>Ottawa's Local Experts</span></span>
+            <span className="flex items-center space-x-1"><span className="w-1 h-1 bg-amber-400 rounded-full"></span><span>Quality Services</span></span>
+            <span className="flex items-center space-x-1"><span className="w-1 h-1 bg-amber-400 rounded-full"></span><span>Skilled Professionals</span></span>
           </div>
         </div>
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <Link href="/" className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-white flex items-center justify-center">
-                <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/PG%20Logo.jpg-PA2Pv0eQKuJGkzYoQf9wsC86lYSKGa.jpeg"
-                  alt="PG Closets Logo"
-                  width={40}
-                  height={40}
-                  className="w-full h-full object-contain"
-                />
-              </div>
+            <Link href="/" className="flex items-center gap-4">
+              <Image
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/PG%20Logo.jpg-PA2Pv0eQKuJGkzYoQf9wsC86lYSKGa.jpeg"
+                alt="PG Closets"
+                width={48}
+                height={48}
+                className="w-12 h-12 object-contain"
+                priority
+              />
               <div>
-                <div className="font-bold text-xl">PG CLOSETS</div>
-                <div className="text-xs text-[#9BC4E2]">Premium Solutions</div>
+                <h1 className="text-2xl font-light tracking-wide text-slate-900">PG CLOSETS</h1>
+                <p className="text-xs text-slate-500 font-light uppercase tracking-widest">Ottawa Closet Specialists</p>
               </div>
             </Link>
 
-            <nav className="hidden md:flex items-center gap-8">
-              <Link href="/" className="hover:text-[#9BC4E2] transition-colors">
+            <nav className="hidden md:flex items-center space-x-8">
+              <Link href="/" className="text-slate-700 hover:text-slate-900 px-3 py-2 text-sm font-light tracking-wide transition-colors">
                 Home
               </Link>
-              <Link href="/products" className="hover:text-[#9BC4E2] transition-colors">
+              <Link href="/products" className="text-slate-700 hover:text-slate-900 px-3 py-2 text-sm font-light tracking-wide transition-colors">
                 Products
               </Link>
-              <Link href="/about" className="hover:text-[#9BC4E2] transition-colors">
+              <Link href="/about" className="text-slate-700 hover:text-slate-900 px-3 py-2 text-sm font-light tracking-wide transition-colors">
                 About
               </Link>
-              <Link href="/services" className="text-[#9BC4E2] font-semibold">
+              <Link href="/services" className="text-slate-900 font-normal border-b border-slate-900">
                 Services
               </Link>
-              <Link href="/contact" className="hover:text-[#9BC4E2] transition-colors">
+              <Link href="/contact" className="text-slate-700 hover:text-slate-900 px-3 py-2 text-sm font-light tracking-wide transition-colors">
                 Contact
               </Link>
-            </nav>
 
-            <div className="flex items-center gap-4">
-              <a
-                href="tel:6135550123"
-                className="hidden md:block text-lg font-semibold hover:text-[#9BC4E2] transition-colors"
-              >
-                (613) 555-0123
-              </a>
-              <Link
-                href="/contact"
-                className="bg-[#9BC4E2] text-[#1B4A9C] px-6 py-2 font-semibold hover:bg-white transition-colors"
-              >
-                Get Quote
-              </Link>
-            </div>
+              <div className="flex items-center space-x-6 ml-8 pl-8 border-l border-slate-200">
+                <a href="tel:6135550123" className="text-slate-600 hover:text-slate-900 font-light tracking-wide transition-colors">
+                  (613) 555-0123
+                </a>
+                <Link
+                  href="/contact"
+                  className="bg-slate-900 text-white px-8 py-2.5 text-sm font-light tracking-wide hover:bg-slate-800 transition-all duration-300"
+                >
+                  Get Quote
+                </Link>
+              </div>
+            </nav>
           </div>
         </div>
       </header>
 
       {/* Hero Section */}
-      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0">
-          <Image
-            src="/images/arcat/renin_205741_Bypass_Closet_Doors_Harmony_1_Lite.jpg"
-            alt="Professional closet door installation showcase"
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/70" />
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-slate-100"></div>
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-amber-400 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-slate-400 rounded-full blur-3xl"></div>
         </div>
 
-        <div className="relative z-10 container mx-auto px-4 text-center text-white">
-          <div className="max-w-4xl mx-auto space-y-6">
-            <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
-              Professional Closet Door
+        <div className="relative z-10 container mx-auto px-4 text-center max-w-6xl">
+          <div className="space-y-8">
+            <div className="inline-block text-xs uppercase tracking-[0.3em] text-slate-500 font-light mb-4">Our Services</div>
+            <h1 className="text-5xl lg:text-7xl font-extralight leading-[1.1] text-slate-900 tracking-tight">
+              Professional Service
               <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-100 to-gray-300">
-                Services
-              </span>
+              <span className="text-slate-600">For Ottawa Homeowners</span>
             </h1>
-            <p className="text-xl lg:text-2xl text-gray-100 max-w-2xl mx-auto">
-              Expert installation • Custom solutions • Lifetime warranty
+            <p className="text-xl lg:text-2xl text-slate-600 max-w-4xl mx-auto font-light leading-relaxed">
+              From free quotes to professional installation, we handle every detail of your 
+              <span className="text-slate-900 font-normal"> closet door upgrade</span> with careful attention to quality
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center pt-8">
               <Link
                 href="/contact"
-                className="bg-white text-black hover:bg-gray-100 shadow-2xl px-8 py-4 text-lg font-semibold transition-colors inline-block"
+                className="group bg-slate-900 text-white hover:bg-slate-800 font-light px-12 py-4 text-lg tracking-wide transition-all duration-500 hover:shadow-2xl hover:scale-105"
               >
-                Get Free Consultation →
+                <span className="group-hover:hidden">Get Free Quote</span>
+                <span className="hidden group-hover:inline-flex items-center space-x-2">
+                  <span>Start Project</span>
+                  <span>→</span>
+                </span>
               </Link>
               <Link
                 href="/products"
-                className="border-2 border-white text-white hover:bg-white hover:text-black px-8 py-4 text-lg font-semibold transition-colors inline-block"
+                className="group border border-slate-300 text-slate-700 hover:border-slate-900 hover:text-slate-900 font-light px-12 py-4 text-lg tracking-wide transition-all duration-300"
               >
-                Browse Products
+                <span className="group-hover:hidden">View Products</span>
+                <span className="hidden group-hover:inline">Browse Doors</span>
               </Link>
             </div>
           </div>
@@ -128,12 +126,16 @@ export default function ServicesPage() {
       </section>
 
       {/* Services Grid */}
-      <section className="py-20">
+      <section className="py-24 bg-slate-50">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Services</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Comprehensive closet door solutions from consultation to installation
+          <div className="text-center mb-20">
+            <div className="inline-block text-xs uppercase tracking-[0.3em] text-slate-500 font-light mb-4">What We Offer</div>
+            <h2 className="text-4xl lg:text-5xl font-extralight mb-8 text-slate-900 tracking-tight">
+              Complete Service Solutions
+            </h2>
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto font-light leading-relaxed">
+              Every service is carefully designed to provide excellent results for 
+              <span className="text-slate-900 font-normal"> Ottawa homeowners who want quality</span>
             </p>
           </div>
 

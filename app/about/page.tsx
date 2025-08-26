@@ -17,30 +17,35 @@ export const metadata: Metadata = {
   alternates: { canonical: "/about" },
 }
 
+// ISR: Revalidate daily for about page (static content)
+export const revalidate = 86400
+
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-white">
-      <header className="fixed top-0 w-full z-50 bg-white/98 backdrop-blur-md border-b-2 border-[#1e3a8a] shadow-xl">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="bg-gradient-to-r from-[#1e3a8a] to-[#87ceeb] text-white text-center py-3 text-sm font-bold tracking-wide">
-            ⭐ 5.0 • 🏠 500+ Installations • ⏰ 15+ Years • 98% Satisfaction
+      <header className="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-sm border-b border-slate-200">
+        <div className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white text-center py-3 text-sm tracking-wide">
+          <div className="flex items-center justify-center space-x-8 text-xs uppercase font-light">
+            <span className="flex items-center space-x-1"><span className="w-1 h-1 bg-amber-400 rounded-full"></span><span>Ottawa's Local Experts</span></span>
+            <span className="flex items-center space-x-1"><span className="w-1 h-1 bg-amber-400 rounded-full"></span><span>15+ Years Excellence</span></span>
+            <span className="flex items-center space-x-1"><span className="w-1 h-1 bg-amber-400 rounded-full"></span><span>Skilled Professionals</span></span>
           </div>
-
+        </div>
+        <div className="max-w-7xl mx-auto px-4">
           <div className="flex justify-between items-center h-20">
             <div className="flex-shrink-0">
               <div className="flex items-center space-x-4">
-                <div className="relative w-16 h-16 overflow-hidden border-2 border-[#87ceeb] shadow-lg">
-                  <Image
-                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/PG%20Logo.jpg-PA2Pv0eQKuJGkzYoQf9wsC86lYSKGa.jpeg"
-                    alt="PG Closets Logo"
-                    fill
-                    className="object-contain"
-                    priority
-                  />
-                </div>
+                <Image
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/PG%20Logo.jpg-PA2Pv0eQKuJGkzYoQf9wsC86lYSKGa.jpeg"
+                  alt="PG Closets"
+                  width={48}
+                  height={48}
+                  className="w-12 h-12 object-contain"
+                  priority
+                />
                 <div>
-                  <h1 className="text-2xl font-black text-[#1e3a8a] tracking-tight">PG CLOSETS</h1>
-                  <p className="text-xs text-[#87ceeb] font-bold tracking-wider">PREMIUM SOLUTIONS</p>
+                  <h1 className="text-2xl font-light tracking-wide text-slate-900">PG CLOSETS</h1>
+                  <p className="text-xs text-slate-500 font-light uppercase tracking-widest">Ottawa Closet Specialists</p>
                 </div>
               </div>
             </div>
@@ -49,78 +54,85 @@ export default function AboutPage() {
               {[
                 { name: "Home", href: "/" },
                 { name: "Products", href: "/products" },
-                { name: "Gallery", href: "/gallery" },
-                { name: "Process", href: "/process" },
                 { name: "About", href: "/about" },
+                { name: "Services", href: "/services" },
                 { name: "Contact", href: "/contact" },
               ].map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className={`relative px-4 py-2 text-sm font-bold uppercase tracking-wide transition-all duration-300 group ${
+                  className={`relative px-3 py-2 text-sm font-light tracking-wide transition-colors duration-300 ${
                     item.name === "About"
-                      ? "text-[#1e3a8a] border-b-2 border-[#87ceeb]"
-                      : "text-gray-800 hover:text-[#1e3a8a]"
+                      ? "text-slate-900 border-b border-slate-900"
+                      : "text-slate-700 hover:text-slate-900"
                   }`}
                 >
                   {item.name}
-                  <span className="absolute bottom-0 left-0 w-0 h-1 bg-[#87ceeb] transition-all duration-300 group-hover:w-full"></span>
                 </a>
               ))}
-              <div className="flex items-center space-x-4">
-                <a href="tel:6135550123" className="text-[#1e3a8a] font-bold hover:text-[#87ceeb] transition-colors">
-                  📞 (613) 555-0123
+              <div className="flex items-center space-x-6 ml-8 pl-8 border-l border-slate-200">
+                <a href="tel:6135550123" className="text-slate-600 hover:text-slate-900 font-light tracking-wide transition-colors">
+                  (613) 555-0123
                 </a>
-                <button className="bg-[#87ceeb] text-white px-8 py-3 font-black uppercase tracking-wide hover:bg-[#1e3a8a] hover:shadow-2xl hover:scale-105 transition-all duration-300 border-2 border-[#87ceeb] hover:border-[#1e3a8a]">
-                  FREE QUOTE
-                </button>
+                <a href="/contact" className="bg-slate-900 text-white px-8 py-2.5 text-sm font-light tracking-wide hover:bg-slate-800 transition-all duration-300">
+                  Get Quote
+                </a>
               </div>
             </nav>
           </div>
         </div>
       </header>
 
-      <section className="pt-32 pb-24 bg-gradient-to-br from-white to-gray-50">
+      <section className="pt-32 pb-24 bg-gradient-to-br from-slate-50 via-white to-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <span className="inline-block bg-[#1e3a8a] text-[#87ceeb] px-6 py-2 text-sm font-black uppercase tracking-wider mb-6">
-                OUR STORY
-              </span>
-              <h1 className="text-5xl md:text-6xl font-black text-[#1e3a8a] mb-8 tracking-tight leading-tight">
-                Family-Owned Excellence Since 2010
+              <div className="inline-block text-xs uppercase tracking-[0.3em] text-slate-500 font-light mb-8">
+                Our Story
+              </div>
+              <h1 className="text-5xl lg:text-6xl font-extralight mb-8 text-slate-900 tracking-tight leading-[1.1]">
+                Your Local
+                <br />
+                <span className="text-slate-600">Closet Experts</span>
               </h1>
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                Ottawa-operated and family-owned, PG Closets has been transforming homes across the region with premium
-                Renin door systems and exceptional service for over a decade.
+              <p className="text-xl text-slate-600 mb-12 leading-relaxed font-light max-w-lg">
+                For over fifteen years, we've been helping Ottawa families with quality closet solutions, 
+                <span className="text-slate-900 font-normal"> building our reputation</span> as the area's 
+                <span className="text-slate-900 font-normal"> trusted closet specialists</span>
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-6">
                 <Link href="/contact">
-                  <button className="bg-[#87ceeb] text-white px-8 py-4 font-black uppercase tracking-wide hover:bg-[#1e3a8a] hover:shadow-2xl hover:scale-105 transition-all duration-300 border-2 border-[#87ceeb] hover:border-[#1e3a8a]">
-                    GET FREE CONSULTATION
+                  <button className="group bg-slate-900 text-white hover:bg-slate-800 font-light px-12 py-4 text-lg tracking-wide transition-all duration-500 hover:shadow-2xl hover:scale-105">
+                    <span className="group-hover:hidden">Get Free Quote</span>
+                    <span className="hidden group-hover:inline-flex items-center space-x-2">
+                      <span>Start Project</span>
+                      <span>→</span>
+                    </span>
                   </button>
                 </Link>
                 <Link href="/products">
-                  <button className="border-2 border-[#1e3a8a] text-[#1e3a8a] px-8 py-4 font-black uppercase tracking-wide hover:bg-[#1e3a8a] hover:text-[#87ceeb] transition-all duration-300">
-                    BROWSE PRODUCTS
+                  <button className="group border border-slate-300 text-slate-700 hover:border-slate-900 hover:text-slate-900 font-light px-12 py-4 text-lg tracking-wide transition-all duration-300">
+                    <span className="group-hover:hidden">View Products</span>
+                    <span className="hidden group-hover:inline">Browse Doors</span>
                   </button>
                 </Link>
               </div>
             </div>
             <div className="relative">
-              <div className="aspect-square overflow-hidden shadow-2xl border-4 border-[#87ceeb]">
+              <div className="aspect-[4/5] overflow-hidden shadow-2xl">
                 <Image
                   src="/images/arcat/renin_199065_hd.jpg"
-                  alt="Premium Renin closet doors installed in Ottawa home"
+                  alt="Premium craftsmanship showcase"
                   fill
                   className="object-cover"
                   priority
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
               </div>
-              <div className="absolute -bottom-6 -right-6 bg-white p-8 shadow-2xl border-2 border-[#87ceeb]">
+              <div className="absolute -bottom-8 -right-8 bg-white/95 backdrop-blur-sm p-8 shadow-2xl">
                 <div className="text-center">
-                  <div className="text-3xl font-black text-[#1e3a8a] mb-2">500+</div>
-                  <div className="text-sm font-bold text-[#87ceeb] uppercase tracking-wide">INSTALLATIONS</div>
+                  <div className="text-3xl font-light text-slate-900 mb-2">500+</div>
+                  <div className="text-xs text-slate-500 uppercase tracking-widest font-light">Happy Customers</div>
                 </div>
               </div>
             </div>
@@ -282,12 +294,12 @@ export default function AboutPage() {
                 </div>
                 <div>
                   <h3 className="text-3xl font-black tracking-tight">PG CLOSETS</h3>
-                  <p className="text-[#87ceeb] font-bold">PREMIUM SOLUTIONS</p>
+                  <p className="text-[#87ceeb] font-bold">QUALITY SOLUTIONS</p>
                 </div>
               </div>
               <p className="text-gray-300 mb-8 leading-relaxed max-w-lg text-lg">
-                Ottawa's premier closet door specialists, transforming homes with premium Renin solutions and
-                award-winning professional installation services since 2010.
+                Ottawa's local closet door specialists, helping homeowners with quality Renin doors and
+                professional installation services since 2010.
               </p>
             </div>
 

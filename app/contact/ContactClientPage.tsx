@@ -52,52 +52,54 @@ export default function ContactClientPage() {
 
   return (
     <div className="min-h-screen bg-white font-sans">
-      <header className="fixed top-0 w-full z-50 bg-white shadow-lg">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="bg-gradient-to-r from-[#1B4A9C] to-[#4A5F8A] text-white text-center py-2 text-sm font-semibold">
-            ⭐ {siteStats.rating} • 🏠 {siteStats.installations} Installations • ⏰ {siteStats.experience} Years •{" "}
-            {siteStats.satisfaction} Satisfaction
+      <header className="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-sm border-b border-slate-200">
+        <div className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white text-center py-3 text-sm tracking-wide">
+          <div className="flex items-center justify-center space-x-8 text-xs uppercase font-light">
+            <span className="flex items-center space-x-1"><span className="w-1 h-1 bg-amber-400 rounded-full"></span><span>Ottawa's Local Experts</span></span>
+            <span className="flex items-center space-x-1"><span className="w-1 h-1 bg-amber-400 rounded-full"></span><span>Professional Service</span></span>
+            <span className="flex items-center space-x-1"><span className="w-1 h-1 bg-amber-400 rounded-full"></span><span>Free Quotes</span></span>
           </div>
+        </div>
+        <div className="max-w-7xl mx-auto px-4">
 
           <div className="flex justify-between items-center h-20">
-            <a href="/" className="flex items-center space-x-3">
-              <div className="relative w-12 h-12">
-                <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/PG%20Logo.jpg-PA2Pv0eQKuJGkzYoQf9wsC86lYSKGa.jpeg"
-                  alt="PG Closets Logo"
-                  fill
-                  className="object-contain"
-                  priority
-                />
-              </div>
+            <a href="/" className="flex items-center space-x-4">
+              <Image
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/PG%20Logo.jpg-PA2Pv0eQKuJGkzYoQf9wsC86lYSKGa.jpeg"
+                alt="PG Closets"
+                width={48}
+                height={48}
+                className="w-12 h-12 object-contain"
+                priority
+              />
               <div>
-                <h1 className="text-xl font-bold text-[#1B4A9C]">PG CLOSETS</h1>
-                <p className="text-xs text-[#9BC4E2] font-medium">Premium Solutions</p>
+                <h1 className="text-2xl font-light tracking-wide text-slate-900">PG CLOSETS</h1>
+                <p className="text-xs text-slate-500 font-light uppercase tracking-widest">Ottawa Closet Specialists</p>
               </div>
             </a>
 
-            <nav className="hidden lg:flex items-center space-x-6">
-              <a href="/" className="text-[#1B4A9C] hover:text-[#9BC4E2] px-3 py-2 text-sm font-medium">
+            <nav className="hidden lg:flex items-center space-x-8">
+              <a href="/" className="text-slate-700 hover:text-slate-900 px-3 py-2 text-sm font-light tracking-wide transition-colors">
                 Home
               </a>
-              <a href="/products" className="text-[#1B4A9C] hover:text-[#9BC4E2] px-3 py-2 text-sm font-medium">
+              <a href="/products" className="text-slate-700 hover:text-slate-900 px-3 py-2 text-sm font-light tracking-wide transition-colors">
                 Products
               </a>
-              <a href="/about" className="text-[#1B4A9C] hover:text-[#9BC4E2] px-3 py-2 text-sm font-medium">
+              <a href="/about" className="text-slate-700 hover:text-slate-900 px-3 py-2 text-sm font-light tracking-wide transition-colors">
                 About
               </a>
-              <a href="/services" className="text-[#1B4A9C] hover:text-[#9BC4E2] px-3 py-2 text-sm font-medium">
+              <a href="/services" className="text-slate-700 hover:text-slate-900 px-3 py-2 text-sm font-light tracking-wide transition-colors">
                 Services
               </a>
               <a
                 href="/contact"
-                className="text-[#9BC4E2] hover:text-[#1B4A9C] px-3 py-2 text-sm font-medium font-semibold"
+                className="text-slate-900 font-normal border-b border-slate-900"
               >
                 Contact
               </a>
 
-              <div className="flex items-center space-x-4 ml-6">
-                <a href="tel:6135550123" className="text-[#9BC4E2] font-semibold hover:text-[#1B4A9C]">
+              <div className="flex items-center space-x-6 ml-8 pl-8 border-l border-slate-200">
+                <a href="tel:6135550123" className="text-slate-600 hover:text-slate-900 font-light tracking-wide transition-colors">
                   (613) 555-0123
                 </a>
               </div>
@@ -144,25 +146,25 @@ export default function ContactClientPage() {
         </div>
       </header>
 
-      <div className="pt-32 pb-8 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4">
-          <nav className="text-sm text-gray-600 mb-4">
-            <a href="/" className="hover:text-[#1B4A9C]">
-              Home
-            </a>{" "}
-            / <span className="text-[#1B4A9C] font-medium">Contact</span>
-          </nav>
+      <div className="pt-32 pb-16 bg-gradient-to-br from-slate-50 via-white to-slate-100">
+        <div className="max-w-7xl mx-auto px-4 text-center">
+          <div className="inline-block text-xs uppercase tracking-[0.3em] text-slate-500 font-light mb-8">Get In Touch</div>
+          <h1 className="text-5xl lg:text-6xl font-extralight mb-8 text-slate-900 tracking-tight leading-[1.1]">
+            Let's Start
+            <br />
+            <span className="text-slate-600">Your Project</span>
+          </h1>
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto font-light leading-relaxed mb-12">
+            Get a free quote from our closet specialists to explore quality solutions for your 
+            <span className="text-slate-900 font-normal"> home</span>. Contact us directly at 
+            <a className="text-slate-900 font-normal hover:underline transition-all" href="mailto:info@pgclosets.com">
+              info@pgclosets.com
+            </a>
+          </p>
         </div>
       </div>
 
-      <main className="max-w-[1200px] mx-auto px-6 py-12">
-        <h1 className="text-3xl md:text-4xl font-extrabold text-[#1B4A9C] mb-4">Request Work</h1>
-        <p className="mt-2 text-slate-600 mb-8">
-          Use the form below to tell us about your project. Prefer email?{" "}
-          <a className="underline text-[#1B4A9C] hover:text-[#9BC4E2]" href="mailto:info@pgclosets.com">
-            info@pgclosets.com
-          </a>
-        </p>
+      <main className="max-w-6xl mx-auto px-6 py-16">
 
         <div className="mt-8 border border-slate-200 bg-white p-6 shadow-sm">
           <div id="83a3d24e-c18d-441c-80d1-d85419ea28ae">
@@ -259,7 +261,7 @@ export default function ContactClientPage() {
                 </div>
               </a>
               <p className="text-gray-300 mb-6">
-                Ottawa's premier closet door specialists, transforming homes with premium solutions.
+                Ottawa's local closet door specialists, helping homeowners with quality solutions.
               </p>
             </div>
 

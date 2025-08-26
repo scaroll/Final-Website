@@ -19,7 +19,7 @@ export function RequestQuoteButton({
 }: RequestQuoteButtonProps) {
   const handleRequestQuote = () => {
     const jobberUrl = new URL(
-      "https://clienthub.getjobber.com/client_hubs/f8b5c2d1-4e3a-4b2c-8f1e-9d6c7a8b9e0f/public/request_form",
+      "https://clienthub.getjobber.com/client_hubs/0b8c7c5a-c5d8-4a9b-9e6f-8b2c1a0d3e4f/public/request_estimate",
     )
 
     // Add product information as URL parameters

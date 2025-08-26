@@ -46,6 +46,13 @@ export default function PgHeader() {
               Products
             </Link>
             <Link
+              href="/custom-walk-in-closets"
+              className="text-body-s text-pg-navy opacity-90 hover:opacity-100 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-pg-sky focus:ring-offset-2 rounded px-2 py-1"
+              style={{ fontWeight: 500 }}
+            >
+              Custom Closets
+            </Link>
+            <Link
               href="/blog"
               className="text-body-s text-pg-navy opacity-90 hover:opacity-100 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-pg-sky focus:ring-offset-2 rounded px-2 py-1"
               style={{ fontWeight: 500 }}
@@ -142,6 +149,13 @@ export default function PgHeader() {
                   className="block text-lg font-medium text-pg-navy hover:text-pg-sky transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-pg-sky focus:ring-offset-2 rounded px-2 py-2"
                 >
                   Products
+                </Link>
+                <Link
+                  href="/custom-walk-in-closets"
+                  onClick={closeMobileMenu}
+                  className="block text-lg font-medium text-pg-navy hover:text-pg-sky transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-pg-sky focus:ring-offset-2 rounded px-2 py-2"
+                >
+                  Custom Closets
                 </Link>
                 <Link
                   href="/blog"

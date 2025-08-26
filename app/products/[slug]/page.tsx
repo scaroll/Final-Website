@@ -3,6 +3,8 @@ import { reninProducts } from "../../../data/renin-products"
 import { ProductJSONLD } from "../../../lib/seo"
 
 export const dynamic = "force-static"
+// ISR: Revalidate every 6 hours for product detail pages
+export const revalidate = 21600
 
 export function generateStaticParams() {
   return reninProducts.map((p) => ({ slug: p.id }))
@@ -10,9 +12,9 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: { slug: string } }) {
   const p = reninProducts.find((product) => product.id === params.slug)
-  if (!p) return { title: "Product Not Found | PG Closets" }
-  const title = `${p.name} | PG Closets Ottawa`
-  const description = `Premium ${p.category} door in Ottawa. ${p.features.join(", ")}. From $${p.price} CAD with professional installation.`
+  if (!p) return { title: "Product Not Found | PG Closets Design Atelier" }
+  const title = `${p.name} | Signature Collection | PG Closets Ottawa Design Atelier`
+  const description = `Bespoke ${p.category} from Ottawa's premier design atelier. ${p.features.join(", ")}. From $${p.price} CAD with master craftsman installation.`
   return {
     title,
     description,
@@ -49,25 +51,25 @@ export default function PDP({ params }: { params: { slug: string } }) {
           <div className="space-y-6">
             {/* Title H1 with exact 32-40px size in navy */}
             <div className="space-y-2">
-              <h1 className="text-h1" style={{ fontSize: "40px" }}>
+              <div className="text-xs uppercase tracking-[0.3em] text-slate-500 font-light mb-4">Quality Collection</div>
+              <h1 className="text-4xl lg:text-5xl font-extralight mb-4 text-slate-900 tracking-tight">
                 {p.name}
               </h1>
-              <div className="text-sm text-blue-600 font-medium uppercase tracking-wider">
-                {p.category} {p.category !== "hardware" ? "Door" : ""}
+              <div className="text-sm text-slate-600 font-light uppercase tracking-wider mb-6">
+                {p.category} {p.category !== "hardware" ? "Design" : ""}
               </div>
-              {/* Price line with exact 16-18px size, dark/80% opacity, 8px spacing from title */}
-              <div className="text-lg text-pg-dark" style={{ opacity: 0.8, fontSize: "18px" }}>
+              <div className="text-2xl font-light text-slate-900 mb-8">
                 {priceText}
               </div>
             </div>
 
             {/* CTA row with exact 24px spacing from price */}
-            <div className="flex flex-col sm:flex-row gap-3">
-              <a href="/contact" className="btn-primary">
-                Request Installation Quote
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a href="/contact" className="bg-slate-900 text-white px-8 py-3.5 font-light text-sm tracking-wide hover:bg-slate-800 transition-all duration-300">
+                Get Free Quote
               </a>
-              <a href="/contact" className="btn-secondary">
-                Schedule Consultation
+              <a href="/contact" className="border border-slate-300 text-slate-700 hover:border-slate-900 hover:text-slate-900 px-8 py-3.5 font-light text-sm tracking-wide transition-all duration-300 text-center">
+                Professional Installation
               </a>
             </div>
 
@@ -76,14 +78,14 @@ export default function PDP({ params }: { params: { slug: string } }) {
               <div className="card-apple p-6">
                 <h2 className="text-h3 mb-3">Overview</h2>
                 <p className="text-body-s text-pg-dark" style={{ opacity: 0.8 }}>
-                  Premium {p.category} system with smooth glide hardware and refined finishes. Professional installation
+                  Quality {p.category} system with smooth hardware and beautiful finishes. Professional installation
                   in Ottawa with 2‑year workmanship warranty.
                 </p>
               </div>
               <div className="card-apple p-6">
                 <h2 className="text-h3 mb-3">What's Included</h2>
                 <ul className="text-body-s text-pg-dark space-y-1" style={{ opacity: 0.8 }}>
-                  <li>• Track & soft‑close hardware</li>
+                  <li>• Quality track & soft‑close hardware</li>
                   <li>• Professional installation (Ottawa)</li>
                   <li>• Removal/disposal of old doors</li>
                   <li>• 2‑year workmanship warranty</li>
@@ -109,7 +111,7 @@ export default function PDP({ params }: { params: { slug: string } }) {
         {related.length > 0 && (
           <section className="pt-12">
             <h2 className="text-h2 mb-8" style={{ fontSize: "28px" }}>
-              Related {p.category} Products
+              More {p.category} Options
             </h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {related.map((r) => (

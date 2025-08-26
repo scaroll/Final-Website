@@ -1,10 +1,11 @@
 import type { MetadataRoute } from "next"
+import { reninProducts } from "../data/renin-products"
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://www.pgclosets.ca"
   const currentDate = new Date().toISOString()
 
-  // Core business pages with appropriate priorities
+  // Core business pages with highest priority
   const staticPages = [
     {
       url: baseUrl,
@@ -13,21 +14,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1.0,
     },
     {
-      url: `${baseUrl}/store`,
-      lastModified: currentDate,
-      changeFrequency: "weekly" as const,
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/store/products`,
-      lastModified: currentDate,
-      changeFrequency: "weekly" as const,
-      priority: 0.9,
-    },
-    {
       url: `${baseUrl}/products`,
       lastModified: currentDate,
       changeFrequency: "weekly" as const,
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/about`,
+      lastModified: currentDate,
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/services`,
+      lastModified: currentDate,
+      changeFrequency: "monthly" as const,
       priority: 0.8,
     },
     {
@@ -37,24 +38,79 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/quote-submitted`,
+      url: `${baseUrl}/custom-walk-in-closets`,
+      lastModified: currentDate,
+      changeFrequency: "weekly" as const,
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/blog`,
+      lastModified: currentDate,
+      changeFrequency: "weekly" as const,
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/blog/walk-in-closet-design-guide`,
       lastModified: currentDate,
       changeFrequency: "monthly" as const,
-      priority: 0.5,
-    },
-    {
-      url: `${baseUrl}/legal/privacy`,
-      lastModified: currentDate,
-      changeFrequency: "yearly" as const,
-      priority: 0.3,
-    },
-    {
-      url: `${baseUrl}/legal/terms`,
-      lastModified: currentDate,
-      changeFrequency: "yearly" as const,
-      priority: 0.3,
+      priority: 0.7,
     },
   ]
 
-  return staticPages
+  // Dynamic product pages - high SEO value
+  const productPages = reninProducts.map((product) => ({
+    url: `${baseUrl}/products/${product.id}`,
+    lastModified: currentDate,
+    changeFrequency: "weekly" as const,
+    priority: 0.7,
+  }))
+
+  // Category pages for Ottawa market
+  const categoryPages = [
+    {
+      url: `${baseUrl}/barn-doors-ottawa`,
+      lastModified: currentDate,
+      changeFrequency: "weekly" as const,
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/bypass-doors-ottawa`,
+      lastModified: currentDate,
+      changeFrequency: "weekly" as const,
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/bifold-doors-ottawa`,
+      lastModified: currentDate,
+      changeFrequency: "weekly" as const,
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/closet-hardware-ottawa`,
+      lastModified: currentDate,
+      changeFrequency: "weekly" as const,
+      priority: 0.7,
+    },
+  ]
+
+  // Ottawa location pages for local SEO
+  const locationPages = [
+    "ottawa",
+    "kanata", 
+    "nepean",
+    "gloucester",
+    "orleans",
+    "barrhaven",
+    "westboro",
+    "the-glebe",
+    "hintonburg",
+    "vanier"
+  ].map(location => ({
+    url: `${baseUrl}/closet-doors-${location}`,
+    lastModified: currentDate,
+    changeFrequency: "monthly" as const,
+    priority: 0.6,
+  }))
+
+  return [...staticPages, ...productPages, ...categoryPages, ...locationPages]
 }
