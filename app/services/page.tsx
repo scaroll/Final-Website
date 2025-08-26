@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
-import { Button } from "@/components/ui/button"
 import Image from "next/image"
+import Link from "next/link"
 
 export const metadata: Metadata = {
   title: "Professional Closet Door Services Ottawa | Installation & Consultation | PG Closets",
@@ -20,6 +20,70 @@ export const metadata: Metadata = {
 export default function ServicesPage() {
   return (
     <main className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
+      {/* Header */}
+      <header className="bg-[#1B4A9C] text-white sticky top-0 z-50 shadow-lg">
+        <div className="bg-[#1B4A9C] py-2 text-center text-sm">
+          <div className="flex items-center justify-center gap-4">
+            <span>⭐ 5.0</span>
+            <span>• 500+ Installations</span>
+            <span>• 15+ Years</span>
+            <span>• 98% Satisfaction</span>
+          </div>
+        </div>
+        <div className="container mx-auto px-4 py-4">
+          <div className="flex items-center justify-between">
+            <Link href="/" className="flex items-center gap-3">
+              <div className="w-10 h-10 bg-white flex items-center justify-center">
+                <Image
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/PG%20Logo.jpg-PA2Pv0eQKuJGkzYoQf9wsC86lYSKGa.jpeg"
+                  alt="PG Closets Logo"
+                  width={40}
+                  height={40}
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <div>
+                <div className="font-bold text-xl">PG CLOSETS</div>
+                <div className="text-xs text-[#9BC4E2]">Premium Solutions</div>
+              </div>
+            </Link>
+
+            <nav className="hidden md:flex items-center gap-8">
+              <Link href="/" className="hover:text-[#9BC4E2] transition-colors">
+                Home
+              </Link>
+              <Link href="/products" className="hover:text-[#9BC4E2] transition-colors">
+                Products
+              </Link>
+              <Link href="/about" className="hover:text-[#9BC4E2] transition-colors">
+                About
+              </Link>
+              <Link href="/services" className="text-[#9BC4E2] font-semibold">
+                Services
+              </Link>
+              <Link href="/contact" className="hover:text-[#9BC4E2] transition-colors">
+                Contact
+              </Link>
+            </nav>
+
+            <div className="flex items-center gap-4">
+              <a
+                href="tel:6135550123"
+                className="hidden md:block text-lg font-semibold hover:text-[#9BC4E2] transition-colors"
+              >
+                (613) 555-0123
+              </a>
+              <Link
+                href="/contact"
+                className="bg-[#9BC4E2] text-[#1B4A9C] px-6 py-2 font-semibold hover:bg-white transition-colors"
+              >
+                Get Quote
+              </Link>
+            </div>
+          </div>
+        </div>
+      </header>
+
       {/* Hero Section */}
       <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
@@ -46,22 +110,18 @@ export default function ServicesPage() {
               Expert installation • Custom solutions • Lifetime warranty
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                variant="primary"
-                size="lg"
+              <Link
                 href="/contact"
-                className="bg-white text-black hover:bg-gray-100 shadow-2xl"
+                className="bg-white text-black hover:bg-gray-100 shadow-2xl px-8 py-4 text-lg font-semibold transition-colors inline-block"
               >
                 Get Free Consultation →
-              </Button>
-              <Button
-                variant="secondary"
-                size="lg"
+              </Link>
+              <Link
                 href="/products"
-                className="border-2 border-white text-white hover:bg-white hover:text-black"
+                className="border-2 border-white text-white hover:bg-white hover:text-black px-8 py-4 text-lg font-semibold transition-colors inline-block"
               >
                 Browse Products
-              </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -79,7 +139,7 @@ export default function ServicesPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Installation Service */}
-            <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
+            <div className="bg-white shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
               <div className="aspect-video relative">
                 <Image
                   src="/images/arcat/renin_205750_Bifold_Closet_Door_Georgian_6_Panel_Insert_Design.jpg"
@@ -126,14 +186,17 @@ export default function ServicesPage() {
                     Clean-up included
                   </li>
                 </ul>
-                <Button variant="primary" size="sm" href="/contact" className="w-full">
+                <Link
+                  href="/contact"
+                  className="w-full bg-[#1B4A9C] text-white px-4 py-2 font-semibold hover:bg-[#2563eb] transition-colors text-center block"
+                >
                   Schedule Installation
-                </Button>
+                </Link>
               </div>
             </div>
 
             {/* Consultation Service */}
-            <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
+            <div className="bg-white shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
               <div className="aspect-video relative">
                 <Image
                   src="/images/arcat/renin_205739_Bypass_Closet_Doors_Euro_3_Lite.jpg"
@@ -180,14 +243,17 @@ export default function ServicesPage() {
                     Design recommendations
                   </li>
                 </ul>
-                <Button variant="secondary" size="sm" href="/contact" className="w-full">
+                <Link
+                  href="/contact"
+                  className="w-full border-2 border-[#1B4A9C] text-[#1B4A9C] px-4 py-2 font-semibold hover:bg-[#1B4A9C] hover:text-white transition-colors text-center block"
+                >
                   Book Consultation
-                </Button>
+                </Link>
               </div>
             </div>
 
             {/* Custom Solutions */}
-            <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
+            <div className="bg-white shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
               <div className="aspect-video relative">
                 <Image
                   src="/images/arcat/renin_205731_Mix_Match_Hardware_Driftwood_K_Design.jpg"
@@ -234,9 +300,12 @@ export default function ServicesPage() {
                     Special hardware
                   </li>
                 </ul>
-                <Button variant="primary" size="sm" href="/contact" className="w-full">
+                <Link
+                  href="/contact"
+                  className="w-full bg-[#1B4A9C] text-white px-4 py-2 font-semibold hover:bg-[#2563eb] transition-colors text-center block"
+                >
                   Discuss Custom Project
-                </Button>
+                </Link>
               </div>
             </div>
           </div>
@@ -313,12 +382,18 @@ export default function ServicesPage() {
               warranty.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="primary" size="lg" href="/contact" className="shadow-xl">
+              <Link
+                href="/contact"
+                className="bg-[#1B4A9C] text-white px-8 py-4 text-lg font-semibold hover:bg-[#2563eb] shadow-xl transition-colors inline-block"
+              >
                 Schedule Free Consultation →
-              </Button>
-              <Button variant="secondary" size="lg" href="/products">
+              </Link>
+              <Link
+                href="/products"
+                className="border-2 border-[#1B4A9C] text-[#1B4A9C] px-8 py-4 text-lg font-semibold hover:bg-[#1B4A9C] hover:text-white transition-colors inline-block"
+              >
                 Browse Products
-              </Button>
+              </Link>
             </div>
             <div className="mt-8 flex items-center justify-center gap-6 text-sm text-gray-600">
               <div className="flex items-center gap-1">
@@ -335,6 +410,75 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
+
+      {/* Footer */}
+      <footer className="bg-[#1B4A9C] text-white py-16">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 bg-white flex items-center justify-center">
+                  <Image
+                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/PG%20Logo.jpg-PA2Pv0eQKuJGkzYoQf9wsC86lYSKGa.jpeg"
+                    alt="PG Closets Logo"
+                    width={40}
+                    height={40}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                <div>
+                  <div className="font-bold text-xl">PG CLOSETS</div>
+                  <div className="text-xs text-[#9BC4E2]">Premium Solutions</div>
+                </div>
+              </div>
+              <p className="text-gray-300 mb-4">
+                Ottawa's premier closet door specialists, transforming homes with premium solutions.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="font-bold text-lg mb-4">Sitemap</h3>
+              <div className="space-y-2">
+                <Link href="/" className="block text-gray-300 hover:text-white transition-colors">
+                  Home
+                </Link>
+                <Link href="/products" className="block text-gray-300 hover:text-white transition-colors">
+                  Products
+                </Link>
+                <Link href="/about" className="block text-gray-300 hover:text-white transition-colors">
+                  About
+                </Link>
+                <Link href="/services" className="block text-gray-300 hover:text-white transition-colors">
+                  Services
+                </Link>
+                <Link href="/contact" className="block text-gray-300 hover:text-white transition-colors">
+                  Contact
+                </Link>
+              </div>
+            </div>
+
+            <div>
+              <h3 className="font-bold text-lg mb-4">Contact</h3>
+              <div className="space-y-2 text-gray-300">
+                <p>(613) 555-0123</p>
+                <p>info@pgclosets.com</p>
+                <p>Ottawa & Surrounding Areas</p>
+                <div className="mt-4">
+                  <p className="font-semibold">Business Hours:</p>
+                  <p>Mon-Fri: 8:00 AM - 6:00 PM</p>
+                  <p>Sat: 9:00 AM - 4:00 PM</p>
+                  <p>Sun: By Appointment</p>
+                </div>
+                <p className="mt-4 text-sm">Licensed & Insured</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="border-t border-[#2563eb] mt-12 pt-8 text-center text-gray-300">
+            <p>© 2025 PG Closets. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
     </main>
   )
 }

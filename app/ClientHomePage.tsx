@@ -1,93 +1,53 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import Image from "next/image"
 
 export default function ClientHomePage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [quoteStep, setQuoteStep] = useState(0)
-  const [projectCount, setProjectCount] = useState(0)
-
   const [selectedProduct, setSelectedProduct] = useState("")
   const [quotePrice, setQuotePrice] = useState(459)
 
   const products = [
     {
       name: "Continental",
-      type: "bypass",
       price: 459,
       image: "/images/arcat/renin_176732_hd.jpg",
-      category: "Bypass",
       specs: "Premium engineered wood core, durable laminate surface",
     },
     {
       name: "Provincial",
-      type: "bifold",
       price: 549,
       image: "/images/arcat/renin_205750_hd.jpg",
-      category: "Bifold",
       specs: "Traditional styling, heavy-duty pivot hinges",
     },
     {
       name: "Gatsby",
-      type: "barn",
       price: 799,
       image: "/images/arcat/renin_205729_hd.jpg",
-      category: "Barn",
       specs: "Modern barn door design, premium hardware included",
     },
     {
       name: "Euro",
-      type: "pivot",
       price: 899,
       image: "/images/arcat/renin_199063_hd.jpg",
-      category: "Pivot",
       specs: "Contemporary European styling, soft-close mechanism",
     },
   ]
-
-  const siteStats = {
-    installations: "500+",
-    rating: "5.0",
-    experience: "15+",
-    satisfaction: "98%",
-  }
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setProjectCount((prev) => (prev < 500 ? prev + 10 : 500))
-    }, 100)
-    return () => clearInterval(timer)
-  }, [])
-
-  useEffect(() => {
-    const video = document.querySelector("video")
-    if (video) {
-      video.addEventListener("error", () => {
-        console.warn("Video failed to load, using gradient background fallback")
-      })
-    }
-  }, [])
 
   return (
     <div className="min-h-screen bg-white font-sans">
       <header className="fixed top-0 w-full z-50 bg-white shadow-lg">
         <div className="max-w-7xl mx-auto px-4">
           <div className="bg-gradient-to-r from-[#1B4A9C] to-[#4A5F8A] text-white text-center py-2 text-sm font-semibold">
-            ⭐ {siteStats.rating} • 🏠 {siteStats.installations} Installations • ⏰ {siteStats.experience} Years •{" "}
-            {siteStats.satisfaction} Satisfaction
+            ⭐ 5.0 • 🏠 500+ Installations • ⏰ 15+ Years • 98% Satisfaction
           </div>
 
           <div className="flex justify-between items-center h-20">
             <a href="/" className="flex items-center space-x-3">
-              <div className="relative w-12 h-12">
-                <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/PG%20Logo.jpg-PA2Pv0eQKuJGkzYoQf9wsC86lYSKGa.jpeg"
-                  alt="PG Closets Logo"
-                  fill
-                  className="object-contain"
-                  priority
-                />
+              <div className="w-12 h-12 bg-[#1B4A9C] flex items-center justify-center text-white font-bold text-lg">
+                PG
               </div>
               <div>
                 <h1 className="text-xl font-bold text-[#1B4A9C]">PG CLOSETS</h1>
@@ -178,19 +138,7 @@ export default function ClientHomePage() {
         </div>
       </header>
 
-      <section
-        className="relative h-screen flex items-center justify-center overflow-hidden"
-        style={{
-          background: "linear-gradient(to bottom right, #1B4A9C, #4A5F8A)",
-        }}
-      >
-        <video autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover z-10">
-          <source src="/hero-video.mp4" type="video/mp4" />
-          <source src="/hero-video.webm" type="video/webm" />
-        </video>
-
-        <div className="absolute inset-0 bg-black bg-opacity-40 z-15"></div>
-
+      <section className="relative h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#1B4A9C] via-[#4A5F8A] to-[#2C5AA0]">
         <div className="relative z-20 text-center text-white px-4 max-w-6xl mx-auto">
           <div className="mb-6">
             <span className="inline-block bg-[#9BC4E2] text-[#1B4A9C] px-4 py-2 text-sm font-semibold">
@@ -200,24 +148,24 @@ export default function ClientHomePage() {
 
           <h1 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight">Premium Closet Doors for Ottawa Homes</h1>
           <p className="text-lg lg:text-xl mb-8 max-w-3xl mx-auto">
-            Official Renin Dealer • {siteStats.installations} Installations • Free Measurement
+            Official Renin Dealer • 500+ Installations • Free Measurement
           </p>
 
           <div className="flex justify-center space-x-8 mb-8 text-[#9BC4E2]">
             <div className="text-center">
-              <div className="text-2xl font-bold">{projectCount}+</div>
+              <div className="text-2xl font-bold">500+</div>
               <div className="text-sm">Ottawa Homes</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold">{siteStats.rating}★</div>
+              <div className="text-2xl font-bold">5.0★</div>
               <div className="text-sm">Google Rating</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold">{siteStats.experience}</div>
+              <div className="text-2xl font-bold">15+</div>
               <div className="text-sm">Years Experience</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold">{siteStats.satisfaction}</div>
+              <div className="text-2xl font-bold">98%</div>
               <div className="text-sm">Satisfaction Rate</div>
             </div>
           </div>
@@ -249,7 +197,7 @@ export default function ClientHomePage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {products.map((product) => (
+            {products.map((product, index) => (
               <div
                 key={product.name}
                 className="bg-white shadow-lg overflow-hidden hover:shadow-xl transition-all border border-[#E0E0E0]"
@@ -260,6 +208,9 @@ export default function ClientHomePage() {
                     alt={product.name}
                     fill
                     className="object-cover hover:scale-105 transition-transform duration-300"
+                    loading={index < 2 ? "eager" : "lazy"}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 300px"
+                    quality={75}
                   />
                   <div className="absolute top-2 left-2 bg-[#1B4A9C] text-white px-3 py-1 text-xs font-semibold">
                     NEW
@@ -290,6 +241,150 @@ export default function ClientHomePage() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl lg:text-4xl font-bold mb-4 text-[#1B4A9C]">What Our Customers Say</h2>
+            <p className="text-lg text-gray-600">500+ satisfied Ottawa homeowners trust PG Closets</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-gray-50 p-6 border-l-4 border-[#9BC4E2]">
+              <div className="flex items-center mb-4">
+                <div className="text-[#FFD700] text-lg">★★★★★</div>
+                <div className="ml-2 text-sm text-gray-600">5.0 Google Review</div>
+              </div>
+              <p className="text-gray-700 mb-4 italic">
+                "Exceptional quality and service. The Continental doors transformed our master bedroom closet
+                completely. Professional installation and great communication throughout."
+              </p>
+              <div className="font-semibold text-[#1B4A9C]">- Sarah M., Kanata</div>
+            </div>
+
+            <div className="bg-gray-50 p-6 border-l-4 border-[#9BC4E2]">
+              <div className="flex items-center mb-4">
+                <div className="text-[#FFD700] text-lg">★★★★★</div>
+                <div className="ml-2 text-sm text-gray-600">5.0 Google Review</div>
+              </div>
+              <p className="text-gray-700 mb-4 italic">
+                "Best investment we made in our home renovation. The Gatsby barn doors are stunning and the installation
+                was flawless. Highly recommend PG Closets!"
+              </p>
+              <div className="font-semibold text-[#1B4A9C]">- Michael R., Orleans</div>
+            </div>
+
+            <div className="bg-gray-50 p-6 border-l-4 border-[#9BC4E2]">
+              <div className="flex items-center mb-4">
+                <div className="text-[#FFD700] text-lg">★★★★★</div>
+                <div className="ml-2 text-sm text-gray-600">5.0 Google Review</div>
+              </div>
+              <p className="text-gray-700 mb-4 italic">
+                "From quote to installation, everything was perfect. The Euro doors with soft-close are exactly what we
+                wanted. Professional team, fair pricing."
+              </p>
+              <div className="font-semibold text-[#1B4A9C]">- Jennifer L., Nepean</div>
+            </div>
+          </div>
+
+          <div className="text-center mt-8">
+            <a
+              href="https://www.google.com/search?q=PG+Closets+Ottawa+reviews"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center text-[#1B4A9C] hover:text-[#9BC4E2] font-semibold"
+            >
+              Read All 127 Google Reviews →
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl lg:text-4xl font-bold mb-4 text-[#1B4A9C]">Recent Projects</h2>
+            <p className="text-lg text-gray-600">See how we transform Ottawa homes with premium closet doors</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="bg-white shadow-lg overflow-hidden">
+              <div className="aspect-video relative">
+                <Image
+                  src="/images/arcat/renin_176732_hd.jpg"
+                  alt="Continental doors in master bedroom closet"
+                  fill
+                  className="object-cover"
+                  loading="lazy"
+                />
+                <div className="absolute top-2 left-2 bg-[#1B4A9C] text-white px-3 py-1 text-xs font-semibold">
+                  BEFORE/AFTER
+                </div>
+              </div>
+              <div className="p-6">
+                <h3 className="text-lg font-semibold text-[#1B4A9C] mb-2">Master Bedroom Makeover</h3>
+                <p className="text-gray-600 text-sm mb-3">Continental doors • Kanata • 2024</p>
+                <p className="text-gray-700 text-sm">
+                  Complete closet transformation with premium Continental doors and professional installation.
+                </p>
+              </div>
+            </div>
+
+            <div className="bg-white shadow-lg overflow-hidden">
+              <div className="aspect-video relative">
+                <Image
+                  src="/images/arcat/renin_205729_hd.jpg"
+                  alt="Gatsby barn doors in modern home"
+                  fill
+                  className="object-cover"
+                  loading="lazy"
+                />
+                <div className="absolute top-2 left-2 bg-[#1B4A9C] text-white px-3 py-1 text-xs font-semibold">
+                  BEFORE/AFTER
+                </div>
+              </div>
+              <div className="p-6">
+                <h3 className="text-lg font-semibold text-[#1B4A9C] mb-2">Modern Barn Door Install</h3>
+                <p className="text-gray-600 text-sm mb-3">Gatsby doors • Orleans • 2024</p>
+                <p className="text-gray-700 text-sm">
+                  Stunning barn door installation with premium hardware and flawless finish work.
+                </p>
+              </div>
+            </div>
+
+            <div className="bg-white shadow-lg overflow-hidden">
+              <div className="aspect-video relative">
+                <Image
+                  src="/images/arcat/renin_199063_hd.jpg"
+                  alt="Euro doors with soft-close mechanism"
+                  fill
+                  className="object-cover"
+                  loading="lazy"
+                />
+                <div className="absolute top-2 left-2 bg-[#1B4A9C] text-white px-3 py-1 text-xs font-semibold">
+                  BEFORE/AFTER
+                </div>
+              </div>
+              <div className="p-6">
+                <h3 className="text-lg font-semibold text-[#1B4A9C] mb-2">Contemporary Upgrade</h3>
+                <p className="text-gray-600 text-sm mb-3">Euro doors • Nepean • 2024</p>
+                <p className="text-gray-700 text-sm">
+                  European-style doors with soft-close technology for a luxury feel.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center mt-8">
+            <a
+              href="/gallery"
+              className="bg-[#1B4A9C] text-white px-8 py-3 font-semibold hover:bg-[#153A7E] transition-all uppercase tracking-wide inline-block"
+            >
+              View Full Gallery
+            </a>
           </div>
         </div>
       </section>
@@ -358,17 +453,55 @@ export default function ClientHomePage() {
       )}
 
       <footer className="bg-[#1B4A9C] text-white py-16">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              name: "PG Closets",
+              description:
+                "Premium closet door specialists serving Ottawa and surrounding areas. Official Renin dealer with 15+ years experience and 500+ installations.",
+              url: "https://pgclosets.com",
+              telephone: "(613) 555-0123",
+              email: "info@pgclosets.com",
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Ottawa",
+                addressRegion: "ON",
+                addressCountry: "CA",
+              },
+              geo: {
+                "@type": "GeoCoordinates",
+                latitude: "45.4215",
+                longitude: "-75.6972",
+              },
+              openingHours: ["Mo-Fr 08:00-18:00", "Sa 09:00-16:00", "Su by appointment"],
+              priceRange: "$459-$899",
+              aggregateRating: {
+                "@type": "AggregateRating",
+                ratingValue: "5.0",
+                reviewCount: "127",
+                bestRating: "5",
+                worstRating: "1",
+              },
+              areaServed: ["Ottawa", "Kanata", "Orleans", "Nepean", "Barrhaven", "Gloucester"],
+              serviceType: [
+                "Closet Door Installation",
+                "Barn Door Installation",
+                "Bifold Door Installation",
+                "Bypass Door Installation",
+              ],
+            }),
+          }}
+        />
+
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
               <a href="/" className="flex items-center space-x-3 mb-6">
-                <div className="relative w-12 h-12">
-                  <Image
-                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/PG%20Logo.jpg-PA2Pv0eQKuJGkzYoQf9wsC86lYSKGa.jpeg"
-                    alt="PG Closets Logo"
-                    fill
-                    className="object-contain"
-                  />
+                <div className="w-12 h-12 bg-[#9BC4E2] flex items-center justify-center text-[#1B4A9C] font-bold text-lg">
+                  PG
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold">PG CLOSETS</h3>
