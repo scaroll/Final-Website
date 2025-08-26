@@ -23,7 +23,7 @@ export default function AboutPage() {
       <header className="fixed top-0 w-full z-50 bg-white/98 backdrop-blur-md border-b-2 border-[#1e3a8a] shadow-xl">
         <div className="max-w-7xl mx-auto px-4">
           <div className="bg-gradient-to-r from-[#1e3a8a] to-[#87ceeb] text-white text-center py-3 text-sm font-bold tracking-wide">
-            🏆 AWARD WINNING: Ottawa's #1 Rated Closet Specialists - Book Free Consultation Today!
+            ⭐ 5.0 • 🏠 500+ Installations • ⏰ 15+ Years • 98% Satisfaction
           </div>
 
           <div className="flex justify-between items-center h-20">
@@ -120,7 +120,7 @@ export default function AboutPage() {
               <div className="absolute -bottom-6 -right-6 bg-white p-8 shadow-2xl border-2 border-[#87ceeb]">
                 <div className="text-center">
                   <div className="text-3xl font-black text-[#1e3a8a] mb-2">500+</div>
-                  <div className="text-sm font-bold text-[#87ceeb] uppercase tracking-wide">HAPPY CUSTOMERS</div>
+                  <div className="text-sm font-bold text-[#87ceeb] uppercase tracking-wide">INSTALLATIONS</div>
                 </div>
               </div>
             </div>
@@ -320,7 +320,7 @@ export default function AboutPage() {
                   <span className="text-[#87ceeb] text-xl">📧</span>
                   <div>
                     <div className="font-bold text-white">Email</div>
-                    <div>spencer@peoplesgrp.com</div>
+                    <div>info@pgclosets.com</div>
                   </div>
                 </div>
                 <div className="flex items-center space-x-4">
@@ -337,6 +337,17 @@ export default function AboutPage() {
                     <div>Ottawa & Surrounding Areas</div>
                   </div>
                 </div>
+                <div className="flex items-center space-x-4">
+                  <span className="text-[#87ceeb] text-xl">🕒</span>
+                  <div>
+                    <div className="font-bold text-white">Business Hours</div>
+                    <div className="text-sm">
+                      <div>Mon-Fri: 8:00 AM - 6:00 PM</div>
+                      <div>Sat: 9:00 AM - 4:00 PM</div>
+                      <div>Sun: By Appointment</div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -344,7 +355,7 @@ export default function AboutPage() {
           <div className="border-t-2 border-[#87ceeb]/30 mt-16 pt-8">
             <div className="flex flex-col md:flex-row justify-between items-center">
               <p className="text-gray-400 mb-4 md:mb-0">
-                &copy; 2024 PG Closets. All rights reserved. | Licensed & Insured | A+ BBB Rating
+                &copy; 2025 PG Closets. All rights reserved. | Licensed & Insured | A+ BBB Rating
               </p>
               <div className="flex space-x-6 text-sm">
                 <a href="#" className="text-gray-400 hover:text-white transition-colors">

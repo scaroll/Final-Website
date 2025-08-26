@@ -12,11 +12,46 @@ export default function ClientHomePage() {
   const [quotePrice, setQuotePrice] = useState(459)
 
   const products = [
-    { name: "Continental", type: "bypass", price: 459, image: "/images/arcat/renin_176732_hd.jpg", category: "Bypass" },
-    { name: "Provincial", type: "bifold", price: 549, image: "/images/arcat/renin_205750_hd.jpg", category: "Bifold" },
-    { name: "Gatsby", type: "barn", price: 799, image: "/images/arcat/renin_205729_hd.jpg", category: "Barn" },
-    { name: "Euro", type: "pivot", price: 899, image: "/products/pivot-euro-1-lite-hero.png", category: "Pivot" },
+    {
+      name: "Continental",
+      type: "bypass",
+      price: 459,
+      image: "/images/arcat/renin_176732_hd.jpg",
+      category: "Bypass",
+      specs: "Premium engineered wood core, durable laminate surface",
+    },
+    {
+      name: "Provincial",
+      type: "bifold",
+      price: 549,
+      image: "/images/arcat/renin_205750_hd.jpg",
+      category: "Bifold",
+      specs: "Traditional styling, heavy-duty pivot hinges",
+    },
+    {
+      name: "Gatsby",
+      type: "barn",
+      price: 799,
+      image: "/images/arcat/renin_205729_hd.jpg",
+      category: "Barn",
+      specs: "Modern barn door design, premium hardware included",
+    },
+    {
+      name: "Euro",
+      type: "pivot",
+      price: 899,
+      image: "/images/arcat/renin_199063_hd.jpg",
+      category: "Pivot",
+      specs: "Contemporary European styling, soft-close mechanism",
+    },
   ]
+
+  const siteStats = {
+    installations: "500+",
+    rating: "5.0",
+    experience: "15+",
+    satisfaction: "98%",
+  }
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -25,12 +60,22 @@ export default function ClientHomePage() {
     return () => clearInterval(timer)
   }, [])
 
+  useEffect(() => {
+    const video = document.querySelector("video")
+    if (video) {
+      video.addEventListener("error", () => {
+        console.warn("Video failed to load, using gradient background fallback")
+      })
+    }
+  }, [])
+
   return (
     <div className="min-h-screen bg-white font-sans">
       <header className="fixed top-0 w-full z-50 bg-white shadow-lg">
         <div className="max-w-7xl mx-auto px-4">
           <div className="bg-gradient-to-r from-[#1B4A9C] to-[#4A5F8A] text-white text-center py-2 text-sm font-semibold">
-            ⭐ 5.0 • 🏠 500+ • ⏰ 15 Years • Official Renin Dealer
+            ⭐ {siteStats.rating} • 🏠 {siteStats.installations} Installations • ⏰ {siteStats.experience} Years •{" "}
+            {siteStats.satisfaction} Satisfaction
           </div>
 
           <div className="flex justify-between items-center h-20">
@@ -134,11 +179,18 @@ export default function ClientHomePage() {
       </header>
 
       <section
-        className="relative h-screen flex items-center justify-center"
+        className="relative h-screen flex items-center justify-center overflow-hidden"
         style={{
           background: "linear-gradient(to bottom right, #1B4A9C, #4A5F8A)",
         }}
       >
+        <video autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover z-10">
+          <source src="/hero-video.mp4" type="video/mp4" />
+          <source src="/hero-video.webm" type="video/webm" />
+        </video>
+
+        <div className="absolute inset-0 bg-black bg-opacity-40 z-15"></div>
+
         <div className="relative z-20 text-center text-white px-4 max-w-6xl mx-auto">
           <div className="mb-6">
             <span className="inline-block bg-[#9BC4E2] text-[#1B4A9C] px-4 py-2 text-sm font-semibold">
@@ -148,7 +200,7 @@ export default function ClientHomePage() {
 
           <h1 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight">Premium Closet Doors for Ottawa Homes</h1>
           <p className="text-lg lg:text-xl mb-8 max-w-3xl mx-auto">
-            Official Renin Dealer • 500+ Installations • Free Measurement
+            Official Renin Dealer • {siteStats.installations} Installations • Free Measurement
           </p>
 
           <div className="flex justify-center space-x-8 mb-8 text-[#9BC4E2]">
@@ -157,12 +209,16 @@ export default function ClientHomePage() {
               <div className="text-sm">Ottawa Homes</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold">5.0★</div>
+              <div className="text-2xl font-bold">{siteStats.rating}★</div>
               <div className="text-sm">Google Rating</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold">15+</div>
+              <div className="text-2xl font-bold">{siteStats.experience}</div>
               <div className="text-sm">Years Experience</div>
+            </div>
+            <div className="text-center">
+              <div className="text-2xl font-bold">{siteStats.satisfaction}</div>
+              <div className="text-sm">Satisfaction Rate</div>
             </div>
           </div>
 
@@ -211,9 +267,7 @@ export default function ClientHomePage() {
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-[#2C3E50] mb-2">{product.name}</h3>
-                  <p className="text-[#6B7280] text-sm mb-4">
-                    Premium {product.category.toLowerCase()} door with professional installation included.
-                  </p>
+                  <p className="text-[#6B7280] text-sm mb-4">{product.specs}</p>
                   <div className="text-3xl font-bold text-[#1B4A9C] mb-6">${product.price}.00</div>
                   <div className="flex gap-2">
                     <button
@@ -353,13 +407,21 @@ export default function ClientHomePage() {
                 <div>(613) 555-0123</div>
                 <div>info@pgclosets.com</div>
                 <div>Ottawa & Surrounding Areas</div>
-                <div>Licensed & Insured</div>
+                <div className="mt-4 pt-4 border-t border-gray-600">
+                  <div className="text-sm">
+                    <div className="font-semibold text-[#9BC4E2] mb-2">Business Hours:</div>
+                    <div>Mon-Fri: 8:00 AM - 6:00 PM</div>
+                    <div>Sat: 9:00 AM - 4:00 PM</div>
+                    <div>Sun: By Appointment</div>
+                  </div>
+                </div>
+                <div className="mt-2">Licensed & Insured</div>
               </div>
             </div>
           </div>
 
           <div className="border-t border-gray-600 mt-12 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 PG Closets. All rights reserved.</p>
+            <p>&copy; 2025 PG Closets. All rights reserved.</p>
           </div>
         </div>
       </footer>

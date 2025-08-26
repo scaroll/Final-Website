@@ -8,6 +8,13 @@ export default function ContactClientPage() {
   const [scriptError, setScriptError] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
+  const siteStats = {
+    installations: "500+",
+    rating: "5.0",
+    experience: "15+",
+    satisfaction: "98%",
+  }
+
   useEffect(() => {
     const link = document.createElement("link")
     link.rel = "stylesheet"
@@ -48,7 +55,8 @@ export default function ContactClientPage() {
       <header className="fixed top-0 w-full z-50 bg-white shadow-lg">
         <div className="max-w-7xl mx-auto px-4">
           <div className="bg-gradient-to-r from-[#1B4A9C] to-[#4A5F8A] text-white text-center py-2 text-sm font-semibold">
-            ⭐ 5.0 • 🏠 500+ • ⏰ 15 Years • Official Renin Dealer
+            ⭐ {siteStats.rating} • 🏠 {siteStats.installations} Installations • ⏰ {siteStats.experience} Years •{" "}
+            {siteStats.satisfaction} Satisfaction
           </div>
 
           <div className="flex justify-between items-center h-20">
@@ -151,8 +159,8 @@ export default function ContactClientPage() {
         <h1 className="text-3xl md:text-4xl font-extrabold text-[#1B4A9C] mb-4">Request Work</h1>
         <p className="mt-2 text-slate-600 mb-8">
           Use the form below to tell us about your project. Prefer email?{" "}
-          <a className="underline text-[#1B4A9C] hover:text-[#9BC4E2]" href="mailto:spencer@peoplesgrp.com">
-            spencer@peoplesgrp.com
+          <a className="underline text-[#1B4A9C] hover:text-[#9BC4E2]" href="mailto:info@pgclosets.com">
+            info@pgclosets.com
           </a>
         </p>
 
@@ -164,14 +172,68 @@ export default function ContactClientPage() {
               </div>
             )}
             {scriptError && (
-              <div className="py-12 text-center">
-                <div className="text-slate-600 mb-4">Unable to load the contact form. Please email us directly:</div>
-                <a
-                  className="inline-block bg-[#1B4A9C] text-white px-6 py-3 hover:bg-[#153A7E] transition-colors"
-                  href="mailto:spencer@peoplesgrp.com?subject=Work Request"
-                >
-                  Email spencer@peoplesgrp.com
-                </a>
+              <div className="py-8">
+                <h3 className="text-xl font-semibold text-[#1B4A9C] mb-6">Contact Form</h3>
+                <form className="space-y-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">First Name *</label>
+                      <input
+                        type="text"
+                        required
+                        className="w-full px-3 py-2 border border-gray-300 focus:outline-none focus:border-[#1B4A9C]"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">Last Name *</label>
+                      <input
+                        type="text"
+                        required
+                        className="w-full px-3 py-2 border border-gray-300 focus:outline-none focus:border-[#1B4A9C]"
+                      />
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">Email *</label>
+                      <input
+                        type="email"
+                        required
+                        className="w-full px-3 py-2 border border-gray-300 focus:outline-none focus:border-[#1B4A9C]"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">Phone</label>
+                      <input
+                        type="tel"
+                        className="w-full px-3 py-2 border border-gray-300 focus:outline-none focus:border-[#1B4A9C]"
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Project Details *</label>
+                    <textarea
+                      rows={4}
+                      required
+                      className="w-full px-3 py-2 border border-gray-300 focus:outline-none focus:border-[#1B4A9C]"
+                      placeholder="Tell us about your closet door project..."
+                    ></textarea>
+                  </div>
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <button
+                      type="submit"
+                      className="bg-[#1B4A9C] text-white px-8 py-3 font-semibold hover:bg-[#153A7E] transition-all"
+                    >
+                      Send Message
+                    </button>
+                    <a
+                      href="mailto:info@pgclosets.com?subject=Closet Door Project"
+                      className="border-2 border-[#1B4A9C] text-[#1B4A9C] px-8 py-3 font-semibold hover:bg-[#1B4A9C] hover:text-white transition-all text-center"
+                    >
+                      Email Directly
+                    </a>
+                  </div>
+                </form>
               </div>
             )}
           </div>
@@ -196,6 +258,9 @@ export default function ContactClientPage() {
                   <p className="text-[#9BC4E2]">Premium Solutions</p>
                 </div>
               </a>
+              <p className="text-gray-300 mb-6">
+                Ottawa's premier closet door specialists, transforming homes with premium solutions.
+              </p>
             </div>
 
             <div>
@@ -225,8 +290,23 @@ export default function ContactClientPage() {
                 <div>(613) 555-0123</div>
                 <div>info@pgclosets.com</div>
                 <div>Ottawa & Surrounding Areas</div>
+                {/* Added business hours section */}
+                <div className="mt-4 pt-4 border-t border-gray-600">
+                  <div className="text-sm">
+                    <div className="font-semibold text-[#9BC4E2] mb-2">Business Hours:</div>
+                    <div>Mon-Fri: 8:00 AM - 6:00 PM</div>
+                    <div>Sat: 9:00 AM - 4:00 PM</div>
+                    <div>Sun: By Appointment</div>
+                  </div>
+                </div>
+                <div className="mt-2">Licensed & Insured</div>
               </div>
             </div>
+          </div>
+
+          <div className="border-t border-gray-600 mt-12 pt-8 text-center text-gray-400">
+            {/* Updated copyright to 2025 */}
+            <p>&copy; 2025 PG Closets. All rights reserved.</p>
           </div>
         </div>
       </footer>
