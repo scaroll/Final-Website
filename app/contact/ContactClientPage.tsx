@@ -1,21 +1,14 @@
 "use client"
 import Script from "next/script"
 import { useEffect, useState } from "react"
+import Image from "next/image"
 
-/**
- * Contact page shows ONLY:
- * - Jobber embedded Work Request form
- * - Public email spencer@peoplesgrp.com as a fallback link
- * No address or phone rendered anywhere.
- * Jobber docs: embed request form in your website. (We load one CSS + one JS and render the div container.)
- */
 export default function ContactClientPage() {
   const [scriptLoaded, setScriptLoaded] = useState(false)
   const [scriptError, setScriptError] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
-  // <CHANGE> Added CSS loading through useEffect for App Router compatibility
   useEffect(() => {
-    // Load Jobber CSS dynamically
     const link = document.createElement("link")
     link.rel = "stylesheet"
     link.href = "https://d3ey4dbjkt2f6s.cloudfront.net/assets/external/work_request_embed.css"
@@ -25,14 +18,12 @@ export default function ContactClientPage() {
     const checkJobberForm = setTimeout(() => {
       const jobberContainer = document.getElementById("83a3d24e-c18d-441c-80d1-d85419ea28ae")
       if (jobberContainer && jobberContainer.children.length === 0) {
-        console.log("[v0] Jobber form container is empty, script may have failed")
         setScriptError(true)
       }
     }, 5000)
 
     return () => {
       clearTimeout(checkJobberForm)
-      // <CHANGE> Cleanup CSS link on unmount
       const existingLink = document.querySelector(
         'link[href="https://d3ey4dbjkt2f6s.cloudfront.net/assets/external/work_request_embed.css"]',
       )
@@ -43,58 +34,210 @@ export default function ContactClientPage() {
   }, [])
 
   const handleScriptLoad = () => {
-    console.log("[v0] Jobber script loaded successfully")
     setScriptLoaded(true)
     setScriptError(false)
   }
 
-  const handleScriptError = (error: any) => {
-    console.log("[v0] Jobber script failed to load:", error)
+  const handleScriptError = () => {
     setScriptError(true)
     setScriptLoaded(false)
   }
 
   return (
-    <main className="max-w-[1200px] mx-auto px-6 py-24">
-      <h1 className="text-3xl md:text-4xl font-extrabold text-slate-800">Request Work</h1>
-      <p className="mt-2 text-slate-600">
-        Use the form below to tell us about your project. Prefer email?{" "}
-        <a className="underline text-blue-600 hover:text-blue-800" href="mailto:spencer@peoplesgrp.com">
-          spencer@peoplesgrp.com
-        </a>
-      </p>
+    <div className="min-h-screen bg-white font-sans">
+      <header className="fixed top-0 w-full z-50 bg-white shadow-lg">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="bg-gradient-to-r from-[#1B4A9C] to-[#4A5F8A] text-white text-center py-2 text-sm font-semibold">
+            ⭐ 5.0 • 🏠 500+ • ⏰ 15 Years • Official Renin Dealer
+          </div>
 
-      {/* Jobber embed container */}
-      <div className="mt-8 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-        <div id="83a3d24e-c18d-441c-80d1-d85419ea28ae">
-          {!scriptLoaded && !scriptError && (
-            <div className="flex items-center justify-center py-12">
-              <div className="text-slate-500">Loading contact form...</div>
-            </div>
-          )}
-          {scriptError && (
-            <div className="py-12 text-center">
-              <div className="text-slate-600 mb-4">Unable to load the contact form. Please email us directly:</div>
+          <div className="flex justify-between items-center h-20">
+            <a href="/" className="flex items-center space-x-3">
+              <div className="relative w-12 h-12">
+                <Image
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/PG%20Logo.jpg-PA2Pv0eQKuJGkzYoQf9wsC86lYSKGa.jpeg"
+                  alt="PG Closets Logo"
+                  fill
+                  className="object-contain"
+                  priority
+                />
+              </div>
+              <div>
+                <h1 className="text-xl font-bold text-[#1B4A9C]">PG CLOSETS</h1>
+                <p className="text-xs text-[#9BC4E2] font-medium">Premium Solutions</p>
+              </div>
+            </a>
+
+            <nav className="hidden lg:flex items-center space-x-6">
+              <a href="/" className="text-[#1B4A9C] hover:text-[#9BC4E2] px-3 py-2 text-sm font-medium">
+                Home
+              </a>
+              <a href="/products" className="text-[#1B4A9C] hover:text-[#9BC4E2] px-3 py-2 text-sm font-medium">
+                Products
+              </a>
+              <a href="/about" className="text-[#1B4A9C] hover:text-[#9BC4E2] px-3 py-2 text-sm font-medium">
+                About
+              </a>
+              <a href="/services" className="text-[#1B4A9C] hover:text-[#9BC4E2] px-3 py-2 text-sm font-medium">
+                Services
+              </a>
               <a
-                className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
-                href="mailto:spencer@peoplesgrp.com?subject=Work Request"
+                href="/contact"
+                className="text-[#9BC4E2] hover:text-[#1B4A9C] px-3 py-2 text-sm font-medium font-semibold"
               >
-                Email spencer@peoplesgrp.com
+                Contact
+              </a>
+
+              <div className="flex items-center space-x-4 ml-6">
+                <a href="tel:6135550123" className="text-[#9BC4E2] font-semibold hover:text-[#1B4A9C]">
+                  (613) 555-0123
+                </a>
+              </div>
+            </nav>
+
+            <div className="lg:hidden">
+              <button
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="text-[#1B4A9C] hover:text-[#9BC4E2] p-2"
+              >
+                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  {mobileMenuOpen ? (
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  ) : (
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                  )}
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          {mobileMenuOpen && (
+            <div className="lg:hidden border-t py-4 space-y-2 bg-white">
+              <a href="/" className="block px-4 py-2 text-[#1B4A9C] hover:text-[#9BC4E2] font-medium">
+                Home
+              </a>
+              <a href="/products" className="block px-4 py-2 text-[#1B4A9C] hover:text-[#9BC4E2] font-medium">
+                Products
+              </a>
+              <a href="/about" className="block px-4 py-2 text-[#1B4A9C] hover:text-[#9BC4E2] font-medium">
+                About
+              </a>
+              <a href="/services" className="block px-4 py-2 text-[#1B4A9C] hover:text-[#9BC4E2] font-medium">
+                Services
+              </a>
+              <a
+                href="/contact"
+                className="block px-4 py-2 text-[#9BC4E2] hover:text-[#1B4A9C] font-medium font-semibold"
+              >
+                Contact
               </a>
             </div>
           )}
         </div>
+      </header>
+
+      <div className="pt-32 pb-8 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4">
+          <nav className="text-sm text-gray-600 mb-4">
+            <a href="/" className="hover:text-[#1B4A9C]">
+              Home
+            </a>{" "}
+            / <span className="text-[#1B4A9C] font-medium">Contact</span>
+          </nav>
+        </div>
       </div>
 
-      {/* <CHANGE> Added error boundary and better error handling for Script component */}
+      <main className="max-w-[1200px] mx-auto px-6 py-12">
+        <h1 className="text-3xl md:text-4xl font-extrabold text-[#1B4A9C] mb-4">Request Work</h1>
+        <p className="mt-2 text-slate-600 mb-8">
+          Use the form below to tell us about your project. Prefer email?{" "}
+          <a className="underline text-[#1B4A9C] hover:text-[#9BC4E2]" href="mailto:spencer@peoplesgrp.com">
+            spencer@peoplesgrp.com
+          </a>
+        </p>
+
+        <div className="mt-8 border border-slate-200 bg-white p-6 shadow-sm">
+          <div id="83a3d24e-c18d-441c-80d1-d85419ea28ae">
+            {!scriptLoaded && !scriptError && (
+              <div className="flex items-center justify-center py-12">
+                <div className="text-slate-500">Loading contact form...</div>
+              </div>
+            )}
+            {scriptError && (
+              <div className="py-12 text-center">
+                <div className="text-slate-600 mb-4">Unable to load the contact form. Please email us directly:</div>
+                <a
+                  className="inline-block bg-[#1B4A9C] text-white px-6 py-3 hover:bg-[#153A7E] transition-colors"
+                  href="mailto:spencer@peoplesgrp.com?subject=Work Request"
+                >
+                  Email spencer@peoplesgrp.com
+                </a>
+              </div>
+            )}
+          </div>
+        </div>
+      </main>
+
+      <footer className="bg-[#1B4A9C] text-white py-16">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+              <a href="/" className="flex items-center space-x-3 mb-6">
+                <div className="relative w-12 h-12">
+                  <Image
+                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/PG%20Logo.jpg-PA2Pv0eQKuJGkzYoQf9wsC86lYSKGa.jpeg"
+                    alt="PG Closets Logo"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold">PG CLOSETS</h3>
+                  <p className="text-[#9BC4E2]">Premium Solutions</p>
+                </div>
+              </a>
+            </div>
+
+            <div>
+              <h4 className="text-lg font-semibold mb-4 text-[#9BC4E2]">Sitemap</h4>
+              <div className="space-y-2">
+                <a href="/" className="block text-gray-300 hover:text-white">
+                  Home
+                </a>
+                <a href="/products" className="block text-gray-300 hover:text-white">
+                  Products
+                </a>
+                <a href="/about" className="block text-gray-300 hover:text-white">
+                  About
+                </a>
+                <a href="/services" className="block text-gray-300 hover:text-white">
+                  Services
+                </a>
+                <a href="/contact" className="block text-gray-300 hover:text-white">
+                  Contact
+                </a>
+              </div>
+            </div>
+
+            <div>
+              <h4 className="text-lg font-semibold mb-4 text-[#9BC4E2]">Contact</h4>
+              <div className="space-y-2 text-gray-300">
+                <div>(613) 555-0123</div>
+                <div>info@pgclosets.com</div>
+                <div>Ottawa & Surrounding Areas</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+
       <Script
         src="https://d3ey4dbjkt2f6s.cloudfront.net/assets/static_link/work_request_embed_snippet.js"
         strategy="afterInteractive"
         onLoad={handleScriptLoad}
         onError={handleScriptError}
         data-clienthub-id="83a3d24e-c18d-441c-80d1-d85419ea28ae"
-        data-form-url="https://clienthub.getjobber.com/client_hubs/83a3d24e-c18d-441c-80d1-d85419ea28ae/public/work_request/embedded_work_request_form"
       />
-    </main>
+    </div>
   )
 }
