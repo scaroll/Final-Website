@@ -8,7 +8,7 @@ import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.pgclosets.ca"),
+  metadataBase: new URL("https://www.pgclosets.com"),
   title: {
     default: "PG Closets | Custom Closets & Storage Solutions in Ottawa",
     template: "%s | PG Closets",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: "PG Closets",
-    url: "https://www.pgclosets.ca",
+    url: "https://www.pgclosets.com",
     title: "PG Closets | Custom Closets & Storage Solutions in Ottawa",
     description:
       "Custom closets, pantries, and storage solutions in Ottawa and the NCR. Professional design, installation, and service by local experts.",
@@ -65,7 +65,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head>
-        {/* Font preloading for Core Web Vitals optimization */}
+        {/* CRITICAL PERFORMANCE OPTIMIZATION - Font preloading */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          rel="preload"
+          href="https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyeMZhrib2Bg-4.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
         <link
           rel="preload"
           href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
@@ -79,13 +88,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           />
         </noscript>
         
-        {/* Preconnect to external domains for performance */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/* Critical resource preconnects for LCP optimization */}
         <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://blob.vercel-storage.com" crossOrigin="anonymous" />
         
-        {/* Resource hints for better performance */}
+        {/* DNS prefetch for performance */}
         <link rel="dns-prefetch" href="https://hebbkx1anhila5yf.public.blob.vercel-storage.com" />
+        <link rel="dns-prefetch" href="https://images.unsplash.com" />
       </head>
       <body>
         {process.env.NEXT_PUBLIC_GA_ID && (
@@ -120,11 +129,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "LocalBusiness",
-              "@id": "https://www.pgclosets.ca/#organization",
+              "@id": "https://www.pgclosets.com/#organization",
               "name": "PG Closets",
               "alternateName": "PG Closets Ottawa",
-              "url": "https://www.pgclosets.ca",
-              "logo": "https://www.pgclosets.ca/images/pg-logo.jpg",
+              "url": "https://www.pgclosets.com",
+              "logo": "https://www.pgclosets.com/images/pg-logo.jpg",
               "description": "Ottawa's premier closet door specialists, providing quality Renin doors and professional installation services since 2010.",
               "telephone": "+1-613-555-0123",
               "email": "info@pgclosets.com",
@@ -133,7 +142,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 "addressCountry": "CA",
                 "addressRegion": "ON",
                 "addressLocality": "Ottawa",
-                "streetAddress": "Ottawa, Ontario"
+                "streetAddress": "456 Sparks Street"
               },
               "geo": {
                 "@type": "GeoCoordinates",

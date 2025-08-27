@@ -7,9 +7,16 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   
-  // Performance optimizations
+  // CRITICAL PERFORMANCE OPTIMIZATIONS
   experimental: {
     optimizePackageImports: ['lucide-react', '@radix-ui/react-icons'],
+    optimizeServerReact: true,
+    webVitalsAttribution: ['CLS', 'LCP', 'FCP', 'FID', 'TTFB'],
+  },
+  
+  // Compiler optimizations
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production',
   },
   
   // External packages configuration
@@ -18,11 +25,12 @@ const nextConfig = {
   // Core Web Vitals optimizations
   poweredByHeader: false,
   
-  // Image optimization
+  // OPTIMIZED Image configuration for Core Web Vitals
   images: {
     unoptimized: false,
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+    loader: 'default',
     remotePatterns: [
       {
         protocol: 'https',
@@ -40,10 +48,16 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'www.homedepot.ca',
       },
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
     ],
-    formats: ['image/webp', 'image/avif'],
-    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
-    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    formats: ['image/avif', 'image/webp'], // AVIF first for better compression
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920], // Optimized for common breakpoints
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384], // Restored 384 for larger thumbnails
+    minimumCacheTTL: 31536000, // 1 year cache
+    contentDispositionType: 'attachment',
   },
   
   // Compression

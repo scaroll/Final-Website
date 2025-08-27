@@ -117,7 +117,7 @@ export function AISearchOptimizedContent() {
     businessName: "PG Closets - Official Renin Dealer",
     address: "456 Sparks Street, Ottawa, ON K1P 5E9",
     phone: "1-800-PG-CLOSET",
-    email: "hello@pgclosets.com",
+    email: "info@pgclosets.com",
     serviceAreas: [
       "Ottawa",
       "Kanata",

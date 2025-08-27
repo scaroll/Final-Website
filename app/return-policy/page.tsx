@@ -169,8 +169,8 @@ export default function ReturnPolicyPage() {
                 <h4 className="font-semibold mb-2">Return Address</h4>
                 <div className="text-sm text-muted-foreground">
                   <p>PG Closets Returns Department</p>
-                  <p>456 Return Processing Way</p>
-                  <p>Toronto, ON M5V 3A8</p>
+                  <p>456 Sparks Street</p>
+                  <p>Ottawa, ON K1P 5E9</p>
                   <p>Canada</p>
                 </div>
               </div>

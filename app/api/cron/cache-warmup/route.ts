@@ -13,7 +13,7 @@ export async function GET(request: NextRequest) {
 
     const baseUrl = process.env.VERCEL_URL 
       ? `https://${process.env.VERCEL_URL}`
-      : 'https://www.pgclosets.ca'
+      : 'https://www.pgclosets.com'
 
     // Critical pages to keep warm
     const criticalPages = [

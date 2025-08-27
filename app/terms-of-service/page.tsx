@@ -168,7 +168,7 @@ export default function TermsOfServicePage() {
               <div className="space-y-2 text-muted-foreground">
                 <p>Email: legal@pgclosets.com</p>
                 <p>Phone: 1-800-PG-CLOSET</p>
-                <p>Address: 123 Organization Way, Toronto, ON M5V 3A8</p>
+                <p>Address: 456 Sparks Street, Ottawa, ON K1P 5E9</p>
               </div>
             </CardContent>
           </Card>

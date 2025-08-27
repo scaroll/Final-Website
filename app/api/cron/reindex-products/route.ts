@@ -44,7 +44,7 @@ export async function GET(request: NextRequest) {
     // Submit updated sitemap to search engines
     const baseUrl = process.env.VERCEL_URL 
       ? `https://${process.env.VERCEL_URL}`
-      : 'https://www.pgclosets.ca'
+      : 'https://www.pgclosets.com'
     
     const searchEngineResults = []
     

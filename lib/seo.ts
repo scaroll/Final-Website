@@ -12,7 +12,7 @@ export function LocalBusinessJSONLD() {
       "@type": "LocalBusiness",
       name: "PG Closets",
       description: "Premium closet doors and custom storage solutions in Ottawa",
-      url: "https://www.pgclosets.ca",
+      url: "https://www.pgclosets.com",
       email: "spencer@peoplesgrp.com",
       address: {
         "@type": "PostalAddress",
@@ -55,11 +55,11 @@ export function WebsiteJSONLD() {
       "@context": "https://schema.org",
       "@type": "WebSite",
       name: "PG Closets",
-      url: "https://www.pgclosets.ca",
+      url: "https://www.pgclosets.com",
       description: "Premium closet doors and custom storage solutions in Ottawa",
       potentialAction: {
         "@type": "SearchAction",
-        target: "https://www.pgclosets.ca/products?search={search_term_string}",
+        target: "https://www.pgclosets.com/products?search={search_term_string}",
         "query-input": "required name=search_term_string",
       },
     })
@@ -84,8 +84,8 @@ export function OrganizationJSONLD() {
       "@context": "https://schema.org",
       "@type": "Organization",
       name: "PG Closets",
-      url: "https://www.pgclosets.ca",
-      logo: "https://www.pgclosets.ca/logo.png",
+      url: "https://www.pgclosets.com",
+      logo: "https://www.pgclosets.com/logo.png",
       description: "Premium closet doors and custom storage solutions in Ottawa",
       email: "spencer@peoplesgrp.com",
       address: {

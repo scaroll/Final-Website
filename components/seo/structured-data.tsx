@@ -136,8 +136,8 @@ export function LocalBusinessSchema({
     },
     contactPoint: {
       "@type": "ContactPoint",
-      telephone: "+1-800-742-5673",
-      email: "hello@pgclosets.com",
+      telephone: "+1-613-555-0123",
+      email: "info@pgclosets.com",
       contactType: "customer service",
       availableLanguage: ["English", "French"],
     },

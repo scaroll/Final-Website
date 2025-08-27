@@ -79,10 +79,10 @@ export default function TermsOfService() {
             <p className="text-body-m text-pg-dark leading-relaxed" style={{ opacity: 0.75 }}>
               For questions about these Terms of Service, please contact us at{" "}
               <a
-                href="mailto:legal@pgclosets.ca"
+                href="mailto:legal@pgclosets.com"
                 className="text-pg-navy hover:text-pg-sky transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-pg-sky focus-visible:outline-offset-2"
               >
-                legal@pgclosets.ca
+                legal@pgclosets.com
               </a>
             </p>
           </section>

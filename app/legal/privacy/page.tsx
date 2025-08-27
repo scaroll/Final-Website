@@ -71,10 +71,10 @@ export default function PrivacyPolicy() {
             <p className="text-body-m text-pg-dark leading-relaxed" style={{ opacity: 0.75 }}>
               If you have questions about this Privacy Policy, please contact us at{" "}
               <a
-                href="mailto:privacy@pgclosets.ca"
+                href="mailto:privacy@pgclosets.com"
                 className="text-pg-navy hover:text-pg-sky transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-pg-sky focus-visible:outline-offset-2"
               >
-                privacy@pgclosets.ca
+                privacy@pgclosets.com
               </a>
             </p>
           </section>

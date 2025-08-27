@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next"
 import { reninProducts } from "../data/renin-products"
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://www.pgclosets.ca"
+  const baseUrl = "https://www.pgclosets.com"
   const currentDate = new Date().toISOString()
 
   // Core business pages with highest priority

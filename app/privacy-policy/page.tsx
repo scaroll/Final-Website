@@ -139,7 +139,7 @@ export default function PrivacyPolicyPage() {
                   <div className="space-y-2 text-muted-foreground">
                     <BodySmall>Email: privacy@pgclosets.com</BodySmall>
                     <BodySmall>Phone: 1-800-PG-CLOSET</BodySmall>
-                    <BodySmall>Address: 123 Organization Way, Toronto, ON M5V 3A8</BodySmall>
+                    <BodySmall>Address: 456 Sparks Street, Ottawa, ON K1P 5E9</BodySmall>
                   </div>
                 </CardContent>
               </Card>
