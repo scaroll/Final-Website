@@ -91,7 +91,7 @@ export function OrderConfirmation({ orderId, shippingInfo }: OrderConfirmationPr
         <p className="text-sm text-pg-gray">
           You'll receive email updates at each step. Questions? Call us at{" "}
           <a href="tel:613-555-0123" className="text-pg-navy font-medium">
-            (613) 555-0123
+            (613) 729-7400
           </a>
         </p>
 

@@ -26,8 +26,8 @@ export default function BarrhavenPage() {
             "@type": "LocalBusiness",
             name: "PG Closets Barrhaven",
             description: "Professional closet door installation in Barrhaven, Ontario",
-            url: "https://pgclosets.com/barrhaven",
-            telephone: "+1-613-XXX-XXXX",
+            url: "https://www.pgclosets.com/barrhaven",
+            telephone: "+1-613-729-7400",
             email: "spencer@peoplesgrp.com",
             address: {
               "@type": "PostalAddress",

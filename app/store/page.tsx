@@ -31,8 +31,8 @@ export default function StorePage() {
               <Button variant="primary" size="lg" href="/contact">
                 Free Consultation
               </Button>
-              <Button variant="secondary" size="lg" href="tel:613-555-0123">
-                Call (613) 555-0123
+              <Button variant="secondary" size="lg" href="tel:613-729-7400">
+                Call (613) 729-7400
               </Button>
             </div>
           </div>

@@ -135,7 +135,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               "url": "https://www.pgclosets.com",
               "logo": "https://www.pgclosets.com/images/pg-logo.jpg",
               "description": "Ottawa's premier closet door specialists, providing quality Renin doors and professional installation services since 2010.",
-              "telephone": "+1-613-555-0123",
+              "telephone": "+1-613-729-7400",
               "email": "info@pgclosets.com",
               "address": {
                 "@type": "PostalAddress",

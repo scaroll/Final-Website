@@ -26,8 +26,8 @@ export default function OrleansPage() {
             "@type": "LocalBusiness",
             name: "PG Closets Orleans",
             description: "Professional closet door installation in Orleans, Ontario",
-            url: "https://pgclosets.com/orleans",
-            telephone: "+1-613-XXX-XXXX",
+            url: "https://www.pgclosets.com/orleans",
+            telephone: "+1-613-729-7400",
             email: "spencer@peoplesgrp.com",
             address: {
               "@type": "PostalAddress",

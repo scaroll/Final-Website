@@ -36,8 +36,8 @@ export default function NotFound() {
               </a>
 
               <div className="flex items-center space-x-4 ml-6">
-                <a href="tel:6135550123" className="text-[#9BC4E2] font-semibold hover:text-[#1B4A9C]">
-                  (613) 555-0123
+                <a href="tel:613-729-7400" className="text-[#9BC4E2] font-semibold hover:text-[#1B4A9C]">
+                  (613) 729-7400
                 </a>
               </div>
             </nav>
@@ -72,8 +72,8 @@ export default function NotFound() {
 
         <div className="mt-12 text-center">
           <p className="text-gray-600 mb-4">Need help finding what you're looking for?</p>
-          <a href="tel:6135550123" className="text-[#9BC4E2] font-semibold hover:text-[#1B4A9C] text-lg">
-            Call us: (613) 555-0123
+          <a href="tel:613-729-7400" className="text-[#9BC4E2] font-semibold hover:text-[#1B4A9C] text-lg">
+            Call us: (613) 729-7400
           </a>
         </div>
       </main>
@@ -120,7 +120,7 @@ export default function NotFound() {
             <div>
               <h4 className="text-lg font-semibold mb-4 text-[#9BC4E2]">Contact</h4>
               <div className="space-y-2 text-gray-300">
-                <div>(613) 555-0123</div>
+                <div>(613) 729-7400</div>
                 <div>info@pgclosets.com</div>
                 <div>Ottawa & Surrounding Areas</div>
                 <div className="mt-2">Licensed & Insured</div>

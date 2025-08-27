@@ -99,17 +99,17 @@ export default function BlogPage() {
             "@type": "Blog",
             name: "PG Closets Ottawa Blog",
             description: "Expert tips and guides for closet doors and home improvement in Ottawa",
-            url: "https://pgclosets.com/blog",
+            url: "https://www.pgclosets.com/blog",
             publisher: {
               "@type": "Organization",
               name: "PG Closets Ottawa",
-              url: "https://pgclosets.com",
+              url: "https://www.pgclosets.com",
             },
             blogPost: blogPosts.map((post) => ({
               "@type": "BlogPosting",
               headline: post.title,
               description: post.excerpt,
-              url: `https://pgclosets.com/blog/${post.id}`,
+              url: `https://www.pgclosets.com/blog/${post.id}`,
               datePublished: post.date,
               author: {
                 "@type": "Organization",

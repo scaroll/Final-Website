@@ -57,8 +57,8 @@ export default function ClientHomePage({ products }: ClientHomePageProps) {
               </a>
 
               <div className="flex items-center space-x-4 ml-6">
-                <a href="tel:6135550123" className="text-[#9BC4E2] font-semibold hover:text-[#1B4A9C]">
-                  (613) 555-0123
+                <a href="tel:613-729-7400" className="text-[#9BC4E2] font-semibold hover:text-[#1B4A9C]">
+                  (613) 729-7400
                 </a>
                 <button
                   onClick={() => setQuoteStep(1)}
@@ -104,7 +104,7 @@ export default function ClientHomePage({ products }: ClientHomePageProps) {
               </a>
 
               <div className="px-4 pt-4 grid grid-cols-2 gap-2">
-                <a href="tel:6135550123" className="bg-[#1B4A9C] text-white py-3 text-center font-semibold">
+                <a href="tel:613-729-7400" className="bg-[#1B4A9C] text-white py-3 text-center font-semibold">
                   Call Now
                 </a>
                 <button
@@ -449,8 +449,8 @@ export default function ClientHomePage({ products }: ClientHomePageProps) {
               name: "PG Closets",
               description:
                 "Premium closet door specialists serving Ottawa and surrounding areas. Official Renin dealer with 15+ years experience and 500+ installations.",
-              url: "https://pgclosets.com",
-              telephone: "(613) 555-0123",
+              url: "https://www.pgclosets.com",
+              telephone: "(613) 729-7400",
               email: "info@pgclosets.com",
               address: {
                 "@type": "PostalAddress",
@@ -524,7 +524,7 @@ export default function ClientHomePage({ products }: ClientHomePageProps) {
             <div>
               <h4 className="text-lg font-semibold mb-4 text-[#9BC4E2]">Contact</h4>
               <div className="space-y-2 text-gray-300">
-                <div>(613) 555-0123</div>
+                <div>(613) 729-7400</div>
                 <div>info@pgclosets.com</div>
                 <div>Ottawa & Surrounding Areas</div>
                 <div className="mt-4 pt-4 border-t border-gray-600">

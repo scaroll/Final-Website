@@ -184,7 +184,7 @@ export default function ClientPage() {
               <h4 className="text-lg font-semibold text-gray-900 mb-4">Contact Info</h4>
               <div className="space-y-2 text-gray-600">
                 <p>📧 spencer@peoplesgrp.com</p>
-                <p>📱 (613) 555-0123</p>
+                <p>📱 (613) 729-7400</p>
                 <p>📍 Ottawa, Ontario</p>
               </div>
             </div>

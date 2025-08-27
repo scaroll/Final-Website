@@ -26,8 +26,8 @@ export default function NepeanPage() {
             "@type": "LocalBusiness",
             name: "PG Closets Nepean",
             description: "Professional closet door installation in Nepean, Ontario",
-            url: "https://pgclosets.com/nepean",
-            telephone: "+1-613-XXX-XXXX",
+            url: "https://www.pgclosets.com/nepean",
+            telephone: "+1-613-729-7400",
             email: "spencer@peoplesgrp.com",
             address: {
               "@type": "PostalAddress",

@@ -67,8 +67,8 @@ export default function ServicesPage() {
               </Link>
 
               <div className="flex items-center space-x-6 ml-8 pl-8 border-l border-slate-200">
-                <a href="tel:6135550123" className="text-slate-600 hover:text-slate-900 font-light tracking-wide transition-colors">
-                  (613) 555-0123
+                <a href="tel:613-729-7400" className="text-slate-600 hover:text-slate-900 font-light tracking-wide transition-colors">
+                  (613) 729-7400
                 </a>
                 <Link
                   href="/contact"
@@ -462,7 +462,7 @@ export default function ServicesPage() {
             <div>
               <h3 className="font-bold text-lg mb-4">Contact</h3>
               <div className="space-y-2 text-gray-300">
-                <p>(613) 555-0123</p>
+                <p>(613) 729-7400</p>
                 <p>info@pgclosets.com</p>
                 <p>Ottawa & Surrounding Areas</p>
                 <div className="mt-4">

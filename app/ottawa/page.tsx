@@ -26,8 +26,8 @@ export default function OttawaPage() {
             "@type": "LocalBusiness",
             name: "PG Closets Ottawa",
             description: "Professional closet door installation in Ottawa, Ontario",
-            url: "https://pgclosets.com/ottawa",
-            telephone: "+1-613-XXX-XXXX",
+            url: "https://www.pgclosets.com/ottawa",
+            telephone: "+1-613-729-7400",
             email: "spencer@peoplesgrp.com",
             address: {
               "@type": "PostalAddress",

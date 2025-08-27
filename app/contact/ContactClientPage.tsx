@@ -99,8 +99,8 @@ export default function ContactClientPage() {
               </a>
 
               <div className="flex items-center space-x-6 ml-8 pl-8 border-l border-slate-200">
-                <a href="tel:6135550123" className="text-slate-600 hover:text-slate-900 font-light tracking-wide transition-colors">
-                  (613) 555-0123
+                <a href="tel:613-729-7400" className="text-slate-600 hover:text-slate-900 font-light tracking-wide transition-colors">
+                  (613) 729-7400
                 </a>
               </div>
             </nav>
@@ -289,7 +289,7 @@ export default function ContactClientPage() {
             <div>
               <h4 className="text-lg font-semibold mb-4 text-[#9BC4E2]">Contact</h4>
               <div className="space-y-2 text-gray-300">
-                <div>(613) 555-0123</div>
+                <div>(613) 729-7400</div>
                 <div>info@pgclosets.com</div>
                 <div>Ottawa & Surrounding Areas</div>
                 {/* Added business hours section */}

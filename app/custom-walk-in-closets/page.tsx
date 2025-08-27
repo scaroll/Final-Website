@@ -20,7 +20,7 @@ import {
 
 export const metadata: Metadata = {
   title: "Custom Walk-In Closets Ottawa | Professional Design & Installation | PG Closets",
-  description: "Transform your space with custom walk-in closets in Ottawa. Professional design, premium materials, and expert installation. Free consultation and 10-year warranty. Call (613) 555-0123.",
+  description: "Transform your space with custom walk-in closets in Ottawa. Professional design, premium materials, and expert installation. Free consultation and 10-year warranty. Call (613) 729-7400.",
   keywords: "custom walk-in closets Ottawa, closet design Ottawa, walk-in closet renovation, custom storage Ottawa, closet organization Ottawa, bedroom closets Ottawa",
   openGraph: {
     title: "Custom Walk-In Closets Ottawa | PG Closets",
@@ -166,7 +166,7 @@ export default function CustomWalkInClosetsPage() {
               >
                 <Link href="tel:+16135550123">
                   <Phone className="w-5 h-5 mr-2" />
-                  Call (613) 555-0123
+                  Call (613) 729-7400
                 </Link>
               </Button>
             </div>

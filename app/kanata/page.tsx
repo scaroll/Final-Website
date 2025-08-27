@@ -26,8 +26,8 @@ export default function KanataPage() {
             "@type": "LocalBusiness",
             name: "PG Closets Kanata",
             description: "Professional closet door installation in Kanata, Ontario",
-            url: "https://pgclosets.com/kanata",
-            telephone: "+1-613-XXX-XXXX",
+            url: "https://www.pgclosets.com/kanata",
+            telephone: "+1-613-729-7400",
             email: "spencer@peoplesgrp.com",
             address: {
               "@type": "PostalAddress",

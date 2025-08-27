@@ -67,8 +67,8 @@ export function StickyHeader({ className = "" }: StickyHeaderProps) {
             <div className="hidden lg:flex items-center space-x-4">
               <div className="flex items-center space-x-2 text-charcoal">
                 <Phone className="w-4 h-4 text-forest" />
-                <a href="tel:613-555-0123" className="font-semibold hover:text-navy transition-colors duration-300">
-                  (613) 555-0123
+                <a href="tel:613-729-7400" className="font-semibold hover:text-navy transition-colors duration-300">
+                  (613) 729-7400
                 </a>
               </div>
               <Link href="/consultation">
@@ -106,11 +106,11 @@ export function StickyHeader({ className = "" }: StickyHeaderProps) {
 
               <div className="pt-4 border-t border-gray-200 space-y-4">
                 <a
-                  href="tel:613-555-0123"
+                  href="tel:613-729-7400"
                   className="flex items-center space-x-3 py-3 text-lg font-semibold text-forest hover:text-green-700 transition-colors duration-300"
                 >
                   <Phone className="w-5 h-5" />
-                  <span>(613) 555-0123</span>
+                  <span>(613) 729-7400</span>
                 </a>
 
                 <Link href="/consultation" onClick={() => setMobileMenuOpen(false)}>

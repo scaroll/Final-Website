@@ -38,8 +38,8 @@ export default function GalleryPage() {
               </a>
 
               <div className="flex items-center space-x-4 ml-6">
-                <a href="tel:6135550123" className="text-[#9BC4E2] font-semibold hover:text-[#1B4A9C]">
-                  (613) 555-0123
+                <a href="tel:613-729-7400" className="text-[#9BC4E2] font-semibold hover:text-[#1B4A9C]">
+                  (613) 729-7400
                 </a>
                 <a
                   href="/contact"
@@ -99,10 +99,10 @@ export default function GalleryPage() {
                 Get Free Quote
               </a>
               <a
-                href="tel:6135550123"
+                href="tel:613-729-7400"
                 className="border-2 border-[#9BC4E2] text-[#9BC4E2] hover:bg-[#9BC4E2] hover:text-[#1B4A9C] px-8 py-3 font-semibold transition-all uppercase tracking-wide"
               >
-                Call (613) 555-0123
+                Call (613) 729-7400
               </a>
             </div>
           </div>
@@ -151,7 +151,7 @@ export default function GalleryPage() {
             <div>
               <h4 className="text-lg font-semibold mb-4 text-[#9BC4E2]">Contact</h4>
               <div className="space-y-2 text-gray-300">
-                <div>(613) 555-0123</div>
+                <div>(613) 729-7400</div>
                 <div>info@pgclosets.com</div>
                 <div>Ottawa & Surrounding Areas</div>
                 <div className="mt-4 pt-4 border-t border-gray-600">

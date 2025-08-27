@@ -210,10 +210,10 @@ export function ProductSchema({ product }: ProductSchemaProps) {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Product",
-    "@id": `https://pgclosets.com/products/${product.id}`,
+    "@id": `https://www.pgclosets.com/products/${product.id}`,
     name: product.name,
     description: product.description,
-    image: product.images.map((img) => `https://pgclosets.com${img}`),
+    image: product.images.map((img) => `https://www.pgclosets.com${img}`),
     brand: {
       "@type": "Brand",
       name: product.brand,
@@ -222,7 +222,7 @@ export function ProductSchema({ product }: ProductSchemaProps) {
     category: product.category,
     offers: {
       "@type": "Offer",
-      url: `https://pgclosets.com/products/${product.id}`,
+      url: `https://www.pgclosets.com/products/${product.id}`,
       priceCurrency: "CAD",
       price: product.price,
       priceValidUntil: "2025-12-31",
@@ -322,20 +322,20 @@ export function WebsiteSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "@id": "https://pgclosets.com/#website",
-    url: "https://pgclosets.com",
+    "@id": "https://www.pgclosets.com/#website",
+    url: "https://www.pgclosets.com",
     name: "PG Closets - Premium Custom Closets & Home Organization | Ottawa & Eastern Ontario",
     description:
       "Ottawa's leading luxury closet specialists offering premium custom closets, wardrobe solutions, and professional organization systems. Serving Ottawa and Eastern Ontario with expert design and installation.",
     publisher: {
-      "@id": "https://pgclosets.com/#organization",
+      "@id": "https://www.pgclosets.com/#organization",
     },
     potentialAction: [
       {
         "@type": "SearchAction",
         target: {
           "@type": "EntryPoint",
-          urlTemplate: "https://pgclosets.com/search?q={search_term_string}",
+          urlTemplate: "https://www.pgclosets.com/search?q={search_term_string}",
         },
         "query-input": "required name=search_term_string",
       },

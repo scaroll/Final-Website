@@ -14,7 +14,7 @@ export default function AddressesPage() {
       city: "Ottawa",
       province: "ON",
       postal: "M5V 3A8",
-      phone: "+1 (613) 555-0123",
+      phone: "+1 (613) 729-7400",
       isDefault: true,
     },
     {

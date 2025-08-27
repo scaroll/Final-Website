@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "FAQ | PG Closets Ottawa",
     description: "Find answers to all your Renin door system questions. Serving Ottawa and surrounding areas.",
-    url: "https://pgclosets.com/faq",
+    url: "https://www.pgclosets.com/faq",
     type: "website",
   },
   alternates: {

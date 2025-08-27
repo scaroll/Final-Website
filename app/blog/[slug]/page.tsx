@@ -335,22 +335,22 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
             "@type": "BlogPosting",
             headline: post.title,
             description: post.excerpt,
-            image: `https://pgclosets.com${post.image}`,
+            image: `https://www.pgclosets.com${post.image}`,
             datePublished: post.date,
             dateModified: post.date,
             author: {
               "@type": "Organization",
               name: post.author,
-              url: "https://pgclosets.com",
+              url: "https://www.pgclosets.com",
             },
             publisher: {
               "@type": "Organization",
               name: "PG Closets Ottawa",
-              url: "https://pgclosets.com",
+              url: "https://www.pgclosets.com",
             },
             mainEntityOfPage: {
               "@type": "WebPage",
-              "@id": `https://pgclosets.com/blog/${params.slug}`,
+              "@id": `https://www.pgclosets.com/blog/${params.slug}`,
             },
           }),
         }}

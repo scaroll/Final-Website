@@ -71,8 +71,8 @@ export default function AboutPage() {
                 </a>
               ))}
               <div className="flex items-center space-x-6 ml-8 pl-8 border-l border-slate-200">
-                <a href="tel:6135550123" className="text-slate-600 hover:text-slate-900 font-light tracking-wide transition-colors">
-                  (613) 555-0123
+                <a href="tel:613-729-7400" className="text-slate-600 hover:text-slate-900 font-light tracking-wide transition-colors">
+                  (613) 729-7400
                 </a>
                 <a href="/contact" className="bg-slate-900 text-white px-8 py-2.5 text-sm font-light tracking-wide hover:bg-slate-800 transition-all duration-300">
                   Get Quote
@@ -339,7 +339,7 @@ export default function AboutPage() {
                   <span className="text-[#87ceeb] text-xl">📱</span>
                   <div>
                     <div className="font-bold text-white">Phone</div>
-                    <div>(613) 555-0123</div>
+                    <div>(613) 729-7400</div>
                   </div>
                 </div>
                 <div className="flex items-center space-x-4">
