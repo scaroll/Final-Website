@@ -1,5 +1,4 @@
 import ProductsPageClient from "./ProductsPageClient"
-import { reninProducts } from "../../data/renin-products"
 
 // ISR: Revalidate every hour for products page
 export const revalidate = 3600
