@@ -73,8 +73,8 @@ export default function ContactClientPage() {
                 priority
               />
               <div>
-                <h1 className="text-2xl font-light tracking-wide text-slate-900">PG CLOSETS</h1>
-                <p className="text-xs text-slate-500 font-light uppercase tracking-widest">Ottawa Closet Specialists</p>
+                <h1 className="text-2xl font-light tracking-wide text-slate-900">OTTAWA DESIGN ATELIER</h1>
+                <p className="text-xs text-slate-500 font-light uppercase tracking-widest">Master Collection</p>
               </div>
             </a>
 

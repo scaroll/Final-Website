@@ -24,47 +24,47 @@ export default function ClientHomePage({ products }: ClientHomePageProps) {
     <div className="min-h-screen bg-white font-sans">
       <header className="fixed top-0 w-full z-50 bg-white shadow-lg">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="bg-gradient-to-r from-[#1B4A9C] to-[#4A5F8A] text-white text-center py-2 text-sm font-semibold">
-            ⭐ 5.0 • 🏠 500+ Installations • ⏰ 15+ Years • 98% Satisfaction
+          <div className="bg-gradient-to-r from-slate-800 to-slate-700 text-white text-center py-2 text-sm font-light tracking-wide">
+            ⭐ 5.0 • 🏠 500+ INSTALLATIONS • ⏰ 15+ YEARS • 98% SATISFACTION
           </div>
 
           <div className="flex justify-between items-center h-20">
             <a href="/" className="flex items-center space-x-3">
-              <div className="w-12 h-12 bg-[#1B4A9C] flex items-center justify-center text-white font-bold text-lg">
+              <div className="w-12 h-12 bg-gradient-to-br from-slate-800 to-blue-800 flex items-center justify-center text-white font-light text-lg shadow-lg">
                 PG
               </div>
               <div>
-                <h1 className="text-xl font-bold text-[#1B4A9C]">PG CLOSETS</h1>
-                <p className="text-xs text-[#9BC4E2] font-medium">Premium Solutions</p>
+                <h1 className="text-xl font-light tracking-wide text-slate-800 uppercase">Ottawa Design Atelier</h1>
+                <p className="text-xs text-sky-400 font-light tracking-widest uppercase">Master Collection</p>
               </div>
             </a>
 
             <nav className="hidden lg:flex items-center space-x-6">
-              <a href="/" className="text-[#1B4A9C] hover:text-[#9BC4E2] px-3 py-2 text-sm font-medium">
+              <a href="/" className="text-slate-800 hover:text-sky-400 px-3 py-2 text-sm font-light tracking-wide uppercase transition-all">
                 Home
               </a>
-              <a href="/products" className="text-[#1B4A9C] hover:text-[#9BC4E2] px-3 py-2 text-sm font-medium">
-                Products
+              <a href="/products" className="text-slate-800 hover:text-sky-400 px-3 py-2 text-sm font-light tracking-wide uppercase transition-all">
+                Collection
               </a>
-              <a href="/about" className="text-[#1B4A9C] hover:text-[#9BC4E2] px-3 py-2 text-sm font-medium">
-                About
+              <a href="/about" className="text-slate-800 hover:text-sky-400 px-3 py-2 text-sm font-light tracking-wide uppercase transition-all">
+                Atelier
               </a>
-              <a href="/services" className="text-[#1B4A9C] hover:text-[#9BC4E2] px-3 py-2 text-sm font-medium">
+              <a href="/services" className="text-slate-800 hover:text-sky-400 px-3 py-2 text-sm font-light tracking-wide uppercase transition-all">
                 Services
               </a>
-              <a href="/contact" className="text-[#1B4A9C] hover:text-[#9BC4E2] px-3 py-2 text-sm font-medium">
+              <a href="/contact" className="text-slate-800 hover:text-sky-400 px-3 py-2 text-sm font-light tracking-wide uppercase transition-all">
                 Contact
               </a>
 
               <div className="flex items-center space-x-4 ml-6">
-                <a href="tel:613-729-7400" className="text-[#9BC4E2] font-semibold hover:text-[#1B4A9C]">
+                <a href="tel:613-729-7400" className="text-sky-400 font-light hover:text-slate-800 tracking-wide">
                   (613) 729-7400
                 </a>
                 <button
                   onClick={() => setQuoteStep(1)}
-                  className="bg-[#9BC4E2] text-[#1B4A9C] px-6 py-2 font-semibold hover:bg-[#1B4A9C] hover:text-white transition-all"
+                  className="bg-sky-400 text-slate-800 px-6 py-2 font-light tracking-wide uppercase hover:bg-slate-800 hover:text-white transition-all shadow-lg"
                 >
-                  Get Quote
+                  Consultation
                 </button>
               </div>
             </nav>
@@ -72,7 +72,7 @@ export default function ClientHomePage({ products }: ClientHomePageProps) {
             <div className="lg:hidden">
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="text-[#1B4A9C] hover:text-[#9BC4E2] p-2"
+                className="text-slate-800 hover:text-sky-400 p-2"
               >
                 <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   {mobileMenuOpen ? (
@@ -87,24 +87,24 @@ export default function ClientHomePage({ products }: ClientHomePageProps) {
 
           {mobileMenuOpen && (
             <div className="lg:hidden border-t py-4 space-y-2 bg-white">
-              <a href="/" className="block px-4 py-2 text-[#1B4A9C] hover:text-[#9BC4E2] font-medium">
+              <a href="/" className="block px-4 py-2 text-slate-800 hover:text-sky-400 font-light tracking-wide uppercase">
                 Home
               </a>
-              <a href="/products" className="block px-4 py-2 text-[#1B4A9C] hover:text-[#9BC4E2] font-medium">
-                Products
+              <a href="/products" className="block px-4 py-2 text-slate-800 hover:text-sky-400 font-light tracking-wide uppercase">
+                Collection
               </a>
-              <a href="/about" className="block px-4 py-2 text-[#1B4A9C] hover:text-[#9BC4E2] font-medium">
-                About
+              <a href="/about" className="block px-4 py-2 text-slate-800 hover:text-sky-400 font-light tracking-wide uppercase">
+                Atelier
               </a>
-              <a href="/services" className="block px-4 py-2 text-[#1B4A9C] hover:text-[#9BC4E2] font-medium">
+              <a href="/services" className="block px-4 py-2 text-slate-800 hover:text-sky-400 font-light tracking-wide uppercase">
                 Services
               </a>
-              <a href="/contact" className="block px-4 py-2 text-[#1B4A9C] hover:text-[#9BC4E2] font-medium">
+              <a href="/contact" className="block px-4 py-2 text-slate-800 hover:text-sky-400 font-light tracking-wide uppercase">
                 Contact
               </a>
 
               <div className="px-4 pt-4 grid grid-cols-2 gap-2">
-                <a href="tel:613-729-7400" className="bg-[#1B4A9C] text-white py-3 text-center font-semibold">
+                <a href="tel:613-729-7400" className="bg-slate-800 text-white py-3 text-center font-light tracking-wide uppercase">
                   Call Now
                 </a>
                 <button
@@ -112,9 +112,9 @@ export default function ClientHomePage({ products }: ClientHomePageProps) {
                     setQuoteStep(1)
                     setMobileMenuOpen(false)
                   }}
-                  className="bg-[#9BC4E2] text-[#1B4A9C] py-3 font-semibold"
+                  className="bg-sky-400 text-slate-800 py-3 font-light tracking-wide uppercase"
                 >
-                  Get Quote
+                  Consultation
                 </button>
               </div>
             </div>
@@ -122,17 +122,20 @@ export default function ClientHomePage({ products }: ClientHomePageProps) {
         </div>
       </header>
 
-      <section className="relative h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#1B4A9C] via-[#4A5F8A] to-[#2C5AA0]">
+      <section className="relative h-screen flex items-center justify-center overflow-hidden gradient-overlay">
+        <div className="absolute inset-0 bg-[url('/abstract-geometric-shapes.png')] opacity-10 bg-cover bg-center"></div>
         <div className="relative z-20 text-center text-white px-4 max-w-6xl mx-auto">
-          <div className="mb-6">
-            <span className="inline-block bg-[#9BC4E2] text-[#1B4A9C] px-4 py-2 text-sm font-semibold">
-              ⚡ December: 3 Slots Left
+          <div className="mb-8">
+            <span className="inline-block glass-dark text-white px-8 py-4 text-sm font-bold rounded-2xl animate-float shadow-premium backdrop-blur-md">
+              🔥 DECEMBER SPECIAL: $500 OFF Installation • Only 2 Slots Left!
             </span>
           </div>
 
-          <h1 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight">Premium Closet Doors for Ottawa Homes</h1>
-          <p className="text-lg lg:text-xl mb-8 max-w-3xl mx-auto">
-            Official Renin Dealer • 500+ Installations • Free Measurement
+          <h1 className="text-h1 font-light mb-8 leading-tight animate-slide-up-fade tracking-wide uppercase">
+            Artisan Closet Doors for <span className="gradient-text-primary bg-gradient-to-r from-white to-gray-200 bg-clip-text text-transparent">Ottawa Homes</span>
+          </h1>
+          <p className="text-body-l mb-10 max-w-3xl mx-auto text-gray-100 animate-slide-up-fade font-light tracking-wide" style={{ animationDelay: '200ms' }}>
+            Official Renin Dealer • 500+ Installations • Complimentary Consultation
           </p>
 
           <div className="flex justify-center space-x-8 mb-8 text-[#9BC4E2]">
@@ -154,19 +157,35 @@ export default function ClientHomePage({ products }: ClientHomePageProps) {
             </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center animate-slide-up-fade" style={{ animationDelay: '400ms' }}>
             <button
               onClick={() => setQuoteStep(1)}
-              className="bg-[#9BC4E2] text-[#1B4A9C] hover:bg-white font-semibold px-8 py-4 shadow-lg hover:shadow-xl transition-all"
+              className="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white font-bold px-12 py-6 shadow-premium hover:shadow-amber-500/25 transition-all duration-300 transform hover:scale-105 hover:-translate-y-2 active:scale-[1.02] active:translate-y-0 text-lg rounded-2xl touch-target glass-dark backdrop-blur-md border border-amber-400/20 group"
             >
-              Calculate Quote →
+              <span className="group-hover:scale-110 transition-transform duration-200 inline-block mr-2">🔥</span>
+              Get My $500 Bonus Quote →
             </button>
             <a
-              href="/products"
-              className="border-2 border-[#9BC4E2] text-[#9BC4E2] hover:bg-[#9BC4E2] hover:text-[#1B4A9C] font-semibold px-8 py-4 transition-all text-center"
+              href="tel:613-729-7400"
+              className="border-2 border-white/30 text-white hover:bg-white hover:text-[var(--pg-navy)] font-bold px-12 py-6 transition-all duration-300 text-center text-lg rounded-2xl shadow-premium backdrop-blur-md glass-dark hover:scale-105 hover:-translate-y-2 active:scale-[1.02] active:translate-y-0 touch-target group"
             >
-              View Products
+              <span className="group-hover:scale-110 transition-transform duration-200 inline-block mr-2">📞</span>
+              Call (613) 729-7400
             </a>
+          </div>
+          
+          {/* Trust Signals */}
+          <div className="mt-8 text-center">
+            <div className="text-amber-200 text-sm font-medium mb-2">
+              🏆 Why 500+ Ottawa families chose PG Closets:
+            </div>
+            <div className="flex flex-wrap justify-center gap-6 text-xs text-amber-100">
+              <div>✓ Licensed & Insured</div>
+              <div>✓ 5.0★ Google Rating</div>
+              <div>✓ Lifetime Warranty</div>
+              <div>✓ Same-Day Quotes</div>
+              <div>✓ Free Installation</div>
+            </div>
           </div>
         </div>
       </section>
@@ -174,9 +193,9 @@ export default function ClientHomePage({ products }: ClientHomePageProps) {
       <section id="products" className="py-20 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-bold mb-4 text-[#1B4A9C]">Premium Door Collection</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Browse our complete selection of premium closet doors with instant pricing
+            <h2 className="text-3xl lg:text-4xl font-light mb-4 text-slate-800 tracking-wide uppercase">Signature Door Collection</h2>
+            <p className="text-lg text-slate-600 max-w-2xl mx-auto font-light">
+              Curated selection of artisan-crafted closet doors with refined pricing
             </p>
           </div>
 
@@ -184,7 +203,7 @@ export default function ClientHomePage({ products }: ClientHomePageProps) {
             {products.map((product, index) => (
               <div
                 key={product.name}
-                className="bg-white shadow-lg overflow-hidden hover:shadow-xl transition-all border border-[#E0E0E0]"
+                className="bg-white shadow-lg overflow-hidden hover:shadow-xl transition-all border border-slate-200 hover:border-sky-400"
               >
                 <div className="aspect-square relative overflow-hidden">
                   <Image
@@ -199,14 +218,14 @@ export default function ClientHomePage({ products }: ClientHomePageProps) {
                     placeholder="blur"
                     blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGBkaGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknysbliyjqTzSlT54b6bk+h0R//Z"
                   />
-                  <div className="absolute top-2 left-2 bg-[#1B4A9C] text-white px-3 py-1 text-xs font-semibold">
+                  <div className="absolute top-2 left-2 bg-slate-800 text-white px-3 py-1 text-xs font-light tracking-widest uppercase">
                     NEW
                   </div>
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold text-[#2C3E50] mb-2">{product.name}</h3>
-                  <p className="text-[#6B7280] text-sm mb-4">{product.specs}</p>
-                  <div className="text-3xl font-bold text-[#1B4A9C] mb-6">${product.price}.00</div>
+                  <h3 className="text-xl font-light text-slate-800 mb-2 tracking-wide uppercase">{product.name}</h3>
+                  <p className="text-slate-500 text-sm mb-4 font-light">{product.specs}</p>
+                  <div className="text-3xl font-light text-slate-800 mb-6">${product.price}.00</div>
                   <div className="flex gap-2">
                     <button
                       onClick={() => {
@@ -214,13 +233,13 @@ export default function ClientHomePage({ products }: ClientHomePageProps) {
                         setQuotePrice(product.price)
                         setQuoteStep(2)
                       }}
-                      className="flex-1 bg-[#1B4A9C] text-white py-3 font-semibold hover:bg-[#153A7E] transition-all text-sm uppercase tracking-wide"
+                      className="flex-1 bg-slate-800 text-white py-3 font-light hover:bg-sky-400 hover:text-slate-800 transition-all text-sm uppercase tracking-widest"
                     >
-                      Get Quote
+                      Select
                     </button>
                     <a
                       href="/products"
-                      className="px-4 py-3 border-2 border-[#1B4A9C] text-[#1B4A9C] hover:bg-[#1B4A9C] hover:text-white transition-all text-sm uppercase tracking-wide text-center"
+                      className="px-4 py-3 border-2 border-slate-800 text-slate-800 hover:bg-slate-800 hover:text-white transition-all text-sm uppercase tracking-widest text-center"
                     >
                       Details
                     </a>
@@ -235,12 +254,12 @@ export default function ClientHomePage({ products }: ClientHomePageProps) {
       <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-bold mb-4 text-[#1B4A9C]">What Our Customers Say</h2>
-            <p className="text-lg text-gray-600">500+ satisfied Ottawa homeowners trust PG Closets</p>
+            <h2 className="text-3xl lg:text-4xl font-light mb-4 text-slate-800 tracking-wide uppercase">Client Testimonials</h2>
+            <p className="text-lg text-slate-600 font-light">500+ satisfied Ottawa homeowners trust our atelier</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-gray-50 p-6 border-l-4 border-[#9BC4E2]">
+            <div className="bg-slate-50 p-6 border-l-4 border-sky-400">
               <div className="flex items-center mb-4">
                 <div className="text-[#FFD700] text-lg">★★★★★</div>
                 <div className="ml-2 text-sm text-gray-600">5.0 Google Review</div>
@@ -249,10 +268,10 @@ export default function ClientHomePage({ products }: ClientHomePageProps) {
                 "Exceptional quality and service. The Continental doors transformed our master bedroom closet
                 completely. Professional installation and great communication throughout."
               </p>
-              <div className="font-semibold text-[#1B4A9C]">- Sarah M., Kanata</div>
+              <div className="font-light text-slate-800 tracking-wide">- Sarah M., Kanata</div>
             </div>
 
-            <div className="bg-gray-50 p-6 border-l-4 border-[#9BC4E2]">
+            <div className="bg-slate-50 p-6 border-l-4 border-sky-400">
               <div className="flex items-center mb-4">
                 <div className="text-[#FFD700] text-lg">★★★★★</div>
                 <div className="ml-2 text-sm text-gray-600">5.0 Google Review</div>
@@ -261,10 +280,10 @@ export default function ClientHomePage({ products }: ClientHomePageProps) {
                 "Best investment we made in our home renovation. The Gatsby barn doors are stunning and the installation
                 was flawless. Highly recommend PG Closets!"
               </p>
-              <div className="font-semibold text-[#1B4A9C]">- Michael R., Orleans</div>
+              <div className="font-light text-slate-800 tracking-wide">- Michael R., Orleans</div>
             </div>
 
-            <div className="bg-gray-50 p-6 border-l-4 border-[#9BC4E2]">
+            <div className="bg-slate-50 p-6 border-l-4 border-sky-400">
               <div className="flex items-center mb-4">
                 <div className="text-[#FFD700] text-lg">★★★★★</div>
                 <div className="ml-2 text-sm text-gray-600">5.0 Google Review</div>
@@ -273,7 +292,7 @@ export default function ClientHomePage({ products }: ClientHomePageProps) {
                 "From quote to installation, everything was perfect. The Euro doors with soft-close are exactly what we
                 wanted. Professional team, fair pricing."
               </p>
-              <div className="font-semibold text-[#1B4A9C]">- Jennifer L., Nepean</div>
+              <div className="font-light text-slate-800 tracking-wide">- Jennifer L., Nepean</div>
             </div>
           </div>
 
@@ -282,7 +301,7 @@ export default function ClientHomePage({ products }: ClientHomePageProps) {
               href="https://www.google.com/search?q=PG+Closets+Ottawa+reviews"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center text-[#1B4A9C] hover:text-[#9BC4E2] font-semibold"
+              className="inline-flex items-center text-slate-800 hover:text-sky-400 font-light tracking-wide"
             >
               Read All 127 Google Reviews →
             </a>
@@ -293,8 +312,8 @@ export default function ClientHomePage({ products }: ClientHomePageProps) {
       <section className="py-20 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-bold mb-4 text-[#1B4A9C]">Recent Projects</h2>
-            <p className="text-lg text-gray-600">See how we transform Ottawa homes with premium closet doors</p>
+            <h2 className="text-3xl lg:text-4xl font-light mb-4 text-slate-800 tracking-wide uppercase">Recent Atelier Projects</h2>
+            <p className="text-lg text-slate-600 font-light">Discover how we transform Ottawa homes with artisan craftsmanship</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -368,7 +387,7 @@ export default function ClientHomePage({ products }: ClientHomePageProps) {
           <div className="text-center mt-8">
             <a
               href="/gallery"
-              className="bg-[#1B4A9C] text-white px-8 py-3 font-semibold hover:bg-[#153A7E] transition-all uppercase tracking-wide inline-block"
+              className="bg-slate-800 text-white px-8 py-3 font-light hover:bg-sky-400 hover:text-slate-800 transition-all uppercase tracking-widest inline-block shadow-lg"
             >
               View Full Gallery
             </a>
@@ -380,14 +399,14 @@ export default function ClientHomePage({ products }: ClientHomePageProps) {
         <section className="py-20 bg-white">
           <div className="max-w-4xl mx-auto px-4">
             <div className="text-center mb-12">
-              <h2 className="text-3xl lg:text-4xl font-bold mb-4 text-[#1B4A9C]">Get Your Quote</h2>
-              <p className="text-lg text-gray-600">Professional installation included</p>
+              <h2 className="text-3xl lg:text-4xl font-light mb-4 text-slate-800 tracking-wide uppercase">Request Consultation</h2>
+              <p className="text-lg text-slate-600 font-light">Expert installation included</p>
             </div>
 
             <div className="bg-[#F5F5F5] p-8 border-2 border-[#E0E0E0]">
               {quoteStep === 1 && (
                 <div className="text-center">
-                  <h3 className="text-2xl font-bold mb-8 text-[#1B4A9C]">Choose Your Door Style</h3>
+                  <h3 className="text-2xl font-light mb-8 text-slate-800 tracking-wide uppercase">Select From Collection</h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {products.map((product) => (
                       <button
@@ -397,7 +416,7 @@ export default function ClientHomePage({ products }: ClientHomePageProps) {
                           setQuotePrice(product.price)
                           setQuoteStep(2)
                         }}
-                        className="p-4 bg-white border-2 border-[#E0E0E0] hover:border-[#1B4A9C] transition-all"
+                        className="p-4 bg-white border-2 border-slate-200 hover:border-sky-400 transition-all shadow-lg hover:shadow-xl"
                       >
                         <div className="aspect-square relative mb-3 overflow-hidden">
                           <Image
@@ -407,8 +426,8 @@ export default function ClientHomePage({ products }: ClientHomePageProps) {
                             className="object-cover"
                           />
                         </div>
-                        <div className="font-semibold text-[#1B4A9C] mb-1 text-sm">{product.name}</div>
-                        <div className="text-[#1B4A9C] font-bold text-lg">${product.price}</div>
+                        <div className="font-light text-slate-800 mb-1 text-sm tracking-wide uppercase">{product.name}</div>
+                        <div className="text-slate-800 font-light text-lg">${product.price}.00</div>
                       </button>
                     ))}
                   </div>
@@ -417,9 +436,9 @@ export default function ClientHomePage({ products }: ClientHomePageProps) {
 
               {quoteStep === 2 && (
                 <div className="text-center">
-                  <h3 className="text-2xl font-bold mb-8 text-[#1B4A9C]">Your Quote: {selectedProduct}</h3>
-                  <div className="bg-white p-8 border-2 border-[#E0E0E0] mb-6">
-                    <div className="text-4xl font-bold text-[#1B4A9C] mb-6">${quotePrice}</div>
+                  <h3 className="text-2xl font-light mb-8 text-slate-800 tracking-wide uppercase">Your Selection: {selectedProduct}</h3>
+                  <div className="bg-white p-8 border-2 border-slate-200 mb-6 shadow-lg">
+                    <div className="text-4xl font-light text-slate-800 mb-6">${quotePrice}.00</div>
                     <div className="text-sm text-gray-600 mb-6">
                       ✓ Professional installation included
                       <br />✓ Lifetime warranty
@@ -428,7 +447,7 @@ export default function ClientHomePage({ products }: ClientHomePageProps) {
                   </div>
                   <a
                     href="/contact"
-                    className="bg-[#1B4A9C] text-white px-8 py-3 font-semibold hover:bg-[#153A7E] transition-all uppercase tracking-wide inline-block"
+                    className="bg-slate-800 text-white px-8 py-3 font-light hover:bg-sky-400 hover:text-slate-800 transition-all uppercase tracking-widest inline-block shadow-lg"
                   >
                     Book Consultation
                   </a>
@@ -439,7 +458,7 @@ export default function ClientHomePage({ products }: ClientHomePageProps) {
         </section>
       )}
 
-      <footer className="bg-[#1B4A9C] text-white py-16">
+      <footer className="bg-slate-800 text-white py-16">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -487,12 +506,12 @@ export default function ClientHomePage({ products }: ClientHomePageProps) {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
               <a href="/" className="flex items-center space-x-3 mb-6">
-                <div className="w-12 h-12 bg-[#9BC4E2] flex items-center justify-center text-[#1B4A9C] font-bold text-lg">
+                <div className="w-12 h-12 bg-sky-400 flex items-center justify-center text-slate-800 font-light text-lg">
                   PG
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold">PG CLOSETS</h3>
-                  <p className="text-[#9BC4E2]">Premium Solutions</p>
+                  <h3 className="text-2xl font-light tracking-wide uppercase">Ottawa Design Atelier</h3>
+                  <p className="text-sky-400 font-light tracking-widest uppercase">Master Collection</p>
                 </div>
               </a>
               <p className="text-gray-300 mb-6">
@@ -501,7 +520,7 @@ export default function ClientHomePage({ products }: ClientHomePageProps) {
             </div>
 
             <div>
-              <h4 className="text-lg font-semibold mb-4 text-[#9BC4E2]">Sitemap</h4>
+              <h4 className="text-lg font-light mb-4 text-sky-400 tracking-wide uppercase">Navigation</h4>
               <div className="space-y-2">
                 <a href="/" className="block text-gray-300 hover:text-white">
                   Home
@@ -522,14 +541,14 @@ export default function ClientHomePage({ products }: ClientHomePageProps) {
             </div>
 
             <div>
-              <h4 className="text-lg font-semibold mb-4 text-[#9BC4E2]">Contact</h4>
+              <h4 className="text-lg font-light mb-4 text-sky-400 tracking-wide uppercase">Contact</h4>
               <div className="space-y-2 text-gray-300">
                 <div>(613) 729-7400</div>
                 <div>info@pgclosets.com</div>
                 <div>Ottawa & Surrounding Areas</div>
                 <div className="mt-4 pt-4 border-t border-gray-600">
                   <div className="text-sm">
-                    <div className="font-semibold text-[#9BC4E2] mb-2">Business Hours:</div>
+                    <div className="font-light text-sky-400 mb-2 tracking-wide uppercase">Business Hours:</div>
                     <div>Mon-Fri: 8:00 AM - 6:00 PM</div>
                     <div>Sat: 9:00 AM - 4:00 PM</div>
                     <div>Sun: By Appointment</div>
@@ -541,7 +560,7 @@ export default function ClientHomePage({ products }: ClientHomePageProps) {
           </div>
 
           <div className="border-t border-gray-600 mt-12 pt-8 text-center text-gray-400">
-            <p>&copy; 2025 PG Closets. All rights reserved.</p>
+            <p>&copy; 2025 Ottawa Design Atelier. All rights reserved.</p>
           </div>
         </div>
       </footer>

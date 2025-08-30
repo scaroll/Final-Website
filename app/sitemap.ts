@@ -93,7 +93,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ]
 
-  // Ottawa location pages for local SEO
+  // Ottawa location pages for local SEO - EXPANDED
   const locationPages = [
     "ottawa",
     "kanata", 
@@ -104,13 +104,69 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "westboro",
     "the-glebe",
     "hintonburg",
-    "vanier"
+    "vanier",
+    "south-keys",
+    "riverside-south",
+    "manotick",
+    "stittsville",
+    "carp"
   ].map(location => ({
-    url: `${baseUrl}/closet-doors-${location}`,
+    url: `${baseUrl}/${location}`,
     lastModified: currentDate,
     changeFrequency: "monthly" as const,
-    priority: 0.6,
+    priority: 0.7,
   }))
 
-  return [...staticPages, ...productPages, ...categoryPages, ...locationPages]
+  // Service + Location combinations for maximum local SEO coverage
+  const serviceLocationPages = []
+  const services = ['barn-doors', 'bypass-doors', 'bifold-doors', 'closet-hardware', 'installation']
+  const primaryLocations = ['ottawa', 'kanata', 'nepean', 'orleans', 'barrhaven']
+  
+  for (const service of services) {
+    for (const location of primaryLocations) {
+      serviceLocationPages.push({
+        url: `${baseUrl}/${service}-${location}`,
+        lastModified: currentDate,
+        changeFrequency: "monthly" as const,
+        priority: 0.8,
+      })
+    }
+  }
+
+  // Long-tail keyword pages
+  const longTailPages = [
+    {
+      url: `${baseUrl}/custom-closet-doors-ottawa`,
+      lastModified: currentDate,
+      changeFrequency: "weekly" as const,
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/professional-closet-installation-ottawa`,
+      lastModified: currentDate,
+      changeFrequency: "weekly" as const,
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/renin-doors-ottawa`,
+      lastModified: currentDate,
+      changeFrequency: "weekly" as const,
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/closet-door-repair-ottawa`,
+      lastModified: currentDate,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    }
+  ]
+
+  return [
+    ...staticPages, 
+    ...productPages, 
+    ...categoryPages, 
+    ...locationPages, 
+    ...serviceLocationPages, 
+    ...longTailPages
+  ]
 }

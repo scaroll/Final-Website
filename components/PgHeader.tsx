@@ -22,56 +22,56 @@ export default function PgHeader() {
           <Link
             href="/"
             className="flex items-center gap-3 hover:opacity-80 transition-opacity duration-200 focus:outline-none focus:ring-2 focus:ring-pg-sky focus:ring-offset-2 rounded-lg p-1"
-            aria-label="PG Closets - Go to homepage"
+            aria-label="Ottawa Design Atelier - Go to homepage"
           >
             <PGLogo width={24} height={24} aria-hidden="true" />
-            <span className="font-extrabold text-pg-navy" style={{ fontSize: "24px", fontWeight: 800 }}>
-              PG Closets
-            </span>
+            <div>
+              <span className="font-light text-slate-800 tracking-wide uppercase" style={{ fontSize: "18px" }}>
+                Ottawa Design Atelier
+              </span>
+              <div className="text-xs text-sky-400 font-light tracking-widest uppercase" style={{ fontSize: "10px" }}>
+                Master Collection
+              </div>
+            </div>
           </Link>
 
           <nav className="hidden md:flex items-center gap-6" role="navigation" aria-label="Main navigation">
             <Link
               href="/"
-              className="text-body-s text-pg-navy opacity-90 hover:opacity-100 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-pg-sky focus:ring-offset-2 rounded px-2 py-1"
-              style={{ fontWeight: 500 }}
+              className="text-body-s text-slate-800 hover:text-sky-400 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-pg-sky focus:ring-offset-2 rounded px-2 py-1 font-light tracking-wide uppercase"
             >
               Home
             </Link>
             <Link
               href="/products"
-              className="text-body-s text-pg-navy opacity-90 hover:opacity-100 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-pg-sky focus:ring-offset-2 rounded px-2 py-1"
-              style={{ fontWeight: 500 }}
+              className="text-body-s text-slate-800 hover:text-sky-400 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-pg-sky focus:ring-offset-2 rounded px-2 py-1 font-light tracking-wide uppercase"
             >
-              Products
+              Collection
             </Link>
             <Link
               href="/custom-walk-in-closets"
-              className="text-body-s text-pg-navy opacity-90 hover:opacity-100 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-pg-sky focus:ring-offset-2 rounded px-2 py-1"
-              style={{ fontWeight: 500 }}
+              className="text-body-s text-slate-800 hover:text-sky-400 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-pg-sky focus:ring-offset-2 rounded px-2 py-1 font-light tracking-wide uppercase"
             >
-              Custom Closets
+              Atelier Services
             </Link>
             <Link
               href="/blog"
-              className="text-body-s text-pg-navy opacity-90 hover:opacity-100 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-pg-sky focus:ring-offset-2 rounded px-2 py-1"
-              style={{ fontWeight: 500 }}
+              className="text-body-s text-slate-800 hover:text-sky-400 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-pg-sky focus:ring-offset-2 rounded px-2 py-1 font-light tracking-wide uppercase"
             >
-              Blog
+              Journal
             </Link>
             <Link
               href="/contact"
-              className="text-body-s text-pg-navy opacity-90 hover:opacity-100 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-pg-sky focus:ring-offset-2 rounded px-2 py-1"
-              style={{ fontWeight: 500 }}
+              className="text-body-s text-slate-800 hover:text-sky-400 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-pg-sky focus:ring-offset-2 rounded px-2 py-1 font-light tracking-wide uppercase"
             >
               Contact
             </Link>
 
             <Link
               href="/request-work"
-              className="btn-primary ml-6 focus:outline-none focus:ring-2 focus:ring-pg-sky focus:ring-offset-2"
+              className="bg-sky-400 text-slate-800 px-6 py-2 font-light tracking-wide uppercase hover:bg-slate-800 hover:text-white transition-all shadow-lg ml-6 focus:outline-none focus:ring-2 focus:ring-pg-sky focus:ring-offset-2 rounded-lg"
             >
-              Request a Quote
+              Consultation
             </Link>
           </nav>
 
@@ -139,35 +139,35 @@ export default function PgHeader() {
                 <Link
                   href="/"
                   onClick={closeMobileMenu}
-                  className="block text-lg font-medium text-pg-navy hover:text-pg-sky transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-pg-sky focus:ring-offset-2 rounded px-2 py-2"
+                  className="block text-lg font-light text-slate-800 hover:text-sky-400 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-pg-sky focus:ring-offset-2 rounded px-2 py-2 tracking-wide uppercase"
                 >
                   Home
                 </Link>
                 <Link
                   href="/products"
                   onClick={closeMobileMenu}
-                  className="block text-lg font-medium text-pg-navy hover:text-pg-sky transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-pg-sky focus:ring-offset-2 rounded px-2 py-2"
+                  className="block text-lg font-light text-slate-800 hover:text-sky-400 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-pg-sky focus:ring-offset-2 rounded px-2 py-2 tracking-wide uppercase"
                 >
-                  Products
+                  Collection
                 </Link>
                 <Link
                   href="/custom-walk-in-closets"
                   onClick={closeMobileMenu}
-                  className="block text-lg font-medium text-pg-navy hover:text-pg-sky transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-pg-sky focus:ring-offset-2 rounded px-2 py-2"
+                  className="block text-lg font-light text-slate-800 hover:text-sky-400 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-pg-sky focus:ring-offset-2 rounded px-2 py-2 tracking-wide uppercase"
                 >
-                  Custom Closets
+                  Atelier Services
                 </Link>
                 <Link
                   href="/blog"
                   onClick={closeMobileMenu}
-                  className="block text-lg font-medium text-pg-navy hover:text-pg-sky transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-pg-sky focus:ring-offset-2 rounded px-2 py-2"
+                  className="block text-lg font-light text-slate-800 hover:text-sky-400 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-pg-sky focus:ring-offset-2 rounded px-2 py-2 tracking-wide uppercase"
                 >
-                  Blog
+                  Journal
                 </Link>
                 <Link
                   href="/contact"
                   onClick={closeMobileMenu}
-                  className="block text-lg font-medium text-pg-navy hover:text-pg-sky transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-pg-sky focus:ring-offset-2 rounded px-2 py-2"
+                  className="block text-lg font-light text-slate-800 hover:text-sky-400 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-pg-sky focus:ring-offset-2 rounded px-2 py-2 tracking-wide uppercase"
                 >
                   Contact
                 </Link>
@@ -177,9 +177,9 @@ export default function PgHeader() {
                   <Link
                     href="/request-work"
                     onClick={closeMobileMenu}
-                    className="block w-full text-center bg-pg-navy text-white py-3 px-6 rounded-lg font-medium hover:bg-opacity-90 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-pg-sky focus:ring-offset-2"
+                    className="block w-full text-center bg-slate-800 text-white py-3 px-6 rounded-lg font-light tracking-wide uppercase hover:bg-sky-400 hover:text-slate-800 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-pg-sky focus:ring-offset-2"
                   >
-                    Request a Quote
+                    Consultation
                   </Link>
                 </div>
               </div>

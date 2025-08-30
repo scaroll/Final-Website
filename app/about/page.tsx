@@ -3,15 +3,15 @@ import Image from "next/image"
 import Link from "next/link"
 
 export const metadata: Metadata = {
-  title: "About PG Closets | Official Renin Dealer Ottawa",
+  title: "About Ottawa Design Atelier | Official Renin Dealer Ottawa",
   description:
-    "Learn about PG Closets, Ottawa's trusted Renin dealer specializing in premium door systems and professional installation. Family-owned business serving Ottawa since 2010.",
+    "Learn about Ottawa Design Atelier, Ottawa's trusted Renin dealer specializing in artisan door systems and expert installation. Atelier business serving Ottawa since 2010.",
   keywords:
-    "about PG Closets, Renin dealer Ottawa, family business Ottawa, door installation company, Ottawa closet company history",
+    "about Ottawa Design Atelier, Renin dealer Ottawa, atelier business Ottawa, door installation company, Ottawa closet company history",
   openGraph: {
-    title: "About PG Closets | Official Renin Dealer Ottawa",
+    title: "About Ottawa Design Atelier | Official Renin Dealer Ottawa",
     description:
-      "Learn about PG Closets, Ottawa's trusted Renin dealer specializing in premium door systems and professional installation.",
+      "Learn about Ottawa Design Atelier, Ottawa's trusted Renin dealer specializing in artisan door systems and expert installation.",
     images: [{ url: "/og-about.jpg", width: 1200, height: 630 }],
   },
   alternates: { canonical: "/about" },
@@ -44,8 +44,8 @@ export default function AboutPage() {
                   priority
                 />
                 <div>
-                  <h1 className="text-2xl font-light tracking-wide text-slate-900">PG CLOSETS</h1>
-                  <p className="text-xs text-slate-500 font-light uppercase tracking-widest">Ottawa Closet Specialists</p>
+                  <h1 className="text-2xl font-light tracking-wide text-slate-900">OTTAWA DESIGN ATELIER</h1>
+                  <p className="text-xs text-slate-500 font-light uppercase tracking-widest">Master Collection</p>
                 </div>
               </div>
             </div>
@@ -74,8 +74,8 @@ export default function AboutPage() {
                 <a href="tel:613-729-7400" className="text-slate-600 hover:text-slate-900 font-light tracking-wide transition-colors">
                   (613) 729-7400
                 </a>
-                <a href="/contact" className="bg-slate-900 text-white px-8 py-2.5 text-sm font-light tracking-wide hover:bg-slate-800 transition-all duration-300">
-                  Get Quote
+                <a href="/contact" className="bg-slate-900 text-white px-8 py-2.5 text-sm font-light tracking-wide hover:bg-sky-400 hover:text-slate-800 transition-all duration-300">
+                  Consultation
                 </a>
               </div>
             </nav>
@@ -144,22 +144,22 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-4xl font-black text-[#1e3a8a] mb-8 tracking-tight">The PG Closets Journey</h2>
+              <h2 className="text-4xl font-light text-slate-800 mb-8 tracking-wide uppercase">The Atelier Journey</h2>
               <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
                 <p>
-                  What started as a small family business has grown into Ottawa's most trusted name in premium door
+                  What started as a small artisan workshop has grown into Ottawa's most trusted name in sophisticated door
                   systems. As an official Renin dealer, we combine the quality and innovation of Canada's leading door
-                  manufacturer with the personal touch and local expertise that only a family business can provide.
+                  manufacturer with the refined touch and local expertise that only an atelier can provide.
                 </p>
                 <p>
                   Our commitment to excellence has earned us the trust of over 500 Ottawa families, and we're proud to
-                  maintain a 98% customer satisfaction rating. Every project, from a simple barn door to a complete
-                  closet system, receives the same attention to detail and dedication to quality that has defined our
-                  business from day one.
+                  maintain a 98% customer satisfaction rating. Every project, from a refined barn door to a complete
+                  closet system, receives the same attention to detail and dedication to craftsmanship that has defined our
+                  atelier from day one.
                 </p>
                 <p>
-                  Today, we continue to grow while staying true to our founding principles: transparent pricing, quality
-                  products, professional installation, and exceptional customer service. When you choose PG Closets,
+                  Today, we continue to grow while staying true to our founding principles: transparent pricing, artisan
+                  products, expert installation, and exceptional customer service. When you choose Ottawa Design Atelier,
                   you're not just getting a door system – you're joining a family of satisfied customers who trust us
                   with their homes.
                 </p>
@@ -210,10 +210,10 @@ export default function AboutPage() {
       <section className="py-24 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
-            <span className="inline-block bg-[#1e3a8a] text-[#87ceeb] px-6 py-2 text-sm font-black uppercase tracking-wider mb-6">
+            <span className="inline-block bg-slate-800 text-sky-400 px-6 py-2 text-sm font-light uppercase tracking-wider mb-6">
               OUR VALUES
             </span>
-            <h2 className="text-5xl font-black text-[#1e3a8a] mb-8 tracking-tight">What Drives Us</h2>
+            <h2 className="text-5xl font-light text-slate-800 mb-8 tracking-wide uppercase">What Drives Us</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Our mission is simple: to provide Ottawa homeowners with premium door solutions that enhance both function
               and beauty in their homes.
@@ -221,33 +221,33 @@ export default function AboutPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white p-10 text-center shadow-2xl border-t-4 border-[#87ceeb] hover:shadow-3xl hover:-translate-y-2 transition-all duration-300">
-              <div className="w-20 h-20 bg-[#87ceeb]/10 flex items-center justify-center mx-auto mb-8 border-2 border-[#87ceeb]">
+            <div className="bg-white p-10 text-center shadow-2xl border-t-4 border-sky-400 hover:shadow-3xl hover:-translate-y-2 transition-all duration-300">
+              <div className="w-20 h-20 bg-sky-400/10 flex items-center justify-center mx-auto mb-8 border-2 border-sky-400">
                 <span className="text-3xl">🏆</span>
               </div>
-              <h3 className="text-2xl font-black text-[#1e3a8a] mb-6 uppercase tracking-wide">Quality First</h3>
+              <h3 className="text-2xl font-light text-slate-800 mb-6 uppercase tracking-wide">Artisan Quality</h3>
               <p className="text-gray-600 leading-relaxed">
                 We partner exclusively with Renin, Canada's premier door manufacturer, to ensure every product meets the
-                highest standards of excellence and durability.
+                highest standards of artisan excellence and durability.
               </p>
             </div>
 
-            <div className="bg-white p-10 text-center shadow-2xl border-t-4 border-[#87ceeb] hover:shadow-3xl hover:-translate-y-2 transition-all duration-300">
-              <div className="w-20 h-20 bg-[#87ceeb]/10 flex items-center justify-center mx-auto mb-8 border-2 border-[#87ceeb]">
+            <div className="bg-white p-10 text-center shadow-2xl border-t-4 border-sky-400 hover:shadow-3xl hover:-translate-y-2 transition-all duration-300">
+              <div className="w-20 h-20 bg-sky-400/10 flex items-center justify-center mx-auto mb-8 border-2 border-sky-400">
                 <span className="text-3xl">🤝</span>
               </div>
-              <h3 className="text-2xl font-black text-[#1e3a8a] mb-6 uppercase tracking-wide">Personal Service</h3>
+              <h3 className="text-2xl font-light text-slate-800 mb-6 uppercase tracking-wide">Atelier Service</h3>
               <p className="text-gray-600 leading-relaxed">
-                As a family business, we treat every customer like family, providing personalized attention and care
-                throughout your entire project journey.
+                As an atelier business, we treat every customer like family, providing personalized attention and care
+                throughout your entire design journey.
               </p>
             </div>
 
-            <div className="bg-white p-10 text-center shadow-2xl border-t-4 border-[#87ceeb] hover:shadow-3xl hover:-translate-y-2 transition-all duration-300">
-              <div className="w-20 h-20 bg-[#87ceeb]/10 flex items-center justify-center mx-auto mb-8 border-2 border-[#87ceeb]">
+            <div className="bg-white p-10 text-center shadow-2xl border-t-4 border-sky-400 hover:shadow-3xl hover:-translate-y-2 transition-all duration-300">
+              <div className="w-20 h-20 bg-sky-400/10 flex items-center justify-center mx-auto mb-8 border-2 border-sky-400">
                 <span className="text-3xl">🎯</span>
               </div>
-              <h3 className="text-2xl font-black text-[#1e3a8a] mb-6 uppercase tracking-wide">Local Focus</h3>
+              <h3 className="text-2xl font-light text-slate-800 mb-6 uppercase tracking-wide">Local Focus</h3>
               <p className="text-gray-600 leading-relaxed">
                 We're proud to call Ottawa home and are committed to serving our community with integrity, excellence,
                 and unwavering dedication.
@@ -257,21 +257,21 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="py-24 bg-gradient-to-r from-[#1e3a8a] to-[#87ceeb] text-white">
+      <section className="py-24 bg-gradient-to-r from-slate-800 to-sky-400 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-5xl font-black mb-8 tracking-tight">Ready to Work Together?</h2>
-          <p className="text-xl mb-12 leading-relaxed max-w-2xl mx-auto">
-            Experience the PG Closets difference for yourself. Let's create something beautiful and functional for your
+          <h2 className="text-5xl font-light mb-8 tracking-wide uppercase">Ready to Create Together?</h2>
+          <p className="text-xl mb-12 leading-relaxed max-w-2xl mx-auto font-light">
+            Experience the Ottawa Design Atelier difference for yourself. Let's create something beautiful and sophisticated for your
             home.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Link href="/contact">
-              <button className="bg-white text-[#1e3a8a] px-12 py-5 font-black text-xl uppercase tracking-wide hover:bg-gray-100 hover:scale-105 transition-all duration-300">
+              <button className="bg-white text-slate-800 px-12 py-5 font-light text-xl uppercase tracking-wide hover:bg-gray-100 hover:scale-105 transition-all duration-300">
                 START YOUR PROJECT
               </button>
             </Link>
             <Link href="/contact">
-              <button className="border-4 border-white text-white px-12 py-5 font-black text-xl uppercase tracking-wide hover:bg-white hover:text-[#1e3a8a] hover:scale-105 transition-all duration-300">
+              <button className="border-4 border-white text-white px-12 py-5 font-light text-xl uppercase tracking-wide hover:bg-white hover:text-slate-800 hover:scale-105 transition-all duration-300">
                 GET IN TOUCH
               </button>
             </Link>
@@ -279,12 +279,12 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <footer className="bg-[#1e3a8a] text-white py-20">
+      <footer className="bg-slate-800 text-white py-20">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
             <div className="md:col-span-2">
               <div className="flex items-center space-x-4 mb-8">
-                <div className="relative w-16 h-16 overflow-hidden border-2 border-[#87ceeb]">
+                <div className="relative w-16 h-16 overflow-hidden border-2 border-sky-400">
                   <Image
                     src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/PG%20Logo.jpg-PA2Pv0eQKuJGkzYoQf9wsC86lYSKGa.jpeg"
                     alt="PG Closets Logo"
@@ -293,18 +293,18 @@ export default function AboutPage() {
                   />
                 </div>
                 <div>
-                  <h3 className="text-3xl font-black tracking-tight">PG CLOSETS</h3>
-                  <p className="text-[#87ceeb] font-bold">QUALITY SOLUTIONS</p>
+                  <h3 className="text-3xl font-light tracking-wide">OTTAWA DESIGN ATELIER</h3>
+                  <p className="text-sky-400 font-light tracking-widest uppercase">MASTER COLLECTION</p>
                 </div>
               </div>
-              <p className="text-gray-300 mb-8 leading-relaxed max-w-lg text-lg">
-                Ottawa's local closet door specialists, helping homeowners with quality Renin doors and
-                professional installation services since 2010.
+              <p className="text-gray-300 mb-8 leading-relaxed max-w-lg text-lg font-light">
+                Ottawa's local closet door atelier, helping homeowners with artisan Renin doors and
+                expert installation services since 2010.
               </p>
             </div>
 
             <div>
-              <h4 className="text-xl font-black mb-8 text-[#87ceeb] uppercase tracking-wide">Navigation</h4>
+              <h4 className="text-xl font-light mb-8 text-sky-400 uppercase tracking-wide">Navigation</h4>
               <div className="space-y-4">
                 {[
                   { name: "Home", href: "/" },
@@ -317,7 +317,7 @@ export default function AboutPage() {
                   <a
                     key={link.name}
                     href={link.href}
-                    className="block text-gray-300 hover:text-white hover:translate-x-2 transition-all duration-300 font-semibold"
+                    className="block text-gray-300 hover:text-white hover:translate-x-2 transition-all duration-300 font-light"
                   >
                     → {link.name}
                   </a>
@@ -326,33 +326,33 @@ export default function AboutPage() {
             </div>
 
             <div>
-              <h4 className="text-xl font-black mb-8 text-[#87ceeb] uppercase tracking-wide">Contact</h4>
+              <h4 className="text-xl font-light mb-8 text-sky-400 uppercase tracking-wide">Contact</h4>
               <div className="space-y-6 text-gray-300">
                 <div className="flex items-center space-x-4">
                   <span className="text-[#87ceeb] text-xl">📧</span>
                   <div>
-                    <div className="font-bold text-white">Email</div>
-                    <div>info@pgclosets.com</div>
+                    <div className="font-light text-white">Email</div>
+                    <div>info@ottawadesignatelier.com</div>
                   </div>
                 </div>
                 <div className="flex items-center space-x-4">
                   <span className="text-[#87ceeb] text-xl">📱</span>
                   <div>
-                    <div className="font-bold text-white">Phone</div>
+                    <div className="font-light text-white">Phone</div>
                     <div>(613) 729-7400</div>
                   </div>
                 </div>
                 <div className="flex items-center space-x-4">
                   <span className="text-[#87ceeb] text-xl">📍</span>
                   <div>
-                    <div className="font-bold text-white">Service Area</div>
+                    <div className="font-light text-white">Service Area</div>
                     <div>Ottawa & Surrounding Areas</div>
                   </div>
                 </div>
                 <div className="flex items-center space-x-4">
                   <span className="text-[#87ceeb] text-xl">🕒</span>
                   <div>
-                    <div className="font-bold text-white">Business Hours</div>
+                    <div className="font-light text-white">Business Hours</div>
                     <div className="text-sm">
                       <div>Mon-Fri: 8:00 AM - 6:00 PM</div>
                       <div>Sat: 9:00 AM - 4:00 PM</div>
@@ -367,7 +367,7 @@ export default function AboutPage() {
           <div className="border-t-2 border-[#87ceeb]/30 mt-16 pt-8">
             <div className="flex flex-col md:flex-row justify-between items-center">
               <p className="text-gray-400 mb-4 md:mb-0">
-                &copy; 2025 PG Closets. All rights reserved. | Licensed & Insured | A+ BBB Rating
+                &copy; 2025 Ottawa Design Atelier. All rights reserved. | Licensed & Insured | A+ BBB Rating
               </p>
               <div className="flex space-x-6 text-sm">
                 <a href="#" className="text-gray-400 hover:text-white transition-colors">

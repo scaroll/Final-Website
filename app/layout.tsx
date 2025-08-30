@@ -4,17 +4,18 @@ import ClientLayout from "./clientLayout"
 import type React from "react"
 import { Suspense } from "react"
 import Script from "next/script"
+import { siteConfig, getFullUrl } from "@/config/site"
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
+// import { CoreWebVitalsMonitor } from "@/components/performance/core-web-vitals-monitor"
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.pgclosets.com"),
+  metadataBase: new URL(siteConfig.url),
   title: {
-    default: "PG Closets | Custom Closets & Storage Solutions in Ottawa",
-    template: "%s | PG Closets",
+    default: siteConfig.seo.title,
+    template: `%s | ${siteConfig.business.name}`,
   },
-  description:
-    "Custom closets, pantries, and storage solutions in Ottawa and the NCR. Professional design, installation, and service by local experts. Request your free quote today.",
+  description: siteConfig.seo.description,
   keywords:
     "custom closets Ottawa, closet design Ottawa, storage solutions Ottawa, pantry organization, garage storage, closet installation, home organization Ottawa, custom storage NCR",
   authors: [{ name: "PG Closets" }],
@@ -88,33 +89,47 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           />
         </noscript>
         
-        {/* Critical resource preconnects for LCP optimization */}
-        <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://blob.vercel-storage.com" crossOrigin="anonymous" />
+        {/* Resource preconnects - configure for your CDN/storage */}
+        {process.env.NEXT_PUBLIC_GA_ID && (
+          <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
+        )}
         
-        {/* DNS prefetch for performance */}
-        <link rel="dns-prefetch" href="https://hebbkx1anhila5yf.public.blob.vercel-storage.com" />
+        {/* SEO-OPTIMIZED DNS prefetch for performance - LOCAL OTTAWA FOCUS */}
         <link rel="dns-prefetch" href="https://images.unsplash.com" />
+        <link rel="dns-prefetch" href="https://blob.vercel-storage.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        
+        {/* CRITICAL: Core Web Vitals - Prioritize LCP resources */}
+        <link rel="preload" as="image" href="/luxury-walk-in-closet.png" />
+        <link rel="preload" as="image" href="/pg-logo.png" />
+        
+        {/* LOCAL SEO: Add schema.org WebSite markup */}
+        <link rel="canonical" href="https://www.pgclosets.com" />
+        
+        {/* PERFORMANCE: Resource hints for faster navigation */}
+        <link rel="prefetch" href="/products" />
+        <link rel="prefetch" href="/contact" />
+        <link rel="prefetch" href="/quote-builder" />
       </head>
       <body>
         {process.env.NEXT_PUBLIC_GA_ID && (
-          <>
-            <Script
-              src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
-              strategy="afterInteractive"
-            />
-            <Script id="google-analytics" strategy="afterInteractive">
-              {`
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}', {
-                  page_title: document.title,
-                  page_location: window.location.href,
-                });
-              `}
-            </Script>
-          </>
+          <Script
+            src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
+            strategy="afterInteractive"
+          />
+        )}
+        {process.env.NEXT_PUBLIC_GA_ID && (
+          <Script id="gtag-init" strategy="afterInteractive">
+            {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}', {
+                page_title: document.title,
+                page_location: window.location.href
+              });
+            `}
+          </Script>
         )}
 
         <Suspense fallback={<div className="min-h-screen bg-gray-50 animate-pulse" />}>
@@ -265,6 +280,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }}
         />
 
+        {/* ENHANCED Performance Monitoring - temporarily disabled */}
+        {/* <CoreWebVitalsMonitor /> */}
+        
+        {/* Vercel Pro Analytics for conversion tracking */}
         <Analytics />
         <SpeedInsights />
       </body>

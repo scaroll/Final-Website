@@ -5,13 +5,13 @@ import Link from "next/link"
 import PgHeader from "@/components/PgHeader"
 import PgFooter from "@/components/PgFooter"
 import { ProductCard } from "@/components/store/product-card"
-import { ProductFilters } from "@/components/store/product-filters"
+// import { ProductFilters } from "@/components/store/product-filters"
 import { Button } from "@/components/ui/button"
-import { reninProducts } from "@/data/renin-products"
+import { enhancedReninCatalog, formatPrice, filterProducts } from "@/data/enhanced-renin-catalog"
 
 
 export default function ProductsPageClient() {
-  const [filteredProducts, setFilteredProducts] = useState(reninProducts)
+  const [filteredProducts, setFilteredProducts] = useState(enhancedReninCatalog)
   const [isLoaded, setIsLoaded] = useState(false)
 
   useEffect(() => {
@@ -19,20 +19,13 @@ export default function ProductsPageClient() {
   }, [])
 
   const handleFilterChange = (filters: { category: string; search: string }) => {
-    let filtered = reninProducts
-
-    if (filters.category !== "all") {
-      filtered = filtered.filter((product) => product.category?.toLowerCase() === filters.category.toLowerCase())
-    }
-
-    if (filters.search) {
-      filtered = filtered.filter(
-        (product) =>
-          (product.name && product.name.toLowerCase().includes(filters.search.toLowerCase())) ||
-          (product.description && product.description.toLowerCase().includes(filters.search.toLowerCase())),
-      )
-    }
-
+    const filtered = filterProducts(
+      enhancedReninCatalog,
+      filters.category === "all" ? undefined : filters.category,
+      undefined, // price range
+      undefined, // in stock filter
+      filters.search
+    )
     setFilteredProducts(filtered)
   }
 
@@ -49,20 +42,27 @@ export default function ProductsPageClient() {
             installation across Ottawa. All prices in Canadian dollars.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Link href="/contact">
-              <Button className="btn-primary px-8 py-4 text-lg rounded-full">Request Work</Button>
+            <Link href="/quote-builder">
+              <Button className="btn-primary px-8 py-4 text-lg rounded-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 shadow-lg">⚡ Instant Quote Builder</Button>
             </Link>
-            <Link href="/contact">
-              <Button className="btn-secondary px-8 py-4 text-lg rounded-full">Get Quote</Button>
+            <Link href="/luxury-walk-in-closets">
+              <Button className="btn-secondary px-8 py-4 text-lg rounded-full border-amber-500 text-amber-600 hover:bg-amber-50">👑 Luxury Renovations</Button>
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Filters Section */}
+      {/* Search Section */}
       <section className="py-8 bg-white border-b border-pg-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <ProductFilters onFilterChange={handleFilterChange} />
+          <div className="max-w-md mx-auto">
+            <input
+              type="text"
+              placeholder="Search products..."
+              className="w-full px-4 py-2 border border-pg-border rounded-lg focus:outline-none focus:ring-2 focus:ring-pg-sky"
+              onChange={(e) => handleFilterChange({ category: "all", search: e.target.value })}
+            />
+          </div>
         </div>
       </section>
 
@@ -72,7 +72,7 @@ export default function ProductsPageClient() {
           <div className="mb-8">
             <p className="text-pg-gray">
               Showing <span className="font-semibold text-pg-dark">{filteredProducts.length}</span> of{" "}
-              <span className="font-semibold text-pg-dark">{reninProducts.length}</span> products
+              <span className="font-semibold text-pg-dark">{enhancedReninCatalog.length}</span> products
             </p>
           </div>
 
@@ -85,15 +85,15 @@ export default function ProductsPageClient() {
                 }`}
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
-                <ProductCard {...product} product={product} />
+                <ProductCard product={product} />
               </div>
             ))}
           </div>
 
           {filteredProducts.length === 0 && (
             <div className="text-center py-16">
-              <p className="text-xl text-pg-gray mb-4">No products found matching your criteria.</p>
-              <Button className="btn-secondary" onClick={() => setFilteredProducts(reninProducts)}>
+              <p className="text-xl text-slate-600 mb-4 font-light">No products found matching your criteria.</p>
+              <Button className="border-2 border-slate-800 text-slate-800 hover:bg-slate-800 hover:text-white transition-all font-light tracking-wide uppercase px-6 py-3 rounded-lg" onClick={() => setFilteredProducts(enhancedReninCatalog)}>
                 Clear Filters
               </Button>
             </div>

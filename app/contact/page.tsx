@@ -1,8 +1,8 @@
 import ContactClientPage from "./ContactClientPage"
 
 export const metadata = {
-  title: "Contact Us - Request Work",
-  description: "Submit a work request or contact us directly for your project needs.",
+  title: "Contact Ottawa Design Atelier - Request Consultation",
+  description: "Submit a consultation request or contact us directly for your design project needs.",
 }
 
 // ISR: Revalidate daily for contact page

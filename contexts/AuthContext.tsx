@@ -86,26 +86,30 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   // Load user from localStorage on mount
   useEffect(() => {
-    const savedUser = localStorage.getItem("pg-closets-user")
-    if (savedUser) {
-      try {
-        const user = JSON.parse(savedUser)
-        dispatch({ type: "LOAD_USER", payload: user })
-      } catch (error) {
-        console.error("Failed to load user from localStorage:", error)
+    if (typeof window !== 'undefined') {
+      const savedUser = localStorage.getItem("pg-closets-user")
+      if (savedUser) {
+        try {
+          const user = JSON.parse(savedUser)
+          dispatch({ type: "LOAD_USER", payload: user })
+        } catch (error) {
+          console.error("Failed to load user from localStorage:", error)
+          dispatch({ type: "LOAD_USER", payload: null })
+        }
+      } else {
         dispatch({ type: "LOAD_USER", payload: null })
       }
-    } else {
-      dispatch({ type: "LOAD_USER", payload: null })
     }
   }, [])
 
   // Save user to localStorage whenever it changes
   useEffect(() => {
-    if (state.user) {
-      localStorage.setItem("pg-closets-user", JSON.stringify(state.user))
-    } else {
-      localStorage.removeItem("pg-closets-user")
+    if (typeof window !== 'undefined') {
+      if (state.user) {
+        localStorage.setItem("pg-closets-user", JSON.stringify(state.user))
+      } else {
+        localStorage.removeItem("pg-closets-user")
+      }
     }
   }, [state.user])
 
